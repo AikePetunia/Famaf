@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "568d61dd87c857d5",
+    "type": "split",
+    "children": [
+      {
+        "id": "d7ecf4281747a0a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "72db0e891efb77fd",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Matematica discreta/Parcial mio (T2) (6).jpeg"
+              },
+              "icon": "lucide-image",
+              "title": "Parcial mio (T2) (6)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a684017a98ade503",
+    "type": "split",
+    "children": [
+      {
+        "id": "83b58aa179053ce0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "94089116a993427c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d904042affc5aa9c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "4d7776908bad288a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 291.5
+  },
+  "right": {
+    "id": "63e95ed94c86806f",
+    "type": "split",
+    "children": [
+      {
+        "id": "4b636bc9666e22d3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "57472e391ee96118",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Welcome.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Welcome"
+            }
+          },
+          {
+            "id": "66c5e42163b30ac8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Welcome"
+            }
+          },
+          {
+            "id": "6a08c827a43589e8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "85266799f9318429",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "google-drive-sync:Push to Google Drive": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "94089116a993427c",
+  "lastOpenFiles": [
+    "Matematica discreta/Parcial mio (T2) (7).jpeg",
+    "Matematica discreta/Parcial mio (T2) (6).jpeg",
+    "Matematica discreta/Apunte_MD1_2022.pdf",
+    "Matematica discreta/NOTA..jpg",
+    "Matematica discreta/Parcial 2 mio (1).jpeg",
+    "Analisis matematico 2/Practica parcial 2/Parcial2Practica Resuemen.pdf",
+    "Analisis matematico 2/Parcial II/Unidad_5-Funciones_de_varias_variables_v5.pdf",
+    "Analisis matematico 2/Parcial II/tabla-de-derivadas-ejemplo-2.png",
+    "Analisis matematico 2/Parcial II/Practico 5 continuacion.md",
+    "Analisis matematico 2/Parcial II/Practico 3_SolPropia.pdf",
+    "Analisis matematico 2/Parcial I/Practicos-Notas/Practico/Practico 1 Hecho.pdf",
+    "Analisis matematico 2/Parcial I/Practicos-Notas/Practico/Práctico 1.pdf",
+    "Analisis matematico 2/Parcial I/Practicos-Notas/Practico/100 integrales._TERMINADO.pdf",
+    "Analisis matematico 1/Parciales-Finales/Finales/SolucionFinales/Final sin fecha 1.md",
+    "Analisis matematico 1/Parciales-Finales/Finales/SolucionFinales/Final 2024 17 de Agosto Sol..md",
+    "Analisis matematico 1/Parciales-Finales/Finales/SolucionFinales/Final 2018-12-05 sol..md",
+    "Analisis matematico 1/Parciales-Finales/Finales/SolucionFinales/Final 2018-12-05.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/5) consejos_funcional.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 2.excalidraw.md",
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 2  sol(1-5)..md",
+    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/3.5) listas y propiedades recursado.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del practico 2.md",
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico 2 sol./practico2 recursado sol.md",
+    "Pasted Image 20250626112305_061.png",
+    "Pasted Image 20250626112253_642.png",
+    "Pasted Image 20250626112244_338.png",
+    "Pasted Image 20250626112226_411.png",
+    "Pasted Image 20250626112211_420.png",
+    "Pasted Image 20250626112156_820.png",
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 2(6-7).md",
+    "Algoritmo y estructura de datos I PRACTICO/Teorico/Links utiles.md",
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico 1 sol/practico1 recursado sol.md",
+    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del Practico 1.md",
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 1 sol (19-.md",
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 1 sol (1-19).md",
+    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del practico 4.md",
+    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del practico 3.md",
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 3.md",
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 4 sol.excalidraw.md",
+    "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp7/clase.md",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
+    "Organizacion del Computador/Teorico/5) Registros y secuenciales.md",
+    "Organizacion del Computador/Teorico/4) Direcionamiento de memorias selfnotes.md"
+  ]
+}
