@@ -1,0 +1,247 @@
+{
+  "main": {
+    "id": "d948c3f39f16da43",
+    "type": "split",
+    "children": [
+      {
+        "id": "01a3ba7ca324b1f9",
+        "type": "tabs",
+        "dimension": 37.6865671641791,
+        "children": [
+          {
+            "id": "5c53ccf502a16c57",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Probabilidad y estadistica /teorico/Clase 26 de agosto.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Clase 26 de agosto"
+            }
+          },
+          {
+            "id": "04bdaf2ac788f1e8",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Probabilidad y estadistica /Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b3fc32d434750fcd",
+        "type": "tabs",
+        "dimension": 62.31343283582089,
+        "children": [
+          {
+            "id": "e0b365e2bb5afb43",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Probabilidad y estadistica /teorico/! Listado Prop..md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "! Listado Prop."
+            }
+          },
+          {
+            "id": "b032d37d4090ae64",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Probabilidad y estadistica /practico/Practico_2_Proba2025.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Practico_2_Proba2025"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6776498f10ceddcd",
+    "type": "split",
+    "children": [
+      {
+        "id": "21e3c48dee3d64a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "61645e5d3beeafec",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "2288a1f455867447",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "65be1b9c6a2ac21c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "f1718c2d3f7e6ff8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4553b15f98fbdfcb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee88094496b5141d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Probabilidad y estadistica /teorico/Clase 12 de agosto.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Clase 12 de agosto"
+            }
+          },
+          {
+            "id": "23791325417ab9d8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Probabilidad y estadistica /teorico/Clase 12 de agosto.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Clase 12 de agosto"
+            }
+          },
+          {
+            "id": "129e871e62c7154d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "247e25e922f969ef",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Probabilidad y estadistica /teorico/Clase 12 de agosto.pdf",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Clase 12 de agosto"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "e0b365e2bb5afb43",
+  "lastOpenFiles": [
+    "Pasted Image 20250826163407_706.png",
+    "Pasted Image 20250826161354_826.png",
+    "Probabilidad y estadistica /teorico/Clase 26 de agosto.pdf",
+    "Probabilidad y estadistica /teorico/! Listado Prop..md",
+    "Pasted Image 20250826155439_182.png",
+    "Pasted Image 20250826142545_488.png",
+    "Pasted Image 20250826124026_644.png",
+    "Pasted Image 20250826135718_028.png",
+    "Pasted Image 20250826135342_748.png",
+    "Probabilidad y estadistica /Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "Probabilidad y estadistica /teorico/Clase 19 de agosto.md",
+    "Pasted Image 20250826131514_897.png",
+    "Pasted Image 20250826131410_151.png",
+    "Pasted Image 20250826131259_205.png",
+    "Pasted Image 20250826131056_643.png",
+    "Probabilidad y estadistica /teorico/Clase 12, 14 de agosto.md",
+    "Probabilidad y estadistica /practico/Clase 21 de agosto.pdf",
+    "Probabilidad y estadistica /practico/Practico_2_Proba2025.pdf",
+    "Probabilidad y estadistica /teorico/Clase 21 de agosto.pdf",
+    "Probabilidad y estadistica /practico/resoluciones/Ejercicio 5 práctico 2 - 2024.pdf",
+    "Probabilidad y estadistica /teorico/Clase 19 de agosto.pdf",
+    "Probabilidad y estadistica /practico/resoluciones/Ejercicio 13 - guía 2.pdf",
+    "Probabilidad y estadistica /teorico/Clase 14 de agosto.pdf",
+    "Probabilidad y estadistica /practico/resoluciones/Ejercicio 16 práctico 1 - 2024.pdf",
+    "Probabilidad y estadistica /teorico/Untitled.md",
+    "Probabilidad y estadistica /teorico/Listado de propiedades y def. (Agosto) 1.md",
+    "Probabilidad y estadistica /teorico/Listado de propiedades y def. (Agosto).md",
+    "Probabilidad y estadistica /teorico/Drawing 2025-08-12 12.28.48.excalidraw.md"
+  ]
+}
