@@ -76,31 +76,7 @@
             }
           },
           {
-            "id": "8c92893d817bacc5",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "teorico/Parcial2/4) Clase 23 de octubre.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "4) Clase 23 de octubre"
-            }
-          },
-          {
-            "id": "36f122bad8d43bc9",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "practico/Practico_7_Proba2025.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Practico_7_Proba2025"
-            }
-          },
-          {
-            "id": "cec1cb5f9ba485fb",
+            "id": "15777a03f1574662",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -110,9 +86,33 @@
               "icon": "lucide-file-text",
               "title": "5) Clase 28 de octubre"
             }
+          },
+          {
+            "id": "5fa61a5b3e91b2f8",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "teorico/Parcial2/6) Clase 30 de octubre.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "6) Clase 30 de octubre"
+            }
+          },
+          {
+            "id": "d2dd3889600a3527",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "practico/Practico_8_Proba2025.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Practico_8_Proba2025"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -262,29 +262,29 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "722d5d42b79f0d18",
+  "active": "d2dd3889600a3527",
   "lastOpenFiles": [
-    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "practico/Practico_7_Proba2025.pdf",
-    "teorico/Parcial2/4) Clase 23 de octubre.pdf",
-    "practico/tablas/Tabla_normal.pdf",
-    "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
-    "practico/tablas/Tabla_t.pdf",
+    "teorico/Parcial2/6) Clase 30 de octubre.pdf",
     "teorico/Parcial2/5) Clase 28 de octubre.pdf",
-    "Pasted Image 20251029120405_408.png",
-    "Pasted Image 20251029120318_471.png",
-    "Pasted Image 20251029120300_835.png",
-    "Pasted Image 20251029120212_904.png",
-    "Pasted Image 20251029115804_235.png",
-    "Pasted Image 20251029115756_896.png",
-    "Pasted Image 20251029115731_656.png",
-    "Pasted Image 20251029115510_727.png",
-    "Pasted Image 20251029115500_956.png",
-    "Pasted Image 20251028185145_990.png",
-    "teorico/Parcial2/Clase 28 de octubre.pdf",
-    "teorico/Parcial2/Clase 23 de octubre.pdf",
-    "teorico/Parcial2/3) Clase 16 de octubre.pdf",
-    "practico/Practico_6_Proba2025.pdf",
+    "practico/tablas/Tabla_normal.pdf",
+    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "practico/Practico_8_Proba2025.pdf",
+    "practico/tablas/Tabla_t.pdf",
+    "Pasted Image 20251031163520_073.png",
+    "practico/Practico_7_Proba2025.pdf",
+    "Pasted Image 20251031135615_277.png",
+    "Pasted Image 20251031114218_626.png",
+    "Pasted Image 20251031114347_984.png",
+    "Pasted Image 20251031114234_526.png",
+    "Pasted Image 20251031114227_046.png",
+    "Pasted Image 20251031114211_552.png",
+    "Pasted Image 20251031114201_282.png",
+    "Pasted Image 20251031114152_867.png",
+    "Pasted Image 20251031114104_473.png",
+    "practico/Practico_8.pdf",
+    "practico/Guía_práctico_8.pdf",
+    "teorico/Parcial2/Clase 30 de octubre.pdf",
+    "teorico/Parcial2/4) Clase 23 de octubre.pdf",
     "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "Excalidraw/Scripts/Downloaded/Box Each Selected Groups.md",
     "Excalidraw/Scripts/Downloaded/Convert freedraw to line.md",
