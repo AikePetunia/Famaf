@@ -9,6 +9,18 @@
         "dimension": 56.71641791044776,
         "children": [
           {
+            "id": "5bbbaea03f611bb1",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "! Teorico completo + Anotaciones (P1)"
+            }
+          },
+          {
             "id": "722d5d42b79f0d18",
             "type": "leaf",
             "state": {
@@ -32,7 +44,8 @@
               "title": "! Clases 2025.docx"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "78e6929f1d13f738",
@@ -262,14 +275,18 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "d2dd3889600a3527",
+  "active": "722d5d42b79f0d18",
   "lastOpenFiles": [
+    "practico/Practico_8_Proba2025.pdf",
+    "practico/tablas/Tabla_t.pdf",
+    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "teorico/Parcial2/6) Clase 30 de octubre.pdf",
     "teorico/Parcial2/5) Clase 28 de octubre.pdf",
     "practico/tablas/Tabla_normal.pdf",
-    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "practico/Practico_8_Proba2025.pdf",
-    "practico/tablas/Tabla_t.pdf",
+    "Pasted Image 20251102202728_264.png",
+    "Pasted Image 20251102202714_644.png",
+    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "! Clases 2025.docx.pdf",
     "Pasted Image 20251031163520_073.png",
     "practico/Practico_7_Proba2025.pdf",
     "Pasted Image 20251031135615_277.png",
@@ -279,13 +296,9 @@
     "Pasted Image 20251031114227_046.png",
     "Pasted Image 20251031114211_552.png",
     "Pasted Image 20251031114201_282.png",
-    "Pasted Image 20251031114152_867.png",
-    "Pasted Image 20251031114104_473.png",
     "practico/Practico_8.pdf",
     "practico/Guía_práctico_8.pdf",
     "teorico/Parcial2/Clase 30 de octubre.pdf",
-    "teorico/Parcial2/4) Clase 23 de octubre.pdf",
-    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "Excalidraw/Scripts/Downloaded/Box Each Selected Groups.md",
     "Excalidraw/Scripts/Downloaded/Convert freedraw to line.md",
     "Excalidraw/Scripts/Downloaded/Custom Zoom.md",
