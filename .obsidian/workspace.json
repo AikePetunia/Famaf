@@ -11,10 +11,12 @@
             "id": "785aad3e7ef602c9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "excalidraw",
+              "state": {
+                "file": "Analisis matematico 2/Parcial II/Parcial II Practica part2.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Parcial II Practica part2"
             }
           }
         ]
@@ -74,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.5
+    "width": 408.5
   },
   "right": {
     "id": "63e95ed94c86806f",
@@ -169,50 +171,50 @@
   },
   "active": "785aad3e7ef602c9",
   "lastOpenFiles": [
+    "Analisis matematico 2/Parcial II/Practica para parcial II.md",
+    "Analisis matematico 2/Parcial II/Practico 5 continuacion.md",
+    "Analisis matematico 2/Practica parcial 2/Parcial2Practica Resuemen.pdf",
+    "Analisis matematico 2/Parcial II/Parcial II Practica part2.md",
+    "Analisis matematico 2/Parcial I/Parciales/Parcial 1 AM II (MIO)/Parcial1.jpg",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/mini parcial.png",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/mini parcial sol..md",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/Parcial 1 2021-11-26-1 Sol..md",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/Parcial 1 2022-10-05-1 sol..md",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/Parcial 1 2023-09-29 TM sol..md",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/Parcial 1 2023-09-29 TT(1) sol..md",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/Parcial 1 sin fecha sol..md",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/Parcial 1 Turno Tarde 2024.md",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/Parcial1 2024..md",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/Re parcial 2023.md",
+    "Analisis matematico 2/Parcial I/Parciales/Parciales hechos/Parcial 1 2015-09-18 (Turno mañana) sol..md",
+    "Analisis matematico 2/Parcial I/Practicos-Notas/Practico/100 integrales._TERMINADO.pdf",
+    "Analisis matematico 2/Parcial I/Practicos-Notas/Practico/Parcial1Practica PDF.pdf",
+    "Analisis matematico 2/Parcial I/Practicos-Notas/Unidad1 Integrales.pdf",
+    "Analisis matematico 2/Parcial II/Practicos-Notas/Práctico 5.pdf",
+    "Analisis matematico 2/Parcial II/Parcial2Practica Resuemen.pdf",
+    "Analisis matematico 2/Practica parcial I/Practicos-Notas/Unidad2 Sucesiones y Series.pdf",
+    "Analisis matematico 2/Practica parcial I/Practicos-Notas/Unidad1 Integrales.pdf",
+    "Analisis matematico 2/Practica parcial I/Practicos-Notas/Parcial 1 Teorico+Parcial.pdf",
+    "Analisis matematico 2/Practica parcial I/Practico/Practico 2 Hecho.pdf",
     "Probabilidad y estadistica /teorico/! Listado Prop..md",
     "Analisis matematico 2/Parcial II/Parciales/Parcial 2 2019-11-15 (Tema B).jpg",
     "Excalidraw/Drawing 2025-09-13 19.30.28.excalidraw.md",
-    "Excalidraw",
-    "Probabilidad y estadistica /teorico/1)Clase 12 de agosto.pdf",
-    "Probabilidad y estadistica /Matematica discreta.pdf",
     "Organizacion del Computador/lab.md",
     "Organizacion del Computador/Teorico/Final (3)(2).png",
     "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
     "Organizacion del Computador/Teorico/4) Direcionamiento de memorias selfnotes.md",
-    "Organizacion del Computador/Teorico/4) DireccionamientoMemorias.pdf",
     "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
     "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
     "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
-    "Organizacion del Computador/Teorico/2) Algebra Booleana.pdf",
-    "Organizacion del Computador/Teorico/1) Sistemas de numeracion.pdf",
-    "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-    "Matematica discreta/Practico2-soluciones.pdf",
-    "Matematica discreta/Parcial_1_Mat_Discreta_2024_Mañana.pdf",
     "Matematica discreta/Parcial tema 1 (1).jpeg",
     "Matematica discreta/Parcial tema 1.jpeg",
     "Matematica discreta/Parcial mio (T2) (6).jpeg",
     "Matematica discreta/Parcial mio (T2) (5).jpeg",
-    "Analisis matematico 2/Parcial II/Practicos-Notas/Práctico 3.pdf",
     "Analisis matematico 2/Parcial II/tabla-de-derivadas-ejemplo-2.png",
-    "Analisis matematico 2/Parcial II/Practico 5 continuacion.md",
-    "Analisis matematico 2/Parcial II/Parcial II Practica part2.md",
     "Matematica discreta/Parcial mio (T2) (7).jpeg",
-    "Matematica discreta/NOTA..jpg",
-    "Matematica discreta/Parcial 2 mio (1).jpeg",
     "Analisis matematico 1/Parciales-Finales/Finales/SolucionFinales/Final sin fecha 1.md",
     "Analisis matematico 1/Parciales-Finales/Finales/SolucionFinales/Final 2024 17 de Agosto Sol..md",
     "Analisis matematico 1/Parciales-Finales/Finales/SolucionFinales/Final 2018-12-05 sol..md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 2.excalidraw.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 2  sol(1-5)..md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del practico 2.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico 2 sol./practico2 recursado sol.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 2(6-7).md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Links utiles.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico 1 sol/practico1 recursado sol.md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del Practico 1.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 1 sol (19-.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 1 sol (1-19).md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del practico 4.md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del practico 3.md"
+    "Algoritmo y estructura de datos I PRACTICO/Practico/Practico sol VIEJAS/Practico 2.excalidraw.md"
   ]
 }

@@ -6,10 +6,10 @@
       {
         "id": "6ac2b5d73f59bd8f",
         "type": "tabs",
-        "dimension": 56.71641791044776,
+        "dimension": 58.74200426439232,
         "children": [
           {
-            "id": "5bbbaea03f611bb1",
+            "id": "95d3541e35f01f9a",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -19,24 +19,29 @@
               "icon": "excalidraw-icon",
               "title": "! Teorico completo + Anotaciones (P1)"
             }
-          }
-        ]
-      },
-      {
-        "id": "78e6929f1d13f738",
-        "type": "tabs",
-        "dimension": 43.28358208955224,
-        "children": [
+          },
           {
-            "id": "3037ed1bb88a6655",
+            "id": "5bbbaea03f611bb1",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "teorico/Parcial2/! Teorico completo + anotaciones (P2).md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "! Teorico completo + anotaciones (P2)"
+            }
+          },
+          {
+            "id": "95063b47c82480c1",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf"
+                "file": "practico/tablas/Tabla Chi-Cuadrado.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion"
+              "title": "Tabla Chi-Cuadrado"
             }
           },
           {
@@ -62,45 +67,64 @@
               "icon": "lucide-file-text",
               "title": "Tabla_normal"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "78e6929f1d13f738",
+        "type": "tabs",
+        "dimension": 41.25799573560768,
+        "children": [
           {
-            "id": "15777a03f1574662",
+            "id": "3d9e3f1dc165d0f8",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "teorico/Parcial2/5) Clase 28 de octubre.pdf"
+                "file": "practico/tablas/helper.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "5) Clase 28 de octubre"
+              "title": "helper"
             }
           },
           {
-            "id": "5fa61a5b3e91b2f8",
+            "id": "3037ed1bb88a6655",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "teorico/Parcial2/6) Clase 30 de octubre.pdf"
+                "file": "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "6) Clase 30 de octubre"
+              "title": "Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion"
             }
           },
           {
-            "id": "d2dd3889600a3527",
+            "id": "892d82d0f1f3cd2d",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "practico/Practico_8_Proba2025.pdf"
+                "file": "practico/Practico_5_Proba2025.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Practico_8_Proba2025"
+              "title": "Practico_5_Proba2025"
+            }
+          },
+          {
+            "id": "a5970cbc6b2e4fc9",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "practico/Practico_6_Proba2025.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Practico_6_Proba2025"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -132,7 +156,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "probabilidad",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -157,7 +181,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 363.5
+    "width": 363.5,
+    "collapsed": true
   },
   "right": {
     "id": "d78669859a0e5cb2",
@@ -249,32 +274,32 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "5bbbaea03f611bb1",
+  "active": "95d3541e35f01f9a",
   "lastOpenFiles": [
-    "! Clases 2025.docx.pdf",
-    "parciales/2/2022-Parcial 2  TB.pdf",
-    "parciales/Final 2022-12-06.pdf",
-    "parciales/Final 2024-12-16.pdf",
-    "parciales/2/2022-Parcial 2  TA.pdf",
-    "parciales/2/2022-Parcial 2 (Recuperatorio).pdf",
-    "parciales/2/2023-Parcial 2 TA - Resuelto.pdf",
-    "parciales/2/2024-Parcial 2 resuelto.pdf",
-    "parciales/2/2021-Parcial 2.pdf",
-    "RESUMEN FINAL (robado jee).pdf",
-    "parciales/2/Resolucion2doparcial.pdf",
+    "parciales/2/practica/re-practicos.md",
+    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "practico/tablas/Tabla_normal.pdf",
+    "practico/tablas/Tabla_t.pdf",
+    "practico/tablas/Tabla Chi-Cuadrado.pdf",
+    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "practico/Practico_6_Proba2025.pdf",
+    "practico/Practico_5_Proba2025.pdf",
+    "Pasted Image 20251104164838_250.png",
+    "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "practico/tablas/helper.pdf",
+    "Pasted Image 20251104143401_607.png",
+    "Pasted Image 20251104143315_574.png",
+    "Pasted Image 20251104143256_385.png",
+    "Pasted Image 20251104142645_161.png",
+    "Pasted Image 20251104142233_306.png",
+    "Untitled 3.base",
+    "teorico/Parcial2/6) Clase 30 de octubre.pdf",
+    "parciales/2/practica",
     "parciales/2/2023-Parcial 2  TB.jpg",
     "teorico/Aulas y otras cosas.md",
-    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "Pasted Image 20251102202728_264.png",
     "Pasted Image 20251102202714_644.png",
     "Pasted Image 20251031163520_073.png",
-    "Pasted Image 20251031135615_277.png",
-    "Pasted Image 20251031114218_626.png",
-    "Pasted Image 20251031114347_984.png",
-    "Pasted Image 20251031114234_526.png",
-    "Pasted Image 20251031114227_046.png",
-    "Pasted Image 20251031114211_552.png",
     "Excalidraw/Scripts/Downloaded/Box Each Selected Groups.md",
     "Excalidraw/Scripts/Downloaded/Convert freedraw to line.md",
     "Excalidraw/Scripts/Downloaded/Custom Zoom.md",
