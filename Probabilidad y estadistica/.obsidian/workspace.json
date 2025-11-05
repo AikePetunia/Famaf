@@ -6,7 +6,7 @@
       {
         "id": "6ac2b5d73f59bd8f",
         "type": "tabs",
-        "dimension": 58.74200426439232,
+        "dimension": 57.0362473347548,
         "children": [
           {
             "id": "95d3541e35f01f9a",
@@ -21,7 +21,7 @@
             }
           },
           {
-            "id": "5bbbaea03f611bb1",
+            "id": "4867dd9bf935cf4b",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -68,12 +68,13 @@
               "title": "Tabla_normal"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "78e6929f1d13f738",
         "type": "tabs",
-        "dimension": 41.25799573560768,
+        "dimension": 42.9637526652452,
         "children": [
           {
             "id": "3d9e3f1dc165d0f8",
@@ -100,31 +101,19 @@
             }
           },
           {
-            "id": "892d82d0f1f3cd2d",
+            "id": "5b09bceada455e22",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "practico/Practico_5_Proba2025.pdf"
+                "file": "practico/Practico_7_Proba2025.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Practico_5_Proba2025"
-            }
-          },
-          {
-            "id": "a5970cbc6b2e4fc9",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "practico/Practico_6_Proba2025.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Practico_6_Proba2025"
+              "title": "Practico_7_Proba2025"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -198,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
+                "file": "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -208,7 +197,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Welcome"
+              "title": "Backlinks for ! Teorico completo + anotaciones (P2)"
             }
           },
           {
@@ -274,15 +263,21 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "95d3541e35f01f9a",
+  "active": "4867dd9bf935cf4b",
   "lastOpenFiles": [
-    "parciales/2/practica/re-practicos.md",
+    "parciales/2/practica/re-practicos 1.md",
+    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "practico/Practico_7_Proba2025.pdf",
     "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "practico/tablas/Tabla_normal.pdf",
+    "parciales/2/practica/re-practicos.md",
     "practico/tablas/Tabla_t.pdf",
     "practico/tablas/Tabla Chi-Cuadrado.pdf",
-    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "parciales/2/practica/Drawing 2025-11-05 17.29.18.excalidraw.md",
+    "Pasted Image 20251105171123_378.png",
     "practico/Practico_6_Proba2025.pdf",
+    "Pasted Image 20251105130223_585.png",
+    "Pasted Image 20251105130214_808.png",
     "practico/Practico_5_Proba2025.pdf",
     "Pasted Image 20251104164838_250.png",
     "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
@@ -294,12 +289,8 @@
     "Pasted Image 20251104142233_306.png",
     "Untitled 3.base",
     "teorico/Parcial2/6) Clase 30 de octubre.pdf",
-    "parciales/2/practica",
     "parciales/2/2023-Parcial 2  TB.jpg",
     "teorico/Aulas y otras cosas.md",
-    "Pasted Image 20251102202728_264.png",
-    "Pasted Image 20251102202714_644.png",
-    "Pasted Image 20251031163520_073.png",
     "Excalidraw/Scripts/Downloaded/Box Each Selected Groups.md",
     "Excalidraw/Scripts/Downloaded/Convert freedraw to line.md",
     "Excalidraw/Scripts/Downloaded/Custom Zoom.md",
