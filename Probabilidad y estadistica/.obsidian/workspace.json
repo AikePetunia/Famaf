@@ -6,7 +6,7 @@
       {
         "id": "6ac2b5d73f59bd8f",
         "type": "tabs",
-        "dimension": 57.0362473347548,
+        "dimension": 62.420042643923246,
         "children": [
           {
             "id": "95d3541e35f01f9a",
@@ -69,12 +69,12 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       },
       {
         "id": "78e6929f1d13f738",
         "type": "tabs",
-        "dimension": 42.9637526652452,
+        "dimension": 37.57995735607676,
         "children": [
           {
             "id": "3d9e3f1dc165d0f8",
@@ -101,19 +101,31 @@
             }
           },
           {
-            "id": "5b09bceada455e22",
+            "id": "f8d2b98755cc1244",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "practico/Practico_7_Proba2025.pdf"
+                "file": "teorico/Parcial2/6) Clase 30 de octubre.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Practico_7_Proba2025"
+              "title": "6) Clase 30 de octubre"
+            }
+          },
+          {
+            "id": "d383a02c726fc796",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "practico/Practico_8_Proba2025.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Practico_8_Proba2025"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -263,16 +275,20 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "4867dd9bf935cf4b",
+  "active": "d383a02c726fc796",
   "lastOpenFiles": [
     "parciales/2/practica/re-practicos 1.md",
-    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "practico/Practico_7_Proba2025.pdf",
-    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "practico/Practico_8_Proba2025.pdf",
     "practico/tablas/Tabla_normal.pdf",
-    "parciales/2/practica/re-practicos.md",
     "practico/tablas/Tabla_t.pdf",
     "practico/tablas/Tabla Chi-Cuadrado.pdf",
+    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "teorico/Parcial2/6) Clase 30 de octubre.pdf",
+    "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "practico/Practico_7_Proba2025.pdf",
+    "practico/tablas/helper.pdf",
+    "parciales/2/practica/re-practicos.md",
+    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "parciales/2/practica/Drawing 2025-11-05 17.29.18.excalidraw.md",
     "Pasted Image 20251105171123_378.png",
     "practico/Practico_6_Proba2025.pdf",
@@ -280,15 +296,11 @@
     "Pasted Image 20251105130214_808.png",
     "practico/Practico_5_Proba2025.pdf",
     "Pasted Image 20251104164838_250.png",
-    "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
-    "practico/tablas/helper.pdf",
     "Pasted Image 20251104143401_607.png",
     "Pasted Image 20251104143315_574.png",
     "Pasted Image 20251104143256_385.png",
     "Pasted Image 20251104142645_161.png",
     "Pasted Image 20251104142233_306.png",
-    "Untitled 3.base",
-    "teorico/Parcial2/6) Clase 30 de octubre.pdf",
     "parciales/2/2023-Parcial 2  TB.jpg",
     "teorico/Aulas y otras cosas.md",
     "Excalidraw/Scripts/Downloaded/Box Each Selected Groups.md",
