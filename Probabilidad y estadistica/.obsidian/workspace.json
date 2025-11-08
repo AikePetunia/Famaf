@@ -21,18 +21,6 @@
             }
           },
           {
-            "id": "55e8171580466e4d",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto (mio).md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "2024-Parcial 2 (Recuperatorio) resuelto (mio)"
-            }
-          },
-          {
             "id": "95063b47c82480c1",
             "type": "leaf",
             "state": {
@@ -68,8 +56,7 @@
               "title": "Tabla_normal"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "78e6929f1d13f738",
@@ -86,6 +73,18 @@
               },
               "icon": "lucide-file-text",
               "title": "helper"
+            }
+          },
+          {
+            "id": "a7a099435bb26f1c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "parciales/2/2024-Parcial 2 resuelto.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "2024-Parcial 2 resuelto"
             }
           },
           {
@@ -113,7 +112,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -263,17 +262,23 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "55e8171580466e4d",
+  "active": "4867dd9bf935cf4b",
   "lastOpenFiles": [
+    "Pasted Image 20251108122637_991.png",
+    "Pasted Image 20251108114247_767.png",
+    "Pasted Image 20251108112806_943.png",
+    "parciales/2/2024-Parcial 2 resuelto.pdf",
+    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf",
+    "Pasted Image 20251108103848_886.png",
+    "Pasted Image 20251108102919_649.png",
+    "Pasted Image 20251108101428_892.png",
     "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto (mio).md",
     "practico/tablas/Tabla_t.pdf",
-    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
     "practico/tablas/helper.pdf",
     "practico/tablas/Tabla Chi-Cuadrado.pdf",
     "practico/tablas/Tabla_normal.pdf",
-    "parciales/2/2024-Parcial 2 resuelto.pdf",
     "parciales/2/2024-Parcial 2 resuelto (mio).md",
     "teorico/Parcial2/6) Clase 30 de octubre.pdf",
     "practico/Practico_5_Proba2025.pdf",
@@ -287,11 +292,6 @@
     "Pasted Image 20251105130214_808.png",
     "Pasted Image 20251104164838_250.png",
     "Pasted Image 20251104143401_607.png",
-    "Pasted Image 20251104143315_574.png",
-    "Pasted Image 20251104143256_385.png",
-    "Pasted Image 20251104142645_161.png",
-    "Pasted Image 20251104142233_306.png",
-    "parciales/2/2023-Parcial 2  TB.jpg",
     "teorico/Aulas y otras cosas.md",
     "Excalidraw/Scripts/Downloaded/Box Each Selected Groups.md",
     "Excalidraw/Scripts/Downloaded/Convert freedraw to line.md",
