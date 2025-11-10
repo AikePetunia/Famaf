@@ -6,10 +6,22 @@
       {
         "id": "6ac2b5d73f59bd8f",
         "type": "tabs",
-        "dimension": 63.6724960254372,
+        "dimension": 61.089030206677265,
         "children": [
           {
-            "id": "4867dd9bf935cf4b",
+            "id": "27d94b4ff9561518",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "! Teorico completo + Anotaciones (P1)"
+            }
+          },
+          {
+            "id": "7847a8219a565575",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -18,18 +30,6 @@
               },
               "icon": "excalidraw-icon",
               "title": "! Teorico completo + anotaciones (P2)"
-            }
-          },
-          {
-            "id": "95063b47c82480c1",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "practico/tablas/Tabla Chi-Cuadrado.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla Chi-Cuadrado"
             }
           },
           {
@@ -61,7 +61,7 @@
       {
         "id": "78e6929f1d13f738",
         "type": "tabs",
-        "dimension": 36.327503974562795,
+        "dimension": 38.910969793322735,
         "children": [
           {
             "id": "3d9e3f1dc165d0f8",
@@ -76,15 +76,15 @@
             }
           },
           {
-            "id": "a7a099435bb26f1c",
+            "id": "f835af1560f9661b",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "parciales/2/2024-Parcial 2 resuelto.pdf"
+                "file": "parciales/2/2022-Parcial 2 (Recuperatorio).pdf"
               },
               "icon": "lucide-file-text",
-              "title": "2024-Parcial 2 resuelto"
+              "title": "2022-Parcial 2 (Recuperatorio)"
             }
           },
           {
@@ -97,18 +97,6 @@
               },
               "icon": "lucide-file-text",
               "title": "Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion"
-            }
-          },
-          {
-            "id": "a6178f0cd91c3bfa",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "2024-Parcial 2 (Recuperatorio) resuelto"
             }
           }
         ],
@@ -262,36 +250,88 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "4867dd9bf935cf4b",
+  "floating": {
+    "id": "6fce905c52ccc508",
+    "type": "floating",
+    "children": [
+      {
+        "id": "d96fff0a1a3b30bf",
+        "type": "window",
+        "children": [
+          {
+            "id": "4468e9e0aaa4dd1d",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "df35a4bde77a8328",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "parciales/2/2023-Parcial 2 TA - Resuelto (mio).md"
+                  },
+                  "icon": "excalidraw-icon",
+                  "title": "2023-Parcial 2 TA - Resuelto (mio)"
+                }
+              },
+              {
+                "id": "2e5a8c37189870a3",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md"
+                  },
+                  "icon": "excalidraw-icon",
+                  "title": "2022-Parcial 2 (Recuperatorio) resuleto mio"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical",
+        "x": 640,
+        "y": 106,
+        "width": 1314,
+        "height": 1400,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "27d94b4ff9561518",
   "lastOpenFiles": [
-    "Pasted Image 20251108122637_991.png",
-    "Pasted Image 20251108114247_767.png",
-    "Pasted Image 20251108112806_943.png",
-    "parciales/2/2024-Parcial 2 resuelto.pdf",
+    "parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
+    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf",
-    "Pasted Image 20251108103848_886.png",
-    "Pasted Image 20251108102919_649.png",
-    "Pasted Image 20251108101428_892.png",
-    "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto (mio).md",
-    "practico/tablas/Tabla_t.pdf",
-    "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
-    "practico/tablas/helper.pdf",
-    "practico/tablas/Tabla Chi-Cuadrado.pdf",
+    "parciales/2/2022-Parcial 2 (Recuperatorio).pdf",
     "practico/tablas/Tabla_normal.pdf",
-    "parciales/2/2024-Parcial 2 resuelto (mio).md",
-    "teorico/Parcial2/6) Clase 30 de octubre.pdf",
+    "practico/tablas/Tabla_t.pdf",
+    "practico/tablas/Tabla Chi-Cuadrado.pdf",
+    "parciales/2/2023-Parcial 2 TA - Resuelto (mio).md",
+    "parciales/2/2023-Parcial 2 TB (mio) todo.md",
+    "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf",
+    "parciales/2/2023-Parcial 2 TB todo.jpg",
     "practico/Practico_5_Proba2025.pdf",
+    "parciales/2/2023-Parcial 2 TA - Resuelto.pdf",
     "practico/Practico_6_Proba2025.pdf",
+    "Pasted Image 20251110121712_729.png",
+    "practico/tablas/helper.pdf",
+    "Pasted Image 20251110114719_504.png",
+    "Pasted Image 20251110114334_988.png",
+    "Pasted Image 20251029114542_393.png",
+    "Pasted Image 20251028183252_361.png",
+    "Pasted Image 20251026121504_866.png",
+    "Pasted Image 20251022185135_405.png",
+    "Pasted Image 20251110104459_569.png",
+    "Pasted Image 20251108122637_991.png",
+    "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto (mio).md",
+    "parciales/2/2024-Parcial 2 resuelto (mio).md",
     "parciales/2/practica/re-practicos (5,6,7).md",
     "parciales/2/practica/re-practicos 1 (7,8).md",
-    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "parciales/2/practica/Drawing 2025-11-05 17.29.18.excalidraw.md",
-    "Pasted Image 20251105171123_378.png",
-    "Pasted Image 20251105130223_585.png",
-    "Pasted Image 20251105130214_808.png",
-    "Pasted Image 20251104164838_250.png",
-    "Pasted Image 20251104143401_607.png",
     "teorico/Aulas y otras cosas.md",
     "Excalidraw/Scripts/Downloaded/Box Each Selected Groups.md",
     "Excalidraw/Scripts/Downloaded/Convert freedraw to line.md",
@@ -306,8 +346,6 @@
     "Excalidraw/Scripts/Downloaded/Organic Line Legacy.md",
     "teorico/Parcial1/resumen parcial 1.md",
     "Parciales/README.md",
-    "teorico/Parcial1/3)Clase 19 de agosto.md",
-    "teorico/Parcial1/2)Clase 12, 14 de agosto.md",
-    "Welcome.md"
+    "teorico/Parcial1/3)Clase 19 de agosto.md"
   ]
 }
