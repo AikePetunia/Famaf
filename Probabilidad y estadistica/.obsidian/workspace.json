@@ -6,22 +6,10 @@
       {
         "id": "6ac2b5d73f59bd8f",
         "type": "tabs",
-        "dimension": 61.089030206677265,
+        "dimension": 61.14072494669509,
         "children": [
           {
-            "id": "27d94b4ff9561518",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "! Teorico completo + Anotaciones (P1)"
-            }
-          },
-          {
-            "id": "7847a8219a565575",
+            "id": "db3dfd3f80658035",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -30,18 +18,6 @@
               },
               "icon": "excalidraw-icon",
               "title": "! Teorico completo + anotaciones (P2)"
-            }
-          },
-          {
-            "id": "7ca5f730ad7538dd",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "practico/tablas/Tabla_t.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla_t"
             }
           },
           {
@@ -55,38 +31,27 @@
               "icon": "lucide-file-text",
               "title": "Tabla_normal"
             }
+          },
+          {
+            "id": "7ca5f730ad7538dd",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "practico/tablas/Tabla_t.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Tabla_t"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "78e6929f1d13f738",
         "type": "tabs",
-        "dimension": 38.910969793322735,
+        "dimension": 38.859275053304906,
         "children": [
-          {
-            "id": "3d9e3f1dc165d0f8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "practico/tablas/helper.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "helper"
-            }
-          },
-          {
-            "id": "f835af1560f9661b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "parciales/2/2022-Parcial 2 (Recuperatorio).pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "2022-Parcial 2 (Recuperatorio)"
-            }
-          },
           {
             "id": "3037ed1bb88a6655",
             "type": "leaf",
@@ -97,6 +62,30 @@
               },
               "icon": "lucide-file-text",
               "title": "Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion"
+            }
+          },
+          {
+            "id": "4bab6b296ba4f47b",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "parciales/2/2024-Parcial 2 resuelto.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "2024-Parcial 2 resuelto"
+            }
+          },
+          {
+            "id": "27d94b4ff9561518",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "2024-Parcial 2 (Recuperatorio) resuelto"
             }
           }
         ],
@@ -250,85 +239,38 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "floating": {
-    "id": "6fce905c52ccc508",
-    "type": "floating",
-    "children": [
-      {
-        "id": "d96fff0a1a3b30bf",
-        "type": "window",
-        "children": [
-          {
-            "id": "4468e9e0aaa4dd1d",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "df35a4bde77a8328",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "parciales/2/2023-Parcial 2 TA - Resuelto (mio).md"
-                  },
-                  "icon": "excalidraw-icon",
-                  "title": "2023-Parcial 2 TA - Resuelto (mio)"
-                }
-              },
-              {
-                "id": "2e5a8c37189870a3",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md"
-                  },
-                  "icon": "excalidraw-icon",
-                  "title": "2022-Parcial 2 (Recuperatorio) resuleto mio"
-                }
-              }
-            ],
-            "currentTab": 1
-          }
-        ],
-        "direction": "vertical",
-        "x": 640,
-        "y": 106,
-        "width": 1314,
-        "height": 1400,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "27d94b4ff9561518",
+  "active": "4bab6b296ba4f47b",
   "lastOpenFiles": [
-    "parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
-    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "parciales/2/2022-Parcial 2 (Recuperatorio).pdf",
-    "practico/tablas/Tabla_normal.pdf",
+    "parciales/2/2024.md",
+    "parciales/2/2024-Parcial 2 resuelto.pdf",
     "practico/tablas/Tabla_t.pdf",
-    "practico/tablas/Tabla Chi-Cuadrado.pdf",
-    "parciales/2/2023-Parcial 2 TA - Resuelto (mio).md",
-    "parciales/2/2023-Parcial 2 TB (mio) todo.md",
-    "teorico/Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "practico/tablas/Tabla_normal.pdf",
+    "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
+    "parciales/2/2024-Parcial 2 resuelto (mio).md",
+    "parciales/Final 2024-12-16.pdf",
+    "parciales/Final 2022-12-06.pdf",
     "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf",
     "parciales/2/2023-Parcial 2 TB todo.jpg",
-    "practico/Practico_5_Proba2025.pdf",
-    "parciales/2/2023-Parcial 2 TA - Resuelto.pdf",
-    "practico/Practico_6_Proba2025.pdf",
-    "Pasted Image 20251110121712_729.png",
+    "parciales/2/2022-Parcial 2 TB (Mio).md",
+    "parciales/2/2022-Parcial 2 (Recuperatorio).pdf",
     "practico/tablas/helper.pdf",
+    "parciales/2/2022-Parcial 2 TA.pdf",
+    "parciales/2/2022-Parcial 2 TB.pdf",
+    "parciales/2/2022-Parcial 2 TA (Mio).md",
+    "parciales/2/2023-Parcial 2 TA - Resuelto (mio).md",
+    "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "Pasted Image 20251111161305_488.png",
+    "Pasted Image 20251111145056_605.png",
+    "Pasted Image 20251111144843_828.png",
+    "Pasted Image 20251111135146_715.png",
+    "parciales/2/2023-Parcial 2 TB (mio) todo.md",
+    "Pasted Image 20251110121712_729.png",
     "Pasted Image 20251110114719_504.png",
     "Pasted Image 20251110114334_988.png",
     "Pasted Image 20251029114542_393.png",
     "Pasted Image 20251028183252_361.png",
-    "Pasted Image 20251026121504_866.png",
-    "Pasted Image 20251022185135_405.png",
-    "Pasted Image 20251110104459_569.png",
-    "Pasted Image 20251108122637_991.png",
     "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto (mio).md",
-    "parciales/2/2024-Parcial 2 resuelto (mio).md",
     "parciales/2/practica/re-practicos (5,6,7).md",
     "parciales/2/practica/re-practicos 1 (7,8).md",
     "parciales/2/practica/Drawing 2025-11-05 17.29.18.excalidraw.md",
@@ -343,9 +285,6 @@
     "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.md",
     "Excalidraw/Scripts/Downloaded/Palm Guard.md",
     "Excalidraw/Scripts/Downloaded/Palette loader.md",
-    "Excalidraw/Scripts/Downloaded/Organic Line Legacy.md",
-    "teorico/Parcial1/resumen parcial 1.md",
-    "Parciales/README.md",
-    "teorico/Parcial1/3)Clase 19 de agosto.md"
+    "Excalidraw/Scripts/Downloaded/Organic Line Legacy.md"
   ]
 }
