@@ -6,7 +6,7 @@
       {
         "id": "6ac2b5d73f59bd8f",
         "type": "tabs",
-        "dimension": 61.14072494669509,
+        "dimension": 69.136460554371,
         "children": [
           {
             "id": "db3dfd3f80658035",
@@ -44,13 +44,12 @@
               "title": "Tabla_t"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "78e6929f1d13f738",
         "type": "tabs",
-        "dimension": 38.859275053304906,
+        "dimension": 30.863539445628994,
         "children": [
           {
             "id": "3037ed1bb88a6655",
@@ -77,6 +76,18 @@
             }
           },
           {
+            "id": "0641c88e6ac399b4",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "teorico/Parcial2/4) Clase 23 de octubre.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "4) Clase 23 de octubre"
+            }
+          },
+          {
             "id": "27d94b4ff9561518",
             "type": "leaf",
             "state": {
@@ -89,7 +100,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -239,37 +250,74 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "4bab6b296ba4f47b",
+  "floating": {
+    "id": "dc3b76fafe961ecb",
+    "type": "floating",
+    "children": [
+      {
+        "id": "60f3764c5bdb11a6",
+        "type": "window",
+        "children": [
+          {
+            "id": "71be2f264838b5e2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "71892c45fc094d09",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "parciales/2/parcial chagpt.md"
+                  },
+                  "icon": "excalidraw-icon",
+                  "title": "parcial chagpt"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 1165,
+        "y": 18,
+        "width": 658,
+        "height": 1400,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "db3dfd3f80658035",
   "lastOpenFiles": [
-    "parciales/2/2024.md",
-    "parciales/2/2024-Parcial 2 resuelto.pdf",
-    "practico/tablas/Tabla_t.pdf",
-    "practico/tablas/Tabla_normal.pdf",
+    "parciales/2/parcial chagpt.md",
     "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "practico/tablas/Tabla_normal.pdf",
+    "practico/tablas/Tabla_t.pdf",
+    "Pasted Image 20251112132301_474.png",
+    "Pasted Image 20251112132153_160.png",
+    "Pasted Image 20251112132129_678.png",
+    "Pasted Image 20251112132113_731.png",
+    "Pasted Image 20251112132102_952.png",
+    "Pasted Image 20251112121706_175.png",
+    "teorico/Parcial2/4) Clase 23 de octubre.pdf",
+    "Pasted Image 20251112121153_742.png",
+    "Pasted Image 20251112121114_518.png",
+    "Pasted Image 20251112121057_479.png",
+    "Pasted Image 20251112121049_113.png",
+    "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf",
+    "parciales/2/2024-Parcial 2 resuelto.pdf",
     "parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
     "parciales/2/2024-Parcial 2 resuelto (mio).md",
     "parciales/Final 2024-12-16.pdf",
     "parciales/Final 2022-12-06.pdf",
-    "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf",
-    "parciales/2/2023-Parcial 2 TB todo.jpg",
     "parciales/2/2022-Parcial 2 TB (Mio).md",
     "parciales/2/2022-Parcial 2 (Recuperatorio).pdf",
     "practico/tablas/helper.pdf",
     "parciales/2/2022-Parcial 2 TA.pdf",
-    "parciales/2/2022-Parcial 2 TB.pdf",
     "parciales/2/2022-Parcial 2 TA (Mio).md",
     "parciales/2/2023-Parcial 2 TA - Resuelto (mio).md",
     "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "Pasted Image 20251111161305_488.png",
-    "Pasted Image 20251111145056_605.png",
-    "Pasted Image 20251111144843_828.png",
-    "Pasted Image 20251111135146_715.png",
     "parciales/2/2023-Parcial 2 TB (mio) todo.md",
-    "Pasted Image 20251110121712_729.png",
-    "Pasted Image 20251110114719_504.png",
-    "Pasted Image 20251110114334_988.png",
-    "Pasted Image 20251029114542_393.png",
-    "Pasted Image 20251028183252_361.png",
     "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto (mio).md",
     "parciales/2/practica/re-practicos (5,6,7).md",
     "parciales/2/practica/re-practicos 1 (7,8).md",
