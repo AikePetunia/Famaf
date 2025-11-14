@@ -6,4 +6,4 @@ las carpetas que hay son las materias que tienen todo.
 Herramientas usadas:
 - Obsidian + Excalidrew
 - Xournal++
-- pdf viewerfigifirgitz
+- pdf viewer

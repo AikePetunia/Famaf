@@ -6,7 +6,7 @@
       {
         "id": "6ac2b5d73f59bd8f",
         "type": "tabs",
-        "dimension": 69.136460554371,
+        "dimension": 55.66914498141264,
         "children": [
           {
             "id": "db3dfd3f80658035",
@@ -49,7 +49,7 @@
       {
         "id": "78e6929f1d13f738",
         "type": "tabs",
-        "dimension": 30.863539445628994,
+        "dimension": 44.330855018587364,
         "children": [
           {
             "id": "3037ed1bb88a6655",
@@ -61,18 +61,6 @@
               },
               "icon": "lucide-file-text",
               "title": "Probabilidad y Estadistica para Ingenieria y Ciencias - Jay Devore - Septima Edicion"
-            }
-          },
-          {
-            "id": "4bab6b296ba4f47b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "parciales/2/2024-Parcial 2 resuelto.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "2024-Parcial 2 resuelto"
             }
           },
           {
@@ -88,19 +76,31 @@
             }
           },
           {
-            "id": "27d94b4ff9561518",
+            "id": "8073d0a94b5fb11b",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf"
+                "file": "teorico/Parcial2/5) Clase 28 de octubre.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "2024-Parcial 2 (Recuperatorio) resuelto"
+              "title": "5) Clase 28 de octubre"
+            }
+          },
+          {
+            "id": "6467f6f09fb5e7c3",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "teorico/Parcial2/6) Clase 30 de octubre.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "6) Clase 30 de octubre"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -157,8 +157,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 363.5,
-    "collapsed": true
+    "width": 363.5
   },
   "right": {
     "id": "d78669859a0e5cb2",
@@ -250,70 +249,34 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "floating": {
-    "id": "dc3b76fafe961ecb",
-    "type": "floating",
-    "children": [
-      {
-        "id": "60f3764c5bdb11a6",
-        "type": "window",
-        "children": [
-          {
-            "id": "71be2f264838b5e2",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "71892c45fc094d09",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "parciales/2/parcial chagpt.md"
-                  },
-                  "icon": "excalidraw-icon",
-                  "title": "parcial chagpt"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 1165,
-        "y": 18,
-        "width": 658,
-        "height": 1400,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "db3dfd3f80658035",
+  "active": "24b757ad01be298e",
   "lastOpenFiles": [
-    "parciales/2/parcial chagpt.md",
+    "teorico/Parcial2/parcial2.jpeg",
+    "teorico/Parcial2/parcial2(1).jpeg",
+    "teorico/Parcial2/parcial2(3).jpeg",
+    "teorico/Parcial2/parcial2(4).jpeg",
+    "teorico/resumen2.jpeg",
+    "teorico/resumen1.jpeg",
+    "teorico/resumen.jpeg",
+    "teorico/resumen_segundo_parcial.pdf",
+    "teorico/resumen_primer_parcial.pdf",
+    "teorico/resumen_distribuciones.pdf",
     "teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "teorico/Parcial2/4) Clase 23 de octubre.pdf",
+    "teorico/Parcial2/5) Clase 28 de octubre.pdf",
+    "teorico/Parcial2/6) Clase 30 de octubre.pdf",
+    "parciales/2/parcial chagpt.md",
     "practico/tablas/Tabla_normal.pdf",
     "practico/tablas/Tabla_t.pdf",
     "Pasted Image 20251112132301_474.png",
     "Pasted Image 20251112132153_160.png",
     "Pasted Image 20251112132129_678.png",
     "Pasted Image 20251112132113_731.png",
-    "Pasted Image 20251112132102_952.png",
-    "Pasted Image 20251112121706_175.png",
-    "teorico/Parcial2/4) Clase 23 de octubre.pdf",
-    "Pasted Image 20251112121153_742.png",
-    "Pasted Image 20251112121114_518.png",
-    "Pasted Image 20251112121057_479.png",
-    "Pasted Image 20251112121049_113.png",
     "parciales/2/2024-Parcial 2 (Recuperatorio) resuelto.pdf",
     "parciales/2/2024-Parcial 2 resuelto.pdf",
     "parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
     "parciales/2/2024-Parcial 2 resuelto (mio).md",
-    "parciales/Final 2024-12-16.pdf",
-    "parciales/Final 2022-12-06.pdf",
     "parciales/2/2022-Parcial 2 TB (Mio).md",
-    "parciales/2/2022-Parcial 2 (Recuperatorio).pdf",
-    "practico/tablas/helper.pdf",
-    "parciales/2/2022-Parcial 2 TA.pdf",
     "parciales/2/2022-Parcial 2 TA (Mio).md",
     "parciales/2/2023-Parcial 2 TA - Resuelto (mio).md",
     "teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
