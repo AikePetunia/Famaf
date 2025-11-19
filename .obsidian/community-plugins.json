@@ -1,6 +1,11 @@
 [
   "google-drive-sync",
   "obsidian-excalidraw-plugin",
-  "obsidian-annotator",
-  "obsidian-discordrpc"
+  "obsidian-discordrpc",
+  "wakatime-kvh",
+  "obsidian-wakatime",
+  "pdf-plus",
+  "obsidian-zotero-desktop-connector",
+  "obsidian-markmind",
+  "obsidian-icon-folder"
 ]

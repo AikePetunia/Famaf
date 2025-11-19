@@ -5,14 +5,14 @@
     "contrast": 85,
     "sepia": 0
   },
-  "debugLogging": false,
+  "debugLogging": true,
   "customDefaultPath": "",
   "epubSettings": {
     "readingMode": "pagination",
     "fontSize": 100
   },
   "annotationMarkdownSettings": {
-    "annotationModeByDefault": true,
+    "annotationModeByDefault": false,
     "includePrefix": true,
     "highlightHighlightedText": true,
     "includePostfix": true
