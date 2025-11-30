@@ -157,9 +157,10 @@ quedando un ciclo como:
 	{Q : r = ⟨N i, j : 0 ≤ i < j < N : A.i = A.j ⟩}
 
 i) Inicializacion.
-{P: N >= 0}
-S1;
-{INV = r = ⟨N i, j : 0 ≤ i < j < pos : A.i = A.j ⟩ ^ 0<= pos <= N}
+
+	{P: N >= 0}
+	S1;
+	{INV = r = ⟨N i, j : 0 ≤ i < j < pos : A.i = A.j ⟩ ^ 0<= pos <= N}
 
 Sabemos que necesitamso inicializar y delcarar las variables para iniciar el ciclo.
 Asumamos r, pos =: E, F
@@ -205,7 +206,7 @@ res, pos := E, pos+1
 		(0<= i < j < n) v (0<=i<j ^ j = n)	
 	}
 	E = ⟨N i, j : 0 ≤ i < j < pos: A.i = A.j ⟩ + 
-	⟨N i, j : 0 ≤ i < j ^ j = n : A.i = A.j ⟩ 
+	⟨N i, j : 0 ≤ i < j ^ j = pos : A.i = A.j ⟩ 
 	^ 0<= pos+1 <= N
 	={Hipotesis}
 	E = res + ⟨N i, j : 0 ≤ i < j ^ j = n : A.i = A.j ⟩ 
@@ -343,3 +344,297 @@ Var res, pos, res2, pos2: Int;
 		res, pos := res + res2, pos +1
 	od
 	{Q: res = <N i,j: 0<= i < j < N : A.i = A.j} 
+
+
+Dado un arreglo A : array[0, N ) of N um con N ≥ 0, determinar si hay dos elementos que suman 8: 
+
+	Const N : Int, A : array [0, N ) of Int; 
+	Var res : Bool; 
+	{P : N ≥ 0} 
+	S  // Cuerpo del ciclo
+	{Q : res = ⟨ ∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩}
+
+Notemos que es una funcion del tipo, la suma de los elementos en ciertos indices suman 8, siendo algo booleano.
+Necesitamos recorrer los arreglos en posiciones iguales.
+
+Quedando un programa de la estructura
+
+	Const N : Int, A : array [0, N ) of Int; 
+	Var res : Bool; 
+	{P : N ≥ 0} 
+	S1;
+	{inv}
+		do B ->
+			{inv ^ b}
+			S2;
+			{inv}
+		od 
+	{Q : res = ⟨ ∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩}
+
+Por técnica de remplazo de constante por variablem, propongo un invariante para la derviacion del programa que ocupa un ciclo, y lo reforzamos:
+Además, debemos saber que cumpla que Inv ^ -B => Q:
+
+	Inv = res = <Ei,j: 0<= i < j < pos : A.i + A.j = 8> ^ 0<= pos <= N
+	B = pos < N 
+
+Demostremos que vale:
+
+	inv ^ -b => Q
+	={valores}
+	res = <Ei,j: 0<= i < j < pos : A.i + A.j = 8> ^ 0<= pos <= N ^ -(pos<N) => 
+	res = ⟨ ∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩
+	={lógica, elim de variable con pos = N}
+	res = <Ei,j: 0<= i < j < N : A.i + A.j = 8> ^ 0<= pos <= N => 
+	res = ⟨ ∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩
+	={lógica, igualdad lógica p => p}
+	True
+
+siendo una invariante y una guarda válida. Nos queda el ciclo:
+
+	Const N : Int, A : array [0, N ) of Int; 
+	Var res : Bool; pos : Int; 
+	{P : N ≥ 0} 
+	S1; // inicializacion
+	{inv}
+		do pos < n ->
+			{inv ^ b}
+			S2; // cuerpo del ciclo
+			{inv}
+		od 
+	{Q : res = ⟨ ∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩}
+
+i) Inicializacion del ciclo
+
+	{N ≥ 0} 
+	S1; // inicializacion
+	{res = <Ei,j: 0<= i < j < pos : A.i + A.j = 8> ^ 0<= pos <= N}
+
+observando la dif de variables que hay entre la pre y post, sabemos que tenemos que iniociar y declarar pos, res. Propongo:
+
+	res, pos := E,F
+
+y hacemos la wp
+
+	wp.s1.inv
+	={wp de :=}
+	E = <Ei,j: 0<= i < j < F : A.i + A.j = 8> ^ 0 <= F <= N
+	={asumamos F = 0, E = False, para forzar un rango vacío}
+	False = False ^ 0<= 0 <= N 
+	={HI, lógica}
+	True
+
+quedando el programa, con las inicializaciones correspondientes de S1
+
+	Const N : Int, A : array [0, N ) of Int; 
+	Var res : Bool; pos : Int; 
+	{P : N ≥ 0} 
+	res,pos := False, 0; // inicializacion
+	{inv}
+		do pos < n ->
+			{inv ^ b}
+			S2; // cuerpo del ciclo
+			{inv}
+		od 
+	{Q : res = ⟨ ∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩}
+
+ii) Cuerpo del ciclo.
+
+sabemos que el ciclo debe avanzar y las posiciones deben actualizarse, hasta enocntrar un true para A.i + A.j = 8.
+propongo que: res,pos := E, pos+1
+y hacemos la wp.
+
+	wp.s2.inv
+	={wp de :=}
+	E = <Ei,j: 0<= i < j < pos+1 : A.i + A.j = 8> ^ 0 <= pos+1 <= N
+	={lógica en el rango:
+	0<=i<j<pos+1 es lo mismo que
+	0<=i<j ^ j<pos+1 mismo que 
+	0<=i<j ^ j<pos v j=pos, distribuyendo:
+	(0<=i<j ^ j<pos) v (0<=i<j ^ j = pos), usando las asignaciones:
+	(0<=i<j ^ j<pos) v (0<=i<pos) }
+	E = <Ei,j: (0<=i<j ^ j<pos) v  (0 <= i < pos : A.i + A.j = 8>
+	^ 0 <= pos+1 <= N
+	={part de rango}
+	E = <Ei,j: 0<=i<j ^ j<pos : A.i + A.j = 8> v 
+	<Ei,j: 0 <= i < j ^ j = pos : A.i + A.j = 8>
+	^ 0 <= pos+1 <= N
+	={elim de variable j, hipotesis}
+	E = res v <Ei,j: 0 <= i < pos : A.i + A.pos = 8> ^ true
+	={nos trabamos -->}
+
+Nos trabamos, E no es programable ya que nos encontramos con algo que no está en hipotesis y lo planteamos como una más (Invariante extra), además necesitamos otro ciclo (anidado).
+
+	Inv' = res2 = <Ei: 0 <= i < pos2 : A.i + A.pos = 8> ^ 0 <= pos2 <= pos
+
+Con una guarda B, así Inv' ^ -b => Inv
+
+	B' = pos2 < pos
+
+Como tenemos un ciclo anidado,  y como extra, tenemos que ver si realmente coinicidio que A.i + A.j = 8, o no. Tenemos guardasel ciclo tendrá forma de:
+
+	{P2:}
+	S4;
+	{Inv'}
+		do B' ->
+			{Inv' ^ b'}
+			if [] B1 -> S5;
+				[] B2 -> S6
+			{Inv}
+		od
+	{Q2;}
+
+Demostremos Inv' ^ -b => inv'
+
+	Inv' ^ -b => Inv
+	={asignaciones de inv', b, inv}
+	res2 = <Ei: 0 <= i < pos2 : A.i + A.pos = 8> ^ 0 <= pos2 <= pos ^ -(pos2 < pos) => res2 = <Ei,j: 0 <= i < pos2 : A.i + A.pos = 8> 
+	={-b, lógica}
+	res2 = <Ei,j: 0 <= i < pos2 : A.i + A.pos = 8> ^ 0 <= pos2 <= pos ^ pos2 = pos => res2 = <Ei,j: 0 <= i < pos2 : A.i + A.pos = 8> 
+	={Elim de variable}
+	res2 = <Ei: 0 <= i < pos : A.i + A.pos = 8> ^ 0 <= pos <= pos 
+	=> res2 = <Ei,j: 0 <= i < pos2 : A.i + A.pos = 8> 
+	={elim de variable, logica}
+	res2 = <Ei: 0 <= i < pos : A.i + A.pos = 8> => res2 = <Ei,j: 0 <= i < pos2 : A.i + A.pos = 8> 
+	={logica}
+	True
+
+iii) Inicializacion del ciclo interno.
+
+Sabemos que se deben iniciar las variables nuevas, asumamos:
+
+	res2,pos2 := E,F
+
+Hagamos la WP:
+
+	wp.s4.Inv'
+	={wp de :=}
+	E = <Ei: 0 <= i < F : A.i + A.pos = 8> ^ 0 <= F <= pos
+	={elijo F = 0, E = False, para forzar un rango vacio}
+	False = <Ei: 0 <= i < 0 : A.i + A.pos = 8> ^ 0 <= 0 <= pos
+	={lógica, rango vacio}
+	False = False ^ True
+	={lógica}
+	True
+
+Nos queda la inicializacion del ciclo:
+
+	{P2:}
+	res2,pos2 := False, 0
+	{Inv'}
+
+IV) Cuerpo del ciclo anidado.
+Asumamos Inv' ^ B' como hipotesis.
+además, anticipemos que habrán 2 guardas. 
+
+1. A.i + A.j != 8
+2. A.i + A.j = 8 
+
+pensemos que el ciclo debe avanzar y revisar si la guarda es cierta, si lo fuera, se termina el ciclo. (Podemos agregar terminacion anticipada de ciclos tmb, reforzando poniendo que res = true, pero lo hago más adelante xd)
+
+entonces, usemos: res2,pos2 := E, pos2+1
+
+	wp.s5.inv
+	={wp de :=}
+	E = <Ei: 0 <= i < pos2+1 : A.i + A.pos = 8> ^ 0 <= pos2+1 <= pos
+	={lógica, part de rango por final}
+	E = <Ei: 0 <= i < pos2 : A.i + A.pos = 8> v 
+	<Ei: i = pos2: A.i + A.pos = 8> ^ 
+	0 <= pos2+1 <= pos
+	={hipotesis}
+	E = res2 v < Ei: i = pos2: A.i + A.pos = 8>
+	={Rango unitario, 2. casos:
+		I)  A.pos2 + A.pos != 8
+		II) A.pos2 + A.pos = 8}
+		
+	={Caso 1, A.pos2 + A.pos != 8}
+	E = res2 v A.pos2 + A.pos != 8
+	.
+	={Caso 2. A.pos2 + A.pos = 8}
+	E = True v A.pos2 + A.pos = 8
+
+en ambos elegimos E, con el coso y queda como true. Quedando el programa como:
+
+	Const N: Int;
+	Var res,res2: Bool; pos,pos2: Int; 
+	{P: N >= 0}
+	res,pos:= False,0
+	do pos < N ->
+		res2,pos2:= False, 0
+			do pos2 < pos 
+				if A.pos2 + A.pos != 8 -> res2, pos2 =: res2, pos2+1
+					[] A.pos2 + A.pos = 8 -> res2, pos2 =: True, pos2+1
+				fi
+			od
+		pos, res = res v res2, pos+1
+	od
+	{Q: res = ⟨ ∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩ }
+
+Agregamos terminacion anticipada de ciclos:
+sabemos perfectamente que el ciclo se puede cortar inmediatamente si 
+
+	A.pos2 + A.pos = 8
+
+haciendo que res quede como True. Sabemos que hay 2 res, cada uno con su evaluacion booleana
+
+	Var res,res2: Bool;
+
+y cada uno existiendo en su propio ciclo
+
+Para decidir formalmente si se corta antes, sabemos que tenemos que encontrar un C (que sería el de la terminacion anticipada) que haga que cumpla:
+
+	I ^ (-B v C) => Q 
+
+Y esto lo debemos hacer en ambos ciclos.
+para el primer ciclo, proponemos:
+
+	res = True
+
+->
+
+	res = <Ei,j: 0<= i < j < pos : A.i + A.j = 8> ^ 0<= pos <= N ^ 
+	(-(pos<N) v res = true) => res = ⟨∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩ 
+	={Lógica, hipotesis}
+	res = <Ei,j: 0<= i < j < pos : A.i + A.j = 8> ^ (pos=N v res = true) =>
+	res = ⟨∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩ 
+	={elim de variable 2 veces}
+	true = <Ei,j: 0<= i < j < N : A.i + A.j = 8>  => true = ⟨∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩ 
+	={Lógica}
+	True
+
+La primera parte de terminacion anticipada de ciclos está demostrada.
+
+***Veamos la segunda parte (ciclo interno.) (Tengo entendido que esto no sirve demostralo, por que es una tautologia como (P ^ Q) => P)***
+
+	***Inv' ^ (-B v C) => Inv'***
+
+***Sabemos que es lo mismo:***
+
+	***C = pos2 = True***
+
+***->***
+
+	***res2 = <Ei: 0 <= i < pos2 : A.i + A.pos = 8> ^ 0 <= pos2 <= pos ^*** 
+	***(-(pos2 < pos) ^ res2 = true) =>*** 
+	***res2 = <Ei: 0 <= i < pos2 : A.i + A.pos = 8>*** 
+	***={lógica, hipotesis, elim de variable}***
+	***true = <Ei: 0 <= i < pos : A.i + A.pos = 8> =>*** 
+	***true = <Ei: 0 <= i < pos : A.i + A.pos = 8>*** 
+	***={p=>p, logica}***
+	***true***
+
+Con la terminacion anticipada, nos queda:
+
+	Const N: Int;
+	Var res,res2: Bool; pos,pos2: Int; 
+	{P: N >= 0}
+	res,pos:= False,0
+	do pos < N ^ -res ->
+		res2,pos2:= False, 0
+			do pos2 < pos ^ -res2
+				if A.pos2 + A.pos != 8 -> res2, pos2 =: res2, pos2+1
+					[] A.pos2 + A.pos = 8 -> res2, pos2 =: True,  pos2+1
+				fi
+			od
+		pos, res = res v res2, pos+1
+	od
+	{Q: res = ⟨ ∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩ }
