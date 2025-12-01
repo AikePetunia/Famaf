@@ -409,7 +409,7 @@ i) Inicializacion del ciclo
 	S1; // inicializacion
 	{res = <Ei,j: 0<= i < j < pos : A.i + A.j = 8> ^ 0<= pos <= N}
 
-observando la dif de variables que hay entre la pre y post, sabemos que tenemos que iniociar y declarar pos, res. Propongo:
+observando la dif de variables que hay entre la pre y post, sabemos que tenemos que iniciar y declarar pos, res. Propongo:
 
 	res, pos := E,F
 
@@ -638,3 +638,235 @@ Con la terminacion anticipada, nos queda:
 		pos, res = res v res2, pos+1
 	od
 	{Q: res = ⟨ ∃ i, j : 0 ≤ i < j < N : A.i + A.j = 8 ⟩ }
+
+*21) not useful*
+
+	*Const M : Int, A : array [0, M ) of Int;* 
+	*Var r : Int;* 
+	*{P : M ≥ 0}* 
+	*S // programa a encontrar*
+	*{Q : r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩}*
+
+*cuenta la cantidad de números en el arreglo que en el indice j, que son menores que el indice multiplicado por el numero del arreglo en el indice i*
+
+*debo calcular un programa, que recorra los arreglos, en indices distinto, y con una suma para poder operar el termino correctamente. Ya que debo recorrer un arrreglo, en distintos indices, necesito un ciclo.* 
+*Creo un invariante, por tecnica de remplazo de constantes por variables:*
+
+	*Inv =  r = <Ni : 0<= i < pos: <sum j: 0 <= j < i: A.j> <= i * A.i> ^*
+	*0 <= pos <= M*
+
+*Con una guarda B correspondiente, para poder iterar en el ciclo correctamente:*
+
+	*B = pos < M*
+
+*Demostramos que esto vale, por:* 
+
+	*inv ^ -b => Q*
+
+
+### ***// me gustaria revisar la validez de este paso*** 
+
+	*r = <Ni : 0 <= i < pos: <sum j: 0 <= j < i: A.j> <= i * A.i> ^*
+	*0 <= pos <= M ^ -(pos < M) =>* 
+	*r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩*
+	*={Lógica, cambio de variable}*
+	*r = <Ni : 0<= i < M: <sum j: 0 <= j < i: A.j> <= i * A.i> ^*
+	*0 <= pos <= M  =>* 
+	*r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩*
+	*={Hipotesis, igualdad lógica P => P}*
+	*True*
+
+*con esto planteado, quedara una estrucutra del tipo* 
+
+	*Const M : Int, A : array [0, M ) of Int;* 
+	*Var r, pos : Int;* 
+	*{P : M ≥ 0}* 
+	*S1; // Incializacion*
+	*{Inv}*
+	*do -> pos < M* 
+		*{Inv ^ B}*
+		*S2; // Cuerpo del ciclo*
+		*{Inv}*
+	*od*
+	*{Q : r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩}*
+
+*i) Inicializacion del ciclo.*
+
+	*{P : M ≥ 0}* 
+	*S1; // Incializacion*
+	*{r = <Ni : 0<= i < pos: <sum j: 0 <= j < i: A.j> <= i * A.i> ^*
+	*0 <= pos <= M}*
+
+*sabemos que debemos declarar y inicializar las variables que hay entre la P y Inv, propongo:*
+
+	*r,pos := E,F*
+
+*y hago la wp*
+
+	*wp.s1.inv*
+	*={wp de :=}*
+	*E = <Ni : 0<= i < F: <sum j: 0 <= j < i: A.j> <= i * A.i> ^*
+	*0 <= F < M*
+	*={elijo E = 0, F = 0, para forzar rango vacio}*
+	*0 = <Ni : 0<= i < 0: <sum j: 0 <= j < i: A.j> <= i * A.i> ^*
+	*0 <= 0 < M*
+	*={Logica en el rango }*
+	*0 = <Ni : False : <sum j: 0 <= j < i: A.j> <= i * A.i>*
+	*={rango vacio}*
+	*0 = 0*
+	*={logica}*
+	*true*
+
+*entonces, la inicilizacion + resto del programa, va quedando:*
+
+	*Const M : Int, A : array [0, M ) of Int;* 
+	*Var r, pos : Int;* 
+	*{P : M ≥ 0}* 
+	*res,pos := 0,0; // Incializacion*
+	*{Inv}*
+	*do -> pos < M* 
+		*{Inv ^ B}*
+		*S2; // Cuerpo del ciclo*
+		*{Inv}*
+	*od*
+	*{Q : r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩}*
+
+*ii) Cuerpo del ciclo.*
+
+*debemos derivar dentro del ciclo, la parte de:*
+
+	*{Inv ^ B}*
+	*S2; // Cuerpo del ciclo*
+	*{Inv}*
+
+*propongo de hipotesis Inv ^ B,*
+
+*Sabemos que el ciclo debe avanzar entre posiciones, hasta que se de que A.j <= i * A.i, propongo:*
+
+	*r, pos := E, pos+1*
+
+*y hacemos la wp:*
+
+	*wp.s2.Inv*
+	*={wp de :=}*
+	*E = <Ni : 0<= i < pos+1: <sum j: 0 <= j < i: A.j> <= i * A.i> ^*
+	*0 <= pos+1 < M*
+	*={logica en el rango}*
+	*E = <Ni : i = pos v 0 <= i < pos: <sum j: 0 <= j < i: A.j> <= i * A.i> ^*
+	*0 <= pos+1 < M*
+	*={part de rango}*
+	*E = <Ni : i = pos : <sum j: 0 <= j < i: A.j> <= i * A.i> +* 
+	*<Ni :  0 <= i < pos: <sum j: 0 <= j < i: A.j> <= i * A.i> ^*
+	*0 <= pos+1 < M*
+	*={Hipotesis dos veces}*
+	*E = <Ni : i = pos : <sum j: 0 <= j < i: A.j> <= i * A.i> + r ^ True*
+	*={Rango unitario, para conteo, son dos casos*
+		*I) T.c (A.j <= i A.i) = 1*
+		*II) -T.c -(A.j <= i A.i)= 0*
+	*}*
+		*I) E = 1 + r*
+		*={Elijo E = 1+r, con T.c == (A.j <= i A.i) (no programable)}*
+		*True*
+	
+		*II) E = r* 
+		*={Elijo E = r, con -T.C == -(S :  A.j <= i A.i) (no programable)}*
+		*True* 
+
+*// test*
+
+	*Const M : Int, A : array [0, M ) of Int;* 
+	*Var r, pos : Int;* 
+	*{P : M ≥ 0}* 
+	*res,pos := 0,0; // inicializacion*
+	*{Inv}*
+	*do -> pos < M* 
+		*{Inv ^ B}*
+		*pos2 := 0*
+		*do -> pos2 <m*
+			*if <sum j: 0 <= j < i: A.j> <= i * A.i> -> r, pos := r+1, pos+1*
+			*[] -<sum j: 0 <= j < i: A.j> <= i * A.i> -> r, pos := r, pos+1*
+		*{Inv}*
+	*od*
+	*{Q : r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩}*
+
+21)
+
+	Const M : Int, A : array [0, M ) of Int; 
+	Var r : Int; 
+	{P : M ≥ 0} 
+	S // programa a encontrar
+	{Q : r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩}
+
+cuenta la cantidad de números en el arreglo que en el indice j, que son menores que el indice multiplicado por el numero del arreglo en el indice i
+
+debo calcular un programa, que recorra los arreglos, en indices distinto, y con una suma para poder operar el termino correctamente. Ya que debo recorrer un arrreglo, en distintos indices, necesito un ciclo. 
+Creo un invariante, por tecnica de remplazo de constantes por variables, fortalecimiento para el termino:
+
+	Inv =  r = <Ni : 0<= i < pos: <sum j: 0 <= j < i: A.j> <= i * A.i> ^
+	s = <sum j: 0 <= j < i: A.j>
+	0 <= pos <= M
+
+Con una guarda B correspondiente, para poder iterar en el ciclo correctamente:
+
+	B = pos < M
+
+Demostramos que esto vale, por: 
+
+	inv ^ -b => Q
+
+-> 
+
+	r = <Ni : 0<= i < pos : <sum j: 0 <= j < i: A.j> <= i * A.i> ^
+	s = <sum j: 0 <= j < i: A.j>
+	0 <= pos <= M ^ -(pos < m) => 
+	r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩
+	={Lógica, elim de variable, hipotesis}
+	r = <Ni : 0 <= i < pos: <sum j: 0 <= j < i: A.j> <= i * A.i> ^
+	s = <sum j: 0 <= j < i: A.j> ^  pos >= m => 
+	r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩
+	={sustitucion de iguales, elim de var}
+	r = <Ni : 0 <= i < pos: <sum j: 0 <= j < i: A.j> <= i * A.i> ^
+	=> r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩
+	={logica, p=>p}
+	True
+
+i)  Inicializacion del ciclo.
+
+Sabemos que debemos demostrar la parte de:
+
+	{P: M >= 0}
+	S1;
+	{Q: r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩}
+
+Se debe inicializar el programa, declarando varialbes y inciandolas. Propongo:
+
+	r,pos := E, F
+
+->
+
+	wp.s1.inv
+	={wp de :=, con: r,pos := E, F}
+	E = <Ni : 0<= i < F: <sum j: 0 <= j < i: A.j> <= i * A.i> ^
+	s = <sum j: 0 <= j < i: A.j> ^
+	0 <= F <= M
+	={elijo E,F := 0,0, para forzar rango vacios, logica arit}
+	E = <Ni : 0<= i < 0: <sum j: 0 <= j < i: A.j> <= i * A.i> ^
+	s = <sum j: 0 <= j < i: A.j>
+
+
+
+	Const M : Int, A : array [0, M ) of Int; 
+	Var r, pos : Int;
+	{P : M ≥ 0} 
+	res,pos := 0,0; // Incializacion
+	{Inv}
+	do -> pos < M
+		{Inv ^ B}
+		S2; // Cuerpo del ciclo
+		{Inv}
+	od
+	{Q : r = ⟨N i : 0 ≤ i < M : ⟨sum j : 0 ≤ j < i : A.j ⟩ ≤ i ∗ A.i ⟩}
+
+
+prefiero no hacer el 21 xD
+https://famaf.aulavirtual.unc.edu.ar/mod/forum/discuss.php?d=4750
