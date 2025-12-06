@@ -235,16 +235,17 @@ gP.(x►xs) ≐ (0 ≤ x ∧ sum.xs ≤ x) ∨ gP.(n+x).xs
 chatgpt me dio la razon a mi B)
 
 
-parcial turno tarde 2024 (imperativo)
-Const N : Int, A : array [0, N) of Int; 
-Var res : Bool; 
-{P: N ≥ 0 } 
-S 
-{ Q: res = ⟨ ∀ i : 0 ≤ i ≤ N : ⟨ ∑ j : 0 ≤ j < i : A.j ⟩ < 2^i ⟩ }
+### parcial turno tarde 2024 (imperativo)
+
+	Const N : Int, A : array [0, N) of Int; 
+	Var res : Bool; 
+	{P: N ≥ 0 } 
+	S 
+	{ Q: res = ⟨ ∀ i : 0 ≤ i ≤ N : ⟨ ∑ j : 0 ≤ j < i : A.j ⟩ < 2^i ⟩ }
 
 A) Calcular el resultado para A =[-2,5,7,3] usando la especificacion. Justificar, enumerando todos los elementos del rango.
 
-Sabemos que el rango es para A = [-2,5,7,3], entonces i E {0,1,2,3,4} (El arreglo es de tamaño 4)
+Sabemos que el rango es para A = [-2,5,7,3], entonces i E {0,1,2,3,4}  y N = 4
 
 -> ⟨ ∑ j : 0 ≤ j < 0: A.j ⟩ < 2^0
 ^ ⟨ ∑ j : 0 ≤ j < 1: A.j ⟩ < 2^1
@@ -381,11 +382,14 @@ Identifiquemos que, el rango, es:
 
 **fortalecimiento de invariante.** uso el mismo invariante + lo que me falta en la hipotesis.: 
 
-	Inv' = res ^ sum = ⟨ ∑ j : 0 ≤ j < pos : A.j ⟩ ^ pow = 2 * pos
+	Inv' = res = ⟨ ∀ i : 0 ≤ i ≤ pos : ⟨ ∑ j : 0 ≤ j < i : A.j ⟩ < 2^i ⟩ ^
+	sum = ⟨ ∑ j : 0 ≤ j < pos : A.j ⟩ ^ pow = 2 * pos ^ 0 <= pos <= N
 
 Sabemos que 
 
 	inv' => Inv
+
+y en consecuencia:
 
 	inv' ^ -b => Q
 
