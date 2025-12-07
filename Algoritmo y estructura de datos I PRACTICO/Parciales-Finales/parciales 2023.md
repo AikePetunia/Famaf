@@ -993,11 +993,235 @@ El programa queda:
 	{Q: r = <Ei : 0<=i<=N : <Sum j : 0<=j<i: A.j> = i!>}
 
 
+Parcial 2023 acahaval
+
+![[Pasted image 20251207063448.png]]
+
+
+a) debe ser del tipo "Para todo" (A)
+Trabaja sobre una misma lista xs, solo avanza entre elementos y busca el distinto (haciendose en el rango)
+
+F :: [A] -> Bool
+
+b)
+
+	<A i,j : 0<=i<j<#xs : xs!i != xs!j >
+
+c)
+
+	xs = [0,1,2,3]
+
+3)
+
+![[Pasted image 20251207064419.png]]
+
+Hipotesis inductiva: 
+
+	g.xs = <E as, bs, cs: xs = as++bs++cs: prod.bs < #as >
+
+Caso inducitvo, para xs = x:xs 
+
+	g.(x:xs)
+	={Especificacion}
+	<E as, bs, cs: x:xs = as++bs++cs: prod.bs < #as >
+	={Tercer excluido, logica}
+	<E as, bs, cs: x:xs = as++bs++cs ^ (as =[] v as !=[]): prod.bs < #as >
+	={Distributividad}
+	<E as, bs, cs: x:xs = as++bs++cs ^ as =[]: prod.bs < #as >
+	v <E as, bs, cs: x:xs = as++bs++cs ^ as !=[]: prod.bs < #as >
+	={ELim de variable, logica de listas}
+	<E as, bs, cs: x:xs = bs++cs : prod.bs < #as >        <--- MODULARIZACION
+	v <E as, bs, cs: x:xs = a:as++bs++cs ^ as !=[]: prod.bs < #as >
+	
+
+Notar que si hubieramos partido de bs, hubieramos terminado en una generalizacion y no una modularizacion. 
+
+	concat :: [Num] -> Bool
+	concat = <E as, bs, cs: x:xs = bs++cs : prod.bs < #as > 
+
+![[Pasted image 20251207065639.png]]
+
+	Const N: Int; A: Array[0, N) of Int;
+	Var r: Int;  //  <---- esta mal escrito en el parcial, es Int, no Bool
+	{P:N >= 0}
+	S
+	{Q:r = <Sum i: 0<=i<N ^ A.i > <sum j : 0<=j<i : A.j> : A.i>}
+
+Entendamos que es una funcion que se fija si hay un elemento mas grande que la suma de todo el arreglo, devolviendo la suma del arreglo o el numero mas grande
+
+1) Es una funcion que itera sobre un arreglo. Necesito un ciclo. Para poder derivar el ciclo necesito un invariante y una guarda B.
+Usando tecnica de reemplazo de constantes por variables, propongo el invariatne
+
+	INV = r = <Sum i: 0<=i<pos ^ A.i > <sum j : 0<=j<i : A.j>
+	  : A.i> ^ 0<=pos<=N
+
+Y una guarda B
+
+	B = pos < N
+
+Con el invariante y la guarda propuestos, puedo asegurar que el ciclo termina por:
+
+	Inv ^ -b => Q
+
+(Trivial)
+
+
+Con la guarda y conociendo que tendra un ciclo, el programa tendra la siguiente estructura:
+
+	Const N: Int; A: Array[0, N) of Int;
+	Var r,pos: Int;
+	{P:N >= 0}
+	S1;
+	do pos < N ->
+		s2;
+	od
+	{Q:r = <Sum i: 0<=i<N ^ A.i > <sum j : 0<=j<i : A.j> : A.i>}
+
+i) Inicializacion del programa.
+
+Sabemos que el programa debe de inicializarse con sus variables correspondintes.
+Por logica, el arreglo debe recorrerse desde 0
+Propongo:
+
+	r,pos := E, F
+
+y hago la wp
+
+	wp.s0.inv
+	={wp de :=}
+	 E = <Sum i: 0<=i<F ^ A.i > <sum j : 0<=j<i : A.j>
+	  : A.i> ^ 0<=F<=N
+	={Pruebp f = 0, para forzar rango vacio, logica}
+	 E = <Sum i: False ^ A.i > <sum j : 0<=j<i : A.j>
+	  : A.i> 
+	={Abs de false, rango vacio vacio de false}
+	E := 0
+	={elijo E = 0}
+
+Quedandola Inicializacion:
+
+	Const N: Int; A: Array[0, N) of Int;
+	Var r,pos: Int;
+	{P:N >= 0}
+	r,pos := 0,0
+	do pos < N ->
+		s2;
+	od
+	{Q:r = <Sum i: 0<=i<N ^ A.i > <sum j : 0<=j<i : A.j> : A.i>}
+
+ii) Cuerpo del ciclo, supongo Inv ^ B como hipotesis.
+El ciclo debe avanzar, se itera sobre las posiciones, propongo:
+
+	r,pos := E, pos+1
+
+y hago la wp, para poder demostrar que el ciclo avanza y obtener un E
+
+
+	wp.s1.inv
+	={wp de :=}
+	E = <Sum i: 0<=i<pos+1 ^ A.i > <sum j : 0<=j<i : A.j>
+	  : A.i> ^ 0<=pos+1<=N
+	={Logica en el rango}
+	E = <Sum i: (i=pos v 0<=i<pos) ^ A.i > <sum j : 0<=j<i : A.j>
+	  : A.i> ^ 0<=pos+1<=N
+	={Distributividad}
+	E = <Sum i: i=pos  ^ A.i > <sum j : 0<=j<i : A.j>
+	  : A.i> + 
+	  <Sum i: 0<=i<pos ^ A.i > <sum j : 0<=j<i : A.j> : A.i>
+	  ^ 0<=pos+1<=N
+	={Eliminacion de variable, hipoteis}
+	E = <Sum i: i=pos  ^ A.i > <sum j : 0<=j<i : A.j>
+	  : A.i> + r ^ 0<=pos+1<=N
+	={sabemos que la continuacion es correcta, por HI, pos < N y 0<=pos<=N}
+		E = <Sum i: i=pos  ^ A.i > <sum j : 0<=j<i : A.j>
+	  : A.i> + r
+	={ELim de variable}
+	E = r + <Sum i: A.pos > <sum j : 0<=j<pos : A.j> : A.i>
+	={
+		Sabemos que nos trabamos (no tenemos hipotesis)
+		-> Refuerzo el invariante
+		Es un analisis por casos.
+		I) A.pos > sumPos -> A.i
+		II) A.pos <= sumPos -> 0
+	
+	 Nuevo inv
+		Inv' = r = <Sum i: 0<=i<pos ^ A.i > 
+		<sum j : 0<=j<i : A.j> : A.i> ^
+		s = <Sum i: A.pos > <sum j : 0<=j<pos : A.j> : A.pos>	^ 0<=pos<=N
+	}
+	E = if A.pos > s -> r + A.pos
+		  [] A.pos <= s -> r + 0
+
+si esto ya se, no quiero hacer de nuevo el caso base etc, pero supongo que s al inicio vale 0, me quiero concentrar en sacar las guardas de ifs
+
+Nos va quedando el programa una estrucutra como
+
+	Const N: Int; A: Array[0, N) of Int;
+	Var r,pos: Int;
+	{P:N >= 0}
+	r,pos,s := 0,0,0
+	do pos < N ->
+		if A.pos > S -> r, s := r + s, G
+		[] A.pos <= S -> s := G
+		pos := pos+1
+	od
+	{Q:r = <Sum i: 0<=i<N ^ A.i > <sum j : 0<=j<i : A.j> : A.i>}
+
+Nos queda hacer la wp de las guardas para encontrar G, lo que valga S denntro del ciclo.
+
+Sabemos que la wp en los ifs,
+
+	P => Q ^
+	(B1 v B2...) ^ 
+	wp.s1.Q ^
+	wp.s2.Q
+
+No conoces el valor de S, lo asigno como E
+Hacemos ambas wp:
+
+	wp.if..fi.Inv
+	={wp de if, asigno}
+	(A.pos > S v A.pos <= S)
+	r = r + s ^
+	G = <Sum i: A.pos+1 > <sum j : 0<=j<pos+1 : A.j> : A.pos+1> ^ 0<=pos+1<=N
+	^ 
+	G = <Sum i: A.pos+1 > <sum j : 0<=j<pos+1 : A.j> : A.pos+1> ^ 0<=pos+1<=N
+	
+	={
+		logica = pasos varios
+	}
+	r = r +s, g = A.pos + S 
+
+	Const N: Int; A: Array[0, N) of Int;
+	Var r,pos: Int;
+	{P:N >= 0}
+	r,pos,s := 0,0,0
+	do pos < N ->
+		if A.pos > S -> r, s := r + s, A.pos + s
+		[] A.pos <= S -> s := A.pos + s
+		pos := pos+1
+	od
+	{Q:r = <Sum i: 0<=i<N ^ A.i > <sum j : 0<=j<i : A.j> : A.i>}
+
+
 Preguntero:
 Como desago, de las invariantes, los:
 
 	0<= pos <= N 
 	0<= pos + 1 <= N
+
+ANSWER:
+
+	E = <Sum i: i=pos  ^ A.i > <sum j : 0<=j<i : A.j>
+	  : A.i> + r ^ 0<=pos+1<=N
+	={sabemos que la continuacion es correcta, por HI, pos < N y 0<=pos<=N}
+
+
+Cuando tengo desigualdades, del tipo:
+
+	A.i > <sum j : 0<=j<i : A.j> 
+
+se sabe que quedaria un condicional, y como plantearia que queda como incondicional![[Pasted image 20251207071929.png]]
 
 Notas:
 Tener cuidado con los rangos, las particiones pueden ser muy dsitintas y pueyden dar problemas de bordes. 
