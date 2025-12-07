@@ -13,44 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/parciales 2023.md",
+                "file": "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "parciales 2023"
+              "title": "Finales"
             }
           },
           {
-            "id": "7c5852dd5e40719f",
+            "id": "94fba05e1f734a58",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/PARCIAL 2 2023 resuelto (1).pdf",
-                "page": 4,
-                "left": -7,
-                "top": 482,
-                "zoom": 2.304201680672269
+                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Derivación de Programas (notas de clase).pdf",
+                "page": 12,
+                "left": -233,
+                "top": 685,
+                "zoom": 1.32
               },
               "icon": "lucide-file-text",
-              "title": "PARCIAL 2 2023 resuelto (1)"
-            }
-          },
-          {
-            "id": "161139629302869c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/imperativo.pdf",
-                "page": 1,
-                "left": -7,
-                "top": 367,
-                "zoom": 2.303133336469134
-              },
-              "icon": "lucide-file-text",
-              "title": "imperativo"
+              "title": "Derivación de Programas (notas de clase)"
             }
           },
           {
@@ -62,8 +46,8 @@
                 "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/consejos_funcional.pdf",
                 "page": 1,
                 "left": -7,
-                "top": 846,
-                "zoom": 2.3031333364691338
+                "top": 501,
+                "zoom": 2.303133336469134
               },
               "icon": "lucide-file-text",
               "title": "consejos_funcional"
@@ -96,24 +80,9 @@
               "icon": "excalidraw-icon",
               "title": "Manual  de derivación de programas"
             }
-          },
-          {
-            "id": "94fba05e1f734a58",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Derivación de Programas (notas de clase).pdf",
-                "page": 137,
-                "left": -7,
-                "top": 663,
-                "zoom": 2.300335570469799
-              },
-              "icon": "lucide-file-text",
-              "title": "Derivación de Programas (notas de clase)"
-            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -145,7 +114,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#bs",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -166,7 +135,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -235,13 +205,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/parciales 2023.md",
+                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Manual  de derivación de programas.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of parciales 2023"
+              "title": "Outline of Manual  de derivación de programas"
             }
           }
         ]
@@ -266,31 +236,33 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "0cc2801d3b775df5",
+  "active": "a1c4e0b1af1591c8",
   "lastOpenFiles": [
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/PARCIAL 2 2023 resuelto (1).pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/parciales 2023.md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/imperativo.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/consejos_funcional.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/listas.pdf",
+    "Pasted Image 20251207095825_850.png",
     "Algoritmo y estructura de datos I PRACTICO/Teorico/Derivación de Programas (notas de clase).pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/consejos_funcional.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales.md",
     "Algoritmo y estructura de datos I PRACTICO/Teorico/Manual  de derivación de programas.md",
-    "Pasted image 20251207071929.png",
-    "Pasted image 20251207065639.png",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 1/PARCIAL 1 2023 resuelto (2).pdf",
-    "Pasted image 20251207064419.png",
-    "Pasted image 20251207063448.png",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/PARCIAL 2 2023 resuelto (2).pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/PARCIAL 1.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/PARCIAL 2.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2024-12-03.jpg",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/parciales 2023.md",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final2-2024.jpeg",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2021-03-10 (regulares - libres).pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2023-12-05.jpg",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2024-07-03.jpg",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2016-11-15.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/2do parcial Recuperatorio.jpeg",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/2do parcial 2025.jpeg",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2016-11-24.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2017-11-28.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2017-11-21.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2019-11-19 (tema A).pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2019-11-19 (tema B).pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2020-11-24.pdf",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2023-11-14 TM.jpg",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2023-11-14 TT.jpg",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/Parcial 2 2024-11-26 TT Done.jpg",
+    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 2/recuperatorio 2doparcial2025.jpeg",
     "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parciales 2024.md",
-    "Pasted Image 20251206154628_923.png",
-    "Pasted Image 20251206154525_226.png",
-    "Pasted Image 20251206154433_807.png",
-    "Pasted Image 20251206152052_229.png",
-    "Pasted Image 20251206151954_523.png",
-    "Pasted Image 20251206151840_945.png",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parcial 1/Parcial 1 2022-09-26 (Tema 5).pdf",
     "Algoritmo y estructura de datos I PRACTICO/Practico/practico4sol 2.md",
     "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/2do parcial turno tarde 2024.md",
     "Algoritmo y estructura de datos I PRACTICO/Practico/practico4 sol.md",
@@ -311,7 +283,6 @@
     "LINKS UTILES.md",
     "Algoritmo y estructura de datos I PRACTICO/Practico/2024 2c, 2025 1c/Practico sol 2024/Practico 4 sol.excalidraw.md",
     "Algoritmo y estructura de datos I PRACTICO/Practico/2024 2c, 2025 1c/Practico sol 2024/Practico 3.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/2024 2c, 2025 1c/Practico sol 2024/Practico 1 sol (19-.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/2024 2c, 2025 1c/Practico sol 2024/Practico 2  sol(1-5)..md"
+    "Algoritmo y estructura de datos I PRACTICO/Practico/2024 2c, 2025 1c/Practico sol 2024/Practico 1 sol (19-.md"
   ]
 }
