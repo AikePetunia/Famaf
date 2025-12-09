@@ -683,4 +683,410 @@ Quedando el programa:
 	gp.x.[] = True
 	gp.x.(x:xs) = x = b + sum.xs ^ gp.(x+a).xs
 
-## Paso inductivo: `xs = y:ys` (NO uses `x:xs`) chat gpt me aclaro esto, checkiar
+1) Sabemso que el testing se hace con el programa ya derivado.
+
+->
+
+	xs = [3,3,1], # de 3. 
+
+	p.[3,3,1]
+		3 = 3 + sum.[3,1] ^ gp.(3+1).[1,3] 
+		3 = 3 + sum.[3,1] ^ 3 = 3 + sum.[1] ^ gp.(0+1).[1]
+		3 = 3 + sum.[3,1] ^ 3 = 3 + sum.[1] ^ 1 = 1 + sum.[] ^ gp.(0+0).[]
+	={funcion sum}
+		3 = 3 + 3 + 1 ^ gp.(3+1).[1,3] 
+		3 = 3 + 3 + 1 ^ 3 = 3 + 1 ^ gp.(0+1).[1]
+		3 = 3 + 3 + 1 ^ 3 = 3 + 3 + 1 ^ 1 = 1 + 0 ^ True
+	={aritmetica}
+		3 = 7 ^ gp.(3+1).[1,3] 
+		3 = 7 ^ 3 = 4 ^ gp.(0+1).[1]
+		3 = 7 ^ 3 = 4 ^ 1 = 1 ^ True
+	={logica}
+		False ^ False ^ True ^ True
+	={logica}
+		False
+
+
+
+### Paso inductivo: `xs = y:ys` (NO uses `x:xs`).
+Las generalizaciones que usan funciones como sum o demas, no suelen trabajar con letras arbitrarias como a, b. Si no con x, y, x:xs, y:ys .
+
+2)
+
+	const N: Int;
+	Var A: array [0,N) of Int;
+	{N >= 0}
+	S;
+	{r = <A i: 0<= i <= N : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!>}
+
+i) Identifiquemos que es un programa que recorre indices de arreglos de tamanio N.
+Lo que hace, es devolver un tipo Bool si:
+
+	Se fija si la suma de numeros impares es menor o igual al factorial del indice i.
+
+Como recorre arreglos, necesito un ciclo. Para recorrer el ciclo, necesito un invariante y una guarda B. 
+
+Para invariante, uso la tecnica de reemplazo de constantes por variables:
+
+	INV = r = <A i: 0<= i <= pos : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^ 0 <= pos <= N
+
+Y una guarda B:
+
+	B = pos < N 
+
+Luego:
+
+	Inv ^ -B => Q Trivial
+
+El programa queda con una estructura:
+
+	const N: Int;
+	Var A: array [0,N) of Int;
+	{N >= 0}
+	S1;
+	do pos < N ->
+		S2;
+	od
+	{r = <A i: 0<= i <= N : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!>}
+
+ii) Inicializacion del programa. Declaro y inicio las variables necesarias entre P y INV.
+Propongo:
+
+	r, pos := E, F
+
+y hago la wp de :=
+
+	wp.s1.Inv
+	={wp de :=}
+	E = <A i: 0<= i <= F : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^ 0 <= F <= N
+	={Elijo F = 0}
+	E = <A i: 0<= i <= 0 : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^ 0 <= 0 <= N
+	={Logica en el rango, fortalecimiento tmb}
+	E = <A i: i = 0 : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!>
+	={Rango unitario}
+	E = <Sum j: 0 <=j<0 ^ A.j mod 2 = 1: A.j> <= 0!
+	={Rango falso, factorial}
+	E = 0 <= 1
+	={Logica}
+	E = True 
+	={Elijo E = True}
+	True
+
+Quedando el programa de momento:
+
+	const N: Int;
+	Var A: array [0,N) of Int;
+	{N >= 0}
+	r, pos := True, 0;
+	do pos < N ->
+		S2;
+	od
+	{r = <A i: 0<= i <= N : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!>}
+
+iii) Cuerpo del ciclo. Las posiciones deben actualizarse, igual que r. Propongo
+
+	r, pos := E, pos+1
+
+supongo Inv ^ B como hipotesis
+
+y hago la wp
+
+	wp.s2.Inv
+	={wp de :=}
+	E = <A i: 0<= i <= pos+1 : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^ 0 <= pos+1 <= N
+	={logica en el rango}
+	E = <A i: i=pos+1 v 0<=i<=pos : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^ 0 <= pos+1 <= N
+	={Por hipotesis, pos < n, 0<=pos<=N, part de rango}
+	E = <A i: i=pos+1 : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^ 
+	<A i:  0<=i<=pos : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!>
+	<= i!>
+	={elim de variable, hipotesis}
+	E = <Sum j: 0 <=j<pos+1 ^ A.j mod 2 = 1: A.j> 
+	<= pos+1! ^ r
+	={me trabo, debo reforzar invariante, ademas se que habran 2 casos}
+
+Propongo nuevo invariante:
+
+	Inv' = 
+	r = <A i: 0<= i <= pos : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^
+	sum = <Sum j: 0 <=j<pos ^ A.j mod 2 = 1: A.j> ^  
+	fac = pos! ^ 0 <= pos <= N
+
+	Inv' => inv (Trivial), conservandose Inv' ^ -B => Q
+
+pte 2) Nuevo programa coninvariante fortalecido.
+
+i) Inicializacion de programa,, neccesito inicializar las variables que se usaran, propongo:
+
+	r,pos,sum,fac := E, F, G, H
+
+y hago la wp
+
+	wp.s1.Inv'
+	={wp de :=}
+	E = <A i: 0<= i <= F : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^
+	G = <Sum j: 0 <=j<F ^ A.j mod 2 = 1: A.j> ^  
+	H = F! ^ 0 <= F <= N
+	={Elijo F = 0, aritmetica, logica de rango}
+	E = <A i: i = 0 : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^
+	G = <Sum j: Falsd ^ A.j mod 2 = 1: A.j> ^  
+	H = 1 ^ 0 <= 0 <= N 
+	={Elim de variable, logica, abs,  rango vacio}
+	E = <Sum j: 0 <= j< 0  ^ A.j mod 2 = 1: A.j> <= 0!> ^
+	G = 0 ^  
+	H = 1 
+	={rango vacio de nuevo, aritmetica y logica}
+	E= True ^ G = 0 ^ H = 0
+	={elijo variables.}
+
+Quedando el programa con la inicializacion hecha
+
+	const N: Int;
+	Var A: array [0,N) of Int;
+	{N >= 0}
+	r, pos, sum, fac := True, 0,0,1
+	do pos < N ->
+		S2;
+	od
+	{r = <A i: 0<= i <= N : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!>}
+
+ii) Cuerpo del ciclo. Sabemos que el ciclo debe avanzar por posicione.
+Suponggo Inv ^ B como hipotesis. 
+Asiigno:
+
+	r,pos,sum,fac := E, pos+1, G, H
+
+y hago la wp
+
+
+	wp.s2.Inv'
+	={wp de :=}
+	E = <A i: 0<= i <= pos+1 : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!> ^
+	G = <Sum j: 0 <=j<pos+1 ^ A.j mod 2 = 1: A.j> ^  
+	H = (pos+1)! ^ 0 <= pos+1 <= N
+	={logica en el rango, por hipotesis, pos < N, y 0<=pos<=N}
+	E = <A i: i=pos+1 v 0<=i<=pos : 
+	<Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!> ^
+	G = <Sum j: j=pos v 0<=i<pos^ A.j mod 2 = 1: A.j> ^  
+	H = (pos+1)!
+	={part de rango, aritmetica en factorial} 
+	E = <A i: i=pos+1 : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!> ^
+	<A i: 0<=i<=pos : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!> ^
+	G = <Sum j: j=pos ^ A.j mod 2 = 1: A.j> +
+	<Sum j: 0<=i<pos ^ A.j mod 2 = 1: A.j>  ^  
+	H = pos+1 * pos!
+	={hipotesis fac, sum, rango unitario, elim de variable}
+	E = <Sum j: 0 <=j<pos+1 ^ A.j mod 2 = 1: A.j> <= (pos+1)!> ^
+	<A i: 0<=i<=pos : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!> ^
+	G = <Sum j: A.pos mod 2 = 1: A.pos> + sum ^  
+	H = pos+1 * fac
+	={Hipotesis r}
+	E = <Sum j: 0 <=j<pos+1 ^ A.j mod 2 = 1: A.j> <= (pos+1)!> ^ r ^
+	G = <Sum j: A.pos mod 2 = 1: A.pos> + sum ^  
+	H = pos+1 * fac
+	={logica en el rango}
+	E = <Sum j: j=pos v 0<=j<pos ^ A.j mod 2 = 1: A.j> <= (pos+1)! ^ r ^
+	G = <Sum j: A.pos mod 2 = 1: A.pos> + sum ^  
+	H = pos+1 * fac
+	={part de rango, hip de sum}
+	E = <Sum j: j=pos ^ A.j mod 2 = 1: A.j> + sum <= (pos+1)! ^ r ^
+	G = <Sum j: A.pos mod 2 = 1: A.pos> + sum ^  
+	H = pos+1 * fac
+	={eliminacion de variable}
+	E = <Sum j: A.pos mod 2 = 1: A.pos> + sum <= (pos+1)! ^ r ^
+	G = <Sum j: A.pos mod 2 = 1: A.pos> + sum ^  
+	H = pos+1 * fac
+	={Analisis por casos. para A.pos mod 2}
+		1. Caso 1. Vale condicion A.pos mod 2 = 1
+		E = <Sum j: A.pos mod 2 = 1: A.pos> + sum <= (pos+1)! ^ r ^
+		G = <Sum j: A.pos mod 2 = 1: A.pos> + sum ^  
+		H = pos+1 * fac
+		={logica por hipotesis de caso}
+		E = A.pos + sum <= (pos+1)! ^ r ^
+		G = A.pos + sum ^  
+		H = pos+1 * fac
+		={Aritmetica en fac }
+		E = A.pos + sum <= pos+1 * pos! ^ r ^
+		G = A.pos + sum ^  
+		H = pos+1 * fac
+		={Hipotesis fac}
+		E = A.pos + sum <= pos+1 * fac ^ r ^
+		G = A.pos + sum ^  
+		H = pos+1 * fac
+		={Elijo lo q vale cu}
+		True
+		
+		2. Caso 2. Vale condicion A.pos mod 2 = 0
+		E = <Sum j: A.pos mod 2 = 1: A.pos> + sum <= (pos+1)! ^ r ^
+		G = <Sum j: A.pos mod 2 = 1: A.pos> + sum ^  
+		H = pos+1 * fac
+		={Logica por hipotesis}
+		E = 0 + sum <= (pos+1)! ^ r ^
+		G = 0 + sum ^  
+		H = pos+1 * fac
+		={Arit. Sum ,fac}
+		E = sum <= pos+1 * pos! ^ r ^
+		G = sum ^  
+		H = pos+1 * fac
+		={Hipotesis fac}
+		E = sum <= pos+1 * fac ^ r ^
+		G = sum 
+		H = pos+1 * fac
+		={Elijo lo que vale cu}
+		True
+
+Quedando el programa derviado:
+
+	const N: Int;
+	Var A: array [0,N) of Int;
+	{N >= 0}
+	r, pos, sum, fac := True, 0,0,1
+	do pos < N ->
+			if A.pos mod 2 = 1 ->
+				r,sum := A.pos + sum <= pos+1 * fac ^ r,  A.pos + sum
+			[] A.pos mod 2 = 0 ->
+				r,sum := sum <= pos+1 * fac ^ r, sum
+			fi
+			pos, fac := pos+1, pos+1 * fac 
+	od
+	{r = <A i: 0<= i <= N : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!>}
+
+Terminacion temprana de ciclos.
+
+Sabemos que el ciclo podria terminar perfectamente si se da que r se hace false
+
+O sea:
+
+	C = r
+
+Quedando una guarda B reforzada:
+
+	B' = pos < N ^ r
+
+Ya sabemos que trivialmente:
+
+	Inv' => Inv
+
+Y podemos usar el invariante original, haciendose mas simple
+Pudiendo quedar demostrado si:
+
+	Inv' ^ -B => Q == Inv' ^ (-b v -c) => Q
+
+ya sabemso que 
+
+	Inv' ^ -b => Q (Trivial)
+
+Ahora, queremos demostrar que
+
+	Inv ^ -res => Q
+
+Supongamos de hipotesis  verdaderas
+
+	INV = r = <A i: 0<= i <= pos : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> 
+	<= i!> ^ 0 <= pos <= N
+
+Y
+
+	-r
+
+Y vemso Q
+
+	Q
+	={Def de Q}
+	False = <A i: 0<=i<=N : <Sum j: 0 <=j<i ^ A.j mod 2 = 1: A.j> <= i!>
+	={logica, i va hasta N como hasta pos, por 0<=pos<=N}
+	False = <A i: 0<=i<=N v pos<i<=N: <Sum j: 0<=j<i ^ A.j mod 2 = 1: A.j><= i!>
+	={Part de rango}
+	False = <A i: 0<=i<=N: <Sum j: 0<=j<i ^ A.j mod 2 = 1: A.j><= i!>
+	^ <A i: pos<i<=N: <Sum j: 0<=j<i ^ A.j mod 2 = 1: A.j><= i!>
+	={Hipotesis inv}
+	False = r ^ <A i: pos<i<=N: <Sum j: 0<=j<i ^ A.j mod 2 = 1: A.j><= i!>
+	={abs}
+	False = False
+	={Logica}
+	True
+
+
+Funcion de cota 
+
+Sabemos que el ciclo itera hasta N veces (La guarda es pos < N)
+
+Sabemos que podemos elegir varias cotas validas, para el caso, elijo a la inicializacion del ciclo:
+
+	t = N
+
+Y dentro del ciclo, la cota decrecera de manera:
+
+	t = N - pos
+
+Demostremos formalmente:
+
+	iv.a) INV ^ B => t >= 0 (si estoy en el ciclo, la cota es mayor iguala 0)
+
+Y supongamos inv, b como hipotesis.
+
+entonces:
+
+	t >= 0
+	={def de t}
+	N - pos >=0
+	={aritmetica}
+	N >= pos
+	={Hipotesis de inv}
+	True
+
+Ahora>
+
+	iv.b) { Inv ^ B ^ T = t} if...fi {t < T}
+
+Y hacemos la wp.
+
+	wp.if...fi.(t < T)
+	={wp de if}
+	(A.pos mod 2 = 1 v A.pos mod 2 = 0) ^ 
+	wp.s2.(t < T) ^
+	wp.s3.(t < T)
+	={logica, abs de True, wp}
+	wp.(r,sum,pos, fac := A.pos + sum <= pos+1 * fac ^ r,  
+				A.pos + sum, pos+1, pos+1 * fac).(t < T) ^ 
+	wp.(r,sum,pos, fac :=  sum <= pos+1 * fac ^ r, sum, 
+				pos+1, pos+1 * fac).(t < T)
+	={ valor de t}
+	wp.(r,sum,pos, fac := A.pos + sum <= pos+1 * fac ^ r,  
+				A.pos + sum, pos+1, pos+1 * fac).(N - pos < T) ^ 
+	wp.(r,sum,pos, fac :=  sum <= pos+1 * fac ^ r, sum, 
+				pos+1, pos+1 * fac).(N - pos < T)
+	={wp :=}
+	(N - (pos+1) < T) ^ 
+	(N - (pos+1) < T)
+	={Hipotesis T = t, arit}
+	N - pos - 1 < N - pos ^ 
+	N - pos - 1 < N - pos 
+	={Aritmetica}
+	-1 < 0
+	={logica}
+	True
+
+/// igual me doy cuenta q hacer la wp en condicional es al pedo, por que la vaariable q debo usar es pos y esta fuera de los ifs... A lo mejor no era ni necesario y me enrede al pedo, de igual manera dejo la version sin enredarme al pedo:
+
+	wp.s4.(t < T)
+	={wp de if}
+	wp.(pos, fac := pos+1, pos+1 * fac).(t < T) 
+	={def de t, wp de :=}
+	N - (pos+1) < T
+	={Aritmetica, hipotesis, T = t}
+	N - pos - 1 < N - pos 
+	={Aritmetica}
+	-1 < 0
+	={logica}
+	Tue
