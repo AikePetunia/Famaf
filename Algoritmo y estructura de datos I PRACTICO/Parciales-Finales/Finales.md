@@ -1,3 +1,5 @@
+FInal que esta en el apunte.
+
 p.xs = ⟨ ∃ as, b, bs : xs = as ++ (b:bs) : b = ⟨∑ i : 0 ≤ i < # bs ∧ (bs!i) mod 2 = 1 : bs!i ⟩ ⟩
 
 i) Caso base, para xs=[]
@@ -485,3 +487,200 @@ Una vez llegado hasta N, (pos = N) el ciclo se corta por que termino de iterar.
 (tambine pude haber propuesto, t = N, y por cada iteracion, t = N - pos, hasta que t = 0)
 
 ## todo: ver demostracion formal de demostracion de cota.
+
+mi lectura del teorico la deje en la pagina 44 
+
+Final2-2024
+
+	p.xs = <E as,b,bs: xs = as ++(b:bs): b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+
+1) derivar
+
+Veamos que es un programa booleano que trabaja con listas,que se fijate si un elemento B de la lista bs, es igual a la suma de los elementos impares
+
+i) Caso base, para xs = []
+
+	p.[]
+	={Especificacion}
+	<E as,b,bs: [] = as ++(b:bs): b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	={logica de listas}
+	<E as,b,bs: [] = as ^ (b:bs) = [] : b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	={logica}
+	<E as,b,bs: [] = as ^ False : b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	={Abs de false, rango vacio de E}
+	False
+
+ii) Planteo de hipotesis inductiva. Digo que vale:
+
+	HIP = p.xs =<E as,b,bs: xs = as ++(b:bs): b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+
+iii) Paso inductivo, demuestor que vvale para xs=x:xs 
+
+	p.(x:xs)
+	={especificacion}
+	<E as,b,bs: x:xs = as ++(b:bs): b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	={Tercer excluido, logica de listas}
+	<E as,b,bs: x:xs = as ++(b:bs) ^ (as = [] v as != []): b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	={Distributividad, particion de rango}
+	<E as,b,bs: x:xs = as ++(b:bs) ^ as = []: b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	v
+	<E as,b,bs: x:xs = as ++(b:bs) ^ as != []: b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	={logica de listas, elim de variable}
+	<E as,b,bs: x:xs = [] ++(b:bs): b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	v
+	<E as,b,bs: x:xs = a:as ++ (b:bs) : b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	={logica de listas, concat, elim de variable}
+	<E b,bs: x = b ^ xs = bs : b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	v
+	<E as,b,bs: x = a ^ xs = as ++ (b:bs) : b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	={elim de variable, rango unitario}
+	x = <Sum i: 0<=i<#xs ^ xs!i mod 2 = 1 : xs!i>
+	v
+	<E as,b,bs: xs = as ++ (b:bs) : b = 
+	<Sum i: 0<=i<#bs ^ bs!i mod 2 = 1 : bs!i>>
+	={hipotesis}
+	x = <Sum i: 0<=i<#xs ^ xs!i mod 2 = 1 : xs!i>
+	v p.xs
+	={me trabo, debo modularizar}
+
+pte 2)
+modularizo como =
+
+	sumImpar = <Sum i: 0<=i<#xs ^ xs!i mod 2 = 1 : xs!i>
+
+i)
+
+ok aca me doy cuenta q ya hice este final xd
+
+
+
+### Final 2024-12-03
+
+1)
+
+	p.xs = <A as,b,bs: xs = as ++ b:bs : b = sum.as + sum.bs>
+
+i) caso base, xs = []
+
+	p.[]
+	={especificacion}
+	<A as,b,bs: [] = as ++ b:bs : b = sum.as + sum.bs>
+	={logica de lsitas}
+	<A as,b,bs: as= [] ^ b:bs = [] : b = sum.as + sum.bs>
+	={logica de listas}
+	<A as,b,bs: as= [] ^ false : b = sum.as + sum.bs>
+	={abs de false, rango falso}
+	True
+
+ii) Hipotesis inductiva:
+
+	HIP = p.xs =<A as,b,bs: xs = as ++ b:bs : b = sum.as + sum.bs>
+
+iii) Paso inductivo, para xs = x:xs
+
+	p.(x:xs)
+	={Especifciacion}
+	<A as,b,bs: x:xs = as ++ b:bs : b = sum.as + sum.bs>
+	={tercer exluido, logica de listas}
+	<A as,b,bs: x:xs = as ++ b:bs ^ (as = [] v as != []): b = sum.as + sum.bs>
+	={Distributividad, part de rango}
+	<A as,b,bs: x:xs = as ++ b:bs ^ as = []: b = sum.as + sum.bs>
+	^
+	<A as,b,bs: x:xs = as ++ b:bs ^ as != []: b = sum.as + sum.bs>
+	={elim de variable, logica de listas}
+	<A b,bs: x:xs = [] ++ b:bs: b = sum.[] + sum.bs>
+	^
+	<A as,b,bs: x:xs = as ++ b:bs ^ a:as != []: b = sum.a:as + sum.bs>
+	={concat de listas vacia, sum de lista vacia, logica de listas}
+	<A b,bs: x:xs = b:bs: b = 0 + sum.bs>
+	^
+	<A as,b,bs: x:xs = a:as ++ b:bs: b = sum.a:as + sum.bs>
+	={logica de listass, aritmetica, funcion sum}
+	<A b,bs: x = b ^ xs = bs: b = sum.bs>
+	^
+	<A as,b,bs: x = a ^ xs = as ++ b:bs: b = a + sum.as + sum.bs>
+	={elim de variabble 3 veces, rango unitario}
+	x = sum.xs ^
+	<A as,b,bs: xs = as ++ b:bs: b = x + sum.as + sum.bs>
+	={me trabo, debo generalizar}
+
+pte2) Nueva especificacion generalizada
+
+	gp.x.xs = <A as,b,bs: xs = as ++ b:bs : b = x + sum.as + sum.bs>
+
+y demuestro que p.xs es un caso particular de gp.n.xs
+
+	p.xs
+	={especificacion}
+	<A as,b,bs: xs = as ++ b:bs : b = sum.as + sum.bs>
+	={aritmetica}
+	<A as,b,bs: xs = as ++ b:bs : b = 0 + sum.as + sum.bs>
+	={gp.0.xs}
+	gp.0.xs
+
+entonces, queda que:
+
+	gp.0.xs = p.xs
+
+ahora, re-derivamos para la nueva especificacion:
+
+pte 3) 
+
+i) caso base, xs = []
+
+	gp.[]
+	={especificacion}
+	<A as,b,bs: [] = as ++ b:bs : b = x + sum.as + sum.bs>
+	={logica de listas}
+	<A as,b,bs: [] = as ^  b:bs = [] : b = x + sum.as + sum.bs>
+	={logica de listas, abs de false, rango falso}
+	True
+
+ii) Planteo hipotesis 
+
+	HIP = gp.x.xs = <A as,b,bs: xs = as ++ b:bs : b = x + sum.as + sum.bs>
+
+iii) Paso inductivo, para xs = x:xs 
+
+	gp.x.x:xs
+	={especificacion}
+	<A as,b,bs: x:xs = as ++ b:bs : b = x + sum.as + sum.bs>
+	={tercer excluido, logica listas}
+	<A as,b,bs: x:xs = as ++ b:bs ^ (as = [] v as != [])} :
+	 b = x + sum.as + sum.bs>
+	 ={distributividad, part de rango }
+	 <A as,b,bs: x:xs = as ++ b:bs ^ as = [] :b = x + sum.as + sum.bs> ^ 
+	 <A as,b,bs: x:xs = as ++ b:bs ^ as != [] : b = x + sum.as + sum.bs>
+	 ={logica de listas, elim de variable, }
+	 <A b,bs: x:xs = [] ++ b:bs : b = x + sum.[] + sum.bs> ^ 
+	 <A as,b,bs: x:xs = a:as ++ b:bs : b = x + sum.a:as + sum.bs>
+	 ={logica de listas varias veces, sum en [], concat de []}
+	 <A b,bs: x:xs = b:bs : b = x + 0 + sum.bs> ^ 
+	 <A as,b,bs: x = a ^ xs = as ++ b:bs : b = x + sum.a:as + sum.bs>
+	 ={logica de listas, elim de vvariable, aritmetica, funcion sum}
+	 	<A b,bs: x = b ^ xs = bs : b = x + sum.bs> ^ 
+	 <A as,b,bs:  xs = as ++ b:bs : b = a + x sum.as + sum.bs>
+	 ={elimincacion de variable, rango unitario, conmutatividad y hipotesis}
+	  x = b + sum.xs ^ gp.(x+a).xs
+
+Quedando el programa:
+
+	p.xs = gp.0.xs
+
+	gp.x.[] = True
+	gp.x.(x:xs) = x = b + sum.xs ^ gp.(x+a).xs
+
+## Paso inductivo: `xs = y:ys` (NO uses `x:xs`) chat gpt me aclaro esto, checkiar
