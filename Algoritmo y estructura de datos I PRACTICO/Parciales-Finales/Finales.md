@@ -1090,3 +1090,235 @@ Y hacemos la wp.
 	-1 < 0
 	={logica}
 	Tue
+
+FInal del 3 de julio del 2024.
+
+
+	Const N: Int;
+	Var a: array [0, N) of Int; r: Num;
+	{N > 0}
+	S1;
+	{r = <Max i: 0<=i<N : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)>}
+
+No se puede usar inf, o -inf
+
+El programa devuelve el numero mas grande de un arreglo, en posicion par, elevandolo y dividiendo por el indice +1
+
+i) Sabemos que el programa recorre indices de arreglos, debemos empezar a recorrerlos.
+Necesito un ciclo, para derivar con un ciclo, necesito unainvariatne y una guarda B, propongo:
+
+Para el invariante, uso la tecnica de reemplazo de constantes por variables:
+
+	Inv = r = <Max i: 0<=i<pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)>
+	^ 0 <=pos <= N
+
+Y una guarda B:
+
+	B: pos < N
+
+Y queda que:
+
+	Inv ^ -b => Q Trivial
+
+ii) con las variables declaradas de r, pos debemos inicializarlas, para que cuando comience el ciclo, se cumpla el invariante. Es decir, debemos encontrar un programa S, para que cumpla:
+
+	{P} S {Inv}
+
+Para este caso, debemos proponer o derivar S. Propongo para este caso:
+
+	r, pos := E, F
+
+Suponemos P, y demostramos por wp, wp.s1.inv:
+
+	wp.s1.inv
+	={definicion de wp.}
+	wp.(r, pos := E, F).(r = <Max i: 0<=i<pos : <sumj: 0<=j<i ^ 
+	j mod 2 = 0: A.j>^2 /(i+1)> ^ 0 <= pos <= N)
+	={Notemos que no podemos forzar rango vacio, ya que daria inf, -inf, 
+	elijo entonces F = 1, wp de :=}
+	E = <Max i: 0<=i<1 : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^ 
+	0 <= 1 <= N)
+	={Logica en el rango, en hipotesis}
+	E = <Max i: i=0 : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^ 
+	0<=1 ^ 1 <= N)
+	={Reflexividad, logica arit}
+	E = <Max i: i=0 : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^ 
+	True)
+	={Abs, rango unitario}
+	E =  <sumj: 0<=j<0 ^ j mod 2 = 0: A.j>^2 /(0+1)
+	={Aritmetica, logica en rango} 
+	E = <sumj: False ^ j mod 2 = 0: A.j>^2
+	={Rango falso}
+	E = 0
+	={Elijo E = 0}
+	True
+
+
+*(Cuando tengo un Max o Min y no puedo usar −∞/+∞, tengo que:
+
+- elegir la inicialización de las variables (p.ej. `pos`) para que el rango nunca sea vacío en los estados alcanzables, y
+- inicializar el acumulador (`r`) con el valor de la expresión cuantificada para el primer índice del rango (no con un “número cualquiera muy chico o muy grande”).)*
+
+Quedando el programa de momento, con inicializacion, ciclo y guarda:
+
+	Const N: Int;
+	Var a: array [0, N) of Int; r: Num;
+	{N > 0}
+	r,pos := 0, 1
+	do pos < N ->
+		S2;
+	od
+	{r = <Max i: 0<=i<N : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)>}
+
+iii) Cuerpo del ciclo.
+
+Ahora debemos derivar o proponer un cuerpo del ciclo S para que se mantenga el invariante, es decir, el invariante mantenga el invariante. 
+
+Ademas, sabemos que en el cuerpo del ciclo, las posiciones deben avanzar, propongo:
+
+	r,pos := E, pos+1
+
+Para poder demostrar la terna de: 
+
+	{Inv ^ B } S {Inv}
+
+Y Supongo Inv ^ B como hipotesis, para luego hacer la 
+
+	wp.s2.inv
+	={def de wp}
+	wp.(r,pos := E, F).(r = <Max i: 0<=i<pos : <sumj: 0<=j<i 
+	^ j mod 2 = 0: A.j>^2 /(i+1)> ^ 0 <=pos <= N)
+	={wp de :=}
+	(E = <Max i: 0<=i<pos+1 : <sumj: 0<=j<i 
+	^ j mod 2 = 0: A.j>^2 /(i+1)> ^ 0 <=pos+1<= N)
+	={logica en el rango, logica en inv}
+	(E = <Max i: i=pos v 0<=i<pos : <sumj: 0<=j<i 
+	^ j mod 2 = 0: A.j>^2 /(i+1)> ^ 0<=pos+1 ^ pos+1<=N)
+	={logica arit, abs de True, part de rango}
+	E = <Max i: i=pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> Max 
+	<Max i: 0<=i<pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> 
+	={Rango unitario}
+	E =  <sumj: 0<=j<pos ^ j mod 2 = 0: A.j>^2 /(pos+1)> Max 
+	<Max i: 0<=i<pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> 
+	={hipotesis}
+	E =  <sumj: 0<=j<pos ^ j mod 2 = 0: A.j>^2 /(pos+1)> Max r
+	={Me trabo, refuerzo la hipotesis. Ademas pot no es programable}
+
+pte 2)
+Debo fortalecer el invariante, propongo un nuevo inv reforzado:
+
+	Inv' = r = <Max i: 0<=i<pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^
+	sum = <sumj: 0<=j<pos ^ j mod 2 = 0: A.j> ^ 0 <=pos <= N
+
+ Y queda trivialmente que:
+
+	Inv' => Inv
+
+	(Entonces, tambien se mantiene Inv ^ -b => Q)
+
+ii) Inicializacion del ciclo con el fortalecimiento de invariante.
+Debemos declarar las nuevas inicializaciones en el ciclo. 
+Propongo:
+
+	r,pos,sum := E, F, G
+
+Y hago la wp
+
+	wp.s1.inv
+	={Wp de :=}
+	E = <Max i: 0<=i<F : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^
+	G = <sumj: 0<=j<F ^ j mod 2 = 0: A.j>^2 ^ 0 <= F <= N
+	={Elijo F = 1, (no forzamos rango vacio para no tener max), logica}
+	E = <Max i: i = 0 : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^
+	G = <sumj: 0<=j<1 ^ j mod 2 = 0: A.j>^2 ^ 0 <= 1 <= N
+	={Rango unitario, logica, logica}
+	E = <sumj: j = 0 ^ j mod 2 = 0: A.j>^2 /(0+1) ^
+	G = 0 ^ 1 <= N ^ 1<= N
+	={logica, rango vacio, aritmetica. logica, abs. 
+	Sabemos j mod 2 = 0 siempre sera true}
+	E = 0 ^
+	G = A.0
+
+Con la nueva inicializada, el programa queda:
+
+	Const N: Int;
+	Var a: array [0, N) of Int; r: Num;
+	{N > 0}
+	r,pos,sum := 0, 1,A.0
+	do pos < N ->
+		S2;
+	od
+	{r = <Max i: 0<=i<N : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)>}
+
+
+// TODO: CHECKEAR CICLO. CON LA HIPOTESIS CORREJIDA
+iii)Cuerpo del ciclo.
+Sabemos que las posiciones se deben ir actualizando. Propongo:
+
+	r,pos,sum := E, pos+1, G
+Suponemos Inv' ^ B como hipotesis y hacemos la wp. 
+Para poder demostra la terna de { Inv ^ B } S { Inv }
+
+	wp.s2.Inv'
+	={wp de :=}
+	E = <Max i: 0<=i<pos+1 : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^
+	G = <sumj: 0<=j<pos+1 ^ j mod 2 = 0: A.j>^2 ^ 0 <= pos+1 <= N
+	={Logica en el rango, logica en el refuerzo}
+	E = <Max i: i=pos v 0<=i<pos : <sumj: 0<=j<i 
+	^ j mod 2 = 0: A.j>^2 /(i+1)> ^
+	G = <sumj: j=pos v 0<=j<pos ^ j mod 2 = 0: A.j>^2 ^ 0<=pos+1 ^ pos+1 <=N
+	={Distributividad, Part de rango 2 veces, logica, abs de true}
+	E = <Max i: i=pos : <sumj: 0<=j<i 
+	^ j mod 2 = 0: A.j>^2 /(i+1)> max 
+	<Max i:  0<=i<pos : <sumj: 0<=j<i 
+	^ j mod 2 = 0: A.j>^2 /(i+1)> ^
+	G = <sumj: j=pos ^ j mod 2 = 0: A.j>^2 +
+	<sumj: 0<=i<pos ^ j mod 2 = 0: A.j>^2
+	={Rango unitario, elim de variable, hipotesis }
+	E = <sumj: 0<=j<pos ^ j mod 2 = 0: A.j>^2 /(pos+1)> max 
+	<Max i:  0<=i<pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^
+	G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
+	={Hipotesis de r}
+	E = r + <sumj: 0<=j<pos ^ j mod 2 = 0: A.j>^2 /(pos+1) ^
+	G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
+	={Hipotesis de sum }
+	E = r + sum/(pos+1) ^
+	G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
+	={Me trabo, dos casos. pos mod 2 = 0, pos mod 2 = 1}
+			- Caso 1. pos mod 2 = 0
+			E = r + sum/(pos+1) ^
+			G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
+			={Supogno por hipotesis que pos mod 2 = 0. Dando True}
+			E = r + sum/(pos+1) ^
+			G = A.pos^2 + sum
+
+			- Caso 2. pos mod 2 = 1
+			E = r + sum/(pos+1) ^
+			G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
+			={Supogno por hipotesis que pos mod 2 = 1. Dando Rango vacio}
+			E = r + sum/(pos+1) ^
+			G = 0 + sum
+			={Arit}
+			E = r + sum/(pos+1) ^
+			G = sum
+
+
+Quedando el programa finalmente:
+
+	Const N: Int;
+	Var a: array [0, N) of Int; r: Num;
+	{N > 0}
+	r,pos,sum := 0, 1,0
+	do pos < N ->
+		if pos mod 2 = 0 ->
+			sum := A.pos^2 + sum
+		[] pos mod 2 = 1 ->
+			sum := sum
+		fi
+			r,pos :=r + sum/(pos+1), pos+1
+	od
+	{r = <Max i: 0<=i<N : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)>}
+
+Terminacion de ciclo (funcion de cota)
+
+Terminacion anticipada de ciclos.
