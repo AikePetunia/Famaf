@@ -400,7 +400,7 @@ Quendando el programa:
 	{P : N ≥ 0 } 
 	r,pos, sum := False, 0, 0
 	do pos < N ->
-		if pos mod 2 = 0 -> r, sum := r v A.pos = sum, sum
+		if pos mod 2 = 0  -> r, sum := r v A.pos = sum, sum
 		[] pos mod 2 != 0 ->r, sum := r v False, A.pos + sum
 		pos := pos+1
 	od
@@ -1045,7 +1045,7 @@ entonces:
 	={Hipotesis de inv}
 	True
 
-Ahora>
+Ahora:
 
 	iv.b) { Inv ^ B ^ T = t} if...fi {t < T}
 
@@ -1091,7 +1091,7 @@ Y hacemos la wp.
 	={logica}
 	Tue
 
-FInal del 3 de julio del 2024.
+Final del 3 de julio del 2024.
 
 
 	Const N: Int;
@@ -1244,81 +1244,207 @@ Con la nueva inicializada, el programa queda:
 	Const N: Int;
 	Var a: array [0, N) of Int; r: Num;
 	{N > 0}
-	r,pos,sum := 0, 1,A.0
+	r,pos,sum := 0, 1, A.0
 	do pos < N ->
 		S2;
 	od
 	{r = <Max i: 0<=i<N : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)>}
 
-
-// TODO: CHECKEAR CICLO. CON LA HIPOTESIS CORREJIDA
 iii)Cuerpo del ciclo.
 Sabemos que las posiciones se deben ir actualizando. Propongo:
 
 	r,pos,sum := E, pos+1, G
+
+// checkiar
 Suponemos Inv' ^ B como hipotesis y hacemos la wp. 
 Para poder demostra la terna de { Inv ^ B } S { Inv }
 
 	wp.s2.Inv'
 	={wp de :=}
 	E = <Max i: 0<=i<pos+1 : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^
-	G = <sumj: 0<=j<pos+1 ^ j mod 2 = 0: A.j>^2 ^ 0 <= pos+1 <= N
+	G = <sumj: 0<=j<pos+1 ^ j mod 2 = 0: A.j> ^ 0 <= pos+1 <= N
 	={Logica en el rango, logica en el refuerzo}
-	E = <Max i: i=pos v 0<=i<pos : <sumj: 0<=j<i 
-	^ j mod 2 = 0: A.j>^2 /(i+1)> ^
-	G = <sumj: j=pos v 0<=j<pos ^ j mod 2 = 0: A.j>^2 ^ 0<=pos+1 ^ pos+1 <=N
+	E = <Max i: i=pos v 0<=i<pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> 
+	^ G = <sumj: j=pos v 0<=j<pos ^ j mod 2 = 0: A.j> ^ 0<=pos+1 ^ pos+1 <=N
 	={Distributividad, Part de rango 2 veces, logica, abs de true}
-	E = <Max i: i=pos : <sumj: 0<=j<i 
-	^ j mod 2 = 0: A.j>^2 /(i+1)> max 
-	<Max i:  0<=i<pos : <sumj: 0<=j<i 
-	^ j mod 2 = 0: A.j>^2 /(i+1)> ^
-	G = <sumj: j=pos ^ j mod 2 = 0: A.j>^2 +
-	<sumj: 0<=i<pos ^ j mod 2 = 0: A.j>^2
+	E = <Max i: i=pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> max 
+	<Max i:  0<=i<pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^
+	G = <sumj: j=pos ^ j mod 2 = 0: A.j> + <sumj: 0<=i<pos ^ j mod 2 = 0: A.j>
 	={Rango unitario, elim de variable, hipotesis }
 	E = <sumj: 0<=j<pos ^ j mod 2 = 0: A.j>^2 /(pos+1)> max 
 	<Max i:  0<=i<pos : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)> ^
-	G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
+	G = <sumj: pos mod 2 = 0: A.pos> + sum
 	={Hipotesis de r}
-	E = r + <sumj: 0<=j<pos ^ j mod 2 = 0: A.j>^2 /(pos+1) ^
-	G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
-	={Hipotesis de sum }
-	E = r + sum/(pos+1) ^
-	G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
+	E = r max <sum j: 0<=j<pos ^ j mod 2 = 0: A.j>^2 /(pos+1) ^
+	G = <sumj: pos mod 2 = 0: A.pos> + sum
+	={Hipotesis de sum, pero tengo ^ 2 }
+	E = r max ((sum*sum) / (pos+1)) ^
+	G = <sumj: pos mod 2 = 0: A.pos> + sum
 	={Me trabo, dos casos. pos mod 2 = 0, pos mod 2 = 1}
-			- Caso 1. pos mod 2 = 0
-			E = r + sum/(pos+1) ^
-			G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
-			={Supogno por hipotesis que pos mod 2 = 0. Dando True}
-			E = r + sum/(pos+1) ^
-			G = A.pos^2 + sum
-
-			- Caso 2. pos mod 2 = 1
-			E = r + sum/(pos+1) ^
-			G = <sumj: pos mod 2 = 0: A.pos>^2 + sum
-			={Supogno por hipotesis que pos mod 2 = 1. Dando Rango vacio}
-			E = r + sum/(pos+1) ^
-			G = 0 + sum
-			={Arit}
-			E = r + sum/(pos+1) ^
-			G = sum
-
+		- Caso 1. pos mod 2 = 0
+		E =  r max ((sum*sum) / (pos+1)) ^
+		G = <sum j: pos mod 2 = 0: A.pos> + sum
+		={Supogno por hipotesis que pos mod 2 = 0. Dando True}
+		E =  r max ((sum*sum) / (pos+1)) ^
+		G = A.pos + sum
+	
+		- Caso 2. pos mod 2 = 1
+		E =  r max ((sum*sum) / (pos+1)) ^
+		G = <sumj: pos mod 2 = 0: A.pos> + sum
+		={Supogno por hipotesis que pos mod 2 = 1. Dando Rango vacio}
+		E = r max ((sum*sum) / (pos+1)) ^
+		G = 0 + sum
+		={Arit}
+		E = r max ((sum*sum) / (pos+1)) ^
+		G = sum // puede ser skip, ya que queda como sum := sum
 
 Quedando el programa finalmente:
 
 	Const N: Int;
 	Var a: array [0, N) of Int; r: Num;
 	{N > 0}
-	r,pos,sum := 0, 1,0
+	r,pos,sum := 0, 1, A.0
 	do pos < N ->
 		if pos mod 2 = 0 ->
-			sum := A.pos^2 + sum
+			sum := A.pos + sum
 		[] pos mod 2 = 1 ->
-			sum := sum
+			skip
 		fi
-			r,pos :=r + sum/(pos+1), pos+1
+			r,pos := r max ((sum*sum) / (pos+1)), pos+1
 	od
 	{r = <Max i: 0<=i<N : <sumj: 0<=j<i ^ j mod 2 = 0: A.j>^2 /(i+1)>}
 
 Terminacion de ciclo (funcion de cota)
 
-Terminacion anticipada de ciclos.
+Sabemos que todo ciclo terminar. Intuitivamente, podemos declarar que la funcion de cota, mirando la guarda y el invariante, propongo una cota:
+
+	t = N - pos.
+
+Siendo que N decresera por cada vez se itere, finalmente terminando el ciclo
+
+segun el digesto, si estoy en el ciclo, la cota es >= 0, :
+
+	iv.a) Inv ^ B => t >= 0 
+
+suponemos Inv ^ B y vemos:
+
+	t >= 0
+	={def de t}
+	N - pos >= 0 
+	={Arit.}
+	N >= pos
+	={Hip. del inv}
+	True
+
+Demostrando la no negatividad. 
+
+	iv.b) {INV ^ B ^ t = T} S {t < T}
+
+Demostracion: suponemos como hip Inv ^ B ^ t =T, y vemos la wp
+
+	wp.s2.(t < T)
+	={Def de wp}
+	(r,pos := r max ((sum*sum) / (pos+1)), pos+1).(t < T)
+	={def de t}
+	(r,pos := r max ((sum*sum) / (pos+1)), pos+1).(N - pos < T)
+	={wp de :=}
+	N - (pos+1) < T
+	={hip de T}
+	N - (pos+1) < N - pos
+	={arit}
+	-1 < 0
+
+Demostrando que la cota decrece por ccada iteracion del ciclo
+
+Terminacion anticipada de ciclos -> no hay una condición local que te garantice que el máximo definitivo ya fue alcanzado. no hay
+
+2)
+
+Especificar con pre y post condicion y declaracion de variables (sin derviar) los siguientes problemas:
+
+a) Dados los arreglos a y b, determinar si todos los elementos en a, son menores a uno y solo un element de b. O sea, da True si cada elemento de a es menor a uno de b una sola vez.
+
+	Var A: array [0, N), B: array [0, N) of Int;
+	Const N: Int; res: Bool;
+	{P: N >= 0}
+	S
+	{Q: res = <A i: 0<=i<N : <N j: 0<=j<N : A.i < B.j> = 1>}
+
+b) Dado un arreglo a no vacio, decir si la resta de dos elementos distintos es mayor que al maximo elemento en el arreglo
+
+	Const A: array [0, N) of Int;
+	Var r: Bool;
+	{P: N > 0}
+	S
+	{Q: r = <E i,j: 0<=i<j<N ^ i !=j : A.i - A.j > <Max: 0<=k<N : A.k>>}
+
+3.
+
+	f.xs = <E as,bs: xs = as ++ bs: <Prod i: 0<= i < #as: (as.i)^2> < #as>
+
+i) Caso base, xs = []
+
+	f.[]
+	={Especificacion}
+	<E as,bs: [] = as ++ bs: <Prod i: 0<= i < #as: (as.i)^2> < #as>
+	={Logica de listas}
+	<E as,bs: [] = as ^ [] = bs: <Prod i: 0<= i < #as: (as.i)^2> < #as>
+	={Rango unitario}
+	<Prod i: 0<= i < #[]: ([].i)^2> < #[]
+	={def de #, logica en el rango, rango vacio}
+	1 < 0
+	={coso}
+	False
+
+ii) Planteo de hipotesis inductiva:
+
+	Hip = f.xs=<E as,bs: xs = as ++ bs: <Prod i: 0<= i < #as: (as.i)^2> < #as>
+
+iii) Paso inductivo, para xs = x:xs
+
+	f.(x:xs)
+	={Especificacion}
+	<E as,bs: x:xs = as ++ bs: <Prod i: 0<= i < #as: (as.i)^2> < #as>
+	={Logica de listas}
+	<E as,bs: x:xs = as ++ bs: <Prod i: 0<= i < #as: (as.i)^2> < #as>
+	={Tercer excluido, logica de listas}
+	<E as,bs: x:xs = as ++ bs ^ (as = [] v as != []) :
+	 <Prod i: 0<= i < #as: (as.i)^2> < #as>
+	={Distributividad, part de rango}
+	<E as,bs: x:xs = as ++ bs ^ as = []:
+	<Prod i: 0<= i < #as: (as.i)^2> < #as> v 
+	<E as,bs: x:xs = as ++ bs ^ as != [] : 
+	<Prod i: 0<= i < #as: (as.i)^2> < #as> 
+	={Elim de variable, logica de listas}
+	<E as,bs: x:xs = [] ++ bs: <Prod i: 0<= i < #[]: ([].i)^2> < #[]> v 
+	<E as,bs: x:xs = a:as ++ bs ^ a:as != [] : 
+	<Prod i: 0<= i < #a:as: (a:as.i)^2> < #a:as> 
+	={Elim de variable. Concat}
+	<E bs: x:xs = bs: <Prod i: 0<= i < #[]: ([].i)^2> < #[]> v 
+	<E as,bs: x:xs = a:as ++ bs : 
+	<Prod i: 0<= i < #as + 1: (a:as.i)^2> < #as+ 1> 
+	={logica de listas, rango unitario, def de #, logica de rango}
+	<Prod i: 0<= i < 0: ([].i)^2> < 0 v 
+	<E as,bs: x = a ^ xs = as++ bs:
+	<Prod i: 0<= i < #as + 1: (a:as.i)^2>< #as + 1> 
+	={Rango vacio, elim de variable}
+	1 < 0 v 
+	<E as,bs: x = a ^ xs = as ++ bs:
+	<Prod i: 0<= i < #as + 1: (a:as.i)^2>< #as + 1 > 
+	={ elim de variable, logica en el rango. Logica aritmetica}
+	false v <E as,bs: xs = as ++ bs:
+	<Prod i: i=0 v 1<=i<#as+1: (x:as.i)^2>< #as + 1 > 
+	={part de rango}
+	false v <E as,bs: xs = as ++ bs:
+	<Prod i: i=0 : (x:as.i)^2> * <Prod i: 1<=i<#as+1: (x:as.i)^2>< #as + 1 >
+	={elim de variable, cambio de variablee, i = i+1, aritmetica}
+	false v <E as,bs: xs = as ++ bs:
+	<Prod i: i=0 : (x:as.0)^2> * <Prod i: 0<=i<#as: (x:as.i+1)^2>< #as + 1>
+	={Def de .}
+	false v <E as,bs: xs = as ++ bs: x^2 * <Prod i: 0<=i<#as: (as.i)^2> 
+	< #as + 1>
+	={constante, hipotesis}
+	false v f.xs 
+EHHHHHHHHHHHHH NO SEEEE
+f.[] = false
+f.(x:xs) = false v f.xs
