@@ -1437,14 +1437,144 @@ iii) Paso inductivo, para xs = x:xs
 	={part de rango}
 	false v <E as,bs: xs = as ++ bs:
 	<Prod i: i=0 : (x:as.i)^2> * <Prod i: 1<=i<#as+1: (x:as.i)^2>< #as + 1 >
-	={elim de variable, cambio de variablee, i = i+1, aritmetica}
+	={elim de variable, cambio de variable, i = i+1, aritmetica}
 	false v <E as,bs: xs = as ++ bs:
 	<Prod i: i=0 : (x:as.0)^2> * <Prod i: 0<=i<#as: (x:as.i+1)^2>< #as + 1>
 	={Def de .}
 	false v <E as,bs: xs = as ++ bs: x^2 * <Prod i: 0<=i<#as: (as.i)^2> 
 	< #as + 1>
-	={constante, hipotesis}
-	false v f.xs 
-EHHHHHHHHHHHHH NO SEEEE
-f.[] = false
-f.(x:xs) = false v f.xs
+	={me trabo, debo generalizar}
+
+
+pte 2) Generalizacion. Nueva especificacion de f.xs:
+i)
+
+	gf.n.m.xs=<E as,bs: xs = as ++ bs:n^2* <Prod i: 0<= i < #as: (as.i)^2> < #as +m>
+
+Y demuestro que f.xs es un caso particular de la nueva especificacion.
+
+	f.xs
+	={especificacion}
+	<E as,bs: xs = as ++ bs: <Prod i: 0<= i < #as: (as.i)^2> < #as>
+	={aritmetica}
+	<E as,bs: xs = as ++ bs: 1 * <Prod i: 0<= i < #as: (as.i)^2> < #as + 0>
+	={esp}
+	gf.1.0.xs
+
+
+ii) Caso base, xs = []
+
+	gf.[]
+	={especificacion}
+	<E as,bs: [] = as ++ bs: n * <Prod i: 0<= i < #as: (as.i)^2> < #as+m>
+	={aritmetica}
+	<E as,bs: [] = as ^ bs = []: n * <Prod i: 0<= i < #as: (as.i)^2> < #as +m>
+	={elim de variable}
+	<E bs: bs = []: n * <Prod i: 0<= i < #[]: ([].i)^2> < #[] +m>
+	={rango unitario, def de #, logica}
+	n * <Prod i: 0<= i < 0 ([].i)^2> < 0 +m
+	={rangovacio}
+	n * 1 < 0 + m
+	={arit}
+	n < m
+
+iii) hipotesis inductiva
+
+	gf.E.xs=<E as,bs: xs = as ++ bs:E * <Prod i: 0<= i < #as: (as.i)^2> < #as + m>
+
+iv) Paso inductivo, para xs = x:xs
+
+	gf.n.(x:xs)
+	={Especifcacion}
+	<E as,bs: x:xs = as ++ bs:n* <Prod i: 0<= i < #as: (as.i)^2> < #as + m>
+	={Logica de listas}
+	<E as,bs: x:xs = as ++ bs ^ (as = [] v as != []): 
+	n* <Prod i: 0<= i < #as: (as.i)^2> < #as + m>
+	={Distributividad y part de rango}
+	<E as,bs: x:xs = as ++ bs ^ as = [] : 
+	n* <Prod i: 0<= i < #as: (as.i)^2> < #as + m> v 
+	<E as,bs: x:xs = as ++ bs ^  as != []: 
+	n* <Prod i: 0<= i < #as: (as.i)^2> < #as + m>
+	={elim de variable, logica de listas}
+	<E bs: x:xs = [] ++ bs : n* <Prod i: 0<= i < #[]: ([].i)^2> < #[] + m> v 
+	<E as,bs: x:xs = as ++ bs ^  a:as != []: 
+	n* <Prod i: 0<= i < #as: (as.i)^2> < #as + m>
+	={elim de varialbe, funcion concat}
+	<E bs: x:xs = bs : n * <Prod i: 0<= i < #[]: ([].i)^2> < #[] + m> v 
+	<E as,bs: x:xs = a:as ++ bs : n* <Prod i: 0<= i < #a:as: (a:as.i)^2> < #a:as + m>
+	={def de #, logica de listas varias veces, rango unitario *del otro paso por q as = []}
+	 n * <Prod i: 0<= i < 0: ([].i)^2> < 0 + m> v 
+	<E as,bs:x = a ^ xs = as ++ bs : n *
+	 <Prod i: 0<= i < #as + 1: (a:as.i)^2> < #as + 1 + m>
+	 ={logica, aritmetica, elim de variable. }
+	n < m v <E as,bs: xs = as ++ bs : n *
+	<Prod i: 0<= i < #as + 1: (x:as.i)^2> < #as + 1 + m>
+	={logica en el rango, part d rango. n^2 siempre es positivo}
+	n < m  v <E as,bs: xs = as ++ bs : n *
+	<Prod i: i = 0: (x:as.i)^2> *
+	 <Prod i: 1<= i < #as + 1: (x:as.i)^2>  < #as + 1 + m>
+	={Elim de variable, def de ., cambio de var i = i+1, aritmetica. Abs }	
+	n < m  v <E as,bs: xs = as ++ bs : n * x^2 * 
+	<Prod i: 0<= i < #as: as.i^2>  < #as + 1 + m>
+	={constante, conmutatividad. No se si a gen debe abarcar el +1 de # }
+	n < m  v <E as,bs: xs = as ++ bs :( n^2 * x^2) * 
+	<Prod i: 0<= i < #as: as.i^2> < #as + (1 + m)>
+	={hipotesis}
+	n^2 < m  v gf.(n * x^2).(m+1).xs
+
+
+g.p.m.xs =
+  ⟨∃ as,bs : xs = as ++ bs :
+      p * ⟨Prod i : 0 ≤ i < #as : (as.i)²⟩ < #as + m ⟩
+
+f.xs = g.1.0.xs
+
+g.p.m.[]     = (p < m)
+g.p.m.(x:xs) = (p < m) ∨ g.(p * x²).(m + 1).xs
+
+Que problema del orto !
+
+# final 5 de diciembre de 2023
+
+
+	p.xs = <A as, b, bs: xs = as ++ (b:bs) : b = sum.as + sum.bs>
+
+i) Caso base, xs = []
+
+	p.[]
+	={Especificacion}
+	<A as, b, bs: [] = as ++ (b:bs) : b = sum.as + sum.bs>
+	={logica de listas}
+	<A as, b, bs: as = [] v b:bs = [] : b = sum.as + sum.bs>
+	={logica, rango falso}
+	True
+
+ii) Planteo de hipotesis inductiva 
+
+	p.xs = <A as, b, bs: xs = as ++ (b:bs) : b = sum.as + sum.bs>
+
+iii) paso inductivo, xs = x:xs
+
+	p.(x:xs)
+	={especificacion}
+	<A as, b, bs: x:xs = as ++ (b:bs) : b = sum.as + sum.bs>
+	={Logica de listas, tercer excluido}
+	<A as, b, bs: x:xs = as ++ (b:bs) ^ (as = [] v as != []): b = sum.as + sum.bs>
+	={distributividad, part de rango}
+	<A as, b, bs: x:xs = as ++ (b:bs) ^ as = [] : b = sum.as + sum.bs> ^ <A as, b, bs: x:xs = as ++ (b:bs) ^ as != []: b = sum.as + sum.bs>
+	={elim de variable}
+	<A b, bs: x:xs = [] ++ (b:bs) : b = sum.[] + sum.bs> ^
+	 <A as, b, bs: x:xs = a:as ++ (b:bs): b = sum.a:as + sum.bs>
+	 ={concat, logica de listas, funcion sum en caso base }
+	 <A b, bs: x:xs = (b:bs) : b = 0 + sum.bs> ^
+	 <A as, b, bs: x = a ^ xs = as ++ (b:bs) : b = sum.a:as + sum.bs>
+	 ={funcion sum, logica de listas, aritmetica}
+	 	 <A b, bs: x = b ^ xs = bs: b = sum.bs> ^
+	 <A as, b, bs: xs = as ++ (b:bs) : b = sum.x:as + sum.bs>
+	 ={elim de variable, funcion sum }
+	 	 	 x = sum.xs ^
+	 <A as, b, bs: xs = as ++ (b:bs) : b = x + sum.as + sum.bs>
+	 ={me trabo, necesito generalizar. me cansa hacer el paso de mierda de  generalizacion, pero entendamos q la esp se le agrega la n, y por conmutatividad se resuelve y llega a la hipotesis inducitva}
+	 x = sum.xs ^ gp.(n+x).xs
+
+no iba a generalziar un problema q ya hice lol
