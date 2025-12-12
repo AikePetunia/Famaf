@@ -1545,7 +1545,7 @@ i) Caso base, xs = []
 	={Especificacion}
 	<A as, b, bs: [] = as ++ (b:bs) : b = sum.as + sum.bs>
 	={logica de listas}
-	<A as, b, bs: as = [] v b:bs = [] : b = sum.as + sum.bs>
+	<A as, b, bs: as = [] ^ b:bs = [] : b = sum.as + sum.bs>
 	={logica, rango falso}
 	True
 
@@ -1574,7 +1574,352 @@ iii) paso inductivo, xs = x:xs
 	 ={elim de variable, funcion sum }
 	 	 	 x = sum.xs ^
 	 <A as, b, bs: xs = as ++ (b:bs) : b = x + sum.as + sum.bs>
-	 ={me trabo, necesito generalizar. me cansa hacer el paso de mierda de  generalizacion, pero entendamos q la esp se le agrega la n, y por conmutatividad se resuelve y llega a la hipotesis inducitva}
-	 x = sum.xs ^ gp.(n+x).xs
+	={me trabo, necesito generalizar}
 
-no iba a generalziar un problema q ya hice lol
+Pte 2) Nueva especificacion
+i)
+
+	gp.n.xs = <A as, b, bs: xs = as ++ (b:bs) : b = n + sum.as + sum.bs>
+
+Y demuestro que p.xs es un caso particular de gp.n.xs
+
+	p.xs
+	={especificacion}
+	<A as, b, bs: xs = as ++ (b:bs) : b = sum.as + sum.bs>
+	={Aritmetica}
+	<A as, b, bs: xs = as ++ (b:bs) : b = 0 + sum.as + sum.bs>
+	={esp}
+	gp.0.xs
+
+Entonces, queda que:
+
+	p.xs = gp.0.xs
+
+ii) Caso base, para xs = []
+
+	gp.n.[]
+	={Especificacion}
+	<A as, b, bs: [] = as ++ (b:bs) : b = n + sum.as + sum.bs>
+	={Logica de listas}
+	<A as, b, bs: as = [] ¨^ b:bs = [] : b = n + sum.as + sum.bs>
+	={ logica de listas}
+	<A as, b, bs: as = [] ¨^ False : b = n + sum.as + sum.bs>
+	={Abs de false, rango vacio}
+	True
+
+iii) Planteo de hipotesis inductiva
+
+	HIP = gp.E.xs = 
+	<A as, b, bs: xs = as ++ (b:bs) : b = E + sum.as + sum.bs>
+
+
+iv) Paso inductivo, para xs = x:xs
+
+	gp.n.(x:xs)
+	={Especificacion}
+	<A as, b, bs: x:xs = as ++ (b:bs) : b = n + sum.as + sum.bs>
+	={tercer excluido, logica de listas}
+	<A as, b, bs: x:xs = as ++ (b:bs) ^ (as = [] v as != []) :
+	 b = n + sum.as + sum.bs>
+	={Distributividad, part de rango}
+	<A as, b, bs: x:xs = as ++ (b:bs) ^ as =: []
+	 b = n + sum.as + sum.bs> ^ 
+	 <A as, b, bs: x:xs = as ++ (b:bs) ^  as != []:
+	 b = n + sum.as + sum.bs>
+	 ={Elim de varialbe, logica de listas}
+	<A b, bs: x:xs = [] ++ (b:bs): b = n + sum.[] + sum.bs> ^ 
+	 <A as, b, bs: x:xs = as ++ (b:bs) ^  a:as != []:
+	 b = n + sum.as + sum.bs>
+	 ={concat, elim de variable, funcion sum en []}
+	<A b, bs: x:xs = b:bs : b = n + 0 + sum.bs> ^ 
+	 <A as, b, bs: x:xs = (a:as) ++ (b:bs): b = n + sum.(a:as) + sum.bs>
+	 ={Logica de listas varias veces, aritmetica}
+	 <A b, bs: x = b ^ xs = bs : b = n + sum.bs> ^ 
+	 <A as, b, bs: x = a ^ xs = (as) ++ (b:bs): b = n + sum.(a:as) + sum.bs>
+	={Rango unitario, elim de variable}
+	x = n + sum.xs> ^ 
+	 <A as, b, bs: xs = (as) ++ (b:bs): b = n + sum.(x:as) + sum.bs>
+	={Funcion sum}
+	x = n + sum.xs> ^ 
+	 <A as, b, bs: xs = as ++ (b:bs): b = n + x + sum.as + sum.bs>
+	={conmutatividad}
+	x = n + sum.xs ^  
+	<A as, b, bs: xs = as ++ (b:bs): b = (n + x) + sum.as + sum.bs>
+	={Hipotesis}
+	x = n + sum.xs ^ gp.(n+x).xs
+
+Quedando el programa:
+
+	p.xs = gp.0.xs
+
+	gp.n.[] = True
+	gp.n.(x:xs) = x == n + sum.xs ^ gp.(n+x).xs
+
+b)
+
+	p.[3,3,1], # = 3
+	={Expansion}
+	3 == 3 + (3+1) ^ gp.(3+3).[3,1]
+	3 == 3 + (3+1) ^ 3 == 3 + (1) ^ gp.(3+1).[1]
+	3 == 3 + (3+1) ^ 3 == 3 + (1) ^ 3 == 1 + 0 ^ gp.0.[]
+	3 == 3 + (3+1) ^ 3 == 3 + (1) ^ 3 == 1 + 0 ^ True
+	={Aritmetica}
+	3 == 7 ^ 3 == 4 ^ 3 == 1 ^ True
+	={abs, bool}
+	False
+
+	p.[3.3], # = 3
+	={Expansion}
+	3 == 3 + 0 ^ gp.(3+0).[3]
+	3 == 3 + 0 ^ 3 == 0 + 0 ^ gp.(3+0).[]
+	3 == 3 + 0 ^ 3 == 0 + 0 ^ 0 == 0 ^ True
+	={arit}
+	3 == 3 + 0 ^ 3 = 0 + 0 ^ 0 == 0 ^ True
+	={logica, abs}
+	False
+
+	p.[0,0]
+	={Expansion}
+	0 == 0 + 0 ^ gp.(0+0).[0]
+	0 == 0 + 0 ^ 0 == 0 + 0 ^ gp.(0+0).[]
+	0 == 0 + 0 ^ 0 == 0 + 0 ^ True
+	={Arit, bool}
+	True
+
+2.
+
+	Const N: Int, A: array[0, N) of Int;
+	Var r : Int;
+	{P: N >= 0}
+	S
+	{Q: r = <Max i,j: 0<= i < j <N : |A.i - A.j|>}
+
+Calcular el resultado con A=[3, -2, 1, 0, -2] 
+
+Tenemos:
+
+	A = [3, -2, 1, 0, -2], N = 5. 
+	i, j  e {(0,1), (0,2), (0,3), (0,4)
+				(1,2), (1,3), (1,4) 
+						, (2,3), (2,4)
+								   , (3, 4)}
+								   
+	={Expansion en el termino, para cada i}
+	|A.0 - A.1| 
+	|A.0 - A.1| max |A.0 - A.2| 
+	|A.0 - A.1| max |A.0 - A.2| max |A.0 - A.3|
+	|A.0 - A.1| max |A.0 - A.2| max |A.0 - A.3| max |A.0 - A.4|max 
+	|A.1 - A.2| max 
+	|A.1 - A.2| max |A.1 - A.3|max 
+	|A.1 - A.2| max |A.1 - A.3| max |A.1 - A.4|max 
+	|A.2 - A.3| max 
+	|A.2 - A.3| max |A.2 - A.4|max 
+	|A.3 - A.4| max 
+	={arit, max de todos, evaluado uno a uno}
+	5
+
+b)
+
+	Const N: Int, A: array[0, N) of Int;
+	Var r : Int;
+	{P: N >= 0}
+	S1; 
+	{Q: r = <Max i,j: 0<= i < j <N : |A.i - A.j|>}
+
+i) Notemos que necesita recorrer un arreglo, para eso necesitamos un ciclo. Para poder demostrar un ciclo, necesito un invariante y una guarda b
+
+Para el invariante, usamos la tecnica de reemplazo de constante por variable:
+
+	Inv = r = <Max i,j: 0<= i < j < pos : |A.i - A.j|> ^ 0 <= pos <= N
+
+Y para la guarda b:
+
+	B = pos < N
+
+Quedando 
+
+	Inv ^ -b => Q Trivial
+
+Entonces, el programa tendría una estructura:
+
+	Const N: Int, A: array[0, N) of Int;
+	Var r, pos : Int;
+	{P: N >= 0}
+	S1; 
+	do pos < N ->
+		S2;
+	od
+	{Q: r = <Max i,j: 0<= i < j <N : |A.i - A.j|>}
+
+Notemos que es un programa que eligiria indices del tipo:
+
+	i, j e {(0,1), (0,2), (0,3). (1,2), (1,3), (2,3)}
+
+ii) Inicilalizacion del ciclo. Sabemos que tenemos que {p} s {inv} y hacer la wp, inicializando las variables. Propongo:
+
+	r, pos := E, F
+
+Y hago la wp
+
+	wp.s1.inv
+	={wp de :=}
+	E = <Max i,j: 0<= i < j < F: |A.i - A.j|> ^ 0 <= F <= N
+	={elijo f = 1.}
+	E = <Max i,j: 0<= i < j < 1: |A.i - A.j|> ^ 0 <= 1 <= N
+	={Logica}
+	E = <Max i,j: 0<= i < j < 1: |A.i - A.j|> ^ 0 <= 1 ^ 1 <= N
+	={Logica, abs. Logica en el rango}
+	E = <Max i,j: 0<= i < j < 1: |A.i - A.j|>
+	={logica en el rango vacio. El maximo toma el neutro xq es abs}
+	E = 0
+
+Quedando el programa con las inicializaciones:
+
+	Const N: Int, A: array[0, N) of Int;
+	Var r, pos : Int;
+	{P: N >= 0}
+	r, pos := 0, 1
+	do pos < N ->
+		S2;
+	od
+	{Q: r = <Max i,j: 0<= i < j <N : |A.i - A.j|>}
+
+iii) cuerpo del ciclo. Asumo Inv ^ B como hipotesis, sabemos que el ciclo debe avanzar, propongo:
+
+	r, pos := E, pos +1 
+
+y hago la wp
+
+	wp.s2.Inv 
+	={wp de :=}
+	E = <Max i,j: 0<= i < j < pos+1 : |A.i - A.j|> ^ 0 <= pos+1 <= N
+	={logica, hip varias}
+	E = <Max i,j: 0<=i<j<pos v (0<=i<j<pos ^ j = pos) :|A.i - A.j|> 
+	={part de rango}
+	E = <Max i,j: 0<=i<j<pos :|A.i - A.j|> max
+	 <Max i,j: (0<=i<j<pos ^ j = pos) :|A.i - A.j|> 
+	={elim de variable, hipotesis}
+	E = r max <Max i,j: 0<=i<pos<pos :|A.i - A.pos|> 
+	={logica}
+	E = r max <Max i,j: 0<=i<pos :|A.i - A.pos|> 
+	<- ojo: no fortalecer! hay problema de borde. // HOW
+	= { USO AYUDA A: | Z | = Z max (-Z) }
+	E = r max <Max i : 0 ≤ i < pos : (A.i - A.pos) max (- (A.i - A.pos))>
+	={Regla del termino} 
+	E = r max <Max i : 0 ≤ i < pos : (A.i - A.pos)> 
+	max <Max i : 0 ≤ i < pos : (- (A.i - A.pos)>
+	={aritmetica}
+	E = r max <Max i : 0 ≤ i < pos : +A.i - A.pos)> 
+	max <Max i : 0 ≤ i < pos : -A.i + A.pos)>
+	={Lógica}
+	E = r max <Max i : 0 ≤ i < pos : +A.i> 
+	max <Max i : 0 ≤ i < pos : -A.i>
+
+Fortalecimiento de invariante:
+
+	Inv' = r = <Max i,j: 0<= i < j < pos : |A.i - A.j|> 
+	^ max1 = <Max i : 0 ≤ i < pos : +A.i> ^ max2 = <Max i : 0 ≤ i < pos : -A.i>
+	^ 0 <= pos <= N
+
+pte 2)
+
+i) inicializacion, sabemos que ciclo debe inicializarse con las nuevas variables para que se cumpla en {p} s {inv}, propongo:
+
+	r,pos,max1,max2 := E, F, G, H
+
+y hago la wp
+
+	wp.s1.inv'
+	={Wp de :=}
+	E = <Max i,j: 0<= i < j < F : |A.i - A.j|> 
+	^ G = <Max i : 0 ≤ i < F : +A.i> ^ H = <Max i : 0 ≤ i < F : -A.i> 
+	^ 0 <= F <= N
+	={Elijo F = 0, para forzar rango vacio}
+	E = <Max i,j: 0<= i < j < 0 : |A.i - A.j|>  ^ 
+	G = <Max i : 0 ≤ i < 0 : +A.i> ^ H = <Max i : 0 ≤ i < 0 : -A.i> ^ 
+	0 <= 0 <= N
+	={hipotesis varias, rango vacio. Sabemos que el neutro de max en este caso es 0}
+	E = 0 ^ 
+	G = 0 ^ H = 0 ^ 
+	True
+	={elijo coso}
+	True
+
+Quedando el programa con la inicializacion:
+
+	Const N: Int, A: array[0, N) of Int;
+	Var r, pos, max1,max2: Int;
+	{P: N >= 0}
+	r,pos, max1,max2 := 0, 0, 0, 0
+	do pos < N ->
+		S2;
+	od
+	{Q: r = <Max i,j: 0<= i < j <N : |A.i - A.j|>}
+
+ii) Cuerpo del ciclo. El ciclo debe de avanzar. Supongo Inv' ^ B como hipotesis, y hago la wp.
+Propongo las variables:
+
+	r,pos,max1,max2 := E, pos+1, G, H
+
+y hago la wp.
+
+	wp.s2.inv'
+	={wp de :=}
+	E = <Max i,j: 0<= i < j < pos+1 : |A.i - A.j|> 
+	^ G = <Max i : 0 ≤ i < pos+1 : +A.i> ^ 
+	H = <Max i : 0 ≤ i < pos+1 : -A.i>
+	^ 0 <= pos+1 <= N
+	={Logica en los rangos, hip varias}
+	E = <Max i,j: (0<=i<j<pos) v (j = pos ^ 0<=i<pos) : |A.i - A.j|> 
+	^ G = <Max i : i = pos v 0 ≤ i < pos : +A.i> ^ 
+	H = <Max i : i = pos v 0 ≤ i < pos : -A.i>
+	={Part de rango varias veces}
+	E = <Max i,j: 0<=i<j<pos : |A.i - A.j|> max
+	<Max i,j: (j = pos ^ 0<=i<pos) : |A.i - A.j|> ^ 
+	G = <Max i : i = pos : +A.i> max 
+	<Max i : 0 ≤ i < pos : +A.i> ^ 
+	H = <Max i : i = pos v 0 ≤ i < pos : -A.i> max 
+	<Max i : 0 ≤ i < pos : -A.i>
+	={Elim de variable}
+	E = <Max i,j: 0<=i<j<pos : |A.i - A.j|> max 
+	<Max i,j: 0<=i<pos : |A.i - A.pos|> ^ 
+	G = A.pos max <Max i : 0 ≤ i < pos : +A.i> ^ 
+	H = -A.pos max <Max i : 0 ≤ i < pos : -A.i>
+	={Hipotesis}
+	E = r max <Max i: 0<=i<pos : |A.i - A.pos|> ^ 
+	G = A.pos max max1 ^ 
+	H = -A.pos max max2
+	={ayuda a}
+	E = r max <Max i: 0<=i<pos : (A.i - A.pos) max (-(A.i - A.pos))> ^ 
+	G = A.pos max max1 ^ 
+	H = -A.pos max max2
+	={aritmetica}
+	E = r max <Max i: 0<=i<pos : (A.i - A.pos) max (-A.i + A.pos))> ^ 
+	G = A.pos max max1 ^ 
+	H = -A.pos max max2
+	={Rango del termino}
+	E = r max <Max i: 0<=i<pos : (A.i - A.pos)> max <max: 0<=i<pos :
+	 (-A.i + A.pos))>
+	G = A.pos max max1 ^ 
+	H = -A.pos max max2
+	={Hipotesis}
+	E = r max max1 - A.pos max max2 A.pos
+	G = A.pos max max1 ^ 
+	H = -A.pos max max2
+
+Quedando:
+
+	Const N: Int, A: array[0, N) of Int;
+	Var r, pos, max1,max2: Int;
+	r, max1, max2, pos := 0, 0, 0, 0 ;
+	do pos < N → 
+	r, max1, max2, pos := 
+	r  max  ( max1 +  (-A.pos)  )   max  ( max2 + A.pos  ), 
+	max1  max A.pos, 
+	max2  max (- A.pos), 
+	pos+1
+	od
+
+(No tiene terminacion anticiapada, pues es max)
+
+![[Pasted image 20251212123016.png]]
