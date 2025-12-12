@@ -1923,3 +1923,216 @@ Quedando:
 (No tiene terminacion anticiapada, pues es max)
 
 ![[Pasted image 20251212123016.png]]
+
+
+	Const N: Int, A: array [0, N) of Int;
+	Var res: Bool;
+	{P: N >= 1}
+	S1;
+	{Q: res = <Ei: 0<= i <= N: <sum j: 0<=j<i : (j+1) * A.j> = 1>}
+
+Se fija si existe en los segmentos inicales del arreglo +1 * El numero en su posicion da igual a uno
+
+A) A = [-4, 2,4,-3] , N = 3, i e {0,1,2,3}, j e {0,1,2} (j llega hasta casi i)
+
+	i = 0
+		0 + 1 * A.0 v
+	i = 1
+		0 + 1 * A.0 + 1 + 1 * A.1 v
+	i = 2
+		0 + 1 * A.0 + 1 + 1 * A.1 + 2 + 1 * A.2 v
+	i = 3
+		0 + 1 * A.0 + 1 + 1 * A.1 + 2 + 1 * A.2 + 3 + 1 * A.3 
+	={Posiciones de arreglo, aritmetica}
+	i = 0
+		0 v
+	i = 1
+		1 * -4  + 2 * 2 v
+	i = 2
+		1 * -4  + 2 * 2 + 3 * 4 v
+	i = 3
+		1 * -4  + 2 * 2 + 3 * 4 + 4 * -3 v
+	={Aritmetica}
+	i = 0
+		0 = 1 v
+	i = 1
+		0 v
+	i = 2
+		12 v
+	i = 3
+		0 v
+	={exp bool}
+		False 
+
+
+b)
+
+	Const N: Int, A: array [0, N) of Int;
+	Var res: Bool;
+	{P: N >= 1}
+	S1;
+	{Q: r = <Ei: 0<= i <= N: <sum j: 0<=j<i : (j+1) * A.j> = 1>}
+
+i) Es un programa que itera entre posiciones de arreglo, necesito un ciclo. 
+para derivar un ciclo, necesito un invariante y una guarda, 
+
+para el invariante, uso la tecnica de cambio de constantes por variables:
+
+	Inv = r = <Ei: 0<= i <= pos: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	^ 0 <= pos <= N
+
+Para la guarda B:
+
+	B = pos < N
+
+Quedando Inv ^ -b => Q Trivial
+
+ii) Inicializacion del ciclo, tengo que hacer la terna de {p} s {inv}, tenemos que inicializar las variables que se encuentran en el invariante, propongo como incognitas:
+
+	r, pos := E, F 
+
+y hago la wp:
+
+	wp.s1.inv
+	={wp de :=}
+	E = <Ei: 0<= i <= F: <sum j: 0<=j<i : (j+1) * A.j> = 1> ^ 0 <= F <= N
+	={elijo F = 0}
+	E = <Ei: 0<= i <= 0: <sum j: 0<=j<i : (j+1) * A.j> = 1> ^ 0 <= 0 <= N
+	={logica}
+	E = <Ei: i = 0: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	={rango unitario}
+	E = <sum j: 0<=j<0 : (j+1) * A.j> = 1
+	={logica en el rango, rango vacio}
+	E = (0 = 1)
+	={logica}
+	E = False
+
+Quedando el programa con las variables, la guarda, etc:
+
+	Const N: Int, A: array [0, N) of Int;
+	Var res: Bool;
+	{P: N >= 1}
+	r, pos := false, 0;
+	do pos < N ->
+		s2; // cuerpo del ciclo
+	od
+	{Q: r = <Ei: 0<= i <= N: <sum j: 0<=j<i : (j+1) * A.j> = 1>}
+
+iii)
+Cuerpo del ciclo. Supongo Inv ^ B como hipotesis. Sabemos que el ciclo debe avanzar, propongo:
+
+	r, pos := E, pos+1
+
+y hago la wp
+
+	wp.s2.inv
+	={wp de :=}
+	E = <Ei: 0<= i <= pos+1: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	^ 0 <= pos+1 <= N
+	={Hip varias, logica en el rango}
+	E = <Ei: i = pos+1 v 0<=i<=pos: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	={part de rango}
+	E = <Ei: i = pos+1 : <sum j: 0<=j<i : (j+1) * A.j> = 1>  v 
+	<Ei: 0<=i<=pos: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	={hipotesis, rango unitario}
+	E = r v <sum j: 0<=j<pos+1 : (j+1) * A.j> = 1
+	={logica en el rango}
+	E = r v <sum j: j = pos v 0<=j<pos : (j+1) * A.j> = 1
+	={part de rango, rango unitario}
+	E = r v (pos+1) * A.pos + <sum j: 0<=j<pos : (j+1) * A.j> = 1= 1
+	={me trabo, refuerzo el inv, no puedo llegar a la HI}
+
+pte 2) 
+
+Fortalecimiento de invariante, proponogo:
+
+	inv' = inv ^ sum = <sum j: 0<=j<pos : (j+1) * A.j> ^ 0 <= pos <= N 
+
+O sea: 
+
+	Inv` = r = <Ei: 0<= i <= pos: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	^ sum = <sum j: 0<=j<pos : (j+1) * A.j> ^ 0 <= pos <= N 
+
+Quedando trivial que:
+
+	Inv' => Inv 
+
+Y tmb:
+
+	inv' ^ -b => Q
+
+i) Inicializacion del ciclo con el nuevo invariante. Para hacer {p} s {inv} se deben inicializar las variables. Propongo 
+
+	r, pos, sum := E, F, G
+
+Y hago la wp:
+
+	wp.s1.inv'
+	={wp de :=}
+	E = <Ei: 0<= i <= F: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	^ G = <sum j: 0<=j<F : (j+1) * A.j> ^ 0 <= F <= N 
+	={elijo f = 0}
+	E = <Ei: 0<= i <= 0: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	^ G = <sum j: 0<=j<0 : (j+1) * A.j> ^ 0 <= 0 <= N 
+	={logica varias veces, rango falso}
+	E = <Ei: i = 0: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	^ G = 0 
+	={rango unitario, 0 = 1 == False}
+	E = False ^ 
+	G = 0
+
+Quedando la inicializacion:
+
+	Const N: Int, A: array [0, N) of Int;
+	Var res: Bool;
+	{P: N >= 1}
+	r, pos, sum := false, 0, 0;
+	do pos < N ->
+		s2; // cuerpo del ciclo
+	od
+	{Q: r = <Ei: 0<= i <= N: <sum j: 0<=j<i : (j+1) * A.j> = 1>}
+
+
+ii) Cuerpo del ciclo, el ciclo debe avanzar. Supongo Inv' ^ b. Supongo:
+
+	r,pos, sum := E, pos+1, G
+
+y haog la wp.
+
+	wp.s2.inv'
+	={wp de :=}
+	E = <Ei: 0<= i <= pos+1: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	^ G = <sum j: 0<=j<pos+1 : (j+1) * A.j> ^ 0 <= pos+1 <= N 
+	={logica en los rangos, rangos}
+	E = <Ei: i=pos+1 v 0<=i<=pos: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	^ G = <sum j: j=pos v 0<=j<pos : (j+1) * A.j> ^ 0<= pos+1 ^ pos+1 <= N 
+	={part de rango}
+	E = <Ei: i=pos+1: <sum j: 0<=j<i : (j+1) * A.j> = 1> v 
+	<Ei: 0<=i<=pos: <sum j: 0<=j<i : (j+1) * A.j> = 1>
+	^ G = <sum j: j=pos  : (j+1) * A.j> + <sum j: 0<=j<pos : (j+1) * A.j>
+	={rango unitario, lohipotesis}
+	E = r v <sum j: 0<=j<pos+1 : (j+1) * A.j> = 1 v 
+	^ G = sum + <sum j: j=pos  : (j+1) * A.j>
+	={elim de variable, logica en el rango}
+	E = r v <sum j: j = pos v 0<=j<pos : (j+1) * A.j> = 1 v 
+	^ G = sum + (pos+1) * A.pos
+	={part de rango}
+	E = r v  (pos+1) * A.pos + 
+	<sum j: 0<=j<pos : (j+1) * A.j> = 1 
+	^ G = sum + (pos+1) * A.pos
+	={hip}
+	E = r v (pos+1) * A.pos + sum = 1 
+	^ G = sum + (pos+1) * A.pos
+	={elijoo coso programa re piola}
+
+	Const N: Int, A: array [0, N) of Int;
+	Var res: Bool;
+	{P: N >= 1}
+	r, pos, sum := false, 0, 0;
+	do pos < N ->
+		r, pos, sum := r v ((pos+1) * A.pos + sum) = 1, pos+1, 
+		sum + (pos+1) * A.pos
+	od
+	{Q: r = <Ei: 0<= i <= N: <sum j: 0<=j<i : (j+1) * A.j> = 1>}
+
+los parentesis aike !!!
