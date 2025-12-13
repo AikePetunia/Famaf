@@ -1224,7 +1224,8 @@ Cuando tengo desigualdades, del tipo:
 se sabe que quedaria un condicional, y como plantearia que queda como incondicional![[Pasted image 20251207071929.png]]
 
 Notas:
-Tener cuidado con los rangos, las particiones pueden ser muy dsitintas y pueyden dar problemas de bordes. 
+Tener cuidado con los rangos, las particiones pueden ser muy dsitintas y pueden dar problemas de bordes. 
+
 Muy probablemente un programa jamas termine teniendo en ciclo un 
 
 	A.pos+1
