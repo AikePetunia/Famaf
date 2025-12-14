@@ -2201,6 +2201,107 @@ Y hacemos la wp, suponiendo Inv' ^ Q como hipotesis1.
 	={Logica}
 	True
 
+
+Final 2022-12-05
+
+f.xs.ys = <max as, bs, cs: xs = as ++ bs ^ ys = as ++ cs: prod.as>
+
+ES un programa que encuentra el maximo producto de un segmento inicial. 
+
+i) Caso base, para xs = []
+
+	f.[].ys
+	={espeficacion}
+	<max as, bs, cs: [] = as ++ bs ^ ys = as ++ cs: prod.as>
+	={Logica de listas}
+	<max as, bs, cs: [] = as ^ [] = bs ^ ys = as ++ cs: prod.as>
+	={Elim de variable}
+	<max as, bs, cs: ys = [] ++ cs: prod.[]>
+	={Rango unitario, prod en cao base}
+	1
+
+
+ii) Planteo de hipotesis inductiva:
+
+	Hip = f.xs.ys = <max as, bs, cs: xs = as ++ bs ^ ys = as ++ cs: prod.as>
+
+iii) Paso inductivo, xs = x:xs 
+
+	f.(x:xs).ys
+	={Especificacion}
+	<max as, bs, cs: x:xs = as ++ bs ^ ys = as ++ cs: prod.as>
+	={Tercer excluido, Logica de listas}
+	<max as, bs, cs: (x:xs = as ++ bs ^ ys = as ++ cs) ^ (as =[] v as != []) 
+	: prod.as>
+	={Distributividad, part de rango}
+	<max as, bs, cs: x:xs = as ++ bs ^ ys = as ++ cs ^ as =[] : prod.as> max 
+	<max as, bs, cs: x:xs = as ++ bs ^ ys = as ++ cs ^ as !=[] : prod.as>
+	={Logica de listas, elim de variable}
+	<max as, bs, cs: x:xs = [] ++ bs ^ ys = [] ++ cs : prod.[]> max 
+	<max as, bs, cs: x:xs = a:as ++ bs ^ ys = a:as ++ cs : prod.a:as>
+	={Funcion concat, prod en caso base, logica de listas varias veces}
+	<max as, bs, cs: x:xs = bs ^ ys = cs : 1> max 
+	<max as, bs, cs: x:xs = a:as ++ bs ^ ys = a:as ++ cs : prod.a:as> 
+	={Termino de constante}
+	1 max <max as, bs, cs: x:xs = a:as ++ bs ^ ys = a:as ++ cs : prod.a:as> 
+	={Logica de listas, varios casos. ys puede ser una lista vacia o no.
+	Tengo que hacer sub induccion en ys.}
+	
+		1. p.(x:xs).(y:ys) Paso inductivo de ambos
+		1 max <max as, bs, cs: x:xs = a:as ++ bs ^ 
+		y:ys = a:as ++ cs : prod.a:as>
+		={Logica de listas varias veces} 
+		1 max <max as, bs, cs: x = a ^ xs = as ++ bs ^ y = a ^ 
+		ys = as ++ cs : prod.a:as>
+		={Elim de variable}
+		1 max <max as, bs, cs: xs = as ++ bs ^ y = a ^ 
+		ys = as ++ cs : prod.x:as>
+		={Funcion prod}
+		1 max <max as, bs, cs: xs = as ++ bs ^ y = a ^ 
+		ys = as ++ cs : x * prod.as>
+		={Varios casos:
+			1. y = a 
+			2. y != a}
+
+			3. y = a 
+			1 max <max as, bs, cs: xs = as ++ bs ^ y = a ^ 
+			ys = as ++ cs : x * prod.as>
+			={Logica, y = a }
+			1 max <max as, bs, cs: xs = as ++ bs ^ True ^ 
+			ys = as ++ cs : x * prod.as>
+			={Abs}
+			1 max <max as, bs, cs: xs = as ++ bs ^ ys = as ++ cs : x * prod.as>
+			={Me trabo, debo de generalizar. }
+
+			4. 
+			1 max <max as, bs, cs: xs = as ++ bs ^ y != a ^ 
+			ys = as ++ cs : x * prod.as>
+			={Logica, y != a}
+			1 max <max as, bs, cs: xs = as ++ bs ^ False ^ 
+			ys = as ++ cs : x * prod.as>
+			={Absorbente}
+			1 max <max as, bs, cs: False : x * prod.as>
+			={Rango vacio}
+			1 max -inf
+			={Funcion max}
+			1
+
+		2.  p.(x:xs).[] Paso inductivo de ambos
+		1 max <max as, bs, cs: x:xs = a:as ++ bs ^ 
+		[] = a:as ++ cs : prod.a:as>
+		={Logica de listas varias veces} 
+		1 max <max as, bs, cs: x = a ^ xs = as ++ bs ^ False : prod.a:as>
+		={Abs}
+		1 max -inf
+		={funcion max}
+		1
+
+	Const M: Int;
+	Var A: Array [0, M) of Int, r: Int;
+	{M > 0}
+	S
+	{r = <max i: 0 <= i <= M: <sum j: 0<=j<k: A.j> - i!>}
+
 Notas:
 "Descubrir" una descripcion mas adecuada para un final:
 
