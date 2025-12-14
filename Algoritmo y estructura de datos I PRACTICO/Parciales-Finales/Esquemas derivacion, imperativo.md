@@ -168,3 +168,10 @@ Y queda el programa finalmente con:
 	{Q}
 
 Como es el sacarse los rangos reforzados de invariante, no se si es por hipotesis. (0<=pos<=N)
+
+![[Pasted Image 20251123114735_029.png]]![[Pasted Image 20251123114601_400.png]]
+![[Pasted Image 20251123114646_803.png]]![[Pasted Image 20251206151840_945.png]]En funcional el testing SIEMPRE se hace expandiendo la definición del programa, 
+porque el programa es recursivo y se analiza estructuralmente.![[Pasted Image 20251206152052_229.png]]
+El testing imperativo NO usa el programa ni el cuerpo del ciclo. Solo se evalúa Q con los valores concretos, enumerando el rango
+
+![[Pasted Image 20251130113151_175.png]]![[Pasted Image 20251201075132_939.png]]![[Pasted Image 20251201104402_563.png]]![[Pasted Image 20251209072336_713.png]]![[Pasted Image 20251206145826_606.png]]![[Pasted Image 20251206145751_915.png]]![[Pasted Image 20251206145909_939.png]]![[Pasted Image 20251212111129_452.png]]

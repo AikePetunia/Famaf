@@ -2217,7 +2217,7 @@ i) Caso base, para xs = []
 	<max as, bs, cs: [] = as ^ [] = bs ^ ys = as ++ cs: prod.as>
 	={Elim de variable}
 	<max as, bs, cs: ys = [] ++ cs: prod.[]>
-	={Rango unitario, prod en cao base}
+	={prod en caso base, temrino de constante}
 	1
 
 
@@ -2252,41 +2252,21 @@ iii) Paso inductivo, xs = x:xs
 		y:ys = a:as ++ cs : prod.a:as>
 		={Logica de listas varias veces} 
 		1 max <max as, bs, cs: x = a ^ xs = as ++ bs ^ y = a ^ 
-		ys = as ++ cs : prod.a:as>
+		ys = as ++ cs : prod.(a:as)>
 		={Elim de variable}
-		1 max <max as, bs, cs: xs = as ++ bs ^ y = a ^ 
-		ys = as ++ cs : prod.x:as>
+		1 max <max as, bs, cs: xs = as ++ bs ^ x = y ^ 
+		ys = as ++ cs : prod.(x:as)>
 		={Funcion prod}
-		1 max <max as, bs, cs: xs = as ++ bs ^ y = a ^ 
+		1 max <max as, bs, cs: xs = as ++ bs ^ x = y ^ 
 		ys = as ++ cs : x * prod.as>
-		={Varios casos:
-			1. y = a 
-			2. y != a}
+		={Logica, elim de variable}
+		1 max <max as, bs, cs: xs = as ++ bs ^ 
+		ys = as ++ cs : x * prod.as>
+		={Abs}
+		1 max <max as, bs, cs: xs = as ++ bs ^ ys = as ++ cs : x * prod.as>
+		={Me trabo, debo de generalizar. }
 
-			3. y = a 
-			1 max <max as, bs, cs: xs = as ++ bs ^ y = a ^ 
-			ys = as ++ cs : x * prod.as>
-			={Logica, y = a }
-			1 max <max as, bs, cs: xs = as ++ bs ^ True ^ 
-			ys = as ++ cs : x * prod.as>
-			={Abs}
-			1 max <max as, bs, cs: xs = as ++ bs ^ ys = as ++ cs : x * prod.as>
-			={Me trabo, debo de generalizar. }
-
-			4. 
-			1 max <max as, bs, cs: xs = as ++ bs ^ y != a ^ 
-			ys = as ++ cs : x * prod.as>
-			={Logica, y != a}
-			1 max <max as, bs, cs: xs = as ++ bs ^ False ^ 
-			ys = as ++ cs : x * prod.as>
-			={Absorbente}
-			1 max <max as, bs, cs: False : x * prod.as>
-			={Rango vacio}
-			1 max -inf
-			={Funcion max}
-			1
-
-		2.  p.(x:xs).[] Paso inductivo de ambos
+		3.  p.(x:xs).[] Paso inductivo de ambos
 		1 max <max as, bs, cs: x:xs = a:as ++ bs ^ 
 		[] = a:as ++ cs : prod.a:as>
 		={Logica de listas varias veces} 
@@ -2296,11 +2276,322 @@ iii) Paso inductivo, xs = x:xs
 		={funcion max}
 		1
 
+
+
+GENERALIZACION: NOOOOOOOO NI AHI CON ESTE PROBLEMA MK;SHD
+
+2
+
 	Const M: Int;
 	Var A: Array [0, M) of Int, r: Int;
 	{M > 0}
-	S
-	{r = <max i: 0 <= i <= M: <sum j: 0<=j<k: A.j> - i!>}
+	S1;
+	{r = <max i: 0 <= i <= M: <sum j: 0<=j<i: A.j> - i!>}
+
+Es un programa que toma el máximo numero de la suma de todos los j - indices en factorial.
+
+i) Notemos que la postcondicion de Q, cuantifica sobre indices de arreglos, por lo tnato esta derivacion necesitará un ciclo. Para poder derivar un ciclo correctamente, necesitamos un invariante y una guarda B.
+
+Para el invariante, usamos la tecnica de reemplazo de constantes por variables.
+
+	INV = r = <max i: 0 <= i <= M: <sum j: 0<=j<i: A.j> - i!> ^ 0 <= pos <= N
+
+Y para la guarda b, sabemos que segun el rango, iterará hasta M
+
+	B = pos < M
+
+Garantizandose el requisito 
+
+	III) Inv ^ -b => Q
+
+Entonces, el programá tendra una estructura del estilo:
+
+	Const M: Int;
+	Var A: Array [0, M) of Int, r: Int;
+	{M > 0}
+	S1;
+	do pos < M ->
+		S2;
+	od
+	{r = <max i: 0 <= i <= M: <sum j: 0<=j<i: A.j> - i!>}
+
+ii) Inicializacion del programa. {P} S {Inv}
+Sabemos que el programa debe iniciarse, notemos que debemos iniciar variables para demostrar la terna, cual en la inicializacion debemos iniciarlas. Propongo de incognitas:
+
+	r, pos := E, F
+
+y hago la wp.
+
+	wp.s1.inv
+	={wp de :=}
+	E = <max i: 0 <= i <= F: <sum j: 0<=j<i: A.j> - i!> ^ 0 <= F <= N
+	={Elijo F = 0}
+	E = <max i: 0 <= i <= 1: <sum j: 0<=j<i: A.j> - i!> ^ 0 <= 0 <= N
+	={Logica en el rango, logica}
+	E = <max i: i = 0: <sum j: 0<=j<i: A.j> - i!> 
+	={Rango unitario}
+	E = <sum j: 0<=j<0: A.j> - 0!
+	={Logica, rango falso}
+	E = 0 - 0!
+	={Aritmetica !}
+	E = 1
+
+Quedando el programa de momento con las inicializaciones: 
+
+	Const M: Int;
+	Var A: Array [0, M) of Int, r: Int;
+	{M > 0}
+	r, pos := -1, 0;
+	do pos < M ->
+		S2;
+	od
+	{r = <max i: 0 <= i <= M: <sum j: 0<=j<i: A.j> - i!>}
+
+iii) Cuerpo del ciclo (s2). {Inv ^ B } 
+El ciclo debe iterar, sabemos que el programa indices, y la postcondicion opera con los mismos. Como se debe avanzar las posiciones y por intuicion, propongo las variables:
+
+	res, pos := E, pos+1
+
+Y hago la wp:
+
+	wp.s2.inv
+	={Wp de :=}
+	E = <max i: 0 <= i <= pos+1: <sum j: 0<=j<i: A.j> - i!> ^ 0 <= pos+1 <= N
+	={Lógica en el rango, lógica}
+	E = <max i: i=pos+1 v 0<=i<=pos: <sum j: 0<=j<i: A.j> - i!> 
+	^ 0 <= pos+1 ^ pos+1  <= N
+	={part de rango, hip varias}
+	E = <max i: i=pos+1 : <sum j: 0<=j<i: A.j> - i!> max 
+	<max i: 0<=i<=pos: <sum j: 0<=j<i: A.j> - i!>
+	={Rango unitario, hipotesis}
+	E = r max <sum j: 0<=j<pos+1: A.j> - pos+1!> max 
+	={Lógica}
+	E = r max <sum j: j = pos v 0<=j<pos A.j> - pos+1!
+	={part de rango}
+	E = r max (<sum j: j = pos: A.j> + 
+	<sum j:  0<=j<pos A.j>) - pos+1!
+	={elim de variable}
+	E = r max (A.pos + <sum j:  0<=j<pos A.j>) - pos+1!
+	={Me trabo, llegué a algo que no es hipotesis. Debo de Fortalecer la hipotesis.}
+
+Parte 2)
+
+Nueva hipotesis:
+
+	Inv' = Inv ^ sum = <sum j:  0<=j<pos A.j> ^ fac = pos! ^ 0 <= pos <= N 
+
+O sea:
+
+	Inv' = r = <max i: 0 <= i <= M: <sum j: 0<=j<i: A.j> - i!> ^
+	sum = <sum j:  0<=j<pos : A.j> ^ fac = pos! ^ 0 <= pos <= N 
+
+Trivialmente:
+
+	Inv' => Inv
+
+y por lo tanto:
+
+	Inv' ^ -B => Q
+
+i) Inicializacion del ciclo. {p} s {inv}
+Con la nueva invariante, implica tener nuevas variables requeridas para la inicializacion. Propongo:
+
+	r,pos,sum,fac := E, F, G, H
+
+y hago la wp:
+
+	wp.s1.inv'
+	={wp de :=}
+	E = <max i: 0 <= i <= F: <sum j: 0<=j<i: A.j> - i!> ^
+	G = <sum j:  0<=j<F:A.j> ^ H = F! ^ 0 <= F <= N 
+	={Elijo F = 0}
+	E = <max i: 0 <= i <= 0: <sum j: 0<=j<i: A.j> - i!> ^
+	G = <sum j: 0<=j<0 : A.j> ^ H = 0! ^ 0 <= 0 <= N 
+	={Logica varias veces}
+	E = <max i: i = 0: <sum j: 0<=j<i: A.j> - i!> ^
+	G = <sum j: False : A.j> ^ H = 1 
+	={Rango unitario, rango vacio}
+	E = <sum j: 0<=j<0: A.j> - 0! ^
+	G = 0 ^ H = 1 
+	={Rango falso, aritmetica}
+	E = 0 - 1 ^
+	G = 0 ^ H = 1 
+	={Aritmetica de nuevo}
+	E = -1 ^
+	G = 0 ^ H = 1 
+
+Entonces, con las inicializaciones el programa va quedando:
+
+	Const M: Int;
+	Var A: Array [0, M) of Int, r: Int;
+	{M > 0}
+	r, pos, sum, fac := -1, 0, 0, 1;
+	do pos < M ->
+		S2;
+	od
+	{r = <max i: 0 <= i <= M: <sum j: 0<=j<i: A.j> - i!>}
+
+ii) Cuerpo del ciclo. {Inv ^ B } S {Inv}
+Sabemos que el ciclo opera con indices al igual que la post condicion.  Lógicamente, como se debe avanzar entre posiciones, propongo las variables:
+
+	r, pos, sum, fac := E, pos+1, G, H
+
+Supongo Inv' ^ B como hipotesis
+
+y hago la wp:
+
+	wp.s2.inv
+	={wp de :=}
+	E = <max i: 0 <= i <= pos+1: <sum j: 0<=j<i: A.j> - i!> ^
+	sum = <sum j:  0<=j<pos+1 : A.j> ^ fac = (pos+1)! ^ 0 <= pos+1 <= N 
+	={hip varias, absorbente. lógica en los rangos. aritmetica}
+	E = <max i: i=pos+1 v 0<=i<=pos: <sum j: 0<=j<i: A.j> - i!> ^
+	sum = <sum j: j=pos v 0<=j<pos : A.j> ^ fac = (pos+1) * pos! 
+	={Particion de rango, hipotesis}
+	E = <max i: i=pos+1 : <sum j: 0<=j<i: A.j> - i!> max 
+	<max i: 0<=i<=pos: <sum j: 0<=j<i: A.j> - i!> ^
+	sum = <sum j: j=pos : A.j> + <sum j: 0<=j<pos :A.j> 
+	^ fac = (pos+1) * pos!
+	={Rango unitario, elim de variable, hipotesis}
+	E = <sum j: 0<=j<pos+1: A.j> - pos+1! max r ^
+	sum = A.pos + sum ^ 
+	fac = (pos+1) * fac
+	={logica en el rango}
+	E = <sum j:j = pos v 0<=j<pos: A.j> - pos+1! max r ^
+	sum = A.pos + sum ^ 
+	fac = (pos+1) * fac
+	={part de rango}
+	E = <sum j:j = pos: A.j> + <sum j: 0<=j<pos : A.j> - pos+1! max r ^
+	sum = A.pos + sum ^ 
+	fac = (pos+1) * fac
+	={elim de variable, hipotesis}
+	E = A.pos + sum - pos+1! max r ^
+	sum = A.pos + sum ^ 
+	fac = (pos+1) * fac
+	={Aritmetica, hipotesis}
+	E = (A.pos + sum - (pos+1) * fac) max r ^
+	sum = A.pos + sum ^ 
+	fac = (pos+1) * fac
+
+Quedando el programa con las asignaciones:
+
+	Const M: Int;
+	Var A: Array [0, M) of Int, r: Int;
+	{M > 0}
+	r, pos, sum, fac := -1, 0, 0, 1;
+	do pos < M ->
+		r, pos, sum, fac := (A.pos + sum - (pos+1) * fac) max r,
+		pos+1, A.pos + sum, (pos+1) * fac
+	od
+	{r = <max i: 0 <= i <= M: <sum j: 0<=j<i: A.j> - i!>}
+
+No tiene terminacion anticipada.
+
+Funcion de cota. 
+Todo ciclo debe de iterar una cantidad de veces para que termine, y para demostrar que si termina, tenemos que encontrar una funcion de cota, para este caso:
+
+	t = N - Pos
+
+y tiene que cumplir 2 requisitos:
+
+	iv.a) Inv ^ B => t >= 0 (No negatividad)
+
+y demuestro que:
+
+	t >= 0
+	={Def de t}
+	N - pos >= 0
+	={aritmetica}
+	N >= pos
+
+	iv.b) {Inv ^ B ^ t = T} S {t < T} (Decrece en cada iteración)
+
+Asumo T como hipotesis.
+y hago la wp:
+
+	wp.s.(t < T) 
+	={def de wp, solo pongo el s que me sirve}
+	(pos := pos+1).(t < T)
+	={def de t}
+	(pos := pos+1).(N - Pos < T)
+	={wp de :=}
+	(N - (Pos+1) < T)
+	={artiemtica}
+	(N -pos-1< N - pos)
+	={artiemtica}
+	-1 < 0
+	={logica}
+	true
+
+Si decrece.
+
+
+busca si tenes los cosso de ntoacion
+
+a)
+
+	{r = <max i: 0 <= i <= M: <sum j: 0<=j<i: A.j> - i!>}
+
+A = [3, -1, 1, -1], M = 4, i e {0,1,2,3,4}, j e {0,1,2}
+
+	i = 0, j = FALSE
+	<sum j: 0<=j<0: A.j> - 0! +
+	i = 1, j = 0
+	<sum j: 0<=j<0: A.j> - 0! +
+	<sum j: 0<= j < 1 : A.j> - 1! 
+	i = 2, j = 1
+	<sum j: 0<= j < 0 : A.j> - 0! + 
+	<sum j: 0<= j < 1 : A.j> - 1!
+	<sum j: 0<= j < 1 : A.j> - 2!
+	i = 3, j = 2
+	<sum j: 0<= j < 0 : A.j> - 0! + 
+	<sum j: 0<= j < 1 : A.j> - 1! + 
+	<sum j: 0<= j < 2 : A.j> - 2! +
+	<sum j: 0<= j < 3 : A.j> - 3!
+	i = 4, j = 3
+	<sum j: 0<= j < 0 : A.j> - 0! + 
+	<sum j: 0<= j < 1 : A.j> - 1! + 
+	<sum j: 0<= j < 2 : A.j> - 2! +
+	<sum j: 0<= j < 3 : A.j> - 3! +
+	<sum j: 0<= j < 4 : A.j> - 4!
+	={Valores de indices, fac}
+	i = 0, j = FALSE
+	0 - 1 
+	i = 1, j = 0
+	0 - 1  +
+	3 - 1
+	i = 2, j = 1
+	0 - 1  +
+	3 - 1 
+	-1 - 2
+	i = 3, j = 2
+	0 - 1  +
+	3 - 1 
+	-1 - 2
+	1 - 6
+	i = 4, j = 3
+	0 - 1  +
+	3 - 1 
+	-1 - 2
+	1 - 6
+	-1 - 24
+	={Aritmetica}
+	i = 0, j = FALSE
+	-1 MAX
+	i = 1, j = 0
+	2 MAX
+	i = 2, j = 1
+	0 MAX
+	i = 3, j = 2
+	-3 MAX
+	i = 4, j = 3
+	-22 MAX
+	={Funcion max}
+	2
+
+
+TODO testing:
+
 
 Notas:
 "Descubrir" una descripcion mas adecuada para un final:
