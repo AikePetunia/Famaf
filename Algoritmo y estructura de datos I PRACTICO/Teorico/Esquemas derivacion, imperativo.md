@@ -152,7 +152,8 @@ Suponemos dos hipotesis como verdaderas para demostrar la terminacion anticipada
 Y demostramos que si sale, Inv ^ -r => Q:
 
 	Q
-	={def de q. Lo que se hara es buscar la hipotesis y algun rango raro del refuerzo del inv}
+	={def de q. Lo que se hara es buscar la hipotesis y 
+	algun rango raro del refuerzo del inv}
 
 ![[Pasted image 20251213091606.png]]
 
@@ -167,11 +168,39 @@ Y queda el programa finalmente con:
 	od
 	{Q}
 
-Como es el sacarse los rangos reforzados de invariante, no se si es por hipotesis. (0<=pos<=N)
+Como es el sacarse los rangos reforzados de invariante, no se si es por hipotesis. (0<=pos<=N).
 
+
+Recordemos que cuando tenemos algo como un factorial o potencia, este se **reexpresa de forma inductiva**, porque eso es lo que permite el mantenimiento del invariante.
+
+Ej:
+En la hipotesis, factorial aparece como:
+
+	fac := pos!
+
+Cuando derivamos y finalmente tenemos un programa, queda como:
+
+	fac := (pos+1) * pos!
+
+Que quedaria bien si usamos la hipotesis, o sea:
+
+	fac := (pos+1) * fac
+
+Para una potencia:
+
+![[Pasted image 20251215102722.png]]
+
+![[Pasted image 20251215102753.png]]
+
+![[Pasted Image 20251211072253_432.png]]
+Tampoco está mal poner un -inf. Fijarse que pide el enunciado. 
+Quizá, te puede convenir más un rango unitario antes que un rango vacio (fijarse)
 ![[Pasted Image 20251123114735_029.png]]![[Pasted Image 20251123114601_400.png]]
 ![[Pasted Image 20251123114646_803.png]]![[Pasted Image 20251206151840_945.png]]En funcional el testing SIEMPRE se hace expandiendo la definición del programa, 
 porque el programa es recursivo y se analiza estructuralmente.![[Pasted Image 20251206152052_229.png]]
 El testing imperativo NO usa el programa ni el cuerpo del ciclo. Solo se evalúa Q con los valores concretos, enumerando el rango
+![[Pasted Image 20251212101515_833.png]]
 
-![[Pasted Image 20251130113151_175.png]]![[Pasted Image 20251201075132_939.png]]![[Pasted Image 20251201104402_563.png]]![[Pasted Image 20251209072336_713.png]]![[Pasted Image 20251206145826_606.png]]![[Pasted Image 20251206145751_915.png]]![[Pasted Image 20251206145909_939.png]]![[Pasted Image 20251212111129_452.png]]
+![[Pasted Image 20251130113151_175.png]]![[Pasted Image 20251201075132_939.png]]![[Pasted Image 20251201104402_563.png]]
+![[Pasted image 20251215111407.png]]![[Pasted Image 20251209072336_713.png]]![[Pasted Image 20251206145826_606.png]]![[Pasted Image 20251206145751_915.png]]![[Pasted Image 20251206145909_939.png]]![[Pasted Image 20251212111129_452.png]]
+![[Pasted image 20251215095948.png]]![[Pasted image 20251215095955.png]]
