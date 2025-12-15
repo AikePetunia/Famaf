@@ -6,7 +6,6 @@
       {
         "id": "91893d6109381e96",
         "type": "tabs",
-        "dimension": 42.17784117926771,
         "children": [
           {
             "id": "055b2b6adc7e821d",
@@ -66,90 +65,6 @@
           }
         ],
         "currentTab": 3
-      },
-      {
-        "id": "ea485e1ea6c19c79",
-        "type": "tabs",
-        "dimension": 57.822158820732284,
-        "children": [
-          {
-            "id": "4c711c71e545654c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/listas.pdf",
-                "page": 1,
-                "left": -309,
-                "top": 845,
-                "zoom": 0.898322794804427
-              },
-              "icon": "lucide-file-text",
-              "title": "listas"
-            }
-          },
-          {
-            "id": "8cbb8b6f2190ccbf",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Manual  de derivación de programas.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Manual  de derivación de programas"
-            }
-          },
-          {
-            "id": "94fba05e1f734a58",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Derivación de Programas (notas de clase).pdf",
-                "page": 186,
-                "left": -20,
-                "top": 5,
-                "zoom": 1.7
-              },
-              "icon": "lucide-file-text",
-              "title": "Derivación de Programas (notas de clase)"
-            }
-          },
-          {
-            "id": "41eac86c95b366b2",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/consejos_funcional.pdf",
-                "page": 2,
-                "left": -4,
-                "top": 24,
-                "zoom": 1.6
-              },
-              "icon": "lucide-file-text",
-              "title": "consejos_funcional"
-            }
-          },
-          {
-            "id": "a58a14572e5e097b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/imperativo.pdf",
-                "page": 1,
-                "left": -81,
-                "top": 267,
-                "zoom": 1.1364476310148572
-              },
-              "icon": "lucide-file-text",
-              "title": "imperativo"
-            }
-          }
-        ],
-        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -271,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Manual  de derivación de programas.md",
+                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Esquemas derivacion, imperativo.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Manual  de derivación de programas"
+              "title": "Outline of Esquemas derivacion, imperativo"
             }
           }
         ]
@@ -302,12 +217,13 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "8cbb8b6f2190ccbf",
+  "active": "4b3bca305f7bd87a",
   "lastOpenFiles": [
+    "Pasted Image 20251201104402_563.png",
     "Algoritmo y estructura de datos I PRACTICO/Teorico/Esquemas derivacion, imperativo.md",
+    "Algoritmo y estructura de datos I PRACTICO/Teorico/Manual  de derivación de programas.md",
     "Pasted image 20251215111407.png",
     "Pasted Image 20251215111403_297.png",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Manual  de derivación de programas.md",
     "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales.md",
     "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parciales 2024.md",
     "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/parciales 2023.md",

@@ -168,8 +168,11 @@ Y queda el programa finalmente con:
 	od
 	{Q}
 
-Como es el sacarse los rangos reforzados de invariante, no se si es por hipotesis. (0<=pos<=N).
+Sacarse en las derivaciones el rango:
 
+0<= pos <= N, cuando pos = 0, o 1, es por aritmetica + logica.
+
+0<=pos+1<=N, cuando pos := pos+1, es por hipotesis Inv ^ B
 
 Recordemos que cuando tenemos algo como un factorial o potencia, este se **reexpresa de forma inductiva**, porque eso es lo que permite el mantenimiento del invariante.
 
