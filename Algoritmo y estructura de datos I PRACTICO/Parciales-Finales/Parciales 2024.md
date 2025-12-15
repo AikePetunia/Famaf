@@ -17,7 +17,6 @@ ii) Planteo de hipotesis inductiva.
 
 	HI = f(xs) = <sum i: 0<=i<#xs : (#xs-i) * xs!i> 
 
-
 iii) Paso inductivo, digo que vale para toda lista x:xs y demuestro
 
 	f.(x:xs)
@@ -26,7 +25,7 @@ iii) Paso inductivo, digo que vale para toda lista x:xs y demuestro
 	={def de # }
 	 <sum i: 0<=i<#xs + 1 : (#(x:xs)-i) * (x:xs)!i>
 	={lógica en el rango}
-	<sum i: i = 0 v 1 <= i < #xs : (#(x:xs)-i) * (x:xs)!i>
+	<sum i: i = 0 v 1 <= i < #xs + 1: (#(x:xs)-i) * (x:xs)!i>
 	={part de rango, rango unitario}
 	(#(x:xs)-0) * (x:xs)!0 + 
 	<sum i:  1 <= i < #xs+1  : (#(x:xs)-i) * (x:xs)!i>
