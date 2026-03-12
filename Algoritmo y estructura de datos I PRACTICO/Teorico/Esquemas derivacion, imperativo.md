@@ -27,16 +27,18 @@ Y escribir como quedaria el programa:
 	{Q}
 
 ii) Inicializacion del ciclo. {P} S {Inv}
-notemos que necesitamos inicializar variables para demostrar la terna, para el caso, propongo variables:
+Notemos que necesitamos inicializar variables para demostrar la terna, para el caso, propongo variables:
 
 	r,pos := E, F 
 
 Supongo P como hipotesis, y hago la wp de la inicializacion:
 
 	wp.s1.Inv
+	={wp de := ...}
 
 iii) Cuerpo del ciclo {Inv ^ B} S {Inv}. 
-Sabemos que si maneja indices y la postcondcion opera con los mismos, se debe de iterar en el ciclo. Como debe de avanzar las posiciones y por intuicion del mismo, propongo:
+Sabemos que el programa maneja indices y la postcondcion opera con los mismos, por lo tanto, se debe iterar en el ciclo. 
+Como debe de avanzar las posiciones y por intuicion del mismo, propongo:
 
 	res, pos := E, pos+1
 
@@ -45,7 +47,8 @@ Suponemos Inv ^ B como hipotesis, y hacemos la wp.
 	wp.s2.inv...
 	={pasos varios}
 	...
-	={me trabo, la hipotesis que tengo no es suficiente para la derivacion y debo de fortalecer.}
+	={me trabo, la hipotesis que tengo no es suficiente 
+	para la derivacion y debo de fortalecer.}
 
 2)
 i)Debo de fortalecer el invariante, y por lo tanto re-derivar las partes del programa. Propongo para el invariante:
@@ -54,7 +57,7 @@ i)Debo de fortalecer el invariante, y por lo tanto re-derivar las partes del pro
 
 O tambien:
 
-	Inv' = {valor de invariante}
+	Inv' = {valor de invariante} + nuevas variables para el invariante
 
 Como se menciono antes, en consecuencia:
 
@@ -69,7 +72,7 @@ Se mantiene.
 iii) Inicializacion del ciclo. {P} S {Inv'}
 notemos que necesitamos inicializar variables para demostrar la terna, para el caso, propongo variables:
 
-	r,pos, aux, ... := E, F, G
+	r,pos, aux, ... := E, F, G, ...
 
 Supongo P como hipotesis, y hago la wp de la inicializacion:
 
@@ -118,9 +121,9 @@ supongo Inv ^ b como hipotesis, y demuestro:
 
 Y demostrar que decrece en cada iteracion, suponiendo como hipotesis Inv ^ b ^ t = T
 
-(aca s seria lo q tenemos en el cuerpo del ciclo, pero escribire la variable que se usa en t, que seria pos)
+(aca usaria la sentencia que tengo en el cuerpo del ciclo, pero en este caso, escribo solo la variable que se usa en t, que seria pos)
 
-	iv.b) { Inv ^ B ^ t = T} s { t < T }
+	iv.b) {Inv ^ B ^ t = T} s { t < T }
 
 y hacemos la wp:
 
@@ -151,10 +154,6 @@ Suponemos dos hipotesis como verdaderas para demostrar la terminacion anticipada
 
 Y demostramos que si sale, Inv ^ -r => Q:
 
-	Q
-	={def de q. Lo que se hara es buscar la hipotesis y 
-	algun rango raro del refuerzo del inv}
-
 ![[Pasted image 20251213091606.png]]
 
 Y queda el programa finalmente con:
@@ -174,10 +173,10 @@ Sacarse en las derivaciones el rango:
 
 0<=pos+1<=N, cuando pos := pos+1, es por hipotesis Inv ^ B
 
-Recordemos que cuando tenemos algo como un factorial o potencia, este se **reexpresa de forma inductiva**, porque eso es lo que permite el mantenimiento del invariante.
+Recordemos que cuando tenemos algo como un factorial o potencia, este se **re-expresa de forma inductiva**, porque eso es lo que permite el mantenimiento del invariante.
 
 Ej:
-En la hipotesis, factorial aparece como:
+En el invariante, el factorial aparece como:
 
 	fac := pos!
 
