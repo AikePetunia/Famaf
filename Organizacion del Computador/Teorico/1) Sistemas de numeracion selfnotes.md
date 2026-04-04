@@ -10,7 +10,7 @@ tags: [excalidraw]
 # Excalidraw Data
 
 ## Text Elements
-[[1) Sistemas de numeracion.pdf]] ^ZuauEZ4f
+[[1) Sistemas de numeracion (P).pdf]] ^ZuauEZ4f
 
 Para pasar de Hexadecimal a Binario y de Binario a Hexadecimal.
 Las notaciones para esto pueden ser:

@@ -1,136 +1,141 @@
 {
   "main": {
-    "id": "568d61dd87c857d5",
+    "id": "24b11af5062f65aa",
     "type": "split",
     "children": [
       {
-        "id": "6fa85e6ca8799568",
+        "id": "365c63c12c0f417b",
         "type": "tabs",
+        "dimension": 65.88375796178345,
         "children": [
           {
-<<<<<<< HEAD
-            "id": "fda1dfef97b962b3",
-=======
-            "id": "4b3bca305f7bd87a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Esquemas derivacion, imperativo.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Esquemas derivacion, imperativo"
-            }
-          },
-          {
-            "id": "9fcca5c0de058496",
+            "id": "6184f3ea7b36f87d",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Manual  de derivación de programas.md"
+                "file": "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Manual  de derivación de programas"
+              "title": "3) Logica combinacional y circuitos combinacioanles selfnotes"
             }
           },
           {
-            "id": "a5c9f59075b6af0e",
+            "id": "a4c8f9d151e7cb5d",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/imperativo.pdf",
+                "file": "Organizacion del Computador/Teorico/4) DireccionamientoMemorias (P).pdf",
                 "page": 1,
-                "left": -8,
-                "top": 34,
-                "zoom": 2.0209113083678836
+                "left": -256,
+                "top": 372,
+                "zoom": 1
               },
               "icon": "lucide-file-text",
-              "title": "imperativo"
+              "title": "4) DireccionamientoMemorias (P)"
             }
           },
           {
-            "id": "055b2b6adc7e821d",
->>>>>>> refs/remotes/origin/master
+            "id": "0820b880755eb906",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Organizacion del Computador/Teorico/1) Sistemas de numeracion.pdf",
-                "page": 6,
-                "left": -14,
-                "top": 33,
-                "zoom": 1.0416666666666667
+                "file": "Organizacion del Computador/Teorico/4) DireccionamientoMemorias (T).pdf",
+                "page": 54,
+                "left": -256,
+                "top": 121,
+                "zoom": 1
               },
               "icon": "lucide-file-text",
-              "title": "1) Sistemas de numeracion"
+              "title": "4) DireccionamientoMemorias (T)"
             }
           },
           {
-            "id": "812c358ad509abe1",
+            "id": "db41b420ae950dd0",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md"
+                "file": "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md"
               },
-<<<<<<< HEAD
               "icon": "excalidraw-icon",
-              "title": "1) Sistemas de numeracion selfnotes"
+              "title": "4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes"
             }
           }
         ],
-        "currentTab": 1
-=======
-              "icon": "lucide-file",
-              "title": "parciales 2023"
+        "currentTab": 3
+      },
+      {
+        "id": "5b6c2d241beabc65",
+        "type": "tabs",
+        "dimension": 34.11624203821656,
+        "children": [
+          {
+            "id": "5e3fe45b7163b334",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
+                "page": 5,
+                "left": -44,
+                "top": 655,
+                "zoom": 0.9286912751677854
+              },
+              "icon": "lucide-file-text",
+              "title": "TP3 Lógica Combinacional"
             }
           },
           {
-            "id": "471e60f0d76cf16e",
+            "id": "c4cbc05facb8055f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parciales 2024.md",
-                "mode": "source",
-                "source": false
+                "file": "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
+                "page": 1,
+                "left": 46,
+                "top": 846,
+                "zoom": 1.2
               },
-              "icon": "lucide-file",
-              "title": "Parciales 2024"
+              "icon": "lucide-file-text",
+              "title": "TP4 Direccionamiento y decodificación de memorias"
             }
           },
           {
-            "id": "41b2d07c240eb5fd",
+            "id": "589688bdd499a709",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "pdf",
               "state": {
-                "file": "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final2-2024 DONE.jpeg"
+                "file": "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+                "page": 270,
+                "left": 40,
+                "top": 299,
+                "zoom": 1.3
               },
-              "icon": "lucide-image",
-              "title": "Final2-2024 DONE"
+              "icon": "lucide-file-text",
+              "title": "Diseño digital, 3ra Edición - M. Morris Mano.ORG"
             }
           }
-        ]
->>>>>>> refs/remotes/origin/master
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "a684017a98ade503",
+    "id": "c5297325a80f8b7a",
     "type": "split",
     "children": [
       {
-        "id": "83b58aa179053ce0",
+        "id": "a88d124e2baab0ed",
         "type": "tabs",
         "children": [
           {
-            "id": "94089116a993427c",
+            "id": "08aa564aa91d1d2b",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -143,12 +148,12 @@
             }
           },
           {
-            "id": "d904042affc5aa9c",
+            "id": "2a97b815cfdeb945",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#bs",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -160,7 +165,7 @@
             }
           },
           {
-            "id": "4d7776908bad288a",
+            "id": "03ca293af6df4863",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -173,23 +178,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 408.5
+    "width": 300,
+    "collapsed": true
   },
   "right": {
-    "id": "63e95ed94c86806f",
+    "id": "5d729815bc1b3eae",
     "type": "split",
     "children": [
       {
-        "id": "4b636bc9666e22d3",
+        "id": "c55ad58cd98a0fdd",
         "type": "tabs",
         "children": [
           {
-            "id": "57472e391ee96118",
+            "id": "9a2d3da5d4e87646",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
+                "file": "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -199,25 +205,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Welcome"
+              "title": "Backlinks for TP3 Lógica Combinacional"
             }
           },
           {
-            "id": "66c5e42163b30ac8",
+            "id": "beaead06c2b352fe",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
+                "file": "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Welcome"
+              "title": "Outgoing links from TP3 Lógica Combinacional"
             }
           },
           {
-            "id": "6a08c827a43589e8",
+            "id": "d44d6a63f65a4e1e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -232,18 +238,18 @@
             }
           },
           {
-            "id": "85266799f9318429",
+            "id": "b95b5980ac8cf80e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+                "file": "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1) Sistemas de numeracion selfnotes"
+              "title": "Outline of 4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes"
             }
           }
         ]
@@ -255,93 +261,45 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
+      "bases:Create new base": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "812c358ad509abe1",
+  "active": "db41b420ae950dd0",
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "Organizacion del Computador/Practico/TP1 - Sistemas de Numeración (2025 or 2026).pdf",
-    "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
-    "Organizacion del Computador/Teorico/1) Sistemas de numeracion.pdf",
-    "Organizacion del Computador/Parcial 1/Parcial 1 2024-04-24 (Tema B).pdf",
-    "Organizacion del Computador/Parcial 1/repaso parcial 2.md",
-    "Organizacion del Computador/Parcial 1/Repaso parcial.md",
-    "Organizacion del Computador/Teorico/2) Algebra Booleana.pdf",
-    "Organizacion del Computador/Teorico/Final (3)(2).png",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales.md",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/parciales 2023.md",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parciales 2024.md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Esquemas derivacion, imperativo.md",
-    "Pasted Image 20251201104402_563.png",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Manual  de derivación de programas.md",
-    "Pasted image 20251215111407.png",
-    "Pasted Image 20251215111403_297.png",
-    "Pasted image 20251215102753.png",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Derivación de Programas (notas de clase).pdf",
-    "Pasted image 20251215102722.png",
-    "Pasted Image 20251215100008_343.png",
-    "Pasted image 20251215095955.png",
-    "Pasted image 20251215095948.png",
-    "Pasted Image 20251215095942_540.png",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/listas.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/imperativo.pdf",
-=======
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/imperativo.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Manual  de derivación de programas.md",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Parciales 2024.md",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/parciales 2023.md",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final2-2024 DONE.jpeg",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2024-12-03 DONE.jpg",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2022-02-23.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2022-07-05.jpg",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2022-07-27.jpg",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2022-08-10.jpg",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2022-12-05.jpg",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2023-12-05 DONE.jpg",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2024-07-03 DONE.jpg",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/CLASE, pre-final/2021-12-01 Consulta.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/practico4.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales.md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Esquemas derivacion, imperativo.md",
-    "Pasted Image 20251201104402_563.png",
-    "Pasted image 20251215111407.png",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Derivación de Programas (notas de clase).pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/listas.pdf",
->>>>>>> refs/remotes/origin/master
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/digesto-cuantificadores.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Digestos/consejos_funcional.pdf",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/CLASE, pre-final/2021-12-14 Consulta.pdf",
-    "Untitled 3.md",
-<<<<<<< HEAD
-=======
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/Finales/Final 2014-12-03.pdf",
->>>>>>> refs/remotes/origin/master
-    "Algoritmo y estructura de datos I PRACTICO/Practico/practico4sol 2.md",
-    "Algoritmo y estructura de datos I PRACTICO/Parciales-Finales/2do parcial turno tarde 2024.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/practico4 sol.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/practico3 sol.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/practico4 sol.c.md",
-    "Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/practico2 sol.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/practico1 sol.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/2024 2c, 2025 1c/Practico 2/practico2 recursado sol.md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del Practico 1.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/CLASE, pre-final/partico2 sol (p2).md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Equivalencias De Igualdad.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/2024 2c, 2025 1c/Practico 1/practico1 recursado sol.md",
-    "Algoritmo y estructura de datos I PRACTICO/Teorico/Teorico del practico 2.md",
-    "Algoritmo y estructura de datos I PRACTICO/Practico/2024 2c, 2025 1c/Practico sol 2024/Practico 1 sol (1-19).md"
+    "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
+    "Pasted Image 20260404091518_750.png",
+    "Pasted Image 20260404091411_838.png",
+    "Pasted Image 20260404091311_713.png",
+    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
+    "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
+    "Pasted Image 20260404085330_326.png",
+    "Pasted Image 20260404081740_772.png",
+    "Organizacion del Computador/Teorico/4) DireccionamientoMemorias (T).pdf",
+    "Organizacion del Computador/Teorico/4) DireccionamientoMemorias (P).pdf",
+    "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
+    "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (T).pdf",
+    "Organizacion del Computador/Teorico/7) Chapter_04 (P).pdf",
+    "Organizacion del Computador/Teorico/6) Legv8 (P).pdf",
+    "Organizacion del Computador/Teorico/5) Registros y secuenciales.md",
+    "Organizacion del Computador/Teorico/5) algo no se qk.pdf",
+    "Pasted Image 20260404073710_248.png",
+    "Pasted Image 20260404073401_901.png",
+    "Pasted Image 20260404072528_233.png",
+    "Pasted Image 20260404072347_496.png",
+    "Pasted Image 20260404072158_020.png",
+    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "Organizacion del Computador/Teorico/2) Algebra Booleana (T).pdf",
+    "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md"
   ]
 }
