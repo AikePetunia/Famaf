@@ -9,19 +9,19 @@
         "dimension": 65.88375796178345,
         "children": [
           {
-            "id": "a4c8f9d151e7cb5d",
+            "id": "5451b5fd74637086",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Organizacion del Computador/Teorico/5.0) Registros (P).pdf",
-                "page": 25,
+                "file": "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
+                "page": 2,
                 "left": -9,
-                "top": 152,
+                "top": 290,
                 "zoom": 1.6697916666666668
               },
               "icon": "lucide-file-text",
-              "title": "5.0) Registros (P)"
+              "title": "5.2) Circuitos secuenciales con reloj (P)"
             }
           },
           {
@@ -30,18 +30,18 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Organizacion del Computador/Teorico/5.1) Lógica secuencial sincronica (T).pdf",
-                "page": 1,
-                "left": -9,
-                "top": 544,
-                "zoom": 1.6697916666666666
+                "file": "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
+                "page": 7,
+                "left": -256,
+                "top": 377,
+                "zoom": 1
               },
               "icon": "lucide-file-text",
-              "title": "5.1) Lógica secuencial sincronica (T)"
+              "title": "5) Lógica secuencial sincronica (T)"
             }
           },
           {
-            "id": "a418b7e29ef692e1",
+            "id": "fa88e4302fcce28c",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -67,9 +67,9 @@
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
-                "page": 5,
-                "left": -12,
-                "top": 530,
+                "page": 4,
+                "left": -54,
+                "top": 485,
                 "zoom": 0.9
               },
               "icon": "lucide-file-text",
@@ -83,10 +83,10 @@
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
-                "page": 1,
+                "page": 2,
                 "left": -15,
-                "top": 846,
-                "zoom": 1.0130033557046982
+                "top": 806,
+                "zoom": 1.013003355704698
               },
               "icon": "lucide-file-text",
               "title": "TP5 Circuitos Secuenciales"
@@ -100,8 +100,8 @@
               "state": {
                 "file": "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
                 "page": 190,
-                "left": 69,
-                "top": 286,
+                "left": 50,
+                "top": 616,
                 "zoom": 1.5
               },
               "icon": "lucide-file-text",
@@ -262,33 +262,34 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "a418b7e29ef692e1",
+  "active": "fa88e4302fcce28c",
   "lastOpenFiles": [
-    "Organizacion del Computador/Teorico/5.0) Registros (P).pdf",
-    "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
-    "Organizacion del Computador/Teorico/5.1) Lógica secuencial sincronica (T).pdf",
+    "Pasted Image 20260408004138_103.png",
     "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "Pasted Image 20260408003503_777.png",
+    "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
+    "Pasted Image 20260408003405_350.png",
+    "Pasted Image 20260408003354_518.png",
+    "Pasted Image 20260408003327_872.png",
+    "Pasted Image 20260408003247_243.png",
+    "Pasted Image 20260408002702_731.png",
+    "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
     "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
+    "Pasted Image 20260408001307_312.png",
+    "Organizacion del Computador/Teorico/5.1) Registros (P).pdf",
+    "Pasted Image 20260408000726_380.png",
+    "Pasted Image 20260408000624_917.png",
+    "Pasted Image 20260408000551_039.png",
+    "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
+    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
+    "Analisis matematico 1/Teorico/TeoricoDeClases/xopp/CLASE 5 Funciones II.pdf",
+    "Analisis matematico 1/Teorico/TeoricoDeClases/! Resumen Completo Analisis 1.pdf",
+    "Analisis matematico 1/Teorico/TeoricoDeClases/xopp/CLASE 3 Valor Absoluto.pdf",
+    "Analisis matematico 1/Teorico/Calculo James.pdf",
     "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
     "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
-    "Organizacion del Computador/Teorico/9) El procesador (T).pdf",
-    "Organizacion del Computador/Teorico/6) Legv8 (P).pdf",
-    "Organizacion del Computador/Teorico/4) Direccionamiento de Memorias (P).pdf",
-    "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
-    "Organizacion del Computador/Teorico/7) Chapter_04 (P).pdf",
-    "Organizacion del Computador/Teorico/7, 8) Circuito secuenciales (T)",
     "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
     "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "Pasted Image 20260404091518_750.png",
-    "Pasted Image 20260404091411_838.png",
-    "Pasted Image 20260404091311_713.png",
-    "Pasted Image 20260404085330_326.png",
-    "Pasted Image 20260404081740_772.png",
-    "Pasted Image 20260404073710_248.png",
-    "Pasted Image 20260404073401_901.png",
-    "Pasted Image 20260404072528_233.png",
-    "Pasted Image 20260404072347_496.png",
-    "Pasted Image 20260404072158_020.png",
     "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md"
   ]
 }
