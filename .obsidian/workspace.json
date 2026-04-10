@@ -6,7 +6,7 @@
       {
         "id": "365c63c12c0f417b",
         "type": "tabs",
-        "dimension": 92.03821656050955,
+        "dimension": 62.261146496815286,
         "children": [
           {
             "id": "5451b5fd74637086",
@@ -16,8 +16,8 @@
               "state": {
                 "file": "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
                 "page": 38,
-                "left": -114,
-                "top": 313,
+                "left": -3,
+                "top": 317,
                 "zoom": 1.3
               },
               "icon": "lucide-file-text",
@@ -25,36 +25,40 @@
             }
           },
           {
-            "id": "fa88e4302fcce28c",
+            "id": "e91223d8df42b840",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md"
+                "file": "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md"
               },
               "icon": "excalidraw-icon",
-              "title": "5) Registros, logica secuencial sincronica y con reloj selfnotes"
+              "title": "1) Sistemas de numeracion selfnotes"
             }
           },
           {
-            "id": "f9c1db76db562a52",
+            "id": "2d75cf264daca668",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "pdf",
               "state": {
-                "file": "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md"
+                "file": "Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
+                "page": 42,
+                "left": -10,
+                "top": 95,
+                "zoom": 1.5749999999999997
               },
-              "icon": "excalidraw-icon",
-              "title": "2) Algebra de booleanos selfnotes"
+              "icon": "lucide-file-text",
+              "title": "1) Sistemas de numeracion (T)"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "5b6c2d241beabc65",
         "type": "tabs",
-        "dimension": 7.961783439490445,
+        "dimension": 37.738853503184714,
         "children": [
           {
             "id": "c4cbc05facb8055f",
@@ -80,8 +84,8 @@
               "state": {
                 "file": "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
                 "page": 2,
-                "left": -15,
-                "top": 806,
+                "left": -7,
+                "top": 809,
                 "zoom": 1.013003355704698
               },
               "icon": "lucide-file-text",
@@ -95,17 +99,33 @@
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-                "page": 198,
-                "left": -1,
-                "top": 184,
-                "zoom": 1.2
+                "page": 22,
+                "left": 63,
+                "top": 267,
+                "zoom": 1.5
               },
               "icon": "lucide-file-text",
               "title": "Diseño digital, 3ra Edición - M. Morris Mano.ORG"
             }
+          },
+          {
+            "id": "189c3ace9de2b97c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Organizacion del Computador/Practico/TP1 - Sistemas de Numeración (2025 or 2026).pdf",
+                "page": 4,
+                "left": 58,
+                "top": 821,
+                "zoom": 1.4
+              },
+              "icon": "lucide-file-text",
+              "title": "TP1 - Sistemas de Numeración (2025 or 2026)"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -162,7 +182,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -226,13 +247,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+                "file": "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2) Algebra de booleanos selfnotes"
+              "title": "Outline of 1) Sistemas de numeracion selfnotes"
             }
           }
         ]
@@ -257,33 +278,38 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "f9c1db76db562a52",
+  "active": "e91223d8df42b840",
   "lastOpenFiles": [
+    "Organizacion del Computador/Practico/TP1 - Sistemas de Numeración (2025 or 2026).pdf",
+    "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
+    "Pasted Image 20250317103613_061.png",
+    "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
+    "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
     "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
+    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
+    "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
+    "Organizacion del Computador/Practico/TP2 Álgebra de Boole.pdf",
+    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
+    "Organizacion del Computador/Practico/Practicos Resueltos/Ej3.jpeg",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp8/Clase_Ensamblado y desensamblado de LEGv8.pdf",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp7/ej7.1.jpeg",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp7/ej7.jpeg",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
+    "Organizacion del Computador/Parcial 1/repaso parcial 2.md",
+    "Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "Pasted Image 20260408151218_752.png",
     "Pasted Image 20260408145511_990.png",
-    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
-    "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
     "Pasted Image 20260408143234_864.png",
     "Pasted Image 20260408142327_127.png",
-    "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
     "Pasted Image 20260408112235_313.png",
     "Pasted Image 20260408112020_321.png",
-    "Pasted Image 20260408111554_965.png",
-    "Pasted Image 20260408111508_450.png",
-    "Pasted Image 20260408111418_113.png",
     "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
     "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
-    "Pasted Image 20260408104931_199.png",
-    "Organizacion del Computador/Teorico/5.1) Registros (P).pdf",
-    "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
-    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
-    "Analisis matematico 1/Teorico/TeoricoDeClases/xopp/CLASE 5 Funciones II.pdf",
-    "Analisis matematico 1/Teorico/TeoricoDeClases/! Resumen Completo Analisis 1.pdf",
-    "Analisis matematico 1/Teorico/TeoricoDeClases/xopp/CLASE 3 Valor Absoluto.pdf",
-    "Analisis matematico 1/Teorico/Calculo James.pdf",
-    "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
-    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md"
+    "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md"
   ]
 }
