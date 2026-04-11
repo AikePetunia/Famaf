@@ -6,7 +6,7 @@
       {
         "id": "365c63c12c0f417b",
         "type": "tabs",
-        "dimension": 62.261146496815286,
+        "dimension": 62.26114649681529,
         "children": [
           {
             "id": "5451b5fd74637086",
@@ -16,8 +16,8 @@
               "state": {
                 "file": "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
                 "page": 38,
-                "left": -3,
-                "top": 317,
+                "left": -88,
+                "top": 320,
                 "zoom": 1.3
               },
               "icon": "lucide-file-text",
@@ -25,73 +25,53 @@
             }
           },
           {
-            "id": "e91223d8df42b840",
+            "id": "2d75cf264daca668",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md"
+                "file": "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md"
               },
               "icon": "excalidraw-icon",
-              "title": "1) Sistemas de numeracion selfnotes"
+              "title": "2) Algebra de booleanos selfnotes"
             }
           },
           {
-            "id": "2d75cf264daca668",
+            "id": "6ef260ead9b4ef19",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "3) Logica combinacional y circuitos combinacioanles selfnotes"
+            }
+          },
+          {
+            "id": "89284ffd1402407c",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
-                "page": 42,
+                "file": "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
+                "page": 15,
                 "left": -10,
-                "top": 95,
-                "zoom": 1.5749999999999997
+                "top": 165,
+                "zoom": 1.5750000000000002
               },
               "icon": "lucide-file-text",
-              "title": "1) Sistemas de numeracion (T)"
+              "title": "3) Lógica Combinacional-Karnaugh (P)"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       },
       {
         "id": "5b6c2d241beabc65",
         "type": "tabs",
         "dimension": 37.738853503184714,
         "children": [
-          {
-            "id": "c4cbc05facb8055f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
-                "page": 4,
-                "left": -54,
-                "top": 485,
-                "zoom": 0.9
-              },
-              "icon": "lucide-file-text",
-              "title": "TP4 Direccionamiento y decodificación de memorias"
-            }
-          },
-          {
-            "id": "8b3b4911552080fd",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
-                "page": 2,
-                "left": -7,
-                "top": 809,
-                "zoom": 1.013003355704698
-              },
-              "icon": "lucide-file-text",
-              "title": "TP5 Circuitos Secuenciales"
-            }
-          },
           {
             "id": "589688bdd499a709",
             "type": "leaf",
@@ -114,18 +94,34 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Organizacion del Computador/Practico/TP1 - Sistemas de Numeración (2025 or 2026).pdf",
-                "page": 4,
-                "left": 58,
-                "top": 821,
-                "zoom": 1.4
+                "file": "Organizacion del Computador/Practico/TP2 Álgebra de Boole.pdf",
+                "page": 1,
+                "left": -15,
+                "top": 108,
+                "zoom": 0.9853187919463089
               },
               "icon": "lucide-file-text",
-              "title": "TP1 - Sistemas de Numeración (2025 or 2026)"
+              "title": "TP2 Álgebra de Boole"
+            }
+          },
+          {
+            "id": "df56d1ae55c45c04",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
+                "page": 2,
+                "left": -13,
+                "top": 680,
+                "zoom": 1.12751677852349
+              },
+              "icon": "lucide-file-text",
+              "title": "TP3 Lógica Combinacional"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -247,13 +243,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+                "file": "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1) Sistemas de numeracion selfnotes"
+              "title": "Outline of 3) Lógica Combinacional-Karnaugh (P)"
             }
           }
         ]
@@ -278,38 +274,38 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "e91223d8df42b840",
+  "active": "89284ffd1402407c",
   "lastOpenFiles": [
-    "Organizacion del Computador/Practico/TP1 - Sistemas de Numeración (2025 or 2026).pdf",
+    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
+    "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
+    "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
+    "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
+    "Organizacion del Computador/Teorico/2) Algebra Booleana (P).pdf",
+    "Organizacion del Computador/Practico/TP2 Álgebra de Boole.pdf",
     "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "Organizacion del Computador/Parcial 1/Repaso parcial.md",
+    "Pasted Image 20250324094210_736.png",
+    "Organizacion del Computador/Practico/TP1 - Sistemas de Numeración (2025 or 2026).pdf",
+    "Pasted Image 20260411061224_079.png",
+    "Pasted Image 20260411061120_220.png",
+    "Organizacion del Computador/Parcial 1/repaso parcial 2.md",
+    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (4).jpeg",
+    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (3).jpeg",
+    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (2).jpeg",
+    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (1)",
     "Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
+    "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
     "Pasted Image 20250317103613_061.png",
     "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
     "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
-    "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
-    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
-    "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
-    "Organizacion del Computador/Practico/TP2 Álgebra de Boole.pdf",
-    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
     "Organizacion del Computador/Practico/Practicos Resueltos/Ej3.jpeg",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
-    "Organizacion del Computador/Practico/Practicos Resueltos/tp8/Clase_Ensamblado y desensamblado de LEGv8.pdf",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp7/ej7.1.jpeg",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp7/ej7.jpeg",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
-    "Organizacion del Computador/Parcial 1/repaso parcial 2.md",
-    "Organizacion del Computador/Parcial 1/Repaso parcial.md",
-    "Pasted Image 20260408151218_752.png",
-    "Pasted Image 20260408145511_990.png",
-    "Pasted Image 20260408143234_864.png",
-    "Pasted Image 20260408142327_127.png",
-    "Pasted Image 20260408112235_313.png",
-    "Pasted Image 20260408112020_321.png",
     "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
-    "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
     "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md"
   ]
 }
