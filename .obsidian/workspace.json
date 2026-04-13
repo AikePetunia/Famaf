@@ -9,22 +9,6 @@
         "dimension": 62.26114649681529,
         "children": [
           {
-            "id": "5451b5fd74637086",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
-                "page": 38,
-                "left": -88,
-                "top": 320,
-                "zoom": 1.3
-              },
-              "icon": "lucide-file-text",
-              "title": "5.2) Circuitos secuenciales con reloj (P)"
-            }
-          },
-          {
             "id": "2d75cf264daca668",
             "type": "leaf",
             "state": {
@@ -55,17 +39,16 @@
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
-                "page": 15,
+                "page": 20,
                 "left": -10,
-                "top": 165,
-                "zoom": 1.5750000000000002
+                "top": 185,
+                "zoom": 1.575
               },
               "icon": "lucide-file-text",
               "title": "3) Lógica Combinacional-Karnaugh (P)"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       },
       {
         "id": "5b6c2d241beabc65",
@@ -79,29 +62,13 @@
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-                "page": 22,
-                "left": 63,
-                "top": 267,
-                "zoom": 1.5
+                "page": 198,
+                "left": -12,
+                "top": 199,
+                "zoom": 1.282442748091603
               },
               "icon": "lucide-file-text",
               "title": "Diseño digital, 3ra Edición - M. Morris Mano.ORG"
-            }
-          },
-          {
-            "id": "189c3ace9de2b97c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Practico/TP2 Álgebra de Boole.pdf",
-                "page": 1,
-                "left": -15,
-                "top": 108,
-                "zoom": 0.9853187919463089
-              },
-              "icon": "lucide-file-text",
-              "title": "TP2 Álgebra de Boole"
             }
           },
           {
@@ -111,17 +78,17 @@
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
-                "page": 2,
-                "left": -13,
-                "top": 680,
-                "zoom": 1.12751677852349
+                "page": 4,
+                "left": 39,
+                "top": 597,
+                "zoom": 1.3
               },
               "icon": "lucide-file-text",
               "title": "TP3 Lógica Combinacional"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -243,13 +210,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
+                "file": "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3) Lógica Combinacional-Karnaugh (P)"
+              "title": "Outline of TP3 Lógica Combinacional"
             }
           }
         ]
@@ -274,15 +241,19 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "89284ffd1402407c",
+  "active": "df56d1ae55c45c04",
   "lastOpenFiles": [
     "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
-    "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
     "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
+    "Pasted Image 20260413174040_881.png",
     "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
-    "Organizacion del Computador/Teorico/2) Algebra Booleana (P).pdf",
+    "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
+    "Pasted Image 20260413165212_988.png",
+    "Pasted Image 20260413165201_112.png",
+    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
+    "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
     "Organizacion del Computador/Practico/TP2 Álgebra de Boole.pdf",
+    "Organizacion del Computador/Teorico/2) Algebra Booleana (P).pdf",
     "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "Pasted Image 20250324094210_736.png",
@@ -298,11 +269,7 @@
     "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
     "Pasted Image 20250317103613_061.png",
     "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
-    "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-    "Organizacion del Computador/Practico/Practicos Resueltos/Ej3.jpeg",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
-    "Organizacion del Computador/Practico/Practicos Resueltos/tp7/ej7.1.jpeg",
-    "Organizacion del Computador/Practico/Practicos Resueltos/tp7/ej7.jpeg",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
     "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
