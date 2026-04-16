@@ -45,39 +45,31 @@
             }
           },
           {
-            "id": "89284ffd1402407c",
+            "id": "11f02ebc404cda3a",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "excalidraw",
               "state": {
-                "file": "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
-                "page": 16,
-                "left": -10,
-                "top": 87,
-                "zoom": 1.575
+                "file": "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md"
               },
-              "icon": "lucide-file-text",
-              "title": "3) Lógica Combinacional-Karnaugh (P)"
+              "icon": "excalidraw-icon",
+              "title": "4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes"
             }
           },
           {
-            "id": "cf018cafe5e18555",
+            "id": "11a06730d79cb702",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "excalidraw",
               "state": {
-                "file": "Organizacion del Computador/Teorico/4) Direccionamiento de Memorias (P).pdf",
-                "page": 2,
-                "left": -11,
-                "top": 504,
-                "zoom": 1.3802083333333333
+                "file": "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md"
               },
-              "icon": "lucide-file-text",
-              "title": "4) Direccionamiento de Memorias (P)"
+              "icon": "excalidraw-icon",
+              "title": "5) Registros, logica secuencial sincronica y con reloj selfnotes"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       },
       {
         "id": "5b6c2d241beabc65",
@@ -101,32 +93,16 @@
             }
           },
           {
-            "id": "df56d1ae55c45c04",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
-                "page": 6,
-                "left": -13,
-                "top": 269,
-                "zoom": 1.12751677852349
-              },
-              "icon": "lucide-file-text",
-              "title": "TP3 Lógica Combinacional"
-            }
-          },
-          {
             "id": "7623327f660c3fca",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
-                "page": 5,
-                "left": -14,
-                "top": 67,
-                "zoom": 1.1275167785234899
+                "page": 4,
+                "left": 168,
+                "top": 611,
+                "zoom": 1.9
               },
               "icon": "lucide-file-text",
               "title": "TP4 Direccionamiento y decodificación de memorias"
@@ -255,13 +231,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
+                "file": "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3) Logica combinacional y circuitos combinacioanles selfnotes"
+              "title": "Outline of TP4 Direccionamiento y decodificación de memorias"
             }
           }
         ]
@@ -286,19 +262,25 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "6ef260ead9b4ef19",
+  "active": "7623327f660c3fca",
   "lastOpenFiles": [
-    "Pasted Image 20260414172840_821.png",
-    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
+    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
+    "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
+    "Organizacion del Computador/Practico/Practicos Resueltos/Ej3.jpeg",
+    "Organizacion del Computador/Practico/Practicos Resueltos/Ej 3.jpeg",
     "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
+    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "Pasted Image 20250409092018_521.png",
+    "Probabilidad y estadistica/parciales/2/2022-Parcial 2 TA (Mio).md",
+    "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
+    "Organizacion del Computador/Teorico/4) Direccionamiento de Memorias (P).pdf",
+    "Pasted Image 20260414172840_821.png",
+    "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
     "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
     "Pasted Image 20260414164953_845.png",
-    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
     "Pasted Image 20260414162016_698.png",
-    "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
-    "Organizacion del Computador/Teorico/4) Direccionamiento de Memorias (P).pdf",
     "Pasted Image 20260413174040_881.png",
     "Pasted Image 20260413165212_988.png",
     "Pasted Image 20260413165201_112.png",
@@ -308,17 +290,11 @@
     "Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "Pasted Image 20250324094210_736.png",
     "Organizacion del Computador/Practico/TP1 - Sistemas de Numeración (2025 or 2026).pdf",
-    "Pasted Image 20260411061224_079.png",
-    "Pasted Image 20260411061120_220.png",
     "Organizacion del Computador/Parcial 1/repaso parcial 2.md",
-    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (4).jpeg",
-    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (3).jpeg",
     "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (1)",
-    "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
-    "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
     "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md"
   ]
 }
