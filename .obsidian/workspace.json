@@ -64,7 +64,7 @@
               "state": {
                 "file": "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
                 "page": 48,
-                "left": -367,
+                "left": -280,
                 "top": 69,
                 "zoom": 0.8
               },
@@ -73,39 +73,7 @@
             }
           },
           {
-            "id": "1391c56257f26d0f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
-                "page": 1,
-                "left": -152,
-                "top": 409,
-                "zoom": 1
-              },
-              "icon": "lucide-file-text",
-              "title": "5.2) Circuitos secuenciales con reloj (P)"
-            }
-          },
-          {
-            "id": "c8a197fb5ffaab6b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Teorico/5.1) Registros (P).pdf",
-                "page": 5,
-                "left": -10,
-                "top": 186,
-                "zoom": 1.5749999999999997
-              },
-              "icon": "lucide-file-text",
-              "title": "5.1) Registros (P)"
-            }
-          },
-          {
-            "id": "11a06730d79cb702",
+            "id": "e5a77b2acc161835",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -115,9 +83,25 @@
               "icon": "excalidraw-icon",
               "title": "5) Registros, logica secuencial sincronica y con reloj selfnotes"
             }
+          },
+          {
+            "id": "4c18a5faa4d4f778",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
+                "page": 12,
+                "left": -287,
+                "top": 105,
+                "zoom": 0.9
+              },
+              "icon": "lucide-file-text",
+              "title": "5.2) Circuitos secuenciales con reloj (P)"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       },
       {
         "id": "5b6c2d241beabc65",
@@ -163,9 +147,9 @@
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
-                "page": 2,
+                "page": 3,
                 "left": -13,
-                "top": 107,
+                "top": 329,
                 "zoom": 1.12751677852349
               },
               "icon": "lucide-file-text",
@@ -295,13 +279,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
+                "file": "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3) Logica combinacional y circuitos combinacioanles selfnotes"
+              "title": "Outline of 5.2) Circuitos secuenciales con reloj (P)"
             }
           }
         ]
@@ -326,17 +310,22 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "6ef260ead9b4ef19",
+  "active": "4c18a5faa4d4f778",
   "lastOpenFiles": [
     "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
+    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
+    "Organizacion del Computador/Teorico/5.1) Registros (P).pdf",
+    "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
+    "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
+    "README.md",
+    "Pasted image 20260417113923.png",
+    "Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "Pasted Image 20260417112723_282.png",
+    "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
     "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
     "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
-    "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
-    "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
-    "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
-    "Organizacion del Computador/Teorico/5.1) Registros (P).pdf",
     "Pasted Image 20260417084850_811.png",
-    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
     "Pasted Image 20260417072131_988.png",
     "Pasted Image 20260417070941_844.png",
     "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
@@ -351,8 +340,6 @@
     "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
     "Pasted Image 20260414164953_845.png",
-    "Pasted Image 20260414162016_698.png",
-    "Pasted Image 20260413174040_881.png",
     "Organizacion del Computador/Practico/TP2 Álgebra de Boole.pdf",
     "Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "Organizacion del Computador/Parcial 1/repaso parcial 2.md",
