@@ -64,8 +64,8 @@
               "state": {
                 "file": "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
                 "page": 48,
-                "left": -280,
-                "top": 69,
+                "left": -367,
+                "top": 77,
                 "zoom": 0.8
               },
               "icon": "lucide-file-text",
@@ -91,17 +91,17 @@
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
-                "page": 12,
-                "left": -287,
-                "top": 105,
-                "zoom": 0.9
+                "page": 18,
+                "left": -11,
+                "top": 233,
+                "zoom": 1.3802083333333335
               },
               "icon": "lucide-file-text",
               "title": "5.2) Circuitos secuenciales con reloj (P)"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 2
       },
       {
         "id": "5b6c2d241beabc65",
@@ -115,49 +115,16 @@
               "type": "pdf",
               "state": {
                 "file": "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-                "page": 204,
+                "page": 198,
                 "left": -12,
-                "top": 164,
+                "top": 233,
                 "zoom": 1.2824427480916032
               },
               "icon": "lucide-file-text",
               "title": "Diseño digital, 3ra Edición - M. Morris Mano.ORG"
             }
-          },
-          {
-            "id": "7623327f660c3fca",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
-                "page": 5,
-                "left": -15,
-                "top": 108,
-                "zoom": 0.9853187919463089
-              },
-              "icon": "lucide-file-text",
-              "title": "TP4 Direccionamiento y decodificación de memorias"
-            }
-          },
-          {
-            "id": "3bee15f7b16027d8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
-                "page": 3,
-                "left": -13,
-                "top": 329,
-                "zoom": 1.12751677852349
-              },
-              "icon": "lucide-file-text",
-              "title": "TP5 Circuitos Secuenciales"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -279,13 +246,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
+                "file": "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 5.2) Circuitos secuenciales con reloj (P)"
+              "title": "Outline of 3) Logica combinacional y circuitos combinacioanles selfnotes"
             }
           }
         ]
@@ -310,37 +277,37 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "4c18a5faa4d4f778",
+  "active": "6ef260ead9b4ef19",
   "lastOpenFiles": [
     "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
-    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
-    "Organizacion del Computador/Teorico/5.1) Registros (P).pdf",
     "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
     "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
+    "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
+    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
+    "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (4).jpg",
+    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (3).jpg",
+    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (2).jpg",
+    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (1).jpg",
+    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
+    "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
+    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
+    "Organizacion del Computador/Teorico/5.1) Registros (P).pdf",
     "README.md",
     "Pasted image 20260417113923.png",
     "Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "Pasted Image 20260417112723_282.png",
-    "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
-    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
     "Pasted Image 20260417084850_811.png",
     "Pasted Image 20260417072131_988.png",
     "Pasted Image 20260417070941_844.png",
-    "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
     "Organizacion del Computador/Practico/Practicos Resueltos/Ej3.jpeg",
-    "Organizacion del Computador/Practico/Practicos Resueltos/Ej 3.jpeg",
-    "Pasted Image 20250409092018_521.png",
     "Probabilidad y estadistica/parciales/2/2022-Parcial 2 TA (Mio).md",
     "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
     "Organizacion del Computador/Teorico/4) Direccionamiento de Memorias (P).pdf",
-    "Pasted Image 20260414172840_821.png",
-    "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
-    "Pasted Image 20260414164953_845.png",
-    "Organizacion del Computador/Practico/TP2 Álgebra de Boole.pdf",
     "Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "Organizacion del Computador/Parcial 1/repaso parcial 2.md",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
