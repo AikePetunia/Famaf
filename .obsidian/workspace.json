@@ -6,7 +6,7 @@
       {
         "id": "365c63c12c0f417b",
         "type": "tabs",
-        "dimension": 62.26114649681529,
+        "dimension": 64.49044585987261,
         "children": [
           {
             "id": "c02562b00a8bcdf0",
@@ -64,8 +64,8 @@
               "state": {
                 "file": "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
                 "page": 48,
-                "left": -367,
-                "top": 77,
+                "left": -160,
+                "top": 84,
                 "zoom": 0.8
               },
               "icon": "lucide-file-text",
@@ -99,14 +99,30 @@
               "icon": "lucide-file-text",
               "title": "5.2) Circuitos secuenciales con reloj (P)"
             }
+          },
+          {
+            "id": "dcffc72aabb083b0",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Circuitos.pdf",
+                "page": 35,
+                "left": -16,
+                "top": 350,
+                "zoom": 0.965625
+              },
+              "icon": "lucide-file-text",
+              "title": "TP5 Circuitos"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       },
       {
         "id": "5b6c2d241beabc65",
         "type": "tabs",
-        "dimension": 37.738853503184714,
+        "dimension": 35.509554140127385,
         "children": [
           {
             "id": "589688bdd499a709",
@@ -114,17 +130,46 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-                "page": 198,
-                "left": -12,
-                "top": 233,
-                "zoom": 1.2824427480916032
+                "file": "Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Ej8.pdf",
+                "page": 4,
+                "left": -16,
+                "top": 698,
+                "zoom": 0.9223993288590605
               },
               "icon": "lucide-file-text",
-              "title": "Diseño digital, 3ra Edición - M. Morris Mano.ORG"
+              "title": "TP5 Ej8"
+            }
+          },
+          {
+            "id": "f72f569a4d124de5",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
+                "page": 3,
+                "left": -9,
+                "top": 633,
+                "zoom": 1.683724832214765
+              },
+              "icon": "lucide-file-text",
+              "title": "TP5 Circuitos Secuenciales"
+            }
+          },
+          {
+            "id": "00244611780d392a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (3).jpg"
+              },
+              "icon": "lucide-image",
+              "title": "odc parcial 1 2025 (t2) (3)"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -246,13 +291,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
+                "file": "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3) Logica combinacional y circuitos combinacioanles selfnotes"
+              "title": "Outline of 4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes"
             }
           }
         ]
@@ -277,42 +322,42 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "6ef260ead9b4ef19",
+  "active": "11f02ebc404cda3a",
   "lastOpenFiles": [
-    "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
-    "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
+    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (3).jpg",
     "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
     "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
     "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "Pasted Image 20250324095141_936.png",
     "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
-    "Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Ej8.pdf",
+    "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
+    "Organizacion del Computador/Teorico/5) Lógica secuencial sincronica (T).pdf",
+    "Pasted Image 20260421124526_321.png",
+    "Pasted Image 20260421124455_476.png",
+    "Pasted Image 20260421124446_958.png",
+    "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
+    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
+    "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
     "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Ej6.pdf",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Circuitos.pdf",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
+    "Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Registros.pdf",
+    "Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
     "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (4).jpg",
-    "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (3).jpg",
     "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (2).jpg",
     "Organizacion del Computador/Parcial 1/odc parcial 1 2025 (t2) (1).jpg",
-    "Organizacion del Computador/Practico/TP4 Direccionamiento y decodificación de memorias.pdf",
-    "Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
-    "Organizacion del Computador/Teorico/5.2) Circuitos secuenciales con reloj (P).pdf",
-    "Organizacion del Computador/Teorico/5.1) Registros (P).pdf",
     "README.md",
     "Pasted image 20260417113923.png",
     "Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "Pasted Image 20260417112723_282.png",
-    "Pasted Image 20260417084850_811.png",
-    "Pasted Image 20260417072131_988.png",
-    "Pasted Image 20260417070941_844.png",
-    "Organizacion del Computador/Practico/Practicos Resueltos/Ej3.jpeg",
     "Probabilidad y estadistica/parciales/2/2022-Parcial 2 TA (Mio).md",
-    "Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
-    "Organizacion del Computador/Teorico/4) Direccionamiento de Memorias (P).pdf",
-    "Organizacion del Computador/Practico/TP3 Lógica Combinacional.pdf",
     "Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "Organizacion del Computador/Parcial 1/repaso parcial 2.md",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
     "Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
-    "Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
     "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md"
   ]
 }
