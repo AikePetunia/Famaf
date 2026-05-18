@@ -16,12 +16,24 @@
               "state": {
                 "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
                 "page": 134,
-                "left": -77,
+                "left": -4,
                 "top": 15,
                 "zoom": 1.7
               },
               "icon": "lucide-file-text",
               "title": "Computer Organization and Design ARM edition"
+            }
+          },
+          {
+            "id": "b76fef10cfe2a208",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "6) Legv8 selfnotes"
             }
           },
           {
@@ -32,9 +44,9 @@
               "state": {
                 "file": "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
                 "page": 1,
-                "left": -8,
-                "top": 444,
-                "zoom": 1.9330808080808082
+                "left": -16,
+                "top": 448,
+                "zoom": 0.912878787878788
               },
               "icon": "lucide-file-text",
               "title": "TP6 GreenCard LEGv8"
@@ -55,7 +67,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "beff2c899ddc581b",
@@ -86,9 +98,9 @@
               "state": {
                 "file": "06 Organizacion del Computador/Teorico/6) Legv8 (T).pdf",
                 "page": 39,
-                "left": -36,
-                "top": 389,
-                "zoom": 0.4177083333333333
+                "left": -48,
+                "top": 393,
+                "zoom": 0.3104166666666667
               },
               "icon": "lucide-file-text",
               "title": "6) Legv8 (T)"
@@ -249,13 +261,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of 6) Legv8 selfnotes"
             }
           }
         ]
@@ -282,12 +294,13 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "542e64555f849460",
+  "active": "b76fef10cfe2a208",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
-    "99 Adjuntos/Pasted Image 20260518201132_026.png",
     "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
     "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
+    "README.md",
+    "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
+    "99 Adjuntos/Pasted Image 20260518201132_026.png",
     "99 Adjuntos/Pasted Image 20260518200819_219.png",
     "99 Adjuntos/Pasted Image 20260518200505_760.png",
     "99 Adjuntos/Pasted Image 20260518200427_777.png",
@@ -309,7 +322,6 @@
     "06 Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
     "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
     "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
-    "README.md",
     "! README.md",
     "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
     "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo.md",
