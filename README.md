@@ -54,8 +54,6 @@ trabajo y estudio, tenganme paciencia xd
 
 <img width="2550" height="1370" alt="image" src="https://github.com/user-attachments/assets/5d7d1880-8721-4a1f-86a8-91a438b1da79" />
 
-![[Pasted image 20260518141550.png]]
-
 ## 🚦 Estado  
 
 	Cursando ODC y AyED (Lab).
