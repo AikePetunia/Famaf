@@ -1,5 +1,13 @@
 {
-  "cssTheme": "ITS Theme",
+  "cssTheme": "Red-Shadow",
   "theme": "obsidian",
-  "accentColor": ""
+  "accentColor": "",
+  "interfaceFontFamily": "JetBrainsMono Nerd Font",
+  "textFontFamily": "Adwaita Mono",
+  "baseFontSize": 16,
+  "baseFontSizeAction": false,
+  "nativeMenus": true,
+  "enabledCssSnippets": [
+    "coloredSidebar"
+  ]
 }

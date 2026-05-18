@@ -4,71 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "9dc6b647b1c16939",
+        "id": "fc336c28a6c6c086",
         "type": "tabs",
-        "dimension": 61.94267515923567,
         "children": [
           {
-            "id": "8e863cc29e27aa3c",
+            "id": "b1a6bb4849faf9f8",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md"
-              }
+                "file": "! README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "! README"
             }
           }
         ]
-      },
-      {
-        "id": "2788092574daab15",
-        "type": "tabs",
-        "dimension": 38.05732484076433,
-        "children": [
-          {
-            "id": "50311341aa4f9e26",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                "page": 4,
-                "left": -12,
-                "top": 481,
-                "zoom": 1.2555555555555555
-              }
-            }
-          },
-          {
-            "id": "57a82cf2e1aefeaf",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Teorico/6) LEGv8 básico (P).pdf",
-                "page": 1,
-                "left": -16,
-                "top": 27,
-                "zoom": 0.9416666666666667
-              }
-            }
-          },
-          {
-            "id": "645b4559406252cc",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Organizacion del Computador/Teorico/6) Legv8 (T).pdf",
-                "page": 25,
-                "left": -16,
-                "top": 181,
-                "zoom": 0.9416666666666667
-              }
-            }
-          }
-        ],
-        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -87,8 +40,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -103,7 +59,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -111,15 +69,16 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 492.5,
-    "collapsed": true
+    "width": 492.5
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -135,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
+                "file": "06 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +102,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2022-Parcial 2 (Recuperatorio) resuleto mio"
             }
           },
           {
@@ -152,10 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
+                "file": "06 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2022-Parcial 2 (Recuperatorio) resuleto mio"
             }
           },
           {
@@ -165,8 +128,12 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -175,8 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md"
-              }
+                "file": "! README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of ! README"
             }
           }
         ]
@@ -188,7 +160,8 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-excalidraw-plugin:New drawing": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false,
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
@@ -198,50 +171,57 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "8e863cc29e27aa3c",
+  "active": "b1a6bb4849faf9f8",
   "lastOpenFiles": [
-    "Pasted Image 20260517225153_796.png",
-    "Organizacion del Computador/Teorico/6) Legv8 (T).pdf",
-    "Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
-    "Pasted Image 20260517224807_842.png",
-    "Pasted Image 20260517223358_203.png",
-    "Organizacion del Computador/Teorico/6) LEGv8 básico (P).pdf",
-    "Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-    "Pasted Image 20260517221838_399.png",
-    "Pasted Image 20260517221826_227.png",
-    "Pasted Image 20260517221732_056.png",
-    "Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
-    "Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-    "Pasted Image 20260517145923_515.png",
-    "Pasted Image 20260517144218_894.png",
-    "Pasted Image 20260517143242_204.png",
-    "Analisis matematico 1/Teorico/TeoricoDeClases/CLASE 8 Límites_annotated.pdf",
-    "Analisis matematico 2/Practica parcial 2/Parcial2Practica Resuemen.pdf",
-    "Analisis matematico 2/Practica parcial I/Practico/100 integrales._TERMINADO.pdf",
-    "Analisis matematico 1/Teorico/TeoricoDeClases/! Resumen Completo Analisis 1.pdf",
-    "Analisis matematico 1/Teorico/TeoricoDeClases/CLASE 1 Ecuaciones_annotated.pdf",
-    "Pasted Image 20260517122610_503.png",
-    "Pasted Image 20260517122126_850.png",
-    "Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
-    "Organizacion del Computador/Teorico/7) LEGv8 avanzado selfnotes.md",
-    "Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
-    "Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "99 Adjuntos/Pasted image 20260518141550.png",
+    "99 Adjuntos/Pasted image 20260518141434.png",
+    "99 Adjuntos/Pasted image 20260518141351.png",
+    "99 Adjuntos/Pasted image 20260518141045.png",
+    "99 Adjuntos/Pasted image 20260518135933.png",
+    "09 Probabilidad y estadistica/Pasted Image 20250910115810_794.png",
+    "! README.md",
+    "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
+    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo.md",
+    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
+    "04 Analisis matematico 2/Parcial II/Practica para parcial II.md",
+    "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "07 Algoritmo y estrucutra de datos II PRACTICO/Filminas Unificadas.pdf",
+    "Untitled.base",
+    "99 Adjuntos/Pasted Image 20250126211108_069.png",
+    "00 Introduccion a los algoritmos/README.md",
+    "05 Algebra (NO cursada)",
+    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio).pdf",
+    "00 Introduccion a los algoritmos/Algoritmos y estructura de datos (haskell code)/Laboratorio/Laboratorio/ParcialesPractica/Parciales Sol/Parciales Sol/TemaH2024/TemaH2024.hs",
+    "00 Introduccion a los algoritmos/Algoritmos y estructura de datos (haskell code)/Laboratorio/Laboratorio/ParcialesPractica/Parciales Sol/Parciales Sol/TemaH2024/Tema-H 2024.pdf",
+    "00 Introduccion a los algoritmos/Algoritmos y estructura de datos (haskell code)/Laboratorio/Laboratorio/ParcialesPractica/Parciales Sol/Parciales Sol/TemaG 2024/TemaG 2024.hs",
+    "00 Introduccion a los algoritmos/Algoritmos y estructura de datos (haskell code)/Laboratorio/Laboratorio/ParcialesPractica/Parciales Sol/Parciales Sol/TemaG 2024/Tema-G 2024.pdf",
+    "00 Introduccion a los algoritmos/Algoritmos y estructura de datos (haskell code)/Laboratorio/Laboratorio/ParcialesPractica/Parciales Sol/Parciales Sol/TemaD 2024/TemaD2024.hs",
+    "00 Introduccion a los algoritmos/Algoritmos y estructura de datos (haskell code)/Laboratorio/Laboratorio/ParcialesPractica/Parciales Sol/Parciales Sol/TemaD 2024/Tema-D 2024.pdf",
+    "Haskell-main/README.md",
+    "Excalidraw/Drawing 2025-09-13 19.30.28.excalidraw.md",
+    "99 Adjuntos/Pasted Image 20250317100424_811.png",
+    "99 Otros o Herramientas/CRITERIO NOTA.jpg",
+    "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
+    "Untitled.md",
+    "99 Adjuntos/Pasted Image 20260517225153_796.png",
+    "99 Adjuntos/Pasted Image 20260517224807_842.png",
+    "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
+    "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado selfnotes.md",
+    "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
     "Algoritmo y estrucutra de datos II PRACTICO/test.md",
     "Untitled 4.md",
-    "Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
-    "Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
-    "Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
-    "README.md",
-    "Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "Probabilidad y estadistica/parciales/2/2022-Parcial 2 TA (Mio).md",
-    "Organizacion del Computador/Parcial 1/Repaso parcial.md",
-    "Organizacion del Computador/Parcial 1/repaso parcial 2.md",
-    "Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
-    "Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md"
+    "06 Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
+    "06 Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
+    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TA (Mio).md",
+    "06 Organizacion del Computador/Parcial 1/Repaso parcial.md",
+    "06 Organizacion del Computador/Parcial 1/repaso parcial 2.md"
   ]
 }

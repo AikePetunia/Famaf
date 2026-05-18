@@ -1,9 +1,11 @@
 [
-  "obsidian-excalidraw-plugin",
   "obsidian-discordrpc",
   "pdf-plus",
   "obsidian-zotero-desktop-connector",
   "obsidian-markmind",
   "obsidian-icon-folder",
-  "obsidian-wakatime"
+  "obsidian-wakatime",
+  "dataview",
+  "obsidian-git",
+  "obsidian-excalidraw-plugin"
 ]
