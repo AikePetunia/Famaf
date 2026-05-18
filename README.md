@@ -1,7 +1,7 @@
 # Famaf Vault.
 
+<img width="1341" height="1245" alt="image" src="https://github.com/user-attachments/assets/e538d22c-cc04-4e26-b4eb-e5302a0c06fa" />
 
-![[Pasted image 20260518135933.png|421]]
 
 ## 🗂️ Estructura del Directorio
 
@@ -48,9 +48,11 @@ trabajo y estudio, tenganme paciencia xd
 
 * **Colores en la barra lateral:** Incluí en la raíz el archivo `coloredSidebar.css`. Si sabés un poco de CSS, podés abrirlo y editarlo a tu gusto para cambiar los colores de las carpetas o los archivos. [Los saqué de acá](https://github.com/CyanVoxel/Obsidian-Colored-Sidebar) 
 
-![[Pasted image 20260518141351.png]]
+<img width="474" height="346" alt="image" src="https://github.com/user-attachments/assets/27fc67f3-0999-4c28-8f0f-56012999d08d" />
 
 * **Tema principal:** [Red-Shadow](https://github.com/DKLiberty/Red-Shadow)
+
+<img width="2550" height="1370" alt="image" src="https://github.com/user-attachments/assets/5d7d1880-8721-4a1f-86a8-91a438b1da79" />
 
 ![[Pasted image 20260518141550.png]]
 
@@ -58,4 +60,5 @@ trabajo y estudio, tenganme paciencia xd
 
 	Cursando ODC y AyED (Lab).
 
-![[Pasted image 20260518141045.png]]
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/7ec951c5-960d-4b38-838a-0cf47c4a3e78" />
+
