@@ -6,7 +6,7 @@
       {
         "id": "fc336c28a6c6c086",
         "type": "tabs",
-        "dimension": 63.11802232854864,
+        "dimension": 63.676236044657095,
         "children": [
           {
             "id": "b1a6bb4849faf9f8",
@@ -15,10 +15,10 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                "page": 134,
-                "left": -4,
-                "top": 15,
-                "zoom": 1.7
+                "page": 149,
+                "left": -7,
+                "top": 600,
+                "zoom": 2.1458333333333335
               },
               "icon": "lucide-file-text",
               "title": "Computer Organization and Design ARM edition"
@@ -30,10 +30,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md"
+                "file": "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md"
               },
               "icon": "excalidraw-icon",
-              "title": "6) Legv8 selfnotes"
+              "title": "6,7) Legv8 selfnotes"
             }
           },
           {
@@ -44,26 +44,12 @@
               "state": {
                 "file": "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
                 "page": 1,
-                "left": -16,
-                "top": 448,
-                "zoom": 0.912878787878788
+                "left": -8,
+                "top": 728,
+                "zoom": 1.950757575757576
               },
               "icon": "lucide-file-text",
               "title": "TP6 GreenCard LEGv8"
-            }
-          },
-          {
-            "id": "542e64555f849460",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
             }
           }
         ],
@@ -72,24 +58,8 @@
       {
         "id": "beff2c899ddc581b",
         "type": "tabs",
-        "dimension": 36.88197767145135,
+        "dimension": 36.323763955342905,
         "children": [
-          {
-            "id": "62ce1f310428dcfc",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Teorico/6) LEGv8 básico (P).pdf",
-                "page": 1,
-                "left": -3,
-                "top": 15,
-                "zoom": 0.909375
-              },
-              "icon": "lucide-file-text",
-              "title": "6) LEGv8 básico (P)"
-            }
-          },
           {
             "id": "2d0c04ede29c2ce0",
             "type": "leaf",
@@ -97,49 +67,48 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Teorico/6) Legv8 (T).pdf",
-                "page": 39,
-                "left": -48,
-                "top": 393,
-                "zoom": 0.3104166666666667
+                "page": 47,
+                "left": -18,
+                "top": 273,
+                "zoom": 0.8947916666666665
               },
               "icon": "lucide-file-text",
               "title": "6) Legv8 (T)"
             }
           },
           {
-            "id": "6472a612365b13a8",
+            "id": "fdc6a3ab3df59dcd",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
+                "file": "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
                 "page": 1,
                 "left": -14,
-                "top": 193,
-                "zoom": 1.0985738255033557
+                "top": 845,
+                "zoom": 1.0809563758389262
               },
               "icon": "lucide-file-text",
-              "title": "TP7 Assembler de LEGv8 avanzado"
+              "title": "TP8 Ensamblado y desensamblado de LEGv8"
             }
           },
           {
-            "id": "c595608e0d578032",
+            "id": "e921ebd794f18da3",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
-                "page": 2,
-                "left": -14,
-                "top": 58,
-                "zoom": 1.0985738255033557
+                "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
+                "page": 4,
+                "left": -9,
+                "top": 533,
+                "zoom": 1.764261744966443
               },
               "icon": "lucide-file-text",
-              "title": "TP6 Assembler de LEGv8 básico"
+              "title": "TP9 Implementación de la ISA"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -171,7 +140,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "E",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -192,7 +161,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -261,13 +231,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
+                "file": "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 6) Legv8 selfnotes"
+              "title": "Outline of 6,7) Legv8 selfnotes"
             }
           }
         ]
@@ -294,30 +264,78 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
+  "floating": {
+    "id": "a7078934969b1675",
+    "type": "floating",
+    "children": [
+      {
+        "id": "715a97b99f376859",
+        "type": "window",
+        "children": [
+          {
+            "id": "9d4d106a698f8339",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ada4cb4f06061934",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+                    "page": 154,
+                    "left": -8,
+                    "top": 374,
+                    "zoom": 1.2500000000000002
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "Computer Organization and Design ARM edition"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 0,
+        "y": 0,
+        "width": 1277,
+        "height": 1383,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "b76fef10cfe2a208",
   "lastOpenFiles": [
     "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-    "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
-    "README.md",
-    "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
-    "99 Adjuntos/Pasted Image 20260518201132_026.png",
-    "99 Adjuntos/Pasted Image 20260518200819_219.png",
-    "99 Adjuntos/Pasted Image 20260518200505_760.png",
-    "99 Adjuntos/Pasted Image 20260518200427_777.png",
+    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
+    "99 Adjuntos/Pasted Image 20260519123800_670.png",
     "06 Organizacion del Computador/Teorico/6) Legv8 (T).pdf",
-    "06 Organizacion del Computador/Teorico/6) LEGv8 básico (P).pdf",
+    "99 Adjuntos/Pasted Image 20260519122657_057.png",
+    "99 Adjuntos/Pasted Image 20260519122628_667.png",
+    "99 Adjuntos/Pasted Image 20260519122558_796.png",
+    "99 Adjuntos/Pasted Image 20260519122531_769.png",
+    "99 Adjuntos/Pasted Image 20260519122448_118.png",
+    "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
+    "99 Adjuntos/Pasted Image 20260519121016_255.png",
+    "99 Adjuntos/Pasted Image 20260519120829_142.png",
+    "99 Adjuntos/Pasted Image 20260519114335_887.png",
+    "99 Adjuntos/Pasted Image 20260519114323_585.png",
+    "README.md",
     "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
+    "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
     "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
-    "Untitled 2.base",
-    "Untitled 1.base",
-    "99 Adjuntos/Pasted Image 20260518190326_797.png",
-    "99 Adjuntos/Pasted Image 20260518162356_596.png",
-    "99 Adjuntos/Pasted Image 20260518162304_140.png",
-    "99 Adjuntos/Pasted Image 20260518155845_861.png",
-    "99 Adjuntos/Pasted Image 20260518155454_174.png",
-    "99 Adjuntos/Pasted Image 20260518155037_552.png",
-    "Untitled.base",
-    "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado (P).pdf",
+    "Excalidraw/Scripts/Downloaded/Custom Zoom.md",
+    "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.md",
+    "Excalidraw/Scripts/Downloaded/Reverse arrows.md",
+    "Excalidraw/Scripts/Downloaded/Set Font Family.md",
+    "Excalidraw/Scripts/Downloaded/Set Text Alignment.md",
+    "Excalidraw/Scripts/Downloaded/Uniform size.md",
+    "Excalidraw/Scripts/Downloaded/Text Aura.md",
+    "Excalidraw/Scripts/Downloaded",
+    "Excalidraw/Scripts",
+    "Excalidraw",
+    "06 Organizacion del Computador/Teorico/6) LEGv8 básico (P).pdf",
     "06 Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
     "06 Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
     "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
@@ -333,13 +351,6 @@
     "Untitled.md",
     "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
     "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado selfnotes.md",
-    "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
-    "Algoritmo y estrucutra de datos II PRACTICO/test.md",
-    "Untitled 4.md",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp5/Clase tp5.md",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TA (Mio).md",
-    "06 Organizacion del Computador/Parcial 1/Repaso parcial.md"
+    "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md"
   ]
 }
