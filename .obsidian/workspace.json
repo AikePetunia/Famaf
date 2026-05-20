@@ -6,26 +6,10 @@
       {
         "id": "fc336c28a6c6c086",
         "type": "tabs",
-        "dimension": 63.676236044657095,
+        "dimension": 64.25449247207382,
         "children": [
           {
             "id": "b1a6bb4849faf9f8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                "page": 149,
-                "left": -7,
-                "top": 600,
-                "zoom": 2.1458333333333335
-              },
-              "icon": "lucide-file-text",
-              "title": "Computer Organization and Design ARM edition"
-            }
-          },
-          {
-            "id": "b76fef10cfe2a208",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -35,77 +19,44 @@
               "icon": "excalidraw-icon",
               "title": "6,7) Legv8 selfnotes"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "a19f6df827454a79",
+        "type": "tabs",
+        "dimension": 35.74550752792618,
+        "children": [
           {
-            "id": "c1c3c46851e77e94",
+            "id": "289515d2cff37254",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
-                "page": 1,
-                "left": -8,
-                "top": 728,
-                "zoom": 1.950757575757576
+                "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+                "page": 156,
+                "left": -4,
+                "top": 529,
+                "zoom": 1.3
               },
               "icon": "lucide-file-text",
-              "title": "TP6 GreenCard LEGv8"
+              "title": "Computer Organization and Design ARM edition"
             }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "beff2c899ddc581b",
-        "type": "tabs",
-        "dimension": 36.323763955342905,
-        "children": [
+          },
           {
-            "id": "2d0c04ede29c2ce0",
+            "id": "e18e1ddaf23dc242",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Teorico/6) Legv8 (T).pdf",
-                "page": 47,
-                "left": -18,
-                "top": 273,
-                "zoom": 0.8947916666666665
+                "page": 54,
+                "left": -23,
+                "top": 131,
+                "zoom": 0.7135416666666667
               },
               "icon": "lucide-file-text",
               "title": "6) Legv8 (T)"
-            }
-          },
-          {
-            "id": "fdc6a3ab3df59dcd",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
-                "page": 1,
-                "left": -14,
-                "top": 845,
-                "zoom": 1.0809563758389262
-              },
-              "icon": "lucide-file-text",
-              "title": "TP8 Ensamblado y desensamblado de LEGv8"
-            }
-          },
-          {
-            "id": "e921ebd794f18da3",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
-                "page": 4,
-                "left": -9,
-                "top": 533,
-                "zoom": 1.764261744966443
-              },
-              "icon": "lucide-file-text",
-              "title": "TP9 Implementación de la ISA"
             }
           }
         ]
@@ -161,8 +112,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -231,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
+                "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 6,7) Legv8 selfnotes"
+              "title": "Outline of Computer Organization and Design ARM edition"
             }
           }
         ]
@@ -264,93 +214,52 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "floating": {
-    "id": "a7078934969b1675",
-    "type": "floating",
-    "children": [
-      {
-        "id": "715a97b99f376859",
-        "type": "window",
-        "children": [
-          {
-            "id": "9d4d106a698f8339",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "ada4cb4f06061934",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                    "page": 154,
-                    "left": -8,
-                    "top": 374,
-                    "zoom": 1.2500000000000002
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "Computer Organization and Design ARM edition"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 0,
-        "y": 0,
-        "width": 1277,
-        "height": 1383,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "b76fef10cfe2a208",
+  "active": "289515d2cff37254",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
-    "99 Adjuntos/Pasted Image 20260519123800_670.png",
     "06 Organizacion del Computador/Teorico/6) Legv8 (T).pdf",
+    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
+    "99 Adjuntos/Pasted Image 20260520154506_782.png",
+    "99 Adjuntos/Pasted Image 20260520154137_997.png",
+    "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+    "99 Adjuntos/Pasted Image 20260520144227_454.png",
+    "99 Adjuntos/Pasted Image 20260520144149_813.png",
+    "99 Adjuntos/Pasted Image 20260520144034_095.png",
+    "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado (P).pdf",
+    "06 Organizacion del Computador/Teorico/6) LEGv8 básico (P).pdf",
+    "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado selfnotes.md",
+    "Untitled.base",
+    "Untitled 2.base",
+    "Untitled 1.base",
+    "Excalidraw/Scripts/Downloaded/Uniform size.md",
+    "Excalidraw/Scripts/Downloaded/Text Aura.md",
+    "Excalidraw/Scripts/Downloaded/Set Text Alignment.md",
+    "Excalidraw/Scripts/Downloaded/Set Font Family.md",
+    "Excalidraw/Scripts/Downloaded/Reverse arrows.md",
+    "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.md",
+    "Excalidraw/Scripts/Downloaded/Custom Zoom.md",
+    "Excalidraw/Scripts/Downloaded",
+    "Excalidraw/Scripts",
+    "99 Adjuntos/Pasted Image 20260519123800_670.png",
     "99 Adjuntos/Pasted Image 20260519122657_057.png",
     "99 Adjuntos/Pasted Image 20260519122628_667.png",
     "99 Adjuntos/Pasted Image 20260519122558_796.png",
     "99 Adjuntos/Pasted Image 20260519122531_769.png",
-    "99 Adjuntos/Pasted Image 20260519122448_118.png",
-    "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
-    "99 Adjuntos/Pasted Image 20260519121016_255.png",
-    "99 Adjuntos/Pasted Image 20260519120829_142.png",
-    "99 Adjuntos/Pasted Image 20260519114335_887.png",
-    "99 Adjuntos/Pasted Image 20260519114323_585.png",
-    "README.md",
-    "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
-    "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
-    "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
-    "Excalidraw/Scripts/Downloaded/Custom Zoom.md",
-    "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.md",
-    "Excalidraw/Scripts/Downloaded/Reverse arrows.md",
-    "Excalidraw/Scripts/Downloaded/Set Font Family.md",
-    "Excalidraw/Scripts/Downloaded/Set Text Alignment.md",
-    "Excalidraw/Scripts/Downloaded/Uniform size.md",
-    "Excalidraw/Scripts/Downloaded/Text Aura.md",
-    "Excalidraw/Scripts/Downloaded",
-    "Excalidraw/Scripts",
-    "Excalidraw",
-    "06 Organizacion del Computador/Teorico/6) LEGv8 básico (P).pdf",
-    "06 Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
-    "06 Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
-    "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
     "! README.md",
+    "README.md",
     "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
     "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo.md",
     "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
     "04 Analisis matematico 2/Parcial II/Practica para parcial II.md",
+    "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "00 Introduccion a los algoritmos/README.md",
     "Haskell-main/README.md",
     "Excalidraw/Drawing 2025-09-13 19.30.28.excalidraw.md",
     "Untitled.md",
     "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
-    "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado selfnotes.md",
-    "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md"
+    "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
+    "Algoritmo y estrucutra de datos II PRACTICO/test.md"
   ]
 }
