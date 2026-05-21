@@ -6,10 +6,10 @@
       {
         "id": "fc336c28a6c6c086",
         "type": "tabs",
-        "dimension": 64.25449247207382,
+        "dimension": 67.63650856915106,
         "children": [
           {
-            "id": "b1a6bb4849faf9f8",
+            "id": "3dc6f31f86dcb4e1",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -25,7 +25,7 @@
       {
         "id": "a19f6df827454a79",
         "type": "tabs",
-        "dimension": 35.74550752792618,
+        "dimension": 32.363491430848946,
         "children": [
           {
             "id": "289515d2cff37254",
@@ -34,32 +34,33 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                "page": 156,
-                "left": -4,
-                "top": 529,
-                "zoom": 1.3
+                "page": 154,
+                "left": -13,
+                "top": 395,
+                "zoom": 1.1736111111111114
               },
               "icon": "lucide-file-text",
               "title": "Computer Organization and Design ARM edition"
             }
           },
           {
-            "id": "e18e1ddaf23dc242",
+            "id": "09ff1812bb009d15",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Teorico/6) Legv8 (T).pdf",
-                "page": 54,
-                "left": -23,
-                "top": 131,
-                "zoom": 0.7135416666666667
+                "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
+                "page": 2,
+                "left": 38,
+                "top": 712,
+                "zoom": 1.1
               },
               "icon": "lucide-file-text",
-              "title": "6) Legv8 (T)"
+              "title": "TP9 Implementación de la ISA"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -91,7 +92,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "$\\rightarrow$",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -181,13 +182,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+                "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Computer Organization and Design ARM edition"
+              "title": "Outline of TP9 Implementación de la ISA"
             }
           }
         ]
@@ -214,23 +215,30 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "289515d2cff37254",
+  "active": "09ff1812bb009d15",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Teorico/6) Legv8 (T).pdf",
+    "06 Organizacion del Computador/Teorico/9) Implementación de la ISA.pdf",
+    "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
     "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
-    "99 Adjuntos/Pasted Image 20260520154506_782.png",
-    "99 Adjuntos/Pasted Image 20260520154137_997.png",
+    "06 Organizacion del Computador/Teorico/8) Ensamblado y desensamblado de LEGv8 (P).pdf",
+    "06 Organizacion del Computador/Teorico/8,9) El procesador (T).pdf",
+    "06 Organizacion del Computador/Teorico/6,7) Legv8 (T).pdf",
+    "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
+    "99 Adjuntos/Pasted Image 20260521105436_488.png",
+    "99 Adjuntos/Pasted Image 20260521105357_421.png",
+    "99 Adjuntos/Pasted Image 20260521105347_089.png",
+    "99 Adjuntos/Pasted Image 20260521104955_036.png",
+    "99 Adjuntos/Pasted Image 20260521104810_101.png",
+    "99 Adjuntos/Pasted Image 20260521104801_623.png",
     "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-    "99 Adjuntos/Pasted Image 20260520144227_454.png",
-    "99 Adjuntos/Pasted Image 20260520144149_813.png",
-    "99 Adjuntos/Pasted Image 20260520144034_095.png",
-    "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado (P).pdf",
-    "06 Organizacion del Computador/Teorico/6) LEGv8 básico (P).pdf",
-    "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "99 Adjuntos/Pasted Image 20250606163103_101.png",
+    "99 Adjuntos/Pasted Image 20260521104017_704.png",
+    "99 Adjuntos/Pasted Image 20260521103701_617.png",
+    "99 Adjuntos/Pasted Image 20260521103638_934.png",
     "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado selfnotes.md",
-    "Untitled.base",
-    "Untitled 2.base",
-    "Untitled 1.base",
+    "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado (P).pdf",
+    "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
+    "06 Organizacion del Computador/Teorico/6) LEGv8 básico (P).pdf",
     "Excalidraw/Scripts/Downloaded/Uniform size.md",
     "Excalidraw/Scripts/Downloaded/Text Aura.md",
     "Excalidraw/Scripts/Downloaded/Set Text Alignment.md",
@@ -238,13 +246,6 @@
     "Excalidraw/Scripts/Downloaded/Reverse arrows.md",
     "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.md",
     "Excalidraw/Scripts/Downloaded/Custom Zoom.md",
-    "Excalidraw/Scripts/Downloaded",
-    "Excalidraw/Scripts",
-    "99 Adjuntos/Pasted Image 20260519123800_670.png",
-    "99 Adjuntos/Pasted Image 20260519122657_057.png",
-    "99 Adjuntos/Pasted Image 20260519122628_667.png",
-    "99 Adjuntos/Pasted Image 20260519122558_796.png",
-    "99 Adjuntos/Pasted Image 20260519122531_769.png",
     "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
     "! README.md",
     "README.md",
