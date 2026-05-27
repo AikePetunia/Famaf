@@ -28,12 +28,24 @@
               "state": {
                 "file": "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
                 "page": 1,
-                "left": -8,
-                "top": 247,
-                "zoom": 1.7651515151515151
+                "left": -11,
+                "top": 729,
+                "zoom": 1.4393939393939394
               },
               "icon": "lucide-file-text",
               "title": "TP6 GreenCard LEGv8"
+            }
+          },
+          {
+            "id": "9fd4b81caa8515c7",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "1) Sistemas de numeracion selfnotes"
             }
           }
         ]
@@ -44,54 +56,71 @@
         "dimension": 42.18500797448166,
         "children": [
           {
-            "id": "22c9f31b82fee812",
+            "id": "ccfc9797e9ceeb50",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
-                "page": 3,
-                "left": -12,
-                "top": 638,
-                "zoom": 1.2659395973154366
-              },
-              "icon": "lucide-file-text",
-              "title": "TP7 Assembler de LEGv8 avanzado"
-            }
-          },
-          {
-            "id": "daa5e5a5d28906b0",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado (P).pdf",
+                "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
                 "page": 1,
-                "left": -14,
-                "top": 409,
-                "zoom": 1.0479166666666666
+                "left": -21,
+                "top": 845,
+                "zoom": 0.7676174496644297
               },
               "icon": "lucide-file-text",
-              "title": "7) LEGv8 avanzado (P)"
+              "title": "TP9 Implementación de la ISA"
             }
           },
           {
-            "id": "fd5b9ecb46dd8534",
+            "id": "3942b9ed13cb5429",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                "page": 422,
-                "left": 100,
-                "top": 562,
-                "zoom": 1.3972222222222221
+                "page": 344,
+                "left": -13,
+                "top": 528,
+                "zoom": 1.136111111111111
               },
               "icon": "lucide-file-text",
               "title": "Computer Organization and Design ARM edition"
             }
+          },
+          {
+            "id": "a961170c99bb4c1c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Ej 8-3 y 8-6.pdf",
+                "page": 1,
+                "left": -113,
+                "top": 2479,
+                "zoom": 0.17296524816259867
+              },
+              "icon": "lucide-file-text",
+              "title": "Ej 8-3 y 8-6"
+            }
+          },
+          {
+            "id": "c648f366c09bfb83",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Teorico/9) Implementación de la ISA.pdf",
+                "page": 1,
+                "left": -18,
+                "top": 46,
+                "zoom": 0.8520833333333334
+              },
+              "icon": "lucide-file-text",
+              "title": "9) Implementación de la ISA"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -213,13 +242,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
+                "file": "06 Organizacion del Computador/Teorico/9) Implementación de la ISA.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of TP7 Assembler de LEGv8 avanzado"
+              "title": "Outline of 9) Implementación de la ISA"
             }
           }
         ]
@@ -246,30 +275,32 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "22c9f31b82fee812",
+  "active": "c648f366c09bfb83",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
-    "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
-    "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
     "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+    "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
+    "06 Organizacion del Computador/Teorico/9) Implementación de la ISA.pdf",
+    "06 Organizacion del Computador/Teorico/8) Ensamblado y desensamblado de LEGv8 (P).pdf",
+    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Ej 8-3 y 8-6.pdf",
+    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/Algunos ejercicios resueltos del TP8.pdf",
+    "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
+    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
+    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
+    "99 Adjuntos/Pasted Image 20260527125722_021.png",
     "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado (P).pdf",
+    "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
+    "99 Adjuntos/Pasted Image 20260525190009_234.png",
     "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
     "99 Adjuntos/Pasted Image 20260524130639_473.png",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp6/TP6 Clase - LEGv8 básico.pdf",
     "99 Adjuntos/Pasted Image 20260524125808_554.png",
     "99 Adjuntos/Pasted Image 20260523164827_065.png",
     "99 Adjuntos/Pasted Image 20260523164421_513.png",
     "99 Adjuntos/Pasted Image 20260523133113_527.png",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
-    "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
-    "06 Organizacion del Computador/Teorico/9) Implementación de la ISA.pdf",
-    "06 Organizacion del Computador/Teorico/8) Ensamblado y desensamblado de LEGv8 (P).pdf",
-    "06 Organizacion del Computador/Teorico/8,9) El procesador (T).pdf",
     "99 Adjuntos/Pasted Image 20260521105436_488.png",
     "99 Adjuntos/Pasted Image 20260521105357_421.png",
     "99 Adjuntos/Pasted Image 20260521105347_089.png",
-    "99 Adjuntos/Pasted Image 20260521104955_036.png",
-    "99 Adjuntos/Pasted Image 20260521104810_101.png",
     "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado selfnotes.md",
     "Excalidraw/Scripts/Downloaded/Uniform size.md",
     "Excalidraw/Scripts/Downloaded/Text Aura.md",
@@ -286,7 +317,6 @@
     "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
     "04 Analisis matematico 2/Parcial II/Practica para parcial II.md",
     "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "00 Introduccion a los algoritmos/README.md",
     "Haskell-main/README.md",
     "Excalidraw/Drawing 2025-09-13 19.30.28.excalidraw.md",
