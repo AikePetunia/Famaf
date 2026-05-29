@@ -27,9 +27,9 @@
               "state": {
                 "file": "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
                 "page": 1,
-                "left": 201,
-                "top": 521,
-                "zoom": 3.3
+                "left": 29,
+                "top": 695,
+                "zoom": 1.7
               },
               "icon": "lucide-file-text",
               "title": "TP6 GreenCard LEGv8"
@@ -48,9 +48,9 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                "page": 366,
-                "left": 26,
-                "top": 522,
+                "page": 504,
+                "left": -9,
+                "top": 414,
                 "zoom": 1.6694444444444445
               },
               "icon": "lucide-file-text",
@@ -66,8 +66,8 @@
                 "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
                 "page": 2,
                 "left": -10,
-                "top": 89,
-                "zoom": 1.5125838926174497
+                "top": 410,
+                "zoom": 1.5125838926174495
               },
               "icon": "lucide-file-text",
               "title": "TP9 Implementación de la ISA"
@@ -83,10 +83,26 @@
                 "page": 1,
                 "left": -44,
                 "top": 2477,
-                "zoom": 0.34422919880228664
+                "zoom": 0.3442291988022866
               },
               "icon": "lucide-file-text",
               "title": "Ej 8-3 y 8-6"
+            }
+          },
+          {
+            "id": "bd326c4c208b818b",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Implementación de la ISA.pdf",
+                "page": 1,
+                "left": -12,
+                "top": 101,
+                "zoom": 1.2520833333333332
+              },
+              "icon": "lucide-file-text",
+              "title": "Implementación de la ISA"
             }
           }
         ],
@@ -212,13 +228,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
+                "file": "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of TP9 Implementación de la ISA"
+              "title": "Outline of 6,7) Legv8 selfnotes"
             }
           }
         ]
@@ -245,15 +261,15 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "af4bd2a285d0e0f0",
+  "active": "3dc6f31f86dcb4e1",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Implementación de la ISA.pdf",
     "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
     "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
     "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Implementación de la ISA.pdf",
+    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Ej 8-3 y 8-6.pdf",
     "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
     "99 Adjuntos/Pasted Image 20260528085328_850.png",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Ej 8-3 y 8-6.pdf",
     "99 Adjuntos/Pasted Image 20260528075118_517.png",
     "99 Adjuntos/Pasted Image 20260528074130_418.png",
     "99 Adjuntos/Pasted Image 20260528074140_131.png",
