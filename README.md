@@ -58,5 +58,9 @@ trabajo y estudio, tenganme paciencia xd
 
 	Cursando ODC y AyED (Lab).
 
+## Créditos
+
+Parciales mayoritariamente sacados de: <a href="https://github.com/ExamenesViejos-FAMAF-Computacion">https://github.com/ExamenesViejos-FAMAF-Computacion</a>
+
 <img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/7ec951c5-960d-4b38-838a-0cf47c4a3e78" />
 
