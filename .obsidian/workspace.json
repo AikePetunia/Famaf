@@ -6,57 +6,125 @@
       {
         "id": "51f2e5aff027f2d8",
         "type": "tabs",
+        "dimension": 65.78947368421053,
         "children": [
           {
             "id": "ca1ba42732aec290",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "6,7) Legv8 selfnotes"
+            }
+          },
+          {
+            "id": "252830e7f364603b",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
+                "page": 1,
+                "left": 43,
+                "top": 582,
+                "zoom": 2.4
+              },
+              "icon": "lucide-file-text",
+              "title": "TP6 GreenCard LEGv8"
+            }
+          },
+          {
+            "id": "17082da68403386e",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
                 "page": 347,
-                "left": -9,
-                "top": 313,
-                "zoom": 1.6333333333333335
+                "left": -7,
+                "top": 321,
+                "zoom": 2.219444444444444
               },
               "icon": "lucide-file-text",
               "title": "Computer Organization and Design ARM edition"
             }
-          },
-          {
-            "id": "af4bd2a285d0e0f0",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
-                "page": 2,
-                "left": -10,
-                "top": 350,
-                "zoom": 1.4798657718120807
-              },
-              "icon": "lucide-file-text",
-              "title": "TP9 Implementación de la ISA"
-            }
-          },
-          {
-            "id": "bd326c4c208b818b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Implementación de la ISA.pdf",
-                "page": 1,
-                "left": -21,
-                "top": 408,
-                "zoom": 0.7125
-              },
-              "icon": "lucide-file-text",
-              "title": "Implementación de la ISA"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
+      },
+      {
+        "id": "74bffdd148d47597",
+        "type": "tabs",
+        "dimension": 34.21052631578947,
+        "children": [
+          {
+            "id": "0194d7af909c7dcc",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-19 DONE.pdf",
+                "page": 4,
+                "left": 46,
+                "top": 778,
+                "zoom": 1.2
+              },
+              "icon": "lucide-file-text",
+              "title": "Parcial 2 2024-06-19 DONE"
+            }
+          },
+          {
+            "id": "b7d2623f517c7fad",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12.pdf",
+                "page": 1,
+                "left": -12,
+                "top": 846,
+                "zoom": 1.2030201342281879
+              },
+              "icon": "lucide-file-text",
+              "title": "Parcial 2 2024-06-12"
+            }
+          },
+          {
+            "id": "24c606959e0a0566",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema B).pdf",
+                "page": 3,
+                "left": -13,
+                "top": 90,
+                "zoom": 1.1715686274509804
+              },
+              "icon": "lucide-file-text",
+              "title": "Parcial 2 2023-06-16 (Tema B)"
+            }
+          },
+          {
+            "id": "8b6bda3d290b58da",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema A).pdf",
+                "page": 1,
+                "left": -12,
+                "top": 846,
+                "zoom": 1.2043942753477122
+              },
+              "icon": "lucide-file-text",
+              "title": "Parcial 2 2023-06-16 (Tema A)"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -88,7 +156,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "$\\rightarrow$",
+                "query": " file:Algunos",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -113,7 +181,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 492.5
+    "width": 492.5,
+    "collapsed": true
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -177,13 +246,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Ej 8-3 y 8-6.pdf",
+                "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-19 DONE.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Ej 8-3 y 8-6"
+              "title": "Outline of Parcial 2 2024-06-19 DONE"
             }
           }
         ]
@@ -210,31 +279,32 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "08aa564aa91d1d2b",
+  "active": "0194d7af909c7dcc",
   "lastOpenFiles": [
+    "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
+    "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
+    "99 Adjuntos/Pasted Image 20260531150311_865.png",
+    "99 Adjuntos/Pasted Image 20260531150259_445.png",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-19 DONE.pdf",
+    "99 Adjuntos/Pasted Image 20260531141150_510.png",
+    "99 Adjuntos/Pasted Image 20260531141137_657.png",
+    "99 Adjuntos/Pasted Image 20260531141124_506.png",
+    "99 Adjuntos/Pasted Image 20260531141053_280.png",
+    "Untitled 3.base",
+    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/Algunos ejercicios resueltos del TP8.pdf",
+    "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
+    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema A).pdf",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema B).pdf",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12.pdf",
+    "06 Organizacion del Computador/Teorico/8) Ensamblado y desensamblado de LEGv8 (P).pdf",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/README.md",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 3 2000-06-20.pdf",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 2 2024-06-19.pdf",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 2 2024-06-12.pdf",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 2 2023-06-16 (Tema B).pdf",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 2 2023-06-16 (Tema A).pdf",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 2 2021-06-11.pdf",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 2 2006.pdf",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 2 2000-05-19.pdf",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 1 2024-04-24 (Tema B).pdf",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 1 2024-04-24 (Tema A).pdf",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Parcial 1 2019 (Tema B).jpeg",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Laboratorios/Lab 2021/rpi-asm-framebuffer/README.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Examenes sin fecha desordenados/WhatsApp Image 2021-05-13 at 19.27.58.jpeg",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Examenes sin fecha desordenados/WhatsApp Image 2021-05-13 at 19.27.58 (1).jpeg",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Examenes sin fecha desordenados/WhatsApp Image 2021-05-13 at 19.27.57.jpeg",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Examenes sin fecha desordenados/WhatsApp Image 2021-05-13 at 19.27.57 (3).jpeg",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Examenes sin fecha desordenados/WhatsApp Image 2021-05-13 at 19.27.57 (2).jpeg",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Examenes sin fecha desordenados/WhatsApp Image 2021-05-13 at 19.27.57 (1).jpeg",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Examenes sin fecha desordenados/WhatsApp Image 2021-05-13 at 19.27.56 (3).jpeg",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Examenes sin fecha desordenados/WhatsApp Image 2021-05-13 at 19.27.56 (2).jpeg",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Examenes sin fecha desordenados/WhatsApp Image 2021-05-13 at 19.27.56 (1).jpeg",
-    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
     "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
@@ -255,8 +325,6 @@
     "04 Analisis matematico 2/Parcial II/Practica para parcial II.md",
     "00 Introduccion a los algoritmos/README.md",
     "Haskell-main/README.md",
-    "Excalidraw/Drawing 2025-09-13 19.30.28.excalidraw.md",
-    "Untitled.md",
-    "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md"
+    "Excalidraw/Drawing 2025-09-13 19.30.28.excalidraw.md"
   ]
 }
