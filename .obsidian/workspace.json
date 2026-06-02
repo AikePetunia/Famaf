@@ -6,7 +6,7 @@
       {
         "id": "51f2e5aff027f2d8",
         "type": "tabs",
-        "dimension": 87.27537639630889,
+        "dimension": 73.44497607655502,
         "children": [
           {
             "id": "ca1ba42732aec290",
@@ -19,29 +19,6 @@
               "icon": "excalidraw-icon",
               "title": "6,7) Legv8 selfnotes"
             }
-          }
-        ]
-      },
-      {
-        "id": "74bffdd148d47597",
-        "type": "tabs",
-        "dimension": 12.724623603691112,
-        "children": [
-          {
-            "id": "17082da68403386e",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                "page": 340,
-                "left": -16,
-                "top": 610,
-                "zoom": 0.9486111111111113
-              },
-              "icon": "lucide-file-text",
-              "title": "Computer Organization and Design ARM edition"
-            }
           },
           {
             "id": "606127921cd45b6f",
@@ -51,16 +28,82 @@
               "state": {
                 "file": "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
                 "page": 1,
-                "left": 108,
-                "top": 533,
-                "zoom": 3.01
+                "left": 22,
+                "top": 485,
+                "zoom": 2.7
               },
               "icon": "lucide-file-text",
               "title": "TP6 GreenCard LEGv8"
             }
           }
+        ]
+      },
+      {
+        "id": "d6e8acd2bebcc47e",
+        "type": "split",
+        "dimension": 26.555023923444978,
+        "children": [
+          {
+            "id": "74bffdd148d47597",
+            "type": "tabs",
+            "dimension": 76.62807525325616,
+            "children": [
+              {
+                "id": "17082da68403386e",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+                    "page": 347,
+                    "left": -11,
+                    "top": 336,
+                    "zoom": 0.9583333333333334
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "Computer Organization and Design ARM edition"
+                }
+              },
+              {
+                "id": "15def6bf874a8536",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema B).pdf",
+                    "page": 1,
+                    "left": -25,
+                    "top": 796,
+                    "zoom": 0.5919117647058824
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "Parcial 2 2023-06-16 (Tema B)"
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "ad80d50a58e06c81",
+            "type": "tabs",
+            "dimension": 23.37192474674385,
+            "children": [
+              {
+                "id": "a05642b9dc80b3b1",
+                "type": "leaf",
+                "state": {
+                  "type": "image",
+                  "state": {
+                    "file": "99 Adjuntos/Pasted Image 20250317100442_251.png"
+                  },
+                  "icon": "lucide-image",
+                  "title": "Pasted Image 20250317100442_251"
+                }
+              }
+            ]
+          }
         ],
-        "currentTab": 1
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -92,7 +135,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": " file:Algunos",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,8 +160,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 492.5,
-    "collapsed": true
+    "width": 492.5
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -212,37 +254,38 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
   "active": "ca1ba42732aec290",
   "lastOpenFiles": [
-    "99 Adjuntos/Pasted Image 20260525190009_234.png",
+    "gemini-scribe/Prompts/example-expert.md",
+    "gemini-scribe/Scheduled-Tasks/scheduled-tasks-state.json",
+    "gemini-scribe/Scheduled-Tasks/Runs",
+    "gemini-scribe/Scheduled-Tasks",
+    "gemini-scribe/Skills",
+    "gemini-scribe/Prompts",
+    "gemini-scribe/Background-Tasks",
+    "gemini-scribe/Agent-Sessions",
+    "gemini-scribe",
     "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
-    "99 Adjuntos/Pasted Image 20260601010239_483.png",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema B).pdf",
     "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
+    "99 Adjuntos/Pasted Image 20250317100442_251.png",
+    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "99 Adjuntos/Pasted Image 20260601170542_945.png",
+    "99 Adjuntos/Pasted Image 20260601113627_599.png",
+    "99 Adjuntos/Pasted Image 20260601112442_300.png",
+    "99 Adjuntos/Pasted Image 20260601112313_929.png",
+    "99 Adjuntos/Pasted Image 20260525190009_234.png",
+    "99 Adjuntos/Pasted Image 20260601010239_483.png",
     "99 Adjuntos/Pasted Image 20260601010049_399.png",
     "99 Adjuntos/Pasted Image 20260601005708_671.png",
     "99 Adjuntos/Pasted Image 20260601005602_911.png",
-    "99 Adjuntos/Pasted Image 20260601004156_067.png",
-    "99 Adjuntos/Pasted Image 20260601003933_570.png",
-    "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema A).pdf",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema B).pdf",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12.pdf",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-19 DONE.pdf",
-    "99 Adjuntos/Pasted Image 20260531150311_865.png",
-    "99 Adjuntos/Pasted Image 20260531150259_445.png",
-    "99 Adjuntos/Pasted Image 20260531141150_510.png",
-    "99 Adjuntos/Pasted Image 20260531141137_657.png",
-    "Untitled 3.base",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/Algunos ejercicios resueltos del TP8.pdf",
-    "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md",
-    "06 Organizacion del Computador/Teorico/8) Ensamblado y desensamblado de LEGv8 (P).pdf",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/README.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Laboratorios/Lab 2021/rpi-asm-framebuffer/README.md",
-    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
     "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado selfnotes.md",

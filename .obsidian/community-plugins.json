@@ -7,5 +7,7 @@
   "obsidian-wakatime",
   "dataview",
   "obsidian-git",
-  "obsidian-excalidraw-plugin"
+  "obsidian-excalidraw-plugin",
+  "gemini-scribe",
+  "obsidian-linter"
 ]
