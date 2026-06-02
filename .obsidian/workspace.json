@@ -6,7 +6,6 @@
       {
         "id": "51f2e5aff027f2d8",
         "type": "tabs",
-        "dimension": 73.44497607655502,
         "children": [
           {
             "id": "ca1ba42732aec290",
@@ -26,84 +25,17 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
+                "file": "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
                 "page": 1,
                 "left": 22,
                 "top": 485,
                 "zoom": 2.7
               },
               "icon": "lucide-file-text",
-              "title": "TP6 GreenCard LEGv8"
+              "title": "GreenCard LEGv8"
             }
           }
         ]
-      },
-      {
-        "id": "d6e8acd2bebcc47e",
-        "type": "split",
-        "dimension": 26.555023923444978,
-        "children": [
-          {
-            "id": "74bffdd148d47597",
-            "type": "tabs",
-            "dimension": 76.62807525325616,
-            "children": [
-              {
-                "id": "17082da68403386e",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                    "page": 347,
-                    "left": -11,
-                    "top": 336,
-                    "zoom": 0.9583333333333334
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "Computer Organization and Design ARM edition"
-                }
-              },
-              {
-                "id": "15def6bf874a8536",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema B).pdf",
-                    "page": 1,
-                    "left": -25,
-                    "top": 796,
-                    "zoom": 0.5919117647058824
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "Parcial 2 2023-06-16 (Tema B)"
-                }
-              }
-            ],
-            "currentTab": 1
-          },
-          {
-            "id": "ad80d50a58e06c81",
-            "type": "tabs",
-            "dimension": 23.37192474674385,
-            "children": [
-              {
-                "id": "a05642b9dc80b3b1",
-                "type": "leaf",
-                "state": {
-                  "type": "image",
-                  "state": {
-                    "file": "99 Adjuntos/Pasted Image 20250317100442_251.png"
-                  },
-                  "icon": "lucide-image",
-                  "title": "Pasted Image 20250317100442_251"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -160,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 492.5
+    "width": 492.5,
+    "collapsed": true
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -233,11 +166,12 @@
               "title": "Outline of 6,7) Legv8 selfnotes"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 213.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -260,6 +194,20 @@
   },
   "active": "ca1ba42732aec290",
   "lastOpenFiles": [
+    "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
+    "99 Adjuntos/Pasted Image 20260602123423_413.png",
+    "99 Adjuntos/Pasted Image 20260602123413_381.png",
+    "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
+    "h.md",
+    "99 Adjuntos/Pasted Image 20260602122611_174.png",
+    "99 Adjuntos/Pasted Image 20260602122556_824.png",
+    "99 Adjuntos/Pasted Image 20260602122420_539.png",
+    "99 Adjuntos/Pasted Image 20260602122404_975.png",
+    "99 Adjuntos/Pasted Image 20260602122240_990.png",
+    "99 Adjuntos/Pasted Image 20260602122219_537.png",
+    "99 Adjuntos/Pasted Image 20260602112117_012.png",
+    "99 Adjuntos/Pasted Image 20260602111726_061.png",
     "gemini-scribe/Prompts/example-expert.md",
     "gemini-scribe/Scheduled-Tasks/scheduled-tasks-state.json",
     "gemini-scribe/Scheduled-Tasks/Runs",
@@ -269,20 +217,7 @@
     "gemini-scribe/Background-Tasks",
     "gemini-scribe/Agent-Sessions",
     "gemini-scribe",
-    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema B).pdf",
-    "06 Organizacion del Computador/Practico/TP6 GreenCard LEGv8.pdf",
-    "99 Adjuntos/Pasted Image 20250317100442_251.png",
     "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
-    "99 Adjuntos/Pasted Image 20260601170542_945.png",
-    "99 Adjuntos/Pasted Image 20260601113627_599.png",
-    "99 Adjuntos/Pasted Image 20260601112442_300.png",
-    "99 Adjuntos/Pasted Image 20260601112313_929.png",
-    "99 Adjuntos/Pasted Image 20260525190009_234.png",
-    "99 Adjuntos/Pasted Image 20260601010239_483.png",
-    "99 Adjuntos/Pasted Image 20260601010049_399.png",
-    "99 Adjuntos/Pasted Image 20260601005708_671.png",
-    "99 Adjuntos/Pasted Image 20260601005602_911.png",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/README.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Laboratorios/Lab 2021/rpi-asm-framebuffer/README.md",
@@ -303,8 +238,6 @@
     "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo.md",
     "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
     "04 Analisis matematico 2/Parcial II/Practica para parcial II.md",
-    "00 Introduccion a los algoritmos/README.md",
-    "Haskell-main/README.md",
-    "Excalidraw/Drawing 2025-09-13 19.30.28.excalidraw.md"
+    "00 Introduccion a los algoritmos/README.md"
   ]
 }
