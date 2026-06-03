@@ -8,34 +8,85 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ca1ba42732aec290",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "6,7) Legv8 selfnotes"
-            }
-          },
-          {
-            "id": "606127921cd45b6f",
+            "id": "3929410834c02456",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
-                "page": 1,
-                "left": -5,
-                "top": 631,
-                "zoom": 3.1010101010101008
+                "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12 DONE \"modelo\" 2026.pdf",
+                "page": 2,
+                "left": -371,
+                "top": 602,
+                "zoom": 1.4
               },
               "icon": "lucide-file-text",
-              "title": "GreenCard LEGv8"
+              "title": "Parcial 2 2024-06-12 DONE \"modelo\" 2026"
+            }
+          },
+          {
+            "id": "33b4aa430e4c5467",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
+                "page": 4,
+                "left": -222,
+                "top": 843,
+                "zoom": 1.8
+              },
+              "icon": "lucide-file-text",
+              "title": "TP6 Assembler de LEGv8 básico"
+            }
+          },
+          {
+            "id": "e7da88c5a92592c0",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
+                "page": 4,
+                "left": -282,
+                "top": 694,
+                "zoom": 1.2
+              },
+              "icon": "lucide-file-text",
+              "title": "TP7 Assembler de LEGv8 avanzado"
+            }
+          },
+          {
+            "id": "d54407af89f9fb27",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
+                "page": 2,
+                "left": -282,
+                "top": 561,
+                "zoom": 1.2
+              },
+              "icon": "lucide-file-text",
+              "title": "TP8 Ensamblado y desensamblado de LEGv8"
+            }
+          },
+          {
+            "id": "aa37aab20543537e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Parcial IA"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -157,13 +208,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
+                "file": "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 6,7) Legv8 selfnotes"
+              "title": "Outline of Parcial IA"
             }
           }
         ],
@@ -197,30 +248,86 @@
     "type": "floating",
     "children": [
       {
-        "id": "1d4971b4e4d9ea02",
+        "id": "94da30d1dd9b631e",
         "type": "window",
         "children": [
           {
-            "id": "6fbe3b318dfdec95",
-            "type": "tabs",
+            "id": "3ccf4a429fa85858",
+            "type": "split",
             "children": [
               {
-                "id": "7be659520ba4c3c8",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-                    "page": 122,
-                    "left": -126,
-                    "top": 620,
-                    "zoom": 1.8
+                "id": "4827a88d0bda64bc",
+                "type": "tabs",
+                "dimension": 66.82974559686889,
+                "children": [
+                  {
+                    "id": "ca1ba42732aec290",
+                    "type": "leaf",
+                    "state": {
+                      "type": "excalidraw",
+                      "state": {
+                        "file": "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md"
+                      },
+                      "icon": "excalidraw-icon",
+                      "title": "6,7) Legv8 selfnotes"
+                    }
                   },
-                  "icon": "lucide-file-text",
-                  "title": "Computer Organization and Design ARM edition"
-                }
+                  {
+                    "id": "606127921cd45b6f",
+                    "type": "leaf",
+                    "state": {
+                      "type": "pdf",
+                      "state": {
+                        "file": "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
+                        "page": 1,
+                        "left": 55,
+                        "top": 579,
+                        "zoom": 3
+                      },
+                      "icon": "lucide-file-text",
+                      "title": "GreenCard LEGv8"
+                    }
+                  },
+                  {
+                    "id": "feabd90ad25650cc",
+                    "type": "leaf",
+                    "state": {
+                      "type": "pdf",
+                      "state": {
+                        "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
+                        "page": 1,
+                        "left": -13,
+                        "top": 846,
+                        "zoom": 1.1325503355704698
+                      },
+                      "icon": "lucide-file-text",
+                      "title": "TP9 Implementación de la ISA"
+                    }
+                  }
+                ],
+                "currentTab": 1
+              },
+              {
+                "id": "9396e163e6167fb8",
+                "type": "tabs",
+                "dimension": 33.17025440313112,
+                "children": [
+                  {
+                    "id": "b70fa32b79df64d0",
+                    "type": "leaf",
+                    "state": {
+                      "type": "image",
+                      "state": {
+                        "file": "99 Adjuntos/Pasted Image 20250317100442_251.png"
+                      },
+                      "icon": "lucide-image",
+                      "title": "Pasted Image 20250317100442_251"
+                    }
+                  }
+                ]
               }
-            ]
+            ],
+            "direction": "horizontal"
           }
         ],
         "direction": "vertical",
@@ -233,32 +340,33 @@
       }
     ]
   },
-  "active": "ca1ba42732aec290",
+  "active": "aa37aab20543537e",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
-    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
     "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
+    "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
+    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
+    "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
+    "99 Adjuntos/Pasted Image 20250317100442_251.png",
+    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "99 Adjuntos/Pasted image 20260603123914.png",
+    "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12 DONE \"modelo\" 2026.pdf",
+    "99 Adjuntos/Pasted image 20260603123342.png",
+    "99 Adjuntos/Pasted image 20260603122416.png",
+    "99 Adjuntos/Pasted image 20260603122402.png",
+    "99 Adjuntos/Pasted image 20260603121835.png",
+    "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
+    "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
+    "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2023-06-16 (Tema A).pdf",
+    "06 Organizacion del Computador/Finales/Final 2020-07-03.pdf",
+    "06 Organizacion del Computador/Finales/Final 2002-12-09.pdf",
+    "99 Adjuntos/Pasted Image 20260603104413_690.png",
     "99 Adjuntos/Pasted Image 20260602202547_580.png",
     "99 Adjuntos/Pasted Image 20260602123423_413.png",
     "99 Adjuntos/Pasted Image 20260602123413_381.png",
     "h.md",
-    "99 Adjuntos/Pasted Image 20260602122611_174.png",
-    "99 Adjuntos/Pasted Image 20260602122556_824.png",
-    "99 Adjuntos/Pasted Image 20260602122420_539.png",
-    "99 Adjuntos/Pasted Image 20260602122404_975.png",
-    "99 Adjuntos/Pasted Image 20260602122240_990.png",
-    "99 Adjuntos/Pasted Image 20260602122219_537.png",
-    "99 Adjuntos/Pasted Image 20260602112117_012.png",
     "gemini-scribe/Prompts/example-expert.md",
-    "gemini-scribe/Scheduled-Tasks/scheduled-tasks-state.json",
-    "gemini-scribe/Scheduled-Tasks/Runs",
-    "gemini-scribe/Scheduled-Tasks",
-    "gemini-scribe/Skills",
-    "gemini-scribe/Prompts",
-    "gemini-scribe/Background-Tasks",
-    "gemini-scribe/Agent-Sessions",
-    "gemini-scribe",
-    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/README.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Laboratorios/Lab 2021/rpi-asm-framebuffer/README.md",
@@ -278,7 +386,6 @@
     "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
     "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo.md",
     "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto mio.md",
-    "04 Analisis matematico 2/Parcial II/Practica para parcial II.md",
-    "00 Introduccion a los algoritmos/README.md"
+    "04 Analisis matematico 2/Parcial II/Practica para parcial II.md"
   ]
 }
