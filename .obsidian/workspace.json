@@ -27,9 +27,9 @@
               "state": {
                 "file": "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
                 "page": 1,
-                "left": 22,
-                "top": 485,
-                "zoom": 2.7
+                "left": -5,
+                "top": 631,
+                "zoom": 3.1010101010101008
               },
               "icon": "lucide-file-text",
               "title": "GreenCard LEGv8"
@@ -192,13 +192,55 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
+  "floating": {
+    "id": "b05ce1263cb73ac9",
+    "type": "floating",
+    "children": [
+      {
+        "id": "1d4971b4e4d9ea02",
+        "type": "window",
+        "children": [
+          {
+            "id": "6fbe3b318dfdec95",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "7be659520ba4c3c8",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+                    "page": 122,
+                    "left": -126,
+                    "top": 620,
+                    "zoom": 1.8
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "Computer Organization and Design ARM edition"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 0,
+        "y": 0,
+        "width": 1277,
+        "height": 1383,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "ca1ba42732aec290",
   "lastOpenFiles": [
     "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
     "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
+    "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
+    "99 Adjuntos/Pasted Image 20260602202547_580.png",
     "99 Adjuntos/Pasted Image 20260602123423_413.png",
     "99 Adjuntos/Pasted Image 20260602123413_381.png",
-    "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
     "h.md",
     "99 Adjuntos/Pasted Image 20260602122611_174.png",
     "99 Adjuntos/Pasted Image 20260602122556_824.png",
@@ -207,7 +249,6 @@
     "99 Adjuntos/Pasted Image 20260602122240_990.png",
     "99 Adjuntos/Pasted Image 20260602122219_537.png",
     "99 Adjuntos/Pasted Image 20260602112117_012.png",
-    "99 Adjuntos/Pasted Image 20260602111726_061.png",
     "gemini-scribe/Prompts/example-expert.md",
     "gemini-scribe/Scheduled-Tasks/scheduled-tasks-state.json",
     "gemini-scribe/Scheduled-Tasks/Runs",
