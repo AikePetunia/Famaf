@@ -4,89 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "51f2e5aff027f2d8",
+        "id": "235ea8c9f4c25149",
         "type": "tabs",
         "children": [
           {
-            "id": "3929410834c02456",
+            "id": "0a67f9b1669e5ca1",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "excalidraw",
               "state": {
-                "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12 DONE \"modelo\" 2026.pdf",
-                "page": 2,
-                "left": -371,
-                "top": 602,
-                "zoom": 1.4
+                "file": "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md"
               },
-              "icon": "lucide-file-text",
-              "title": "Parcial 2 2024-06-12 DONE \"modelo\" 2026"
-            }
-          },
-          {
-            "id": "33b4aa430e4c5467",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
-                "page": 4,
-                "left": -222,
-                "top": 843,
-                "zoom": 1.8
-              },
-              "icon": "lucide-file-text",
-              "title": "TP6 Assembler de LEGv8 básico"
-            }
-          },
-          {
-            "id": "e7da88c5a92592c0",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/Algunos ejercicios resueltos del TP8.pdf",
-                "page": 12,
-                "left": -391,
-                "top": 211,
-                "zoom": 1
-              },
-              "icon": "lucide-file-text",
-              "title": "Algunos ejercicios resueltos del TP8"
-            }
-          },
-          {
-            "id": "d54407af89f9fb27",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
-                "page": 1,
-                "left": -328,
-                "top": 161,
-                "zoom": 1.2
-              },
-              "icon": "lucide-file-text",
-              "title": "TP8 Ensamblado y desensamblado de LEGv8"
-            }
-          },
-          {
-            "id": "aa37aab20543537e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Parcial IA"
+              "icon": "excalidraw-icon",
+              "title": "6,7,8,9) Legv8 selfnotes"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -143,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 492.5
+    "width": 377.5,
+    "collapsed": true
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -207,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
+                "file": "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Parcial IA"
+              "title": "Outline of 6,7,8,9) Legv8 selfnotes"
             }
           }
         ],
@@ -242,35 +176,38 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
-  "active": "aa37aab20543537e",
+  "active": "0a67f9b1669e5ca1",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
-    "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
-    "06 Organizacion del Computador/Teorico/6,7) Legv8 selfnotes.md",
-    "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
-    "99 Adjuntos/Pasted Image 20260604131749_727.png",
-    "99 Adjuntos/Pasted Image 20260604131731_444.png",
-    "99 Adjuntos/Pasted Image 20260604131717_713.png",
-    "99 Adjuntos/Pasted Image 20260604131704_123.png",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/Algunos ejercicios resueltos del TP8.pdf",
-    "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/Clase_Ensamblado y desensamblado de LEGv8.pdf",
-    "06 Organizacion del Computador/Teorico/8) Ensamblado y desensamblado de LEGv8 (P).pdf",
-    "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
-    "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado (P).pdf",
-    "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
-    "99 Adjuntos/Pasted image 20260604121546.png",
-    "99 Adjuntos/Pasted Image 20260604113356_581.png",
-    "99 Adjuntos/Pasted image 20260604115218.png",
-    "99 Adjuntos/Pasted Image 20250317100442_251.png",
-    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
-    "99 Adjuntos/Pasted image 20260603123914.png",
-    "06 Organizacion del Computador/Practico/TP6 Assembler de LEGv8 básico.pdf",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12 DONE \"modelo\" 2026.pdf",
-    "99 Adjuntos/Pasted image 20260603123342.png",
-    "h.md",
+    "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
+    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
+    "99 Adjuntos/Pasted Image 20260612192409_094.png",
+    "06 Organizacion del Computador/Teorico/8,9) El procesador (T).pdf",
+    "gemini-scribe/Scheduled-Tasks/scheduled-tasks-state.json",
     "gemini-scribe/Prompts/example-expert.md",
+    "gemini-scribe/Scheduled-Tasks/Runs",
+    "gemini-scribe/Scheduled-Tasks",
+    "gemini-scribe/Skills",
+    "gemini-scribe/Prompts",
+    "gemini-scribe/Background-Tasks",
+    "gemini-scribe/Agent-Sessions",
+    "gemini-scribe",
+    "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
+    "Cheatsheat AYED2.md",
+    "machete.md",
+    "99 Adjuntos/Pasted Image 20260610222832_741.png",
+    "99 Adjuntos/Pasted Image 20260610223116_215.png",
+    "99 Adjuntos/Pasted Image 20260610223102_550.png",
+    "99 Adjuntos/Pasted Image 20260610223039_987.png",
+    "99 Adjuntos/Pasted Image 20260610222931_817.png",
+    "99 Adjuntos/Pasted Image 20260610222721_315.png",
+    "99 Adjuntos/Pasted Image 20260610222717_535.png",
+    "h.md",
+    "Untitled.md",
+    "99 Adjuntos/Pasted image 20260610222602.png",
+    "99 Adjuntos/Pasted image 20260610222539.png",
+    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
+    "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
+    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/README.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Laboratorios/Lab 2021/rpi-asm-framebuffer/README.md",
@@ -285,9 +222,6 @@
     "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.md",
     "Excalidraw/Scripts/Downloaded/Custom Zoom.md",
     "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md",
-    "! README.md",
-    "README.md",
-    "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
-    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo.md"
+    "! README.md"
   ]
 }
