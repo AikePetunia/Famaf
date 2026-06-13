@@ -366,3 +366,5 @@ La unidad de Control original de LEGv8 levanta la señal `Branch = 1` cuando lee
 **Consigna:** Agregando **una sola compuerta lógica** (NOT, AND, OR, XOR) en el diagrama del Datapath & Control original, explicá cómo cambiás la implementación para que la instrucción ejecute un `CBNZ` en lugar de un `CBZ`. ¿Dónde pones el cable y la compuerta?
 
 un not antes del and en la parte de z
+
+

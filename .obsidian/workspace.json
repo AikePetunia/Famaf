@@ -6,7 +6,7 @@
       {
         "id": "366b782969d4b643",
         "type": "tabs",
-        "dimension": 33.17384370015949,
+        "dimension": 59.52950558213716,
         "children": [
           {
             "id": "c3c442028be3befc",
@@ -36,13 +36,12 @@
               "title": "Parcial IA"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "235ea8c9f4c25149",
         "type": "tabs",
-        "dimension": 66.8261562998405,
+        "dimension": 40.47049441786284,
         "children": [
           {
             "id": "0a67f9b1669e5ca1",
@@ -64,9 +63,9 @@
               "state": {
                 "file": "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
                 "page": 1,
-                "left": -10,
-                "top": 729,
-                "zoom": 1.517676767676768
+                "left": 38,
+                "top": 677,
+                "zoom": 1.4
               },
               "icon": "lucide-file-text",
               "title": "GreenCard LEGv8"
@@ -210,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
+                "file": "06 Organizacion del Computador/Parcial 2/re-parciales..md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 6,7,8,9) Legv8 selfnotes"
+              "title": "Outline of re-parciales."
             }
           }
         ],
@@ -245,32 +244,31 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
-  "active": "0a67f9b1669e5ca1",
+  "active": "c3c442028be3befc",
   "lastOpenFiles": [
-    "99 Adjuntos/Pasted Image 20260613181550_671.png",
+    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
+    "06 Organizacion del Computador/Parcial 2/re-parciales..md",
+    "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
     "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-19 DONE.pdf",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12 DONE \"modelo\" 2026.pdf",
+    "99 Adjuntos/Pasted Image 20260613181550_671.png",
     "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2).pdf",
     "06 Organizacion del Computador/Finales/Final 2021-12-06.pdf",
     "06 Organizacion del Computador/Finales/Final 2021-12-21.pdf",
     "06 Organizacion del Computador/Finales/Final 2022-02-24.pdf",
     "06 Organizacion del Computador/Finales/Final 2024-02-09.pdf",
-    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
     "99 Adjuntos/Pasted Image 20260613181232_764.png",
-    "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
-    "06 Organizacion del Computador/Parcial 2/re-parciales..md",
     "99 Adjuntos/Pasted Image 20260613143435_028.png",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Implementación de la ISA.pdf",
     "99 Adjuntos/Pasted Image 20260613143126_319.png",
     "06 Organizacion del Computador/Teorico/8) Ensamblado y desensamblado de LEGv8 (P).pdf",
-    "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado (P).pdf",
     "99 Adjuntos/Pasted Image 20260613140710_333.png",
     "99 Adjuntos/Pasted Image 20260613131654_245.png",
     "99 Adjuntos/Pasted Image 20260613131549_347.png",
     "99 Adjuntos/Pasted Image 20260613131509_559.png",
     "99 Adjuntos/Pasted Image 20260524130639_473.png",
     "99 Adjuntos/Pasted Image 20260613124522_309.png",
-    "99 Adjuntos/Pasted Image 20260613122156_178.png",
-    "06 Organizacion del Computador/Computer Organization and Design ARM edition.pdf",
     "gemini-scribe/Prompts/example-expert.md",
     "Cheatsheat AYED2.md",
     "machete.md",
