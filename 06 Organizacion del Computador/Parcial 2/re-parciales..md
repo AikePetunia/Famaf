@@ -335,3 +335,202 @@ Rd(5):00001
 SUBI x1, x1, #1 
 
 // estaria bueno practicarlo con branches
+
+## Ejercicio 5 
+Ensamblar estos dos programas:
+
+```
+0000: 0, 0001: 1, 0010: 2, 0011: 3, 0100: 4,
+0101: 5, 0110: 6, 0111: 7, 1000: 8, 1001: 9,
+1010: A, 1011: B, 1100: C, 1101: D, 1110: E, 1111: F
+```
+
+|      | Ensamblador                                       | Codigo máquina                           |
+| ---- | ------------------------------------------------- | ---------------------------------------- |
+| DL1: | .org 0x2000<br>L0: SUBI X0, X0, #1<br>CBNZ X0, L0 | # Ensambla en 0x2000<br>0xD1000400<br>0x |
+| DL2: | .org 0x4000<br>L1: SUBI X0, X0, #1<br>CBNZ X0, L1 | # Ensambla en 0x4000<br>0x<br>0x         |
+L0: SUBI X0, X0, #1
+Opcode(10): 1101000100
+Aluimmediate(12):0000 0000 0001
+Rn(5):00000
+Rd(5):00000
+
+1101 0001 0000 0000 0000 0100 0000 0000
+0xD1000400
+
+CBNZ x0, l0
+Opcode(8): 10110101
+COND_BR_address(19):
+Retrocede 1 linea (-1).
+0000 0000 0000 0000 001
+Complemento a 2:
+1111 1111 1111 1111 110
+Sumo 1(para -):
+1111 1111 1111 1111 111
+
+Si retrocediece muchas lineas, deberia de usar la formula de :
+Direccion destino = PC + (imm * 4)
+Quedando  (Pues, estoy ensamblando):
+Imm = (Dirección Destino - PC) / 4
+ponele q l0 esta en 0x2000 y estoy en 0x2004
+(0x2000 - 0x2004)/4 = -4 / 4 = -1 
+
+1011 0101 1111 1111 1111 1111 1110 0000
+0xB5FFFFE0
+
+org 0x4000
+L1: SUBI X0, X0, #1
+CBNZ X0, L1
+lit es lo mismo xD 
+
+Ejercicio 6 Dada la compilación con la siguiente relación entre variables y registros: ● x ↔ X0 ● score ↔ X1 ● speedx ↔ X2
+
+![[Pasted image 20260615132705.png]]Explicar en una línea si la compilación es correcta o no y por qué.![[Pasted image 20260615132940.png]]
+No esta haciendo -speedx, solo hace un -1, sumo un 1 (quedando en 0)-
+
+![[Pasted image 20260615134136.png]]
+
+Ejercicio 8 Un opcode genera una instrucción no documentada que hace que Control tome estos valores 
+Reg2Loc ALUSrc MemtoReg RegWrite MemRead MemWrite Branch ALU ADD 
+0 0 1 1 1 0 0  
+Describir qué operación realiza: ______________________________________________________
+Memoria a registro
+Escribe en registro 
+Lee memoria
+Add
+Realiza una suma entre registros, para leer lo que se guardo en memoria en ese registro para luego colocarlo en otro registro
+Invente su nemónico: 
+AMR (Alu Operation In Memory To Register)
+
+---------------------------------------
+Parcial 2 2024-06-19 DONE
+
+| Instruccion              | Si/NO | Just                                                |
+| ------------------------ | ----- | --------------------------------------------------- |
+| LDUR X0, [X9, XZR]       | NO    | LDUR necesita inmediato en el tercer campo          |
+| EORI XZR, X1, #65500     | NO    | No es posible hacer XOR con un inmediato tan grande |
+| ORRS XZR, XZR, XZR       | si    | Simplemente skip seteando flags                     |
+| SUBI X1, X30, #-1        | No    | En aritmetica inmediata no permite negativos        |
+| Br X0                    | Si    | x0 es un registro, BR (Branch Register)             |
+| MOVK XZR, #Fa110, lsl #0 | No    | FA110 es de 5 bytes y no 4                          |
+2)Escribir un programa en LEGv8 que dado un número en float32 en X0 produce un número TensorFloat32 también en X0. La representación de TensorFloat32 se basa en truncar float32 para pasar de una mantisa de 23 bits a una de 10 bits.
+
+
+X0 = número grande con mantisa de 32 bits.
+Debo de usar. 
+```
+LSR x0, x0, #13 // desplazo a derecha los bits para borrar
+LSL x0, x0, #13 // desplazo nuevamente a la izq para conservar valores 
+```
+
+3) Para estas instrucciones con operandos inmediatos, dar el intervalo en bytes. Puede expresarse de la forma (2^k)-j. El paso es el incremento mínimo entre un valor y el siguiente y puede ser 1, 2, 4 u 8.
+
+|        | RANGO OP IMM             | PASO |
+| ------ | ------------------------ | ---- |
+| LDURB  | [-2⁸⁻¹,2⁸⁻¹-1)           | 1    |
+| ADDI   | [0,2¹²-1)                | 1    |
+| B      | [-2²⁵ * 2², 2²⁵ * 2² -1) | 4    |
+| B.COND | [-2¹⁸ * 2², 2¹⁸ * 2²-1)  | 4    |
+| CBNZ   | [-2¹⁸ * 2², 2¹⁸ * 2²-1)  | 4    |
+| MOVK   | (0,2¹⁶-1)                | 1    |
+LDURB, type D:
+Opcode(11):
+Op(2):
+DT_Address(9):
+Rn(5):
+Rt(5):
+
+ADDI, type I:
+opcode(10):
+ALU_immediate(12):
+Rn(5):
+Rt(5):
+
+MOVK, type IM:
+opcode(9):
+LSL(2):
+Imm(16):
+Rd(5)
+
+Entendamos que los campos de inmediato funcionan asi:
+Si acepta negativos, es un numero signado y por el signo, se le resta 1 al exponente.
+Si NO es signado, 2^imm toma su immediato normal y no acepta 0.
+Según su salto, es a cuanto se le tiene q multiplicar su campo (si sus saltos son de a 4, a su inmediato (segun signo) se le multiplica 2²)
+
+4)
+
+| Entrada | Entrada |     |
+| ------- | ------- | --- |
+| X0      | X1      | X0  |
+| 15      | 5       | 5   |
+| 14      | 7       | 7   |
+| 21      | 14      | 7   |
+|         |         |     |
+x0 = 15, x1 = 5,
+no se cumple nada
+x0 = 15 - 5, goto l8
+
+x0 = 10, x1 = 5,
+no cumple
+x0 = 10 - 5, goto l8
+
+x0 = 5, x1 = 5, cumple
+b.eq l1 (goto ret)
+
+
+---
+x0 = 14, x1 = 7,
+x0 = 14 - 7
+no cumple
+x0 = 7, x1 = 7
+cumple, goto l1.
+
+---
+x0 = 21, x1 = 14
+no cumple
+x0 = 21 - 14;
+
+x0 = 7, x1 = 14;
+cumple ls, goto l3
+x1 = 14 - 7;
+goto l8
+cumple b.eq l1
+ret
+
+b) Decompilar el assembly a “C”
+
+```
+int i = x0;
+int j = x1;
+while (i != j) {
+	if (i < j ) { // se que dice b.LS (<=) pero tiene dpss un == y no entraria mas
+	 j -= i;
+	} else if (i > j) {
+	 i -= j;
+	} 
+}
+
+
+// El programa iguala los inputs
+```
+
+5) Dada una implementación incompleta de la ISA LEGv8
+![[Pasted image 20260615152526.png]]a) Supongo que Control tiene una salida más que indica CBZ(1)/CBNZ(0), agregar lógica, cortar cables / agregar cables de forma tal que acepte los dos tipos de salto.
+
+- Cortar el cable que sale de la flag `Zero` de la ALU.
+    
+- Poner un MUX de 2 a 1.
+    
+- Al puerto `1` del MUX, conectás el cable `Zero` directo (para cuando la instrucción sea CBZ).
+    
+- Al puerto `0` del MUX, le conectás el cable `Zero` pasándolo previamente por una compuerta **NOT** (para cuando sea CBNZ).
+    
+- El selector de este MUX es la nueva señal de Control `CBZ/CBNZ`.
+    
+- La salida del MUX va a la compuerta AND del Branch.
+
+b) Indique cómo deberían estar el resto de las señales para estas instrucciones.
+
+| REG2LOC | ALUSRC | MEMTOREG | REGWRITE | MEMREAD | MEMWRITE | BRANCH | ALU |
+| ------- | ------ | -------- | -------- | ------- | -------- | ------ | --- |
+| 1       | 0      | 0        | 0        | 0       | 0        | 1      | 01  |
