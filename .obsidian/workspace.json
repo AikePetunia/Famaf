@@ -48,10 +48,10 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
-                "page": 2,
-                "left": 89,
-                "top": 264,
-                "zoom": 5.1
+                "page": 1,
+                "left": 40,
+                "top": 384,
+                "zoom": 4.3
               },
               "icon": "lucide-file-text",
               "title": "GreenCard LEGv8"
@@ -64,10 +64,10 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2026 ODC.pdf",
-                "page": 4,
-                "left": -19,
-                "top": 653,
-                "zoom": 0.8013094707068724
+                "page": 7,
+                "left": -9,
+                "top": 710,
+                "zoom": 1.7046725060792427
               },
               "icon": "lucide-file-text",
               "title": "Parcial 2 2026 ODC"
@@ -196,13 +196,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2026 ODC.pdf",
+                "file": "06 Organizacion del Computador/Parcial 2/re-parciales..md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Parcial 2 2026 ODC"
+              "title": "Outline of re-parciales."
             }
           }
         ],
@@ -231,13 +231,13 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
-  "active": "bc907c54dbed1f53",
+  "active": "c3c442028be3befc",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Parcial 2/re-parciales..md",
-    "99 Adjuntos/Pasted image 20260616104559.png",
     "06 Organizacion del Computador/Parcial 2/Parcial 2 2026 ODC.pdf",
-    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
+    "06 Organizacion del Computador/Parcial 2/re-parciales..md",
     "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
+    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
+    "99 Adjuntos/Pasted image 20260616104559.png",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Implementación de la ISA.pdf",
     "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-19 DONE.pdf",
     "99 Adjuntos/Pasted image 20260615152526.png",

@@ -746,3 +746,154 @@ ALU PASS B: hace un branch
 
 Que operacion realiza (inventada):
 Escribe en un registro, la posicion en memoria y checkea sio tiene que hacer un salto condicional
+
+
+---
+Parcial tema 2.
+Ejercicio 1.
+Escribir un NOP, un skip, UNA instruccion que no hace nada. Una con cada nemonico. No se peude suponer nada acerca de los registros, la memoria, el pc o los flags. Si no es posible, poner -.
+
+addi xzr, xzr, #0 
+adds -
+andi xzr, xzr, #0 
+ands -
+B 1 (o B Done, done:)
+br -
+cbz xzr, 1 
+EORI xzr, xzr, #0 
+ldurh -
+lsl xzr, xzr, #0 
+movk xzr, #0, lsl #0 
+orr xzr, xzr, xzr 
+stur -
+sturh -
+sub xzr, xzr, xzr
+subis - 
+
+2. Completar el programa legv8 para que el loop itere exactamente 2⁶⁴ veces.
+sabemos que 2⁶⁴ es 2 (0 o 1) y 64 bits que permite almacenar una instruccion, 2⁶⁴ = 0xffff ffff ffff ffff siendo un numero de iteraciones
+
+```
+ADDI X0, XZR, #1
+L0: SUBI X0, X0, #1 
+CBNZ X0, L0
+```
+
+
+Ejercicio 3 
+Escribir un programa Legv8 que sobreescriba el rango de memoria [0x0000, 0x1000) con 0's. Si usa mas de 5 instrucciones baja puntos.
+
+```
+	movz x8, #0x1000, lsl #0 
+li: 
+	subi x0, x0, #8 // para acceder a los i necesarios y poner 0's
+	stur xzr, [x0, #0] // pongo 0's en la direccion que este
+	CBNZ x8, li; // itera todos los numeros hasta tener 0 
+```
+
+ejercicio 4)
+Para el siguiente codigo LEGv8 la directica org le indica al programa que esnambla la direccion de memoria:
+
+```
+0000: 0, 0001: 1, 0010: 2, 0011: 3, 0100: 4,
+0101: 5, 0110: 6, 0111: 7, 1000: 8, 1001: 9,
+1010: A, 1011: B, 1100: C, 1101: D, 1110: E, 1111: F
+```
+
+| ensamblador                                                                               | código de máquina                                    |
+| ----------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| ORG 0X2000<br>ADD X16, XZR, XZR<br>SUBI X0, XZR, #1<br>L: ADD X16, X16, X0<br>CBNZ X16, L | <br>0X2000:0X<br>0X2004:0X<br>0X2008:0X<br>0X200C:0X |
+ADD X16, XZR, XZR.
+R[Rd] = R[Rn] + R[Rm]
+Opcode(11): 10001011000
+Rm(5):11111 
+Shamt(6):000000
+Rd(5):10000
+Rn(5):11111
+Binary:
+1000 1011 0001 1111 0000 0011 1111 0000
+`0x8B1F021F`
+
+SUBI X0, XZR, #1  
+R[Rd] = R[Rn] - ALUImm
+Opcode(10):1101000100
+ALU_imm(12): 000000000001
+Rn(5): 11111
+Rd(5): 00000
+1101 0001 0000 0000 0000 0111 1110 0000
+0XD10007E0
+
+ADD X16, X16, X0  
+R[Rd] = R[Rn] + R[Rm]
+Opcode(11):10001011000
+Rm(5): 00000
+Shamt(6):000000
+Rd(5):10000
+Rn(5): 10000
+1000 1011 0000 0000 0000 0010 0001 0000
+0X8B000210
+
+CBNZ X16, L
+Opcode(8): 1011 0101
+COND_BR_address(19): 1111 1111 1111 1111 111
+Rt(5):1000 0
+1011 0101 1111 1111 1111 1111 1111 0000
+0XB5FFFFF0
+
+B) Dado que la arquitectura es LE, ESCRIBIR LA SECUENCIA DE BYTES EN MEMORia:
+0x2000: 1f
+0x2001: 02 
+0x2002: 1F
+0x2003: 8B 
+
+0x2004: E0
+0x2005: 07
+0x2006 00
+0x2007 D1
+
+0x2008 10 
+0x2009 02
+0x200a 00
+0x200b 8B
+
+0x200c F0
+0x200d FF
+0x200e FF 
+0x200f B5
+
+
+Ejercicio 5:
+Compilar a LEGV8 CON LA SIGUIENTE RELACION ENTRE VARIABLES Y REGISTROS:
+x= x0, dx=x1
+En 7 instrucciones o penalidad por cada instruccion demas 
+
+``` 
+if (x==0) #rebota
+	dx = -dx;
+else 
+	x=x+dx;
+```
+
+```
+	CBNZ x0, else
+	SUB x1, xzr, x1
+	b.done
+else: 
+	add, x0, x0, x1
+done:
+```
+
+EJERCICIO 7:
+dar tabla datapath del STUR
+
+| REG2LOC | ALUSRC | MEMTOREG | REGWRITE | MEMREAD | MEMWRITE | BRANCH | ALU |
+| ------- | ------ | -------- | -------- | ------- | -------- | ------ | --- |
+| 1       | 1      | 0        | 0        | 0       | 1        | 0      | 00  |
+STUR ES TIPO D, OPERA CON 
+RT (4..0)
+RN (9..5)
+OP(2)
+DTADDRESS
+OPCODE
+stur escribe en memoria, o sea
+stur M[R[Rn] + DTAddr] = R[Rt];
