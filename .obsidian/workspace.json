@@ -48,10 +48,10 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
-                "page": 1,
-                "left": 214,
-                "top": 532,
-                "zoom": 3
+                "page": 2,
+                "left": 89,
+                "top": 264,
+                "zoom": 5.1
               },
               "icon": "lucide-file-text",
               "title": "GreenCard LEGv8"
@@ -64,10 +64,10 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2026 ODC.pdf",
-                "page": 3,
-                "left": -9,
-                "top": 161,
-                "zoom": 1.7046725060792427
+                "page": 4,
+                "left": -19,
+                "top": 653,
+                "zoom": 0.8013094707068724
               },
               "icon": "lucide-file-text",
               "title": "Parcial 2 2026 ODC"
@@ -233,13 +233,14 @@
   },
   "active": "bc907c54dbed1f53",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Implementación de la ISA.pdf",
     "06 Organizacion del Computador/Parcial 2/re-parciales..md",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-19 DONE.pdf",
-    "99 Adjuntos/Pasted image 20260615152526.png",
+    "99 Adjuntos/Pasted image 20260616104559.png",
     "06 Organizacion del Computador/Parcial 2/Parcial 2 2026 ODC.pdf",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
     "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
+    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Implementación de la ISA.pdf",
+    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-19 DONE.pdf",
+    "99 Adjuntos/Pasted image 20260615152526.png",
     "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
     "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12 DONE \"modelo\" 2026.pdf",
     "99 Adjuntos/Pasted image 20260615134136.png",
@@ -255,7 +256,6 @@
     "99 Adjuntos/Pasted Image 20260613181232_764.png",
     "99 Adjuntos/Pasted Image 20260613143435_028.png",
     "99 Adjuntos/Pasted Image 20260613143126_319.png",
-    "99 Adjuntos/Pasted Image 20260613140710_333.png",
     "gemini-scribe/Prompts/example-expert.md",
     "Cheatsheat AYED2.md",
     "machete.md",

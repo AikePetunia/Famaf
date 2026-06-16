@@ -534,3 +534,215 @@ b) Indique cómo deberían estar el resto de las señales para estas instruccion
 | REG2LOC | ALUSRC | MEMTOREG | REGWRITE | MEMREAD | MEMWRITE | BRANCH | ALU |
 | ------- | ------ | -------- | -------- | ------- | -------- | ------ | --- |
 | 1       | 0      | 0        | 0        | 0       | 0        | 1      | 01  |
+|         |        |          |          |         |          |        |     |
+
+
+---
+Parcial 2026 "Abstraction Breaker".
+
+1)decir si modifica un registro y/o memoria o nada.
+
+Al pc y los flags no se les considera reigstros. NO puede hacer ninguna suposicion acerca del contenido de los registros ni de la memoria
+
+ADD X0, X0, X0 modifica registro
+ADDIS x0, x0, #0 Es "skip", setea flags.
+AND x31, x31, x31 Es skip, "Y esta con con Y esta cosa, es Y"
+ANDIS X0, X0, #0XFFF Modifica un registro
+B 0 NO modifica nada
+Bl 1 Modifica un registro
+CBNZ x31, -1 no modifica nada
+EOR x8, x8, x8 modifica un registro
+LDUR x31, [x0, #16] No modifica nada, x31 es XZR
+LDURB x0, [x0, #0] Modifica un registro, hace valor = a[i]
+LSR x30, x30, #63 Registro
+Movz x0, #0, lsl, 0 Modifica un registro
+ORRI x7, x7, 0 skip, no modifica nada
+STURB x30, [x30, #8] Modifica memoria
+STURW x30, [x30, #16] Modifica memoria
+SUBI x1, x2, xzr No modifica nada, subi necesita un inmediato
+SUB x2, x2, xzr es skip
+
+
+2) Indicar exactmanete cuantas veces se ejectua la instruccion subi x0, x0, #1
+
+```
+	MOVZ X1, #3, LSL #0       // x1 = 0x0000 0000 0000 0003
+L0: MOVZ X0, #0, LSL #48      // x0 = 0x0000 0000 0000 0000
+L1: SUBI X0, X0, #1           // x0 = x0 -1
+	CBNZ X0, L1
+	SUBI, X1, X1, #1
+	CBNZ X1, L0
+```
+
+Sabemos que el registro x1 es literalmente 3, por lo tanto el SUBI X1, X1, #1 Se ejecutara si o si 3 veces. 
+Luego, como tenemos:
+0x0000 0000 0000 0000
+pero antes, de ver branch, restamos 1 (A traves del subI a observar)
+Como el CBNZ hace q volvamos a subi,  pero tenemos un subi, nuestro registro antes del primer CBNZ hace:
+
+```
+L0: MOVZ X0, #0, LSL #48      // x0 = 0x0000 0000 0000 0000
+L1: SUBI X0, X0, #1           // x0 = 0xFFFF FFFF FFFF FFFF 
+```
+ese 0xfff tiene q ir hasta 0, entonces este itera 2⁶⁴-1 veces
+(el calculo es valorDigito * 16^pos)
+
+Entonces tenemos que esta instruccion sola
+
+```
+L1: SUBI X0, X0, #1           // x0 = 0xFFFF FFFF FFFF FFFF 
+```
+Itera 2⁶⁴-1 veces.
+pero hay que tener en cuenta el bucle externo.
+
+```
+	MOVZ X1, #3, LSL #0       // x1 = 0x0000 0000 0000 0003
+	
+L0: MOVZ X0, #0, LSL #48      // x0 = 0x0000 0000 0000 0000
+L1: SUBI X0, X0, #1           // x0 = x0 -1
+	CBNZ X0, L1
+	
+	SUBI, X1, X1, #1
+	CBNZ X1, L0
+
+```
+
+Demos el hipotetico caso, que x0 puede terminar siendo 
+x0 = 0x0000 0000 0000 0000 ,
+aun queda subi x1, x1 #1 que resta -1 a x1, o sea
+
+0x0000 0000 0000 0000 0003 -1 y esto lo tiene que hacer 3 veces. 
+Estas 3 veces, tiene que hacerse de nuevo el bloque anteriormente mencionado.
+
+Tenemos que:
+2⁶⁴-1 veces de  iteracion de subi x0 y cbnz x0 
+1 instruccion externa, pero no importa
+subi x1, cbnz x1 reinicia el subi digamos
+Nos queda en total, las veces que ejecutra subi1 x0, x0, #1 
+
+((2⁶⁴) * 3)
+
+3) El siguiente programa en assembler LEGV8 pone a 0 la memoria en el rango [0x0000, 0x1000)
+```
+	.ORG 0Xc0c0 // esto solo indica en que instruccion estoy
+	MOVZ X0, #0X1000, LSL #0 
+L: SUBI X0, X0, #1 
+	STURB XZR, [X0, #0]
+	CBNZ X0, L
+```
+
+a) indicar cuantas instrucciones ejecuta en total, dejar el valor expresado como sumas, multiplicaciones y/p potencias.
+
+3n + 1 Instrucciones
+
+b) Escribir una version modificada que ocupe la misma cantidad en memoria, pero que ejecute 2, 4 u 8 veces menos instrucciones 
+
+```
+	MOVZ X0, #0X1000, LSL #0 
+L: SUBI X0, X0, #8 
+	STUR XZR, [X0, #0]
+	CBNZ X0, L
+```
+
+
+### Ejercicio 4: Desensamblado a medida
+
+La siguiente secuencia de bytes es código máquina LEGv8 volcado desde la memoria RAM. Desensamblar el programa completo a código Assembly, detallando el Opcode, el Formato de Instrucción y el valor de cada campo.
+
+Plaintext
+
+```
+29 00 42 F8 // LE: 0xf8420029
+
+2A 01 02 8B // LE: 0X8B02012A
+
+21 08 00 D1 // LE: 0XD1000821
+
+DA FF FF B5 // LE: 0XB5FFFFDA
+```
+
+```
+0000: 0, 0001: 1, 0010: 2, 0011: 3, 0100: 4,
+0101: 5, 0110: 6, 0111: 7, 1000: 8, 1001: 9,
+1010: A, 1011: B, 1100: C, 1101: D, 1110: E, 1111: F
+```
+
+// LE: 0xf8420029
+1111 1000 0100 0010 0000 0000 0010 1001
+
+Opcode(11): 1111 1000 010 (LDUR) TYPE D
+DT_address(9):000 1000 00
+op(2):00
+Rn(5):00001
+Rt(5):01001
+LDUR R[RT] = M[R[Rn] + DTAddr]
+
+LDUR x9, [x1, #32]
+
+// LE: 0X8B02012A
+**1000 1011 000**0 0010** **0000 00**01 001**0 1010**
+Opcode(11): 1000 1011 000 (ADD) type r
+rm(5): 00010
+shamt(6):0000 00
+Rn(5):01001
+Rd(5):01010
+
+ADD R[Rd] = R[Rn] + R[Rm]
+ADD x10, x9, x2
+
+// LE: 0XD1000821
+**1101 0001 00**00 0000 0000 1**000 00**1**0 0001**
+Opcode(10): 1101 0001 00 (SUBI) type i
+ALU_immediate(12):0000 0000 0010
+Rn(5):00001
+Rd(5):00001
+SUBI x1, x1, #2
+
+// LE: 0XB5FFFFDA
+**1011 0101** **1111 1111 1111 1111 110**1 1010**
+Opcode(8): 1011 0101
+COND_BR_address(19): 1111 1111 1111 1111 110
+Rt(5):11010
+
+CBNZ x26, -2
+
+ejercicio 5 pasar de ASM a C entre variables y registros:
+```
+	CBNZ X0, ELSE
+	SUBI X8, XZR, #1 // hago x8 = -1
+	EOR X1, X1, X8 // dx = d1 ^ x8
+	ADDI X1, X1, #1  // dx ++;
+	B EXIT
+ELSE: ADD X0, X0, X1
+EXIT:
+```
+
+x=x0, dx=x1
+
+```
+if (x == 0) {
+	dx = -dx;
+	dx++;
+} else {
+	x = x + dx;
+}
+```
+
+![[Pasted image 20260616104559.png]]
+
+Ej 7) Un opcode genera una instruiccion no docuemtnada que hace que Control tome estos valores
+
+| REG2LOC | ALUSRC | MEMTOREG | REGWRITE | MEMREAD | MEMWRITE | BRANCH | ALU    |
+| ------- | ------ | -------- | -------- | ------- | -------- | ------ | ------ |
+| 1       | 0      | 1        | 1        | 1       | 0        | 1      | PASS B |
+
+Sepas que las señales hacen:
+
+Reg2loc: Selecciona las instruciones [4-0] para leer ese registro
+Regwrite: escribe en un registro.
+Memread: lee un dato de la memoria, como un LDUR
+Branch hace un salto de un lugar a otro (B.cond, CBNZ, BL, BR, etc)
+ALU PASS B: hace un branch
+
+Que operacion realiza (inventada):
+Escribe en un registro, la posicion en memoria y checkea sio tiene que hacer un salto condicional
