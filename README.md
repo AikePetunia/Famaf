@@ -37,10 +37,10 @@ trabajo y estudio, tenganme paciencia xd
 
 ## 🛠️ Herramientas
 
-* **[Obsidian](https://obsidian.md/)**: El núcleo de todo. Gestión del conocimiento, interconexión de notas (Zettelkasten) y teoría. 
-* **Excalidraw + PDF++**: Para resolver ejercicios prácticos a mano alzada, hacer esquemas lógicos y linkear partes específicas de los PDFs provistos por las cátedras. 
-* **Xournal++**: Herramienta de apoyo para tomar notas rápidas sobre PDFs.
-* **Gemini + NotebookLM**: Es la mejor IA para estudio, recomiendo demasiado usarla junto a NotebookLM y un prompt personalizado.
+* **[Obsidian](https://obsidian.md/)**: El núcleo de todo. Tiene las notas, practicos, parciales, anotaciones, etc. 
+* **Excalidraw + PDF++**: Para resolver ejercicios prácticos a mano alzada,o simplemente escribir los teoricos.
+* **Xournal++**: Herramienta de apoyo para tomar notas rápidas sobre PDFs. Usado para materias matematicas
+* **Gemini + NotebookLM**: Es la mejor IA para estudio, recomiendo demasiado usarla junto a NotebookLM y un prompt personalizado segun materia
 
 ## Personalización
 
