@@ -4,77 +4,79 @@
     "type": "split",
     "children": [
       {
-        "id": "366b782969d4b643",
+        "id": "da896ba0afdc969a",
         "type": "tabs",
-        "dimension": 43.9792663476874,
+        "dimension": 59.80861244019139,
         "children": [
           {
-            "id": "c3c442028be3befc",
+            "id": "a0d7479b81db6acd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "06 Organizacion del Computador/Parcial 2/re-parciales..md",
-                "mode": "source",
-                "source": false
+                "file": "06 Organizacion del Computador/Teorico/1,2,3,4,5) Computer Organization selfnotes.md"
               },
-              "icon": "lucide-file",
-              "title": "re-parciales."
+              "icon": "excalidraw-icon",
+              "title": "1,2,3,4,5) Computer Organization selfnotes"
             }
           }
         ]
       },
       {
-        "id": "235ea8c9f4c25149",
+        "id": "df131e26fa8a6984",
         "type": "tabs",
-        "dimension": 56.02073365231261,
+        "dimension": 40.19138755980861,
         "children": [
           {
-            "id": "0a67f9b1669e5ca1",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "6,7,8,9) Legv8 selfnotes"
-            }
-          },
-          {
-            "id": "ac09f5a47735e9d5",
+            "id": "2be2c1bd53f1f156",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
-                "page": 1,
-                "left": 40,
-                "top": 384,
-                "zoom": 4.3
+                "file": "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+                "page": 43,
+                "left": -5,
+                "top": 61,
+                "zoom": 1.4
               },
               "icon": "lucide-file-text",
-              "title": "GreenCard LEGv8"
+              "title": "Diseño digital, 3ra Edición - M. Morris Mano.ORG"
             }
           },
           {
-            "id": "bc907c54dbed1f53",
+            "id": "d3a8625ed51570a4",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Parcial 2/Parcial 2 2026 ODC.pdf",
-                "page": 7,
-                "left": -9,
-                "top": 710,
-                "zoom": 1.7046725060792427
+                "file": "06 Organizacion del Computador/Teorico/2) Algebra Booleana (P).pdf",
+                "page": 14,
+                "left": -13,
+                "top": 164,
+                "zoom": 1
               },
               "icon": "lucide-file-text",
-              "title": "Parcial 2 2026 ODC"
+              "title": "2) Algebra Booleana (P)"
+            }
+          },
+          {
+            "id": "18e3e51e0805f72f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Teorico/2,3,4,5) Algebra Booleana (T).pdf",
+                "page": 43,
+                "left": -13,
+                "top": 527,
+                "zoom": 1
+              },
+              "icon": "lucide-file-text",
+              "title": "2,3,4,5) Algebra Booleana (T)"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -196,13 +198,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Parcial 2/re-parciales..md",
+                "file": "06 Organizacion del Computador/Teorico/1,2,3,4,5) Computer Organization selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of re-parciales."
+              "title": "Outline of 1,2,3,4,5) Computer Organization selfnotes"
             }
           }
         ],
@@ -231,31 +233,38 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
-  "active": "c3c442028be3befc",
+  "active": "a0d7479b81db6acd",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2026 ODC.pdf",
-    "06 Organizacion del Computador/Parcial 2/re-parciales..md",
-    "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
-    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
-    "99 Adjuntos/Pasted image 20260616104559.png",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp9/Implementación de la ISA.pdf",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-19 DONE.pdf",
-    "99 Adjuntos/Pasted image 20260615152526.png",
-    "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2024-06-12 DONE \"modelo\" 2026.pdf",
-    "99 Adjuntos/Pasted image 20260615134136.png",
-    "99 Adjuntos/Pasted image 20260615132940.png",
-    "99 Adjuntos/Pasted image 20260615132705.png",
-    "99 Adjuntos/Pasted Image 20260614181525_711.png",
-    "99 Adjuntos/Pasted Image 20260613181550_671.png",
-    "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2).pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-12-06.pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-12-21.pdf",
-    "06 Organizacion del Computador/Finales/Final 2022-02-24.pdf",
+    "06 Organizacion del Computador/Teorico/2) Algebra Booleana (P).pdf",
+    "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "06 Organizacion del Computador/Teorico/2,3,4,5) Algebra Booleana (T).pdf",
+    "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
+    "06 Organizacion del Computador/Teorico/1,2,3,4,5) Computer Organization selfnotes.md",
+    "99 Adjuntos/Pasted Image 20260620204818_744.png",
+    "99 Adjuntos/Pasted Image 20260620203052_715.png",
+    "99 Adjuntos/Pasted Image 20260620203034_614.png",
+    "99 Adjuntos/Pasted Image 20260620202836_897.png",
+    "99 Adjuntos/Pasted Image 20260620201636_233.png",
+    "99 Adjuntos/Pasted Image 20260620201554_332.png",
+    "99 Adjuntos/Pasted Image 20260620201545_653.png",
+    "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion (P).pdf",
+    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
+    "99 Adjuntos/Pasted Image 20260620201002_832.png",
+    "99 Adjuntos/Pasted Image 20260620194314_779.png",
+    "99 Adjuntos/Pasted Image 20260620193915_276.png",
+    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
+    "99 Otros o Herramientas/LINKS UTILES.md",
+    "06 Organizacion del Computador/Finales/final pandemia.pdf",
     "06 Organizacion del Computador/Finales/Final 2024-02-09.pdf",
-    "99 Adjuntos/Pasted Image 20260613181232_764.png",
-    "99 Adjuntos/Pasted Image 20260613143435_028.png",
-    "99 Adjuntos/Pasted Image 20260613143126_319.png",
+    "06 Organizacion del Computador/Finales/Final 2022-02-24.pdf",
+    "06 Organizacion del Computador/Finales/Final 2021-12-06.pdf",
+    "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2).pdf",
+    "06 Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
+    "06 Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
+    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
+    "06 Organizacion del Computador/Parcial 2/re-parciales..md",
+    "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
     "gemini-scribe/Prompts/example-expert.md",
     "Cheatsheat AYED2.md",
     "machete.md",
@@ -263,20 +272,13 @@
     "Untitled.md",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
     "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
-    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/README.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Laboratorios/Lab 2021/rpi-asm-framebuffer/README.md",
-    "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md",
     "06 Organizacion del Computador/Teorico/7) LEGv8 avanzado selfnotes.md",
     "Excalidraw/Scripts/Downloaded/Uniform size.md",
     "Excalidraw/Scripts/Downloaded/Text Aura.md",
-    "Excalidraw/Scripts/Downloaded/Set Text Alignment.md",
-    "Excalidraw/Scripts/Downloaded/Set Font Family.md",
-    "Excalidraw/Scripts/Downloaded/Reverse arrows.md",
-    "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.md",
-    "Excalidraw/Scripts/Downloaded/Custom Zoom.md",
-    "06 Organizacion del Computador/Teorico/6) Legv8 selfnotes.md"
+    "Excalidraw/Scripts/Downloaded/Set Text Alignment.md"
   ]
 }
