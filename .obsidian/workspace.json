@@ -6,7 +6,7 @@
       {
         "id": "da896ba0afdc969a",
         "type": "tabs",
-        "dimension": 59.80861244019139,
+        "dimension": 75.31897926634768,
         "children": [
           {
             "id": "a0d7479b81db6acd",
@@ -14,10 +14,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "06 Organizacion del Computador/Teorico/1,2,3,4,5) Computer Organization selfnotes.md"
+                "file": "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md"
               },
               "icon": "excalidraw-icon",
-              "title": "1,2,3,4,5) Computer Organization selfnotes"
+              "title": "1,2,3,4,5) Digital Design selfnotes"
             }
           }
         ]
@@ -25,7 +25,7 @@
       {
         "id": "df131e26fa8a6984",
         "type": "tabs",
-        "dimension": 40.19138755980861,
+        "dimension": 24.68102073365231,
         "children": [
           {
             "id": "2be2c1bd53f1f156",
@@ -34,29 +34,13 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-                "page": 43,
-                "left": -5,
-                "top": 61,
-                "zoom": 1.4
+                "page": 290,
+                "left": -4,
+                "top": 107,
+                "zoom": 1.5
               },
               "icon": "lucide-file-text",
               "title": "Diseño digital, 3ra Edición - M. Morris Mano.ORG"
-            }
-          },
-          {
-            "id": "d3a8625ed51570a4",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "06 Organizacion del Computador/Teorico/2) Algebra Booleana (P).pdf",
-                "page": 14,
-                "left": -13,
-                "top": 164,
-                "zoom": 1
-              },
-              "icon": "lucide-file-text",
-              "title": "2) Algebra Booleana (P)"
             }
           },
           {
@@ -67,8 +51,8 @@
               "state": {
                 "file": "06 Organizacion del Computador/Teorico/2,3,4,5) Algebra Booleana (T).pdf",
                 "page": 43,
-                "left": -13,
-                "top": 527,
+                "left": -4,
+                "top": 531,
                 "zoom": 1
               },
               "icon": "lucide-file-text",
@@ -108,7 +92,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#INM",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -133,8 +117,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 377.5,
-    "collapsed": true
+    "width": 454.5
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -198,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Teorico/1,2,3,4,5) Computer Organization selfnotes.md",
+                "file": "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1,2,3,4,5) Computer Organization selfnotes"
+              "title": "Outline of 1,2,3,4,5) Digital Design selfnotes"
             }
           }
         ],
@@ -235,33 +218,34 @@
   },
   "active": "a0d7479b81db6acd",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Teorico/2) Algebra Booleana (P).pdf",
-    "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-    "06 Organizacion del Computador/Teorico/2,3,4,5) Algebra Booleana (T).pdf",
+    "99 Adjuntos/Pasted Image 20260408112020_321.png",
+    "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
+    "99 Adjuntos/Pasted Image 20260417112723_282.png",
+    "99 Adjuntos/Pasted Image 20250324171937_240.png",
     "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
-    "06 Organizacion del Computador/Teorico/1,2,3,4,5) Computer Organization selfnotes.md",
-    "99 Adjuntos/Pasted Image 20260620204818_744.png",
-    "99 Adjuntos/Pasted Image 20260620203052_715.png",
-    "99 Adjuntos/Pasted Image 20260620203034_614.png",
-    "99 Adjuntos/Pasted Image 20260620202836_897.png",
-    "99 Adjuntos/Pasted Image 20260620201636_233.png",
-    "99 Adjuntos/Pasted Image 20260620201554_332.png",
-    "99 Adjuntos/Pasted Image 20260620201545_653.png",
     "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
+    "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "06 Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
+    "06 Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
+    "06 Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
+    "06 Organizacion del Computador/Teorico/2,3,4,5) Algebra Booleana (T).pdf",
+    "99 Adjuntos/Pasted Image 20260621113157_481.png",
+    "99 Adjuntos/Pasted Image 20260413165201_112.png",
+    "99 Adjuntos/Pasted Image 20260621112654_051.png",
+    "99 Adjuntos/Pasted Image 20260621112350_668.png",
+    "99 Adjuntos/Pasted Image 20260621112341_351.png",
+    "99 Adjuntos/Pasted Image 20260621112328_427.png",
+    "99 Adjuntos/Pasted Image 20260621112319_224.png",
+    "99 Adjuntos/Pasted Image 20260621112241_934.png",
+    "06 Organizacion del Computador/Teorico/2) Algebra Booleana (P).pdf",
+    "Untitled.base",
+    "Untitled 1.base",
     "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion (P).pdf",
     "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
-    "99 Adjuntos/Pasted Image 20260620201002_832.png",
-    "99 Adjuntos/Pasted Image 20260620194314_779.png",
-    "99 Adjuntos/Pasted Image 20260620193915_276.png",
     "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "99 Otros o Herramientas/LINKS UTILES.md",
     "06 Organizacion del Computador/Finales/final pandemia.pdf",
     "06 Organizacion del Computador/Finales/Final 2024-02-09.pdf",
-    "06 Organizacion del Computador/Finales/Final 2022-02-24.pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-12-06.pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2).pdf",
-    "06 Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
-    "06 Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
     "06 Organizacion del Computador/Parcial 2/re-parciales..md",
     "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
