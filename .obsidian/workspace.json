@@ -4,30 +4,8 @@
     "type": "split",
     "children": [
       {
-        "id": "da896ba0afdc969a",
-        "type": "tabs",
-        "dimension": 67.54385964912281,
-        "children": [
-          {
-            "id": "a0d7479b81db6acd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "06 Organizacion del Computador/Parcial 1/re-parciales 1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "re-parciales 1"
-            }
-          }
-        ]
-      },
-      {
         "id": "df131e26fa8a6984",
         "type": "tabs",
-        "dimension": 32.45614035087719,
         "children": [
           {
             "id": "2be2c1bd53f1f156",
@@ -36,10 +14,10 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-                "page": 290,
-                "left": -4,
-                "top": 107,
-                "zoom": 1.5
+                "page": 29,
+                "left": -7,
+                "top": 605,
+                "zoom": 2.254293893129771
               },
               "icon": "lucide-file-text",
               "title": "Diseño digital, 3ra Edición - M. Morris Mano.ORG"
@@ -58,23 +36,94 @@
             }
           },
           {
-            "id": "9272a7b53a1a3eb6",
+            "id": "f473ce00f41a0bda",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Parcial 1/2026 - 1er Parcial ODC.pdf",
+                "file": "06 Organizacion del Computador/Parcial 1/Parcial 1 2021-04-30.pdf",
                 "page": 2,
-                "left": 93,
-                "top": 128,
-                "zoom": 1.3
+                "left": -10,
+                "top": 744,
+                "zoom": 1.514352491151215
               },
               "icon": "lucide-file-text",
-              "title": "2026 - 1er Parcial ODC"
+              "title": "Parcial 1 2021-04-30"
+            }
+          },
+          {
+            "id": "79879757799d9a68",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Finales/Final 2022-02-24.pdf",
+                "page": 1,
+                "left": -10,
+                "top": 796,
+                "zoom": 1.4730392156862746
+              },
+              "icon": "lucide-file-text",
+              "title": "Final 2022-02-24"
+            }
+          },
+          {
+            "id": "eacd74254054ffd5",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Parcial 1/Parcial 1 2023-04-28.pdf",
+                "page": 1,
+                "left": -10,
+                "top": 846,
+                "zoom": 1.5143116307196132
+              },
+              "icon": "lucide-file-text",
+              "title": "Parcial 1 2023-04-28"
             }
           }
         ],
         "currentTab": 2
+      },
+      {
+        "id": "13b3f15b7c49d34e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dbf6659be3b7f60f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Finales/Final 2024-02-09.pdf",
+                "page": 1,
+                "left": -10,
+                "top": 847,
+                "zoom": 1.512787002040106
+              },
+              "icon": "lucide-file-text",
+              "title": "Final 2024-02-09"
+            }
+          },
+          {
+            "id": "e3186f6a4dd2b53b",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1).pdf",
+                "page": 1,
+                "left": -10,
+                "top": 24,
+                "zoom": 1.4730392156862746
+              },
+              "icon": "lucide-file-text",
+              "title": "Final 2021-07-29 (Tema 1)"
+            }
+          }
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -196,13 +245,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Parcial 1/re-parciales 1.md",
+                "file": "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1).pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of re-parciales 1"
+              "title": "Outline of Final 2021-07-29 (Tema 1)"
             }
           }
         ],
@@ -231,39 +280,38 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
-  "active": "a0d7479b81db6acd",
+  "active": "e3186f6a4dd2b53b",
   "lastOpenFiles": [
-    "99 Adjuntos/Pasted image 20260621165007.png",
-    "06 Organizacion del Computador/Parcial 1/2026 - 1er Parcial ODC.pdf",
+    "06 Organizacion del Computador/Parcial 1/Parcial 1 2021-04-30.pdf",
+    "06 Organizacion del Computador/Parcial 1/Parcial 1 2024-04-24 (Tema A).pdf",
+    "06 Organizacion del Computador/Finales/Final 2022-02-24.pdf",
+    "06 Organizacion del Computador/Parcial 1/Parcial 1 2023-04-28.pdf",
+    "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
+    "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1).pdf",
+    "06 Organizacion del Computador/Finales/Final 2024-02-09.pdf",
+    "06 Organizacion del Computador/Parcial 1/2026 - 1er Parcial ODC DONE.pdf",
+    "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
+    "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
+    "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
     "06 Organizacion del Computador/Parcial 1/re-parciales 1.md",
+    "99 Adjuntos/Pasted Image 20260622202950_731.png",
+    "99 Adjuntos/Pasted Image 20260622195140_859.png",
+    "99 Adjuntos/Pasted image 20260622193930.png",
+    "99 Adjuntos/Pasted image 20260622193430.png",
+    "99 Adjuntos/Pasted image 20260621165007.png",
     "99 Adjuntos/Pasted image 20260621163509.png",
     "99 Adjuntos/Pasted image 20260621163450.png",
     "99 Adjuntos/Pasted image 20260621163139.png",
     "99 Adjuntos/Pasted image 20260621162145.png",
     "99 Adjuntos/Pasted image 20260621160606.png",
-    "99 Adjuntos/Pasted image 20260621155341.png",
-    "99 Adjuntos/Pasted image 20260621154744.png",
-    "99 Adjuntos/Pasted image 20260621154732.png",
-    "99 Adjuntos/Pasted image 20260621154726.png",
-    "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
-    "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-    "99 Adjuntos/Pasted Image 20260621150920_934.png",
     "06 Organizacion del Computador/Parcial 1/repaso parcial 2.md",
     "06 Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
     "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
     "06 Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
     "06 Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
-    "06 Organizacion del Computador/Teorico/3) Lógica Combinacional-Karnaugh (P).pdf",
-    "06 Organizacion del Computador/Teorico/2,3,4,5) Algebra Booleana (T).pdf",
-    "06 Organizacion del Computador/Teorico/2) Algebra Booleana (P).pdf",
-    "Untitled.base",
-    "Untitled 1.base",
-    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion (P).pdf",
-    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion (T).pdf",
     "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
     "99 Otros o Herramientas/LINKS UTILES.md",
-    "06 Organizacion del Computador/Finales/final pandemia.pdf",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
     "06 Organizacion del Computador/Parcial 2/re-parciales..md",
     "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
