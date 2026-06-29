@@ -6,7 +6,7 @@
       {
         "id": "df131e26fa8a6984",
         "type": "tabs",
-        "dimension": 48.006379585326954,
+        "dimension": 42.78309409888357,
         "children": [
           {
             "id": "2be2c1bd53f1f156",
@@ -25,18 +25,6 @@
             }
           },
           {
-            "id": "18e3e51e0805f72f",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "1,2,3,4,5) Digital Design selfnotes"
-            }
-          },
-          {
             "id": "aed25f178d9258c9",
             "type": "leaf",
             "state": {
@@ -51,12 +39,12 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "13b3f15b7c49d34e",
         "type": "tabs",
-        "dimension": 51.993620414673046,
+        "dimension": 57.216905901116434,
         "children": [
           {
             "id": "dbf6659be3b7f60f",
@@ -66,9 +54,9 @@
               "state": {
                 "file": "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1).pdf",
                 "page": 1,
-                "left": -10,
-                "top": 796,
-                "zoom": 1.5343137254901962
+                "left": -9,
+                "top": 534,
+                "zoom": 1.6948529411764708
               },
               "icon": "lucide-file-text",
               "title": "Final 2021-07-29 (Tema 1)"
@@ -81,17 +69,40 @@
               "type": "pdf",
               "state": {
                 "file": "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-                "page": 133,
-                "left": -41,
-                "top": 480,
-                "zoom": 1.6
+                "page": 1,
+                "left": 652,
+                "top": 720,
+                "zoom": 1.1863782595587649
               },
               "icon": "lucide-file-text",
               "title": "Diseño digital, 3ra Edición - M. Morris Mano.ORG"
             }
+          },
+          {
+            "id": "18e3e51e0805f72f",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1) draw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Final 2021-07-29 (Tema 1) draw"
+            }
+          },
+          {
+            "id": "2ed89a6d95fd87d3",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "1,2,3,4,5) Digital Design selfnotes"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -250,11 +261,16 @@
   },
   "active": "aed25f178d9258c9",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-    "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
-    "99 Adjuntos/Pasted Image 20260623101052_439.png",
-    "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1).md",
     "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1).pdf",
+    "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
+    "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1).md",
+    "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1) draw.md",
+    "99 Adjuntos/Pasted image 20260629120249.png",
+    "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
+    "99 Adjuntos/Pasted image 20260629115113.png",
+    "99 Adjuntos/Pasted image 20260629114758.png",
+    "99 Adjuntos/Pasted image 20260629095933.png",
+    "99 Adjuntos/Pasted Image 20260623101052_439.png",
     "99 Adjuntos/Pasted Image 20260623081652_037.png",
     "06 Organizacion del Computador/Finales/Final 2021-07-01.pdf",
     "06 Organizacion del Computador/Finales/Final 2021-02-23.pdf",
@@ -270,10 +286,6 @@
     "99 Adjuntos/Pasted Image 20260622195140_859.png",
     "99 Adjuntos/Pasted image 20260622193930.png",
     "99 Adjuntos/Pasted image 20260622193430.png",
-    "99 Adjuntos/Pasted image 20260621165007.png",
-    "99 Adjuntos/Pasted image 20260621163509.png",
-    "99 Adjuntos/Pasted image 20260621163450.png",
-    "99 Adjuntos/Pasted image 20260621163139.png",
     "06 Organizacion del Computador/Parcial 1/repaso parcial 2.md",
     "06 Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
@@ -293,7 +305,6 @@
     "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md",
     "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/README.md",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Laboratorios/Lab 2021/rpi-asm-framebuffer/README.md",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp6/Clase.md"
+    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/Laboratorios/Lab 2021/rpi-asm-framebuffer/README.md"
   ]
 }
