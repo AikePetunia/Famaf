@@ -247,27 +247,49 @@ Elija una de ellas y explique los campos y el funcionamiento de la instrucción 
 | ----------------------- | ----------- | --------------------------------------------------------------------- | ------------ |
 | MOVK X30, 0, LSL 30     | No          | Lsl 0, 16, 32, 48                                                     |              |
 | LSR X0, X0, -3          | No          | Usar LSL para #-                                                      |              |
-| STURH X20, [X21, #5]    | Si          |                                                                       |              |
-| EOR X29, X30, X31       | Si          |                                                                       |              |
+| STURH X20, [X21, #5]    | Si          |                                                                       | 0x780052B4   |
+| EOR X29, X30, X31       | Si          |                                                                       | 0xCA1F03DD   |
 | MOVK XZR, 65535, LSL 48 | No          | Los movk si o si tienen que ser hexa de 4 en 4, no pueden ser de mas. |              |
 | AND X1, X2, 8           | No          | debe ser andi                                                         |              |
 | LDUR X31, [X32, #33]    | No          | x32 no existe                                                         |              |
 | LSR X0, X1, 0x7F        | No          | LSR no acepta > 64                                                    |              |
-| BL -40                  | Si          |                                                                       |              |
+| BL -40                  | Si          |                                                                       | 0x97FFFFF6   |
 
+```
+0000: 0  0100: 4  1000: 8  1100: C
+0001: 1  0101: 5  1001: 9  1101: D
+0010: 2  0110: 6  1010: A  1110: E
+0011: 3  0111: 7  1011: B  1111: F
+```
 BL -40
+EL PC va de 4 en 4, entonces salta 40/4 = 10 bytes.
 Type b.
 Opcode(6): 100101
-BR_Adress(25):
+BR_Adress(26): 11 1111 1111 1111 1111 1111 0110 
+1001 0111 1111 1111 1111 1111 1111 0110 
 
+0x97FFFFF6
 
 EOR X29, X30, X31
 R[Rd] = R[Rn] ^ R[Rm]
 Type R. 
 Opcode(11): 1100 1010 000
+Shamt(6):0000 00 
+Rd (5): 11101
+Rn (5): 11110
+Rm (5): 11111
+1100 1010 0001 1111 0000 0011 1101 1101
 
+0xCA1F03DD
 
 STURH X20, [X21, #5]
 M[R[Rn] + DTAddr](15:0) = R[Rt](15:0)
 Type D
 Opcode(11): 011 1100 0000
+DT_Address(9): 0 0000 0101
+Op(2): 00 
+Rn(5): 10101
+Rt(5): 10100
+0111 1000 0000 0000 0101 0010 1011 0100
+
+0x780052B4
