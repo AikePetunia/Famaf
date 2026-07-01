@@ -119,20 +119,70 @@ Implemetacion total: 8GB
 | A            | 0   | 1   |
 | B            | 1   | 0   |
 | No Permitido | 1   | 1   |
-- [x] El sistema debe iniciar con LOCK = 1. 
+- [ ] El sistema debe iniciar con LOCK = 1. 
 - [ ] La secuencia de apertura es: „A‟-‟A‟-‟B‟-‟A‟. 
 - [ ] Si esta secuencia se ingresa correctamente de manera consecutiva, la señal de salida se desbloquea LOCK = 0. 
 - [ ] Para cualquier otra secuencia de „A‟ y „B‟ el sistema debe permanecer bloqueado. 
 - [ ] Una vez desbloqueado el sistema, el mismo se volverá a bloquear solo ante la recepción de ‟B‟- ‟B‟ en forma consecutiva.
 - [ ] La combinación de entrada de los bit A y B simultáneamente en 0 o 1 no esta permitida, y su aparición representa un error en el sistema. 
 - [ ] De registrarse alguno de estos dos casos, el sistema debe ir inmediatamente a un estado de error (con LOCK = 1) del cual se sale solo ante la ocurrencia de la secuencia ‟A‟-‟B‟ de manera consecutiva o no.
-- [ ] Se pide: 
+
+Dos bits de entrada (B, A) y una salida (LOCK).
+Como es un detector de patrones del estilo A-A-B-A, o sea, "4 bits necesario/4 estados" (Podemos reutilizar un A despues de B.), tengo 3 estados + uno inicial (Que se debe iniciar con lock 1). También pide un estado de "bueno, ya se desbloqueo." Entonces:
+
+1 Estado de inicialización. (Lock -> 1) "El sistema debe iniciar con LOCK = 1. " Además, este estado será el de error, que restablecera el sistema.
+
+3 Estados para detectar "A-A-B-A" (Lock -> 1) "Para cualquier otra secuencia de „A‟ y „B‟ el sistema debe permanecer bloqueado"
+
+1 Estado para detectar desbloqueo. "Si esta secuencia se ingresa correctamente de manera consecutiva, la señal de salida se desbloquea LOCK = 0."
+
+Se pide: 
 a) Diagrama de estados 
+![[Pasted image 20260701194316.png]]
 b) Tablas de transición de estados y de salida 
+
+Combinacional de entrada.
+
+| Estado Actual |     | Entradas |     | Salidas |
+| ------------- | --- | -------- | --- | ------- |
+Como tenemos 5 entradas (Q3, Q2, Q1, A, B) 2⁵ entradas, o sea 64 (no pienso hacer todas XDD)
+
+| Q3  | Q2  | Q1  |     | A   | B   |     | S3  | S2  | S1  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X   | X   | X   |     | 0   | 0   |     | 0   | 0   | 0   |
+| X   | X   | X   |     | 1   | 1   |     | 0   | 0   | 0   |
+| 0   | 0   | 0   |     | 0   | 1   |     | 0   | 1   | 1   |
+| 0   | 0   | 0   |     | 1   | 0   |     | 0   | 0   | 1   |
+| 0   | 0   | 1   |     | 0   | 1   |     | 0   | 1   | 1   |
+| 0   | 0   | 1   |     | 1   | 0   |     | 0   | 1   | 0   |
+| 0   | 1   | 0   |     | 0   | 1   |     | 0   | 1   | 1   |
+| 0   | 1   | 0   |     | 1   | 0   |     | 0   | 1   | 1   |
+| 0   | 1   | 1   |     | 0   | 1   |     | 0   | 1   | 1   |
+| 0   | 1   | 1   |     | 1   | 0   |     | 1   | 0   | 0   |
+| 1   | 0   | 0   |     | 0   | 1   |     | 0   | 1   | 1   |
+| 1   | 0   | 0   |     | 1   | 0   |     | 0   | 0   | 0   |
+
+
+Combinacional de salida.
+
+| Estado Actual |     | Salida |
+| ------------- | --- | ------ |
+
+| Cod. | Q3  | Q2  | Q1  |     | LOCKED |
+| ---- | --- | --- | --- | --- | ------ |
+| E0   | 0   | 0   | 0   |     | 1      |
+| E1   | 0   | 0   | 1   |     | 1      |
+| E2   | 0   | 1   | 0   |     | 1      |
+| E3   | 0   | 1   | 1   |     | 1      |
+| E4   | 1   | 0   | 0   |     | 0      |
+| E5   | 1   | 0   | 1   |     | X      |
+| E6   | 1   | 1   | 0   |     | X      |
+| E7   | 1   | 1   | 1   |     | X      |
+
 c) Simplificar mediante diagramas de Karnaugh todas las funciones que lo permitan 
 d) Implementar los circuitos combinacionales de transición de estados y de salida utilizando compuertas lógicas de cualquier tipo y número de entradas.
 
-es demasiado dificil xd
+no pienso hacer esto sencillo, es una pla, flip flops al final y listo.
 
 
 5) Dado el siguiente código:

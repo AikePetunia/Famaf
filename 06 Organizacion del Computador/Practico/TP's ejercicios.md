@@ -55,3 +55,51 @@ tenemos que detectar 1011. O sea 4 bits. O sea 4 estados.
 Tenemos que iniciar la maquina de estados. Agregamos 1 estado más.
 Un error es volver al inicio. 
 lo que vos llamás "bits de transición" son las **condiciones de entrada**.
+
+La máquina debería mostrar un ‘1’ como salida cada vez que se encuentra el patrón, y un ‘0’ en caso contrario.
+
+![[Pasted image 20260701183521.png]]
+Combinacional de entradas.
+El combinacional de estados, representa en si, en que estado estoy, y según que saque de este estado, a que estado me fui.
+
+| Estado Actual |     | Entradas |     | Salida<br> |
+| ------------- | --- | -------- | --- | ---------- |
+
+| Q3  | Q2  | Q1  |     | In  |     | S3  | S2  | S1  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0   | 0   | 0   |     | 0   |     | 0   | 0   | 0   |
+| 0   | 0   | 0   |     | 1   |     | 0   | 0   | 1   |
+| 0   | 0   | 1   |     | 0   |     | 0   | 1   | 0   |
+| 0   | 0   | 1   |     | 1   |     | 0   | 0   | 1   |
+| 0   | 1   | 0   |     | 0   |     | 0   | 0   | 0   |
+| 0   | 1   | 0   |     | 1   |     | 0   | 1   | 1   |
+| 0   | 1   | 1   |     | 0   |     | 0   | 1   | 0   |
+| 0   | 1   | 1   |     | 1   |     | 1   | 0   | 0   |
+| 1   | 0   | 0   |     | 0   |     | 0   | 0   | 0   |
+| 1   | 0   | 0   |     | 1   |     | 0   | 0   | 1   |
+
+Combinacional de salidas. 
+Las salidas, tienen el estado actual (E0,E1,E2.) Que ponen en binario su valor. La salida, es el número que tiene la pelotita abajo.
+Para un detector de patrones que pone 1 cuando se detecta el patron, debebería de tener "1" en el estado final del patron. 
+Para este caso, como E4 contiene el "1" final, pone salida 1.
+
+| Estado Actual |     |     |     | Salida<br> |
+| ------------- | --- | --- | --- | ---------- |
+| Codif         | Q3  | Q2  | Q1  | S1         |
+| E0            | 0   | 0   | 0   | 0          |
+| E1            | 0   | 0   | 1   | 0          |
+| E2            | 0   | 1   | 0   | 0          |
+| E3            | 0   | 1   | 1   | 0          |
+| E4            | 1   | 0   | 0   | 1          |
+
+![[Pasted image 20260701183621.png]]![[Pasted image 20260701183628.png]]
+
+Analisis:
+
+Selecciona las instrucciones R[4-0], para escribir en ese registro lo que se leyo en memoria, para luego hacer un branch.
+
+res:
+
+Algo así como, un Branch a la un registro, que ese registro contiene una posicion en memoria.
+
+![[Pasted image 20260701195759.png]]Guarda en un registro una posicion de memoria para luego hacer un branch.
