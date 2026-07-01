@@ -4,22 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "995f3c12d2163813",
+        "id": "d64354f812d4bdad",
         "type": "tabs",
-        "dimension": 33.652312599681025,
         "children": [
           {
-            "id": "5af2b8cb4b30242a",
+            "id": "700193be9b7d71ad",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "06 Organizacion del Computador/Finales/Final 2020-12-15 resolucion.md",
+                "file": "06 Organizacion del Computador/Practico/TP's ejercicios.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Final 2020-12-15 resolucion"
+              "title": "TP's ejercicios"
+            }
+          },
+          {
+            "id": "dadc343bd7259a86",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Circuitos.pdf",
+                "page": 28,
+                "left": -12,
+                "top": 394,
+                "zoom": 1.2520833333333334
+              },
+              "icon": "lucide-file-text",
+              "title": "TP5 Circuitos"
             }
           }
         ]
@@ -27,20 +42,7 @@
       {
         "id": "13b3f15b7c49d34e",
         "type": "tabs",
-        "dimension": 66.34768740031897,
         "children": [
-          {
-            "id": "18e3e51e0805f72f",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "06 Organizacion del Computador/Finales/Finales dibujos.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Finales dibujos"
-            }
-          },
           {
             "id": "2ed89a6d95fd87d3",
             "type": "leaf",
@@ -54,19 +56,59 @@
             }
           },
           {
-            "id": "717dbf8d98627f88",
+            "id": "3e8b6712bd835069",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "6,7,8,9) Legv8 selfnotes"
+            }
+          },
+          {
+            "id": "e0b1a48ce8bec55e",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Finales/Final 2020-12-15.pdf",
+                "file": "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
                 "page": 3,
-                "left": -11,
-                "top": 744,
-                "zoom": 1.4730392156862744
+                "left": -10,
+                "top": 47,
+                "zoom": 1.5125838926174495
               },
               "icon": "lucide-file-text",
-              "title": "Final 2020-12-15"
+              "title": "TP9 Implementación de la ISA"
+            }
+          },
+          {
+            "id": "4b00800983032f7f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
+                "page": 2,
+                "left": -10,
+                "top": 622,
+                "zoom": 1.51258389261745
+              },
+              "icon": "lucide-file-text",
+              "title": "TP8 Ensamblado y desensamblado de LEGv8"
+            }
+          },
+          {
+            "id": "b5932a0994188f07",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "06 Organizacion del Computador/Finales/Finales dibujos.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Finales dibujos"
             }
           }
         ]
@@ -126,7 +168,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 454.5
+    "width": 454.5,
+    "collapsed": true
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -190,13 +233,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Finales/Finales dibujos.md",
+                "file": "06 Organizacion del Computador/Practico/TP's ejercicios.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Finales dibujos"
+              "title": "Outline of TP's ejercicios"
             }
           }
         ],
@@ -225,34 +268,35 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
-  "active": "18e3e51e0805f72f",
+  "active": "700193be9b7d71ad",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Finales/Final 2020-12-15 resolucion.md",
-    "06 Organizacion del Computador/Finales/Finales dibujos.md",
-    "06 Organizacion del Computador/Finales/Final 2020-12-15.pdf",
     "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
+    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Circuitos.pdf",
+    "06 Organizacion del Computador/Finales/Finales dibujos.md",
+    "06 Organizacion del Computador/Practico/TP's ejercicios.md",
+    "99 Adjuntos/Pasted Image 20260701140924_957.png",
+    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
+    "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
+    "99 Adjuntos/Pasted image 20260701133002.png",
+    "06 Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
+    "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
+    "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
+    "06 Organizacion del Computador/Finales/Final 2020-08-13.pdf",
+    "06 Organizacion del Computador/Finales/Final 2020-07-03.pdf",
+    "06 Organizacion del Computador/Finales/Final 2020-12-15 half done.pdf",
+    "06 Organizacion del Computador/Finales/Final 2020-12-15 resolucion.md",
+    "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
+    "99 Adjuntos/Pasted image 20260701120950.png",
+    "99 Adjuntos/Pasted Image 20260701120456_371.png",
     "99 Adjuntos/Pasted image 20260630094536.png",
     "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1) resolucion.md",
     "06 Organizacion del Computador/Diseño digital, 3ra Edición - M. Morris Mano.ORG.pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 1).pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2).pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-12-06.pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-12-21.pdf",
-    "06 Organizacion del Computador/Finales/Final 2022-02-24.pdf",
-    "06 Organizacion del Computador/Finales/Final 2024-02-09.pdf",
-    "06 Organizacion del Computador/Finales/final pandemia.pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-02-23.pdf",
     "06 Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "99 Adjuntos/Pasted image 20260629193813.png",
     "99 Adjuntos/Pasted image 20260629182257.png",
     "99 Adjuntos/Pasted image 20260629181850.png",
     "99 Adjuntos/Pasted image 20260629120249.png",
     "99 Adjuntos/Pasted image 20260629115113.png",
-    "99 Adjuntos/Pasted image 20260629114758.png",
-    "99 Adjuntos/Pasted image 20260629095933.png",
-    "99 Adjuntos/Pasted Image 20260623101052_439.png",
-    "99 Adjuntos/Pasted Image 20260623081652_037.png",
-    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
     "06 Organizacion del Computador/Parcial 1/re-parciales 1.md",
     "06 Organizacion del Computador/Parcial 1/repaso parcial 2.md",
     "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
@@ -270,7 +314,6 @@
     "Untitled.md",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
     "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
-    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md",
-    "06 Organizacion del Computador/Parcial 2/ExamenesViejos_OrganizacionDelComputador_FAMAF/README.md"
+    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md"
   ]
 }

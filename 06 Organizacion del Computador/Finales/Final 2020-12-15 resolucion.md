@@ -119,15 +119,27 @@ Implemetacion total: 8GB
 | A            | 0   | 1   |
 | B            | 1   | 0   |
 | No Permitido | 1   | 1   |
-El sistema debe iniciar con LOCK = 1. 
-La secuencia de apertura es: „A‟-‟A‟-‟B‟-‟A‟. 
-Si esta secuencia se ingresa correctamente de manera consecutiva, la señal de salida se desbloquea LOCK = 0. 
-Para cualquier otra secuencia de „A‟ y „B‟ el sistema debe permanecer bloqueado. 
-Una vez desbloqueado el sistema, el mismo se volverá a bloquear solo ante la recepción de ‟B‟- ‟B‟ en forma consecutiva.
-La combinación de entrada de los bit A y B simultáneamente en 0 o 1 no esta permitida, y su aparición representa un error en el sistema. 
-De registrarse alguno de estos dos casos, el sistema debe ir inmediatamente a un estado de error (con LOCK = 1) del cual se sale solo ante la ocurrencia de la secuencia ‟A‟-‟B‟ de manera consecutiva o no.
-Se pide: 
+- [x] El sistema debe iniciar con LOCK = 1. 
+- [ ] La secuencia de apertura es: „A‟-‟A‟-‟B‟-‟A‟. 
+- [ ] Si esta secuencia se ingresa correctamente de manera consecutiva, la señal de salida se desbloquea LOCK = 0. 
+- [ ] Para cualquier otra secuencia de „A‟ y „B‟ el sistema debe permanecer bloqueado. 
+- [ ] Una vez desbloqueado el sistema, el mismo se volverá a bloquear solo ante la recepción de ‟B‟- ‟B‟ en forma consecutiva.
+- [ ] La combinación de entrada de los bit A y B simultáneamente en 0 o 1 no esta permitida, y su aparición representa un error en el sistema. 
+- [ ] De registrarse alguno de estos dos casos, el sistema debe ir inmediatamente a un estado de error (con LOCK = 1) del cual se sale solo ante la ocurrencia de la secuencia ‟A‟-‟B‟ de manera consecutiva o no.
+- [ ] Se pide: 
 a) Diagrama de estados 
 b) Tablas de transición de estados y de salida 
 c) Simplificar mediante diagramas de Karnaugh todas las funciones que lo permitan 
 d) Implementar los circuitos combinacionales de transición de estados y de salida utilizando compuertas lógicas de cualquier tipo y número de entradas.
+
+es demasiado dificil xd
+
+
+5) Dado el siguiente código:
+![[Pasted image 20260701120950.png]]
+
+●Indicar el estado de la memoria de datos cuando el programa inicia y el estado de la memoria cuando el programa termina. (Escribir los datos en formato arreglo de bytes) 
+● ¿Cuántas instrucciones ejecuta el programa antes del label "end"?
+● ¿Qué hace el programa? (Traducir de LEGv8 a C)
+
+realmente no entendi estos 2 ultimos. 
