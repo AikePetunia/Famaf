@@ -4,8 +4,30 @@
     "type": "split",
     "children": [
       {
+        "id": "a5dcc4c34f52a44e",
+        "type": "tabs",
+        "dimension": 33.21371610845295,
+        "children": [
+          {
+            "id": "fdfaab2ab5112dc6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2) resolucion.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Final 2021-08-12 (Tema 2) resolucion"
+            }
+          }
+        ]
+      },
+      {
         "id": "13b3f15b7c49d34e",
         "type": "tabs",
+        "dimension": 66.78628389154704,
         "children": [
           {
             "id": "2ed89a6d95fd87d3",
@@ -51,9 +73,9 @@
               "state": {
                 "file": "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
                 "page": 2,
-                "left": 13,
-                "top": 421,
-                "zoom": 3.2852202542211155
+                "left": 11,
+                "top": 447,
+                "zoom": 2.170974133795143
               },
               "icon": "lucide-file-text",
               "title": "GreenCard LEGv8"
@@ -65,18 +87,18 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "06 Organizacion del Computador/Finales/Final 2020-12-15 half done.pdf",
-                "page": 3,
-                "left": -6,
-                "top": 414,
-                "zoom": 2.4534313725490198
+                "file": "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2).pdf",
+                "page": 1,
+                "left": -8,
+                "top": 52,
+                "zoom": 1.9889705882352942
               },
               "icon": "lucide-file-text",
-              "title": "Final 2020-12-15 half done"
+              "title": "Final 2021-08-12 (Tema 2)"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -198,13 +220,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
+                "file": "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2) resolucion.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 6,7,8,9) Legv8 selfnotes"
+              "title": "Outline of Final 2021-08-12 (Tema 2) resolucion"
             }
           }
         ],
@@ -233,15 +255,22 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
-  "active": "3e8b6712bd835069",
+  "active": "fdfaab2ab5112dc6",
   "lastOpenFiles": [
-    "06 Organizacion del Computador/Finales/Final 2020-12-15 half done.pdf",
+    "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2).pdf",
+    "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2) resolucion.md",
+    "06 Organizacion del Computador/Finales/Finales dibujos.md",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
     "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
+    "99 Adjuntos/Pasted image 20260702145049.png",
     "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
+    "99 Adjuntos/Pasted image 20260702135933.png",
+    "99 Adjuntos/Pasted image 20260702135926.png",
+    "99 Adjuntos/Pasted Image 20260702101956_985.png",
+    "06 Organizacion del Computador/Finales/Final 2020-12-15 half done.pdf",
+    "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 3).pdf",
     "99 Adjuntos/Pasted Image 20260701202935_812.png",
     "99 Adjuntos/Pasted Image 20260701202549_881.png",
-    "06 Organizacion del Computador/Finales/Finales dibujos.md",
     "06 Organizacion del Computador/Practico/TP's ejercicios.md",
     "99 Adjuntos/Pasted image 20260701195759.png",
     "06 Organizacion del Computador/Parcial 2/Parcial 2 2026 ODC.pdf",
@@ -252,14 +281,8 @@
     "99 Adjuntos/Pasted image 20260701183628.png",
     "99 Adjuntos/Pasted image 20260701183621.png",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Circuitos.pdf",
-    "99 Adjuntos/Pasted image 20260701183521.png",
-    "99 Adjuntos/Pasted image 20260701183519.png",
-    "99 Adjuntos/Pasted Image 20260701140924_957.png",
-    "99 Adjuntos/Pasted image 20260701133002.png",
     "06 Organizacion del Computador/Practico/TP5 Circuitos Secuenciales.pdf",
     "06 Organizacion del Computador/Practico/TP7 Assembler de LEGv8 avanzado.pdf",
-    "06 Organizacion del Computador/Finales/Final 2020-08-13.pdf",
-    "06 Organizacion del Computador/Finales/Final 2020-07-03.pdf",
     "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1) resolucion.md",
     "06 Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "06 Organizacion del Computador/Parcial 1/re-parciales 1.md",
@@ -278,7 +301,6 @@
     "h.md",
     "Untitled.md",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md",
-    "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md",
-    "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8,assembly selfnotes.md"
+    "06 Organizacion del Computador/Teorico/8,9) El procesador selfnotes.md"
   ]
 }
