@@ -142,8 +142,19 @@
         "label": "Nano Banana 2",
         "supportsImageGeneration": true,
         "maxTemperature": 1
+      },
+      {
+        "value": "gemini-3.1-flash-lite-image",
+        "label": "Nano Banana 2 Lite",
+        "supportsImageGeneration": true,
+        "maxTemperature": 1
+      },
+      {
+        "value": "gemini-omni-flash-preview",
+        "label": "Gemini Omni Flash Preview",
+        "maxTemperature": 2
       }
     ],
-    "timestamp": 1783010425500
+    "timestamp": 1783362663497
   }
 }
