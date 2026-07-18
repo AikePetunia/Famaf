@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "AAS-backend prompt..md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "AAS-backend prompt."
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 454.5,
-    "collapsed": true
+    "width": 454.5
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -143,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "AAS-backend prompt..md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of AAS-backend prompt."
             }
           }
         ],
@@ -180,12 +179,16 @@
   },
   "active": "9a130af4bc99ddd2",
   "lastOpenFiles": [
+    "Cheatsheat AYED2.md",
+    "machete.md",
+    "The joy of coding.md",
+    "AAS-backend prompt..md",
+    "README.md",
     "00Articles",
     "00 Articles",
     "06 Organizacion del Computador/Finales/Final 2020-12-15 resolucion.md",
     "06 Organizacion del Computador/Finales/Finales dibujos.md",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
-    "The joy of coding.md",
     "Untitled 1.base",
     "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
     "99 Adjuntos/Pasted Image 20260702210200_617.png",
@@ -208,7 +211,6 @@
     "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
     "99 Adjuntos/Pasted image 20260701194316.png",
     "99 Adjuntos/Pasted image 20260701183628.png",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp5/TP5 Circuitos.pdf",
     "06 Organizacion del Computador/Parcial 1/Repaso parcial.md",
     "06 Organizacion del Computador/Parcial 1/re-parciales 1.md",
     "06 Organizacion del Computador/Parcial 1/repaso parcial 2.md",
@@ -221,10 +223,7 @@
     "06 Organizacion del Computador/Parcial 2/re-parciales..md",
     "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
     "gemini-scribe/Prompts/example-expert.md",
-    "Cheatsheat AYED2.md",
-    "machete.md",
     "h.md",
-    "Untitled.md",
     "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md"
   ]
 }

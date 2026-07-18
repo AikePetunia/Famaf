@@ -56,7 +56,7 @@ trabajo y estudio, tenganme paciencia xd
 
 ## 🚦 Estado  
 
-	Cursando ODC y AyED (Lab).
+	- ODC aprobado - Working in: https://github.com/AikePetunia/AAS-backend
 
 ## Créditos
 
