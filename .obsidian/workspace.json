@@ -11,14 +11,12 @@
             "id": "9a130af4bc99ddd2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "AAS-backend prompt..md",
-                "mode": "source",
-                "source": false
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/parcial2.jpeg"
               },
-              "icon": "lucide-file",
-              "title": "AAS-backend prompt."
+              "icon": "lucide-image",
+              "title": "parcial2"
             }
           }
         ]
@@ -142,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AAS-backend prompt..md",
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/parcial2.jpeg",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of AAS-backend prompt."
+              "title": "Outline of parcial2"
             }
           }
         ],
@@ -177,53 +175,53 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
-  "active": "9a130af4bc99ddd2",
+  "active": "08aa564aa91d1d2b",
   "lastOpenFiles": [
+    "08 Sistemas Operativos/practico",
+    "08 Sistemas Operativos/parciales",
+    "08 Sistemas Operativos/teorico",
+    "09 Probabilidad y estadistica/teorico/Aulas y otras cosas.md",
+    "09 Probabilidad y estadistica/teorico/resumen_distribuciones.pdf",
+    "09 Probabilidad y estadistica/teorico/resumen-1.jpeg",
+    "09 Probabilidad y estadistica/teorico/resumen-2.jpeg",
+    "09 Probabilidad y estadistica/teorico/resumen-3.jpeg",
+    "09 Probabilidad y estadistica/Pasted Image 20250812124904_459.png",
+    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_segundo_parcial.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
+    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/parcial2(3).jpeg",
+    "09 Probabilidad y estadistica/teorico/Parcial2/parcial2(1).jpeg",
+    "09 Probabilidad y estadistica/teorico/Parcial2/parcial2.jpeg",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/14) Clase 25 de septiembre.pdf",
+    "09 Probabilidad y estadistica/parciales/Final 2024-12-16.pdf",
+    "09 Probabilidad y estadistica/parciales/Final 2022-12-06.pdf",
+    "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
+    "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 resuelto (mio).md",
+    "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 resuelto.pdf",
+    "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 (Recuperatorio) resuelto 2025.md",
+    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB todo.jpg",
+    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TA - Resuelto (mio) 2025.md",
+    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo 2025.md",
+    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TB (Mio) 2025.md",
+    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TA (Mio) 2025.md",
+    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto 2025.md",
+    "09 Probabilidad y estadistica/parciales/2/practica/re-practicos (5,6,7) 2025.md",
+    "09 Probabilidad y estadistica/parciales/2/practica/re-practicos 1 (7,8) 2025.md",
     "Cheatsheat AYED2.md",
     "machete.md",
     "The joy of coding.md",
     "AAS-backend prompt..md",
     "README.md",
-    "00Articles",
-    "00 Articles",
     "06 Organizacion del Computador/Finales/Final 2020-12-15 resolucion.md",
     "06 Organizacion del Computador/Finales/Finales dibujos.md",
     "06 Organizacion del Computador/Teorico/6,7,8,9) Legv8 selfnotes.md",
-    "Untitled 1.base",
     "06 Organizacion del Computador/Teorico/1,2,3,4,5) Digital Design selfnotes.md",
     "99 Adjuntos/Pasted Image 20260702210200_617.png",
-    "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2) resolucion.md",
-    "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 1) resolucion.md",
-    "06 Organizacion del Computador/Practico/GreenCard LEGv8.pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-08-12 (Tema 2).pdf",
-    "99 Adjuntos/Pasted image 20260702145049.png",
-    "99 Adjuntos/Pasted image 20260702135933.png",
-    "99 Adjuntos/Pasted image 20260702135926.png",
-    "99 Adjuntos/Pasted Image 20260702101956_985.png",
-    "06 Organizacion del Computador/Finales/Final 2020-12-15 half done.pdf",
-    "06 Organizacion del Computador/Finales/Final 2021-07-29 (Tema 3).pdf",
-    "99 Adjuntos/Pasted Image 20260701202935_812.png",
-    "99 Adjuntos/Pasted Image 20260701202549_881.png",
-    "06 Organizacion del Computador/Practico/TP's ejercicios.md",
-    "99 Adjuntos/Pasted image 20260701195759.png",
-    "06 Organizacion del Computador/Parcial 2/Parcial 2 2026 ODC.pdf",
-    "06 Organizacion del Computador/Practico/TP9 Implementación de la ISA.pdf",
-    "06 Organizacion del Computador/Practico/TP8 Ensamblado y desensamblado de LEGv8.pdf",
-    "99 Adjuntos/Pasted image 20260701194316.png",
-    "99 Adjuntos/Pasted image 20260701183628.png",
-    "06 Organizacion del Computador/Parcial 1/Repaso parcial.md",
-    "06 Organizacion del Computador/Parcial 1/re-parciales 1.md",
-    "06 Organizacion del Computador/Parcial 1/repaso parcial 2.md",
-    "06 Organizacion del Computador/Teorico/3) Logica combinacional y circuitos combinacioanles selfnotes.md",
-    "06 Organizacion del Computador/Teorico/2) Algebra de booleanos selfnotes.md",
-    "06 Organizacion del Computador/Teorico/5) Registros, logica secuencial sincronica y con reloj selfnotes.md",
-    "06 Organizacion del Computador/Teorico/4)  Direccionamiento y Lógica de Decodificación de Memorias selfnotes.md",
-    "06 Organizacion del Computador/Teorico/1) Sistemas de numeracion selfnotes.md",
-    "99 Otros o Herramientas/LINKS UTILES.md",
-    "06 Organizacion del Computador/Parcial 2/re-parciales..md",
-    "06 Organizacion del Computador/Parcial 2/Parcial IA.md",
-    "gemini-scribe/Prompts/example-expert.md",
-    "h.md",
-    "06 Organizacion del Computador/Practico/Practicos Resueltos/tp8/clase.md"
+    "99 Adjuntos/Pasted image 20260702145049.png"
   ]
 }

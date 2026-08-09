@@ -885,7 +885,7 @@ Esto cobra sentido cuando se vea Maxima Verosimilut (Parcial 2) ^J3aRMsVk
 cobra mas sentido en intervalos de confianza. 
 Ignorar si es para primer parcial. ^BcB090OR
 
-[[re-practicos (5,6,7)]] ^8w9MjW9G
+[[re-practicos (5,6,7) 2025]] ^8w9MjW9G
 
 ## Element Links
 2N6svUL5: https://www.youtube.com/watch?v=6YzrVUVO9M0

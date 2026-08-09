@@ -56,7 +56,9 @@ trabajo y estudio, tenganme paciencia xd
 
 ## 🚦 Estado  
 
-	- ODC aprobado - Working in: https://github.com/AikePetunia/AAS-backend
+	- Cursando Probabilidad y estadistica 
+	- Cursando Sistemas Operativos
+	- Working in: https://github.com/AikePetunia/AAS-backend
 
 ## Créditos
 
