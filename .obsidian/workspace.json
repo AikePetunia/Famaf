@@ -9,7 +9,7 @@
         "dimension": 58.25358851674641,
         "children": [
           {
-            "id": "4c22ed89879ec4bf",
+            "id": "30c343eb8b7c14c0",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -50,61 +50,45 @@
               "type": "pdf",
               "state": {
                 "file": "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
-                "page": 67,
-                "left": 8,
-                "top": 771,
-                "zoom": 1.2227464529190868
+                "page": 90,
+                "left": 29,
+                "top": 554,
+                "zoom": 1.3119442037382107
               },
               "icon": "lucide-file-text",
               "title": "Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion"
             }
           },
           {
-            "id": "80f1923e5db0c52d",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
-                "page": 45,
-                "left": -18,
-                "top": 304,
-                "zoom": 0.8385416666666667
-              },
-              "icon": "lucide-file-text",
-              "title": "1)Clase 11 de agosto"
-            }
-          },
-          {
-            "id": "cba72aca80e8e890",
+            "id": "acf255e3fa12fc18",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md"
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md"
               },
               "icon": "excalidraw-icon",
-              "title": "2)Clase 12, 14 de agosto"
+              "title": "3)Clase 19 de agosto"
             }
           },
           {
-            "id": "acf255e3fa12fc18",
+            "id": "a9750b3b3da67ec0",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 14 de agosto.pdf",
-                "page": 44,
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.pdf",
+                "page": 2,
                 "left": -14,
-                "top": 387,
+                "top": 39,
                 "zoom": 1.0364583333333335
               },
               "icon": "lucide-file-text",
-              "title": "2)Clase 14 de agosto"
+              "title": "3)Clase 19 de agosto"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -261,10 +245,19 @@
       "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
-  "active": "4c22ed89879ec4bf",
+  "active": "30c343eb8b7c14c0",
   "lastOpenFiles": [
-    "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 14 de agosto.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md",
+    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
+    "99 Adjuntos/Pasted Image 20260814141520_262.png",
+    "99 Adjuntos/Pasted Image 20260814141351_867.png",
+    "99 Adjuntos/Pasted Image 20260814141257_058.png",
+    "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 14 de agosto.pdf",
     "99 Adjuntos/Pasted Image 20260812140134_778.png",
     "99 Adjuntos/Pasted Image 20260812135624_126.png",
     "99 Adjuntos/Pasted Image 20260812135609_732.png",
@@ -272,13 +265,6 @@
     "99 Adjuntos/Pasted Image 20260812134020_582.png",
     "99 Adjuntos/Pasted Image 20260812134004_900.png",
     "99 Adjuntos/Pasted Image 20250815125824_095.png",
-    "99 Adjuntos/Pasted Image 20260812132553_406.png",
-    "99 Adjuntos/Pasted Image 20260812132409_059.png",
-    "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
-    "99 Adjuntos/Pasted Image 20260812123447_166.png",
-    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen_segundo_parcial.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
     "09 Probabilidad y estadistica/asd.md",
@@ -287,9 +273,7 @@
     "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 12 de agosto.pdf",
     "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
     "09 Probabilidad y estadistica/teorico/Aulas y otras cosas.md",
-    "08 Sistemas Operativos/practico",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md",
     "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
     "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 resuelto (mio).md",
     "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 (Recuperatorio) resuelto 2025.md",
