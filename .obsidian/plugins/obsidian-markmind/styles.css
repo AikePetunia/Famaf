@@ -669,7 +669,7 @@ span.mm-sline .line {
     outline: 0
 }
 
-.theme-dark textarea {
+.theme-dark .mm-note textarea {
     color: #666
 }
 
@@ -3772,6 +3772,16 @@ span.mm-sline .line {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.mm-ppt-page .mm-ppt-resize {
+    position: absolute;
+    right: 6px;
+    display: block;
+
+    bottom: 0px;
+    background: transparent;
+    cursor: pointer;
 }
 
 .mm-node-embed {

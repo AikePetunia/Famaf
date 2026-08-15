@@ -8,6 +8,7 @@
   "dataview",
   "obsidian-git",
   "obsidian-excalidraw-plugin",
-  "gemini-scribe",
-  "obsidian-linter"
+  "obsidian-linter",
+  "obsidian-completr",
+  "excalidraw-extras"
 ]
