@@ -6,7 +6,7 @@
       {
         "id": "8444f0e0377e7a0a",
         "type": "tabs",
-        "dimension": 58.25358851674641,
+        "dimension": 56.858054226475275,
         "children": [
           {
             "id": "30c343eb8b7c14c0",
@@ -25,7 +25,7 @@
       {
         "id": "bba049ea72e19682",
         "type": "tabs",
-        "dimension": 41.74641148325359,
+        "dimension": 43.14194577352472,
         "children": [
           {
             "id": "9daceae9179a8b97",
@@ -65,14 +65,14 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/6)Clase 2 de septiembre.pdf",
-                "page": 13,
-                "left": -20,
-                "top": 336,
-                "zoom": 0.7822916666666667
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/9) Clase 11 de septiembre.pdf",
+                "page": 4,
+                "left": -14,
+                "top": 300,
+                "zoom": 1.0729166666666667
               },
               "icon": "lucide-file-text",
-              "title": "6)Clase 2 de septiembre"
+              "title": "9) Clase 11 de septiembre"
             }
           },
           {
@@ -112,9 +112,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -142,10 +140,7 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {
-                "showSearch": false,
-                "searchQuery": ""
-              },
+              "state": {},
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
@@ -225,7 +220,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of ! Teorico completo + Anotaciones (P1)"
             }
           }
         ],
@@ -255,30 +250,30 @@
   },
   "active": "30c343eb8b7c14c0",
   "lastOpenFiles": [
-    "99 Adjuntos/Pasted Image 20260818161329_581.png",
-    "99 Adjuntos/Pasted Image 20260818161300_305.png",
+    "09 Probabilidad y estadistica/teorico/Parcial1/9) Clase 11 de septiembre.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "99 Adjuntos/Pasted Image 20260819141622_742.png",
+    "09 Probabilidad y estadistica/teorico/Parcial1/8) Clase 09 de septiembre.pdf",
+    "99 Adjuntos/Pasted Image 20260819141557_988.png",
+    "99 Adjuntos/Pasted Image 20260819141542_814.png",
+    "99 Adjuntos/Pasted Image 20260819141440_211.png",
+    "99 Adjuntos/Pasted Image 20260819141428_838.png",
+    "99 Adjuntos/Pasted Image 20260819141419_049.png",
+    "99 Adjuntos/Pasted Image 20260819141307_940.png",
+    "99 Adjuntos/Pasted Image 20260819141300_416.png",
+    "99 Adjuntos/Pasted Image 20260819141226_927.png",
+    "99 Adjuntos/Pasted Image 20260819140804_253.png",
+    "09 Probabilidad y estadistica/teorico/Parcial1/7) Clase 4 de septiembre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/6)Clase 2 de septiembre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/5)Clase 26 de agosto.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "99 Adjuntos/Pasted Image 20260818160220_726.png",
-    "99 Adjuntos/Pasted Image 20260818155945_491.png",
-    "99 Adjuntos/Pasted Image 20250826131259_205.png",
-    "99 Adjuntos/Pasted Image 20260818154332_240.png",
-    "99 Adjuntos/Pasted Image 20250826131410_151.png",
-    "99 Adjuntos/Pasted Image 20260818150507_123.png",
     "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
     "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
-    "99 Adjuntos/Pasted Image 20250826135342_748.png",
-    "99 Adjuntos/Pasted Image 20260815160319_600.png",
     "09 Probabilidad y estadistica/teorico/Parcial1/4)Clase 21 de agosto.pdf",
-    "99 Adjuntos/Pasted Image 20260815155523_070.png",
     "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 14 de agosto.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_segundo_parcial.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
     "09 Probabilidad y estadistica/asd.md",
     "09 Probabilidad y estadistica/teorico/Aulas y otras cosas.md",
