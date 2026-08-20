@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "8444f0e0377e7a0a",
+        "id": "e0519324268005fe",
         "type": "tabs",
-        "dimension": 56.858054226475275,
+        "dimension": 50,
         "children": [
           {
-            "id": "30c343eb8b7c14c0",
+            "id": "8e16806462d59862",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -25,7 +25,7 @@
       {
         "id": "bba049ea72e19682",
         "type": "tabs",
-        "dimension": 43.14194577352472,
+        "dimension": 50,
         "children": [
           {
             "id": "9daceae9179a8b97",
@@ -35,7 +35,7 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
                 "page": 1,
-                "left": -12,
+                "left": -76,
                 "top": 796,
                 "zoom": 1.2193627450980393
               },
@@ -51,28 +51,44 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
                 "page": 104,
-                "left": 18,
-                "top": 43,
-                "zoom": 1.265365001485561
+                "left": 31,
+                "top": 789,
+                "zoom": 1.5848813395912855
               },
               "icon": "lucide-file-text",
               "title": "Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion"
             }
           },
           {
-            "id": "a9750b3b3da67ec0",
+            "id": "30c343eb8b7c14c0",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/9) Clase 11 de septiembre.pdf",
-                "page": 4,
-                "left": -14,
-                "top": 300,
-                "zoom": 1.0729166666666667
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/11) Clase 18 de septiembre.pdf",
+                "page": 18,
+                "left": -106,
+                "top": 180,
+                "zoom": 1
               },
               "icon": "lucide-file-text",
-              "title": "9) Clase 11 de septiembre"
+              "title": "11) Clase 18 de septiembre"
+            }
+          },
+          {
+            "id": "f5a654a35fc3762e",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/10) Clase 16 de septiembre.pdf",
+                "page": 32,
+                "left": -12,
+                "top": 341,
+                "zoom": 1.2520833333333334
+              },
+              "icon": "lucide-file-text",
+              "title": "10) Clase 16 de septiembre"
             }
           },
           {
@@ -248,32 +264,31 @@
       "graph:Open graph view": false
     }
   },
-  "active": "30c343eb8b7c14c0",
+  "active": "8e16806462d59862",
   "lastOpenFiles": [
-    "09 Probabilidad y estadistica/teorico/Parcial1/9) Clase 11 de septiembre.pdf",
+    "99 Adjuntos/Pasted Image 20260820120917_637.png",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "99 Adjuntos/Pasted Image 20260819141622_742.png",
-    "09 Probabilidad y estadistica/teorico/Parcial1/8) Clase 09 de septiembre.pdf",
-    "99 Adjuntos/Pasted Image 20260819141557_988.png",
-    "99 Adjuntos/Pasted Image 20260819141542_814.png",
-    "99 Adjuntos/Pasted Image 20260819141440_211.png",
-    "99 Adjuntos/Pasted Image 20260819141428_838.png",
-    "99 Adjuntos/Pasted Image 20260819141419_049.png",
-    "99 Adjuntos/Pasted Image 20260819141307_940.png",
-    "99 Adjuntos/Pasted Image 20260819141300_416.png",
-    "99 Adjuntos/Pasted Image 20260819141226_927.png",
-    "99 Adjuntos/Pasted Image 20260819140804_253.png",
+    "09 Probabilidad y estadistica/teorico/Parcial1/11) Clase 18 de septiembre.pdf",
+    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
+    "99 Adjuntos/Pasted Image 20260820120408_240.png",
+    "99 Adjuntos/Pasted Image 20260820120305_292.png",
+    "99 Adjuntos/Pasted Image 20260820120247_278.png",
+    "99 Adjuntos/Pasted Image 20260820120215_379.png",
+    "99 Adjuntos/Pasted Image 20260820115558_763.png",
+    "09 Probabilidad y estadistica/teorico/Parcial1/10) Clase 16 de septiembre.pdf",
+    "99 Adjuntos/Pasted Image 20260820113111_007.png",
+    "99 Adjuntos/Pasted Image 20260820113033_119.png",
+    "99 Adjuntos/Pasted Image 20260820112953_278.png",
+    "99 Adjuntos/Pasted Image 20260820111113_381.png",
+    "09 Probabilidad y estadistica/teorico/Parcial1/9) Clase 11 de septiembre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/7) Clase 4 de septiembre.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/8) Clase 09 de septiembre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/6)Clase 2 de septiembre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/5)Clase 26 de agosto.pdf",
     "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
-    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/4)Clase 21 de agosto.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
     "09 Probabilidad y estadistica/asd.md",
     "09 Probabilidad y estadistica/teorico/Aulas y otras cosas.md",
