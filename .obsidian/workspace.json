@@ -4,26 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "20605d46ce585522",
+        "id": "dedd16acf8715d59",
         "type": "tabs",
-        "dimension": 60.92503987240829,
         "children": [
           {
-            "id": "9cf4d066a486c65c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1.) Virtualizacion del cpu"
-            }
-          },
-          {
-            "id": "6517b8c02118814b",
+            "id": "b0066d1adafccfce",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -34,48 +19,29 @@
               "title": "Resumen Virtualizacion"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
-        "id": "84df2e59868812c6",
+        "id": "14543622319d19a7",
         "type": "tabs",
-        "dimension": 39.07496012759171,
         "children": [
           {
-            "id": "342e24b73fd4d039",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
-                "page": 1,
-                "left": -24,
-                "top": 846,
-                "zoom": 0.719414187704527
-              },
-              "icon": "lucide-file-text",
-              "title": "1.) Virtualización del cpu"
-            }
-          },
-          {
-            "id": "18fd829f23592003",
+            "id": "b72cff07df7b597f",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
                 "file": "08 Sistemas Operativos/teorico/operating_systems_three_easy_pieces.pdf",
-                "page": 1,
-                "left": 73,
-                "top": 596,
-                "zoom": 1.5
+                "page": 149,
+                "left": -7,
+                "top": 529,
+                "zoom": 2.086805555555556
               },
               "icon": "lucide-file-text",
               "title": "operating_systems_three_easy_pieces"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -95,9 +61,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -125,16 +89,12 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {
-                "showSearch": false,
-                "searchQuery": ""
-              },
+              "state": {},
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -209,7 +169,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of operating_systems_three_easy_pieces"
             }
           }
         ],
@@ -237,10 +197,13 @@
       "graph:Open graph view": false
     }
   },
-  "active": "18fd829f23592003",
+  "active": "b72cff07df7b597f",
   "lastOpenFiles": [
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "08 Sistemas Operativos/teorico/operating_systems_three_easy_pieces.pdf",
+    "99 Adjuntos/Pasted Image 20260829082113_184.png",
+    "99 Adjuntos/Pasted Image 20260829081617_118.png",
+    "08 Sistemas Operativos/luffy.mp3",
     "99 Adjuntos/Pasted Image 20260825155138_593.png",
     "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu.md",
@@ -259,10 +222,7 @@
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
     "99 Adjuntos/Pasted Image 20260820120408_240.png",
     "99 Adjuntos/Pasted Image 20260820120305_292.png",
-    "99 Adjuntos/Pasted Image 20260820120247_278.png",
-    "99 Adjuntos/Pasted Image 20260820120215_379.png",
     "09 Probabilidad y estadistica/teorico/Parcial1/10) Clase 16 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/9) Clase 11 de septiembre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
