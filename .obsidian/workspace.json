@@ -6,17 +6,18 @@
       {
         "id": "dedd16acf8715d59",
         "type": "tabs",
+        "dimension": 56.45933014354066,
         "children": [
           {
-            "id": "b0066d1adafccfce",
+            "id": "da15d73976aa41e5",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md"
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md"
               },
               "icon": "excalidraw-icon",
-              "title": "Resumen Virtualizacion"
+              "title": "! Teorico completo + Anotaciones (P1)"
             }
           }
         ]
@@ -24,6 +25,7 @@
       {
         "id": "14543622319d19a7",
         "type": "tabs",
+        "dimension": 43.54066985645933,
         "children": [
           {
             "id": "b72cff07df7b597f",
@@ -32,16 +34,49 @@
               "type": "pdf",
               "state": {
                 "file": "08 Sistemas Operativos/teorico/operating_systems_three_easy_pieces.pdf",
-                "page": 149,
-                "left": -7,
-                "top": 529,
-                "zoom": 2.086805555555556
+                "page": 155,
+                "left": -9,
+                "top": 551,
+                "zoom": 1.6927083333333335
               },
               "icon": "lucide-file-text",
               "title": "operating_systems_three_easy_pieces"
             }
+          },
+          {
+            "id": "64b07eb2508a94b0",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
+                "page": 1,
+                "left": -11,
+                "top": 768,
+                "zoom": 1.3089158987973077
+              },
+              "icon": "lucide-file-text",
+              "title": "Practico_1_2026"
+            }
+          },
+          {
+            "id": "5c2ab1b174982095",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
+                "page": 37,
+                "left": -15,
+                "top": 111,
+                "zoom": 1.0833333333333333
+              },
+              "icon": "lucide-file-text",
+              "title": "1)Clase 11 de agosto"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -163,13 +198,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08 Sistemas Operativos/teorico/operating_systems_three_easy_pieces.pdf",
+                "file": "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of operating_systems_three_easy_pieces"
+              "title": "Outline of Practico_1_2026"
             }
           }
         ],
@@ -197,8 +232,16 @@
       "graph:Open graph view": false
     }
   },
-  "active": "b72cff07df7b597f",
+  "active": "64b07eb2508a94b0",
   "lastOpenFiles": [
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
+    "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
+    "09 Probabilidad y estadistica/practico/Practico_3_Proba2025.pdf",
+    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
+    "09 Probabilidad y estadistica/practico/Practico_2_Proba2025.pdf",
+    "99 Adjuntos/Pasted Image 20260829201741_257.png",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "08 Sistemas Operativos/teorico/operating_systems_three_easy_pieces.pdf",
     "99 Adjuntos/Pasted Image 20260829082113_184.png",
@@ -213,16 +256,8 @@
     "99 Adjuntos/Pasted Image 20260820161154_724.png",
     "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
     "08 Sistemas Operativos/teorico/Untitled mindmap.md",
-    "08 Sistemas Operativos/practico/4.)persistencia.pdf",
-    "08 Sistemas Operativos/practico/3.) concurrencia.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "99 Adjuntos/Pasted Image 20260820120917_637.png",
-    "09 Probabilidad y estadistica/teorico/Parcial1/11) Clase 18 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
     "99 Adjuntos/Pasted Image 20260820120408_240.png",
-    "99 Adjuntos/Pasted Image 20260820120305_292.png",
-    "09 Probabilidad y estadistica/teorico/Parcial1/10) Clase 16 de septiembre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
