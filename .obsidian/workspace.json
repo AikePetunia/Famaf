@@ -25,7 +25,7 @@
       {
         "id": "14543622319d19a7",
         "type": "tabs",
-        "dimension": 43.54066985645933,
+        "dimension": 43.54066985645934,
         "children": [
           {
             "id": "b72cff07df7b597f",
@@ -50,10 +50,10 @@
               "type": "pdf",
               "state": {
                 "file": "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
-                "page": 1,
-                "left": -11,
-                "top": 768,
-                "zoom": 1.3089158987973077
+                "page": 2,
+                "left": 54,
+                "top": 661,
+                "zoom": 1.6
               },
               "icon": "lucide-file-text",
               "title": "Practico_1_2026"
@@ -67,8 +67,8 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
                 "page": 37,
-                "left": -15,
-                "top": 111,
+                "left": -3,
+                "top": 114,
                 "zoom": 1.0833333333333333
               },
               "icon": "lucide-file-text",
@@ -237,9 +237,9 @@
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
+    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
     "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
     "09 Probabilidad y estadistica/practico/Practico_3_Proba2025.pdf",
-    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
     "09 Probabilidad y estadistica/practico/Practico_2_Proba2025.pdf",
     "99 Adjuntos/Pasted Image 20260829201741_257.png",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
