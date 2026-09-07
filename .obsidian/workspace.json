@@ -6,7 +6,7 @@
       {
         "id": "c7a451d80219d2fb",
         "type": "tabs",
-        "dimension": 50,
+        "dimension": 51.55502392344498,
         "children": [
           {
             "id": "107c0039385b46a6",
@@ -25,7 +25,7 @@
       {
         "id": "14543622319d19a7",
         "type": "tabs",
-        "dimension": 50,
+        "dimension": 48.44497607655502,
         "children": [
           {
             "id": "19c58f83f47ad955",
@@ -35,9 +35,9 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
                 "page": 104,
-                "left": 31,
-                "top": 746,
-                "zoom": 1.5848813395912853
+                "left": 30,
+                "top": 325,
+                "zoom": 1.4213827654570763
               },
               "icon": "lucide-file-text",
               "title": "Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion"
@@ -51,15 +51,48 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
                 "page": 2,
-                "left": -12,
-                "top": 555,
-                "zoom": 1.2271086551224761
+                "left": -14,
+                "top": 562,
+                "zoom": 1.0987342112019707
               },
               "icon": "lucide-file-text",
               "title": "Practico_1_2026"
             }
+          },
+          {
+            "id": "ce7099a3e678eec5",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/practico/Practico_2_Proba2025.pdf",
+                "page": 2,
+                "left": 18,
+                "top": 13,
+                "zoom": 1.6
+              },
+              "icon": "lucide-file-text",
+              "title": "Practico_2_Proba2025"
+            }
+          },
+          {
+            "id": "52e9cf5436eb78f8",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
+                "page": 1,
+                "left": -12,
+                "top": 580,
+                "zoom": 1.3565436241610738
+              },
+              "icon": "lucide-file-text",
+              "title": "Clases 2026.docx"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -181,13 +214,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+                "file": "09 Probabilidad y estadistica/practico/Practico_2_Proba2025.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion"
+              "title": "Outline of Practico_2_Proba2025"
             }
           }
         ],
@@ -215,31 +248,33 @@
       "graph:Open graph view": false
     }
   },
-  "active": "19c58f83f47ad955",
+  "active": "ce7099a3e678eec5",
   "lastOpenFiles": [
-    "08 Sistemas Operativos/teorico/operating_systems_three_easy_pieces.pdf",
-    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/practico/Practico_2_Proba2025.pdf",
+    "99 Adjuntos/Pasted Image 20260907114445_835.png",
+    "99 Adjuntos/Pasted Image 20260907112732_591.png",
+    "99 Adjuntos/Pasted Image 20260907112639_076.png",
+    "99 Adjuntos/Pasted Image 20260907100531_252.png",
+    "08 Sistemas Operativos/teorico/Lab 1 guia.md",
+    "08 Sistemas Operativos/teorico/Lab 1 Guía de estudio.md",
+    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
+    "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
+    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
+    "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu.md",
+    "08 Sistemas Operativos/teorico/operating_systems_three_easy_pieces.pdf",
     "99 Adjuntos/Pasted Image 20260906093337_838.png",
     "99 Adjuntos/Pasted Image 20260906093229_833.png",
     "99 Adjuntos/Pasted Image 20260906093200_589.png",
     "99 Adjuntos/Pasted Image 20260906093105_386.png",
-    "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
     "99 Adjuntos/Pasted Image 20260902133601_607.png",
     "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
-    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
     "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
     "09 Probabilidad y estadistica/practico/Practico_3_Proba2025.pdf",
-    "09 Probabilidad y estadistica/practico/Practico_2_Proba2025.pdf",
     "99 Adjuntos/Pasted Image 20260829201741_257.png",
-    "99 Adjuntos/Pasted Image 20260829082113_184.png",
-    "99 Adjuntos/Pasted Image 20260829081617_118.png",
     "08 Sistemas Operativos/luffy.mp3",
-    "99 Adjuntos/Pasted Image 20260825155138_593.png",
     "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
-    "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu.md",
-    "99 Adjuntos/Pasted image 20260821113220.png",
     "08 Sistemas Operativos/teorico/Untitled mindmap.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md",
@@ -259,8 +294,6 @@
     "09 Probabilidad y estadistica/parciales/2/practica/re-practicos 1 (7,8) 2025.md",
     "Cheatsheat AYED2.md",
     "machete.md",
-    "The joy of coding.md",
-    "AAS-backend prompt..md",
-    "README.md"
+    "The joy of coding.md"
   ]
 }
