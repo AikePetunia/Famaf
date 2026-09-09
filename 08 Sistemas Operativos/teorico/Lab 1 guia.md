@@ -2,78 +2,85 @@
 tags: [sistemas-operativos, mybash, shell, procesos, ipc]
 curso: Sistemas Operativos 2026 - Laboratorio 1 (MyBash)
 ---
-## 1. Fundamentos de Shell y Sistemas Operativos
+## 1. Qué es un shell, para qué sirve
 
-### 1.1 Rol del Shell
-El shell es un **intérprete de línea de comandos**: un programa de espacio de usuario que lee texto que escribe el usuario, lo interpreta como una orden (comando + argumentos + operadores) y le pide al sistema operativo que la ejecute. El shell **no ejecuta el trabajo pesado él mismo** (salvo builtins); delega la ejecución real a otros procesos.
+### 1.1 La idea, en criollo
+Pensá en un restaurante. Vos le pedís algo al mozo, el mozo anota el pedido y se lo lleva a la cocina. El mozo no cocina — solo entiende lo que pediste y se lo pasa a quien sí puede hacerlo.
 
-### 1.2 Shell vs. Kernel
+El **shell** es ese mozo. Vos escribís `ls -l`, el shell entiende que eso es un pedido, y se lo pasa al sistema operativo para que lo resuelva. El shell casi nunca hace el trabajo pesado él mismo.
 
-| | Shell | Kernel |
-|---|---|---|
-| Espacio | Usuario | Kernel (privilegiado) |
-| Rol | Traduce comandos de texto a syscalls | Ejecuta las syscalls, gestiona procesos, memoria, archivos |
-| Ejemplo | Interpreta `ls -l \| wc -l` | Crea los procesos, los pipes, hace el scheduling |
+La **cocina**, en esta analogía, es el **kernel**: la parte del sistema operativo que de verdad tiene el poder de crear procesos, leer archivos, hablar con el hardware, etc. El shell le pide cosas al kernel, pero quien las ejecuta de verdad es el kernel.
 
-**Idea clave:** el shell es un *cliente* del kernel. Todo lo que el shell "hace" en términos de crear procesos, redirigir E/S o comunicar comandos, en realidad lo pide al kernel a través de **syscalls** (`fork`, `execvp`, `pipe`, `open`, `dup2`, `wait`, etc.). El shell traduce; el kernel ejecuta.
+|            | Shell (el mozo)                                | Kernel (la cocina)                                             |
+| ---------- | ---------------------------------------------- | -------------------------------------------------------------- |
+| Qué hace   | Entiende lo que escribiste y se lo pide a otro | Hace el trabajo real: crea procesos, maneja archivos y memoria |
+| Dónde vive | "Espacio de usuario" (un programa más)         | "Espacio de kernel" (tiene permisos especiales)                |
 
-### 1.3 Ciclo REPL
-**REPL = Read - Evaluate - Print - Loop**
+**Para practicar:** cuando escribís `ls`, el shell no "sabe" listar archivos por arte de magia — le pide al sistema operativo que arranque el programa `ls`, que vive en el disco como cualquier otro programa. Pensá: ¿qué tendría que pasar si el archivo `ls` no existiera en tu computadora? (Pista: el shell te va a avisar que no encuentra el comando — no es que el shell "sepa" listar archivos, depende de que el programa exista).
 
-| Fase     | Tarea                                                                      |
-| -------- | -------------------------------------------------------------------------- |
-| Read     | Leer la línea de entrada del usuario y parsea el texto                     |
-| Evaluate | Ejecutar el comando (fork/exec, pipes, redirecciones)                      |
-| Print    | Mostrar resultado (en este caso lo hace el propio proceso hijo vía stdout) |
-| Loop     | Volver a mostrar el prompt y repetir                                       |
+### 1.2 El shell repite lo mismo una y otra vez (REPL)
+Un shell es básicamente un bucle que nunca termina, hasta que le decís `exit`. En cada vuelta hace lo mismo:
 
-En `mybash.c` el ciclo REPL es literalmente el `while(!quit)`:
+1. **Escuchar** lo que escribiste (Read)
+2. **Resolverlo** (Evaluate)
+3. **Mostrarte** el resultado (Print)
+4. **Volver a escuchar** (Loop)
+
+Por eso se lo llama **REPL** (Read-Evaluate-Print-Loop). Es como una charla: escuchás, respondés, y volvés a escuchar.
+
+En `mybash.c`, ese bucle es literalmente esto:
 
 ```c
 input = parser_new(stdin);
 while (!quit) {
-    show_prompt();          // parte del "print" del prompt (no del resultado)
-    // pipe = parse_pipeline(input);   <- READ (falta descomentar)
+    show_prompt();          // esto es el "Print" del prompt, no del resultado
+    // pipe = parse_pipeline(input);   <- esto sería el "Read"
     quit = parser_at_eof(input);
-    /* COMPLETAR: acá iría EVALUATE -> execute_pipeline(pipe) */
+    /* Acá falta completar el "Evaluate": execute_pipeline(pipe) */
 }
 parser_destroy(input);
 ```
- 
-### 1.4 Comandos Internos (Builtins) vs. Externos
 
-|                | Builtin                                                                                                        | Externo                                         |
-| -------------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| Ejecución      | Función C dentro del propio proceso del shell                                                                  | Nuevo proceso vía `fork()` + `execvp()`         |
-| Por qué existe | Porque modifica el **estado del propio shell** (su directorio actual, o debe terminar el propio proceso shell) | Es un programa aparte en el sistema de archivos |
-| Ejemplos       | `cd`, `exit`, `export`, `help`                                                                                 | `ls`, `grep`, `wc`, `gzip`                      |
+> **Ojo:** este archivo tal cual está subido todavía **no ejecuta nada** — el `parse_pipeline` está comentado y falta el paso de "Evaluate". Es un esqueleto para completar, no algo roto.
 
-**Razón de ser de los builtins:** `cd` cambia el directorio de trabajo del proceso que lo ejecuta (`chdir()`). Si `cd` se ejecutara como proceso hijo (fork+exec), cambiaría el directorio *del hijo*, que muere inmediatamente después — el shell padre nunca vería el cambio. Por eso `cd` **tiene** que ejecutarse en el mismo proceso del shell. Lo mismo pasa con `exit` (tiene que terminar el proceso del shell, no uno hijo) y con `export` (variables de entorno del propio shell).
+**Para practicar:** imaginate que el shell no tuviera este bucle, y que el programa terminara después de ejecutar un solo comando. ¿Qué tendrías que hacer vos, como usuario, para correr un segundo comando? (Respuesta: volver a abrir el programa shell entero, cada vez).
 
-En el código, esto se resuelve con una tabla de despacho en `builtin.c`:
+### 1.3 Cosas que el shell resuelve solo (builtins) vs. cosas que delega
+Siguiendo con el mozo: hay pedidos chiquitos que puede resolver sin ir a la cocina — como decirte la hora, o traerte el menú de nuevo. Y hay pedidos que sí o sí tiene que llevar a la cocina, porque él solo no puede prepararlos.
+
+Los **comandos internos (builtins)** son esos pedidos chicos: el shell los resuelve él mismo, sin crear ningún proceso nuevo. `cd`, `exit` y `help` son builtins en MyBash.
+
+Los **comandos externos** son todo lo demás (`ls`, `grep`, `wc`, `gzip`...): son programas aparte, guardados en el disco, y el shell tiene que crear un **proceso nuevo** para correrlos.
+
+| | Builtin | Externo |
+|---|---|---|
+| ¿Quién lo ejecuta? | El shell mismo, con una función en C | Un proceso hijo nuevo |
+| Ejemplos | `cd`, `help`, `exit` | `ls`, `grep`, `wc`, `gzip` |
+
+**¿Por qué `cd` tiene que ser builtin sí o sí?** Pensalo así: si le pedís a un mensajero "andá y mudate a la casa de al lado", el que se muda es el mensajero, no vos. Vos seguís en el mismo lugar. Lo mismo pasa si `cd` se ejecutara en un proceso hijo: el hijo cambiaría *su propia* carpeta de trabajo, y un instante después ese hijo termina y desaparece. El shell (el padre) ni se entera, sigue en la carpeta de siempre. Por eso `cd` tiene que correr en el mismo proceso que el shell — es la única forma de que el cambio "pegue" de verdad.
+
+En el código, en vez de escribir un montón de `if / else if` para cada builtin, se usa una tabla que dice "si el nombre es tal, llamá a tal función":
 
 ```c
 struct internal_commands {
-    const char *name;
-    void (*handler)(scommand);
+    const char *name;              // el nombre que escribe el usuario
+    void (*handler)(scommand);     // qué función hay que llamar
 };
 
 static const struct internal_commands COMMANDS_TABLE[] = {
     {"cd",   handle_cd},
     {"help", handle_help},
     {"exit", handle_exit},
-    {NULL,   NULL} // Terminador (sentinela)
+    {NULL,   NULL}  // marca el final de la tabla
 };
 ```
 
-- `builtin_is_internal(scommand cmd)`: recorre `COMMANDS_TABLE` comparando `scommand_front(cmd)` (el nombre del comando) con `strcmp`.
-- `builtin_alone(pipeline p)`: es interno **y** además es el único comando del pipeline (`pipeline_length(p) == 1`). Esto importa porque un builtin dentro de un pipe (ej. `cd /tmp | ls`) no tiene mucho sentido si se ejecuta en un proceso hijo — por eso el diseño solo trata como "builtin real" al caso en que está solo.
-- `builtin_run(scommand cmd)`: busca el handler en la tabla y lo ejecuta **en el proceso actual**, sin fork.
+La ventaja de esto: si mañana querés agregar un builtin nuevo (por ejemplo `pwd`), no tenés que tocar la lógica que "detecta" builtins — solo agregás una fila nueva a la tabla y escribís la función.
 
-`handle_cd` es el ejemplo perfecto de por qué existen los builtins:
+Y así se ve `cd` resuelto, sin fork ni nada raro, una función C normal:
 ```c
 void handle_cd(scommand cmd) {
-    scommand_pop_front(cmd);               // saco "cd", queda el path (o vacío)
+    scommand_pop_front(cmd);               // saco "cd", queda el path (o nada)
     char *path = !scommand_is_empty(cmd) ? scommand_front(cmd) : getenv("HOME");
     if (path != NULL && chdir(path) != 0) {
         perror("cd");
@@ -83,19 +90,22 @@ void handle_cd(scommand cmd) {
 
 ---
 
-## 2. Gestión de Procesos
+## 2. Procesos: sacarse una fotocopia y disfrazarse
 
-### 2.1 `fork()`
+### 2.1 `fork()` — sacarte una fotocopia de vos mismo
+Imaginate que en el momento exacto en que llamás a `fork()`, sacás una fotocopia perfecta de vos mismo: misma memoria, mismo punto en el que estabas parado, todo igual. A partir de ese instante, **hay dos** (el original y la copia) y cada uno sigue viviendo por su cuenta.
 
 ```c
 pid_t fork(void);
 ```
-- Crea un **proceso hijo** que es una copia (casi) idéntica del proceso padre: mismo código, mismo heap/stack (en la práctica, copy-on-write), mismos descriptores de archivo abiertos.
-- **Valores de retorno** (es la clave de todo el modelo):
-  - En el **proceso hijo**: `fork()` devuelve **0**.
-  - En el **proceso padre**: `fork()` devuelve el **PID del hijo** (> 0).
-  - Si falla: devuelve **-1** (no se pudo crear el proceso).
-- Como ambos procesos siguen ejecutando desde el mismo punto (el `return` de `fork()`), el patrón típico es un `if`:
+
+La pregunta obvia es: si ambos son "idénticos", ¿cómo sabe cada uno si es el original o la copia? La respuesta está en lo que le devuelve `fork()` a cada uno — es como si cada uno se mirara al espejo después de sacarse la fotocopia:
+
+- La **copia (proceso hijo)** ve un **0**.
+- El **original (proceso padre)** ve un número que identifica a la copia (su **PID**, un número > 0).
+- Si algo salió mal y no se pudo sacar la fotocopia: devuelve **-1**.
+
+Como el código sigue corriendo en los dos "a la vez" desde ese mismo punto, se usa un `if` para que cada uno sepa qué hacer:
 
 ```c
 pid_t pid = fork();
@@ -103,147 +113,148 @@ if (pid < 0) {
     perror("Error en la creacion de fork");
     exit(EXIT_FAILURE);
 } else if (pid == 0) {
-    // Código que corre SOLO en el hijo
+    // Esto lo corre SOLO la copia (el hijo)
 } else {
-    // Código que corre SOLO en el padre (pid == PID del hijo)
+    // Esto lo corre SOLO el original (el padre)
 }
 ```
 
-Esto es exactamente lo que hace `execute_pipeline()` en `execute.c` dentro del `for` que recorre cada comando del pipeline.
+Esto es justo lo que hace `execute_pipeline()` en `execute.c`, una vez por cada comando del pipeline.
 
-### 2.2 `execvp()`
+### 2.2 `execvp()` — disfrazarte de otro programa
+Ahora imaginate que esa fotocopia se pone un disfraz completo, tan completo que deja de ser "vos" y pasa a ser otra persona por dentro y por fuera — conserva el mismo documento de identidad (el mismo número de proceso, el PID), pero todo lo demás cambia: otro código, otra memoria.
 
 ```c
 int execvp(const char *file, char *const argv[]);
 ```
-- **Reemplaza la imagen del proceso actual** por un nuevo programa: mismo PID, pero código, datos, stack y heap nuevos, pertenecientes al programa que se está por ejecutar.
-- Si `execvp` tiene éxito, **nunca retorna** (el proceso ya es otro programa). Si retorna, es porque **falló** (por eso siempre va seguido de `perror` + `exit`).
-- `argvp` incluye una variante que busca en el `PATH` (`v` = vector de argumentos, `p` = usa `PATH`), a diferencia de `execv`.
-- `argv[0]` debe ser el nombre del comando y el arreglo debe terminar en `NULL` (por eso en `cmd_to_args()` se hace `args[tam] = NULL;`).
 
-**Combinación fork() + execvp():** es el patrón central de cualquier shell: el padre hace `fork()`, y el **hijo** llama a `execvp()` para convertirse en el programa pedido, mientras el padre sigue siendo el shell.
+Eso es `execvp()`: reemplaza el programa que está corriendo por otro completamente distinto. Si el disfraz sale bien, **no hay vuelta atrás** — la función ni siquiera "vuelve" a tu código, porque tu código ya no existe, ahora sos el otro programa. Si `execvp()` sí devuelve algo, es mala señal: significa que el disfraz falló.
+
+**El combo fork() + execvp() es el corazón de cualquier shell:** el padre se saca una fotocopia de sí mismo (`fork`), y le dice a esa copia "ahora disfrazate de `ls`" (`execvp`). El padre sigue siendo el shell de siempre; el que se disfrazó y "se convirtió en `ls`" fue solo la copia.
 
 ```c
 if (pid == 0) {
-    // ... (redirecciones) ...
+    // ... acá van las redirecciones, si hace falta ...
     char **args = cmd_to_args(cmd);
     execvp(args[0], args);
-    // Solo se llega acá si execvp() falló
+    // Si llegamos hasta acá, es porque el disfraz falló
     perror("Error en la ejecucion de execvp()");
     exit(EXIT_FAILURE);
 }
 ```
 
-### 2.3 `wait()` y `waitpid()`
+### 2.3 `wait()` — preguntar "¿cómo te fue?"
+Si mandás a alguien a hacer un mandado y nunca le preguntás cómo le fue, esa persona técnicamente ya terminó, pero queda "ahí parada" hasta que alguien le pregunte — no se puede ir del todo sin que vos le prestes atención una vez más.
 
 ```c
 pid_t wait(int *wstatus);
 pid_t waitpid(pid_t pid, int *wstatus, int options);
 ```
-- Sirven para que el proceso padre **se bloquee** hasta que un hijo termine, y así pueda recoger su estado de finalización.
-- `wait(NULL)`: espera a **cualquier** hijo (no importa cuál termine primero). Es lo que usa `execute_pipeline()`:
+
+Eso es exactamente un **proceso zombie**: un hijo que ya terminó su trabajo, pero cuyo padre todavía no llamó a `wait()` para "cerrarle el caso". El sistema operativo tiene que guardar esa información (cómo terminó) hasta que alguien la pida, así que el proceso queda con una entrada fantasma en la lista de procesos.
+
+`wait(NULL)` es "esperá a que termine cualquiera de mis hijos, y decime cómo le fue" (acá no nos importa el resultado, por eso `NULL`). `waitpid()` es la versión más específica: "esperá a este hijo puntual".
+
+En `execute_pipeline()`, después de crear todos los procesos, el padre le pregunta a cada uno cómo le fue:
 ```c
 for (int i = 0; i < tam; i++) {
     wait(NULL);
 }
 ```
-- `waitpid(pid, &status, opciones)`: permite esperar a un hijo **específico** (por su PID) y pasar opciones como `WNOHANG` (no bloquear si el hijo no terminó todavía). Es la versión "fina" de `wait()`.
+Eso es justamente lo que evita que queden zombies dando vueltas.
 
-### 2.4 Procesos Zombie
-- Un proceso se convierte en **zombie** cuando termina su ejecución (llamó a `exit()` o terminó su `main`) pero **su padre todavía no llamó a `wait()`/`waitpid()`** para leer su código de salida.
-- El proceso zombie ya liberó casi todos sus recursos (memoria, archivos), pero el kernel **mantiene su entrada en la tabla de procesos** (con su PID y código de salida) hasta que el padre lo "recoja".
-- **Por qué ocurren:** el kernel necesita guardar el estado de salida hasta que alguien lo pida; si el padre nunca llama a `wait()`, ese proceso queda zombie para siempre (o hasta que el padre termine, momento en el cual el zombie es "adoptado" por `init`/PID 1, quien sí hace wait automáticamente).
-- **Cómo se evitan:** llamando a `wait()` o `waitpid()` después de cada `fork()` que se quiera sincronizar. En `execute_pipeline()`, el bucle final de `wait(NULL)` (uno por cada comando del pipeline) es exactamente lo que evita que los hijos queden zombies.
+### 2.4 Esperar parado vs. seguir con lo tuyo (foreground vs. background)
+Cuando corrés un comando normal, el shell **se queda esperando** a que termine antes de mostrarte el prompt de nuevo — como quedarte parado en el mostrador hasta que te traen el pedido. Eso es **foreground**.
 
-### 2.5 Ejecución Foreground vs. Background (`&`)
+Cuando le ponés `&` al final (`sleep 60 &`), le estás diciendo al shell "hacé esto, pero no me hagas esperar, yo sigo con lo mío" — el shell no llama a `wait()` en ese momento, y vos podés seguir escribiendo comandos mientras el otro corre por su cuenta. Eso es **background**.
 
-|             | Foreground                                                                                                       | Background (`&`)                                                                                                                    |
-| ----------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Shell       | Llama a `wait()`/`waitpid()` y se bloquea hasta que el hijo termine                                              | **No** llama a `wait()` inmediatamente: sigue mostrando el prompt                                                                   |
-| Paralelismo | El shell (padre) y el comando (hijo) NO corren en paralelo desde el punto de vista del usuario (el shell espera) | El shell (padre) y el comando (hijo) corren **en paralelo**: el usuario puede seguir tipeando comandos mientras el background corre |
+**Para practicar:** si escribís `sleep 5 &` y en la misma línea después `echo "hola"`, ¿qué se imprime primero? — `hola`, porque el shell no se queda esperando al `sleep`, sigue de largo apenas lo manda a correr.
 
-En el TAD `pipeline`, esto se representa con el campo `wait` (booleano) de `struct pipeline_s`, seteado por `pipeline_set_wait()`. El parser detecta el operador `&` (`parser_op_background()`) y, si aparece, hace `pipeline_set_wait(result, false)`.
+> **Detalle para mirar en el código:** el TAD `pipeline` sí tiene un campo (`wait`) que guarda si hay que esperar o no. Pero en `execute_pipeline()`, el bucle final de `wait(NULL)` se ejecuta **siempre**, sin fijarse en ese campo. Es decir: la idea de "esperar o no" está pensada en el diseño, pero en este archivo puntual todavía no se usa para decidir si esperar o no. Vale la pena tenerlo en cuenta si te preguntan por posibles mejoras al código.
 
 ---
 
-## 3. Comunicación Entre Procesos (IPC) y Redirección de E/S
+## 3. Cómo hablan entre sí los procesos: pipes y redirecciones
 
-### 3.1 Descriptores de Archivo
-Un **descriptor de archivo (fd)** es un entero que el proceso usa como "manija" para leer/escribir sobre un archivo, pipe, socket, etc. Todo proceso arranca con 3 descriptores estándar abiertos:
+### 3.1 Los tres "caños" de cada proceso
+Todo proceso, apenas nace, ya tiene tres "caños" (descriptores de archivo) conectados por default:
 
-| fd | Nombre | Constante | Uso |
-|---|---|---|---|
-| 0 | stdin  | `STDIN_FILENO`  | entrada estándar |
-| 1 | stdout | `STDOUT_FILENO` | salida estándar |
-| 2 | stderr | `STDERR_FILENO` | salida de error |
+| Número | Nombre | Para qué |
+|---|---|---|
+| 0 | entrada (stdin) | por acá "entra" lo que lee (normalmente, lo que tipeás en el teclado) |
+| 1 | salida (stdout) | por acá "sale" lo que imprime (normalmente, la pantalla) |
+| 2 | errores (stderr) | por acá "salen" los mensajes de error (también la pantalla, pero es un caño aparte) |
 
-### 3.2 Pipes (`|`)
-- **Concepto:** un pipe conecta el `stdout` de un proceso con el `stdin` de otro, formando un buffer FIFO en el kernel entre ambos.
+### 3.2 Pipes (`|`) — conectar la salida de uno con la entrada de otro
+Un pipe es como una manguera: conecta el caño de salida de un proceso con el caño de entrada de otro. Todo lo que el primero tira por su salida, el segundo lo recibe por su entrada, sin pasar por la pantalla en el medio.
 
 ```c
 int pipe(int pipefd[2]);
 ```
-- Crea **dos descriptores** en el arreglo que se le pasa:
-  - `pipefd[0]`: extremo de **lectura**.
-  - `pipefd[1]`: extremo de **escritura**.
-- Devuelve `0` si tuvo éxito, `-1` si falló.
+Esta syscall te da la manguera hecha: `pipefd[0]` es la punta por donde se **lee**, `pipefd[1]` es la punta por donde se **escribe**.
 
-En `execute_pipeline()`, para un pipeline de `tam` comandos se necesitan `tam - 1` pipes:
-```c
-int cant_pipes = tam - 1;
-int (*file_descriptor)[2] = malloc(cant_pipes * sizeof(int[2]));
-for (int i = 0; i < cant_pipes; i++) {
-    if (pipe(file_descriptor[i]) == -1) { perror(...); exit(EXIT_FAILURE); }
-}
-```
+Si tenés un pipeline de 3 comandos (`a | b | c`), necesitás **2 mangueras** (una entre `a` y `b`, otra entre `b` y `c`) — siempre son "cantidad de comandos menos uno".
 
-### 3.3 Redirección de E/S
+### 3.3 Redirecciones — conectar un caño a un balde en vez de a otro proceso
+En vez de conectar la manguera a otro proceso, la podés conectar a un **balde** (un archivo).
 
-**Operadores** (según la consigna teórica): `>` (salida, trunca), `<` (entrada), `>>` (salida, agrega), `2>` (redirección de stderr).
+| Operador | Qué hace, en criollo |
+|---|---|
+| `>` | Tirá todo lo que salga por acá a este balde. Si el balde ya tenía algo, primero se vacía |
+| `>>` | Igual, pero sin vaciar el balde antes — se va acumulando arriba de lo que ya había |
+| `<` | En vez de leer del teclado, leé de este balde que ya tiene algo adentro |
+| `2>` | Los mensajes de error (no los normales) van a este balde |
 
-**Syscalls involucradas:**
+En términos técnicos, esto se logra siempre con la misma receta de 3 pasos:
 
 ```c
-int open(const char *pathname, int flags, ...);
-int close(int fd);
-int dup(int oldfd);
-int dup2(int oldfd, int newfd);
+int open(const char *pathname, int flags, ...);  // 1) abrir/crear el balde (archivo)
+int dup2(int oldfd, int newfd);                  // 2) pegar el caño estándar al balde
+int close(int fd);                                // 3) soltar la "etiqueta" que ya no sirve
 ```
 
-| Syscall              | Propósito en la redirección                                                                                                                                                                                          |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `open()`             | Abre (o crea) el archivo de redirección y devuelve un nuevo fd apuntando a él                                                                                                                                        |
-| `dup2(oldfd, newfd)` | Hace que `newfd` (ej. `STDIN_FILENO` o `STDOUT_FILENO`) pase a apuntar **a lo mismo** que `oldfd`. Cierra `newfd` primero si ya estaba abierto. Es la syscall clave: "duplica" el descriptor sobre el estándar       |
-| `close()`            | Cierra el descriptor que quedó "de más" tras el `dup2` (el que abrió `open()`, o el extremo del pipe que ya no se usa), para no dejar descriptores colgados                                                          |
-| `dup(oldfd)`         | Similar a `dup2`, pero devuelve el **primer** fd libre disponible (no se puede elegir el destino). En este laboratorio se usa `dup2` porque necesitamos apuntar exactamente a 0/1, no a "cualquier" descriptor libre |
+1. **`open()`**: abre (o crea) el archivo y te da un número (fd) para referirte a él — pensalo como el "número de mesa" con el que identificás al balde recién abierto.
+2. **`dup2(viejo, nuevo)`**: hace que el caño estándar (`nuevo`, por ejemplo el caño 1 = salida) apunte **a lo mismo** que apuntaba `viejo` (el balde que acabás de abrir). Después de esto, escribir por el caño 1 es literalmente lo mismo que escribir en el balde.
+3. **`close()`**: ya pegaste el caño al balde, así que el número que te dio `open()` al principio ya no hace falta — lo soltás para no dejar cosas abiertas de más.
 
-**Ejemplo real, redirección de entrada (`<`) en `execute_pipeline()`:**
+**Ejemplo pensado paso a paso: `ls -l > out.txt`**
+1. `open("out.txt", ...)` → me da, pongamos, el número 3.
+2. `dup2(3, 1)` → ahora el caño de salida (1) apunta a `out.txt`.
+3. `close(3)` → suelto el número 3, ya no lo necesito (el caño 1 sigue apuntando a `out.txt`).
+4. Corre `ls` → todo lo que `ls` imprime (que en realidad escribe por el caño 1) termina en `out.txt`, en vez de en tu pantalla.
+
+**¿Por qué se usa `dup2()` y no `dup()`?** `dup()` te da "el primer número libre que haya", sin que vos elijas cuál. Acá necesitamos algo específico: que el caño **1** (o el 0, o el 2) apunte al balde — no cualquier caño. `dup2()` te deja elegir exactamente a cuál.
+
+Así se ve la redirección de entrada (`<`) en el código real de MyBash:
 ```c
 if (scommand_get_redir_in(cmd) != NULL) {
     int entrada = open(scommand_get_redir_in(cmd), O_RDONLY);
-    if (entrada == -1) { 
-	    perror("Error al abrir archivo de entrada"); 
-	    exit(EXIT_FAILURE); 
-    }
-    dup2(entrada, STDIN_FILENO);   // STDIN ahora apunta al archivo
-    close(entrada);                 // cierro el fd "extra" que abrió open()
+    if (entrada == -1) { perror("Error al abrir archivo de entrada"); exit(EXIT_FAILURE); }
+    dup2(entrada, STDIN_FILENO);   // el caño de entrada ahora apunta al archivo
+    close(entrada);                 // ya no necesito este número
 } else if (i > 0) {
-    dup2(file_descriptor[i - 1][0], STDIN_FILENO);  // conecto con el pipe anterior
+    dup2(file_descriptor[i - 1][0], STDIN_FILENO);  // me conecto con el pipe anterior
 }
 ```
 
-**Ejemplo real, redirección de salida (`>`) solo en el último comando:**
+Y la de salida (`>`), que solo se aplica en el **último** comando del pipeline:
 ```c
 if (scommand_get_redir_out(cmd) != NULL && i == cant_pipes) {
     int salida = open(scommand_get_redir_out(cmd), O_WRONLY | O_CREAT | O_TRUNC, 0644);
     dup2(salida, STDOUT_FILENO);
     close(salida);
 } else if (i < cant_pipes) {
-    dup2(file_descriptor[i][1], STDOUT_FILENO);  // conecto con el pipe siguiente
+    dup2(file_descriptor[i][1], STDOUT_FILENO);  // me conecto con el pipe siguiente
 }
 ```
 
-Después de configurar `stdin`/`stdout`, **hay que cerrar todos los extremos de todos los pipes** en cada hijo (incluso los que no usó), porque los descriptores se heredan de `fork()` y si quedan abiertos de más, los procesos lectores nunca ven un EOF (el pipe nunca se "cierra" del todo mientras alguien tenga el extremo de escritura abierto):
+Tiene sentido que la redirección a archivo solo se use en el último comando: en `cat file | grep 'a' > out.txt`, el único que tiene un `>` de verdad es `grep`, que además es el último de la cadena. Los comandos del medio siempre mandan su salida al siguiente pipe, nunca a un archivo.
+
+> **Nota:** el código de este laboratorio solo implementa `<` y `>` (y `>` siempre vacía el balde antes, nunca "acumula"). Si te preguntan por `>>` o `2>`, la única diferencia real sería: para `>>` cambiar la forma de abrir el archivo (para que no lo vacíe, sino que agregue al final); para `2>`, pegar el balde al caño de **errores** en vez de al de salida.
+
+**Para practicar:** pensá qué pasaría si hicieras `dup2()` sin hacer `close()` después. (Respuesta: no rompe nada de inmediato, pero te quedan números de más "reservados" sin usar, que en un programa que corre muchos comandos se van acumulando — no es prolijo y en algún momento se puede quedar sin números disponibles).
+
+Después de armar las conexiones, hay que soltar **todas** las mangueras que quedaron sin usar en cada hijo — si no, el otro extremo nunca se entera de que "ya no viene más agua", porque alguien sigue teniendo la manguera agarrada aunque no la use:
 ```c
 for (int j = 0; j < cant_pipes; j++) {
     close(file_descriptor[j][0]);
@@ -251,370 +262,271 @@ for (int j = 0; j < cant_pipes; j++) {
 }
 ```
 
-### 3.4 Diagrama: redirección con `open()` + `dup2()` + `close()`
-
-```mermaid
-flowchart LR
-    A["scommand tiene redir_out = 'out.txt'"] --> B["open('out.txt', O_WRONLY|O_CREAT|O_TRUNC)\nfd_nuevo = 5 (ej)"]
-    B --> C["dup2(fd_nuevo, STDOUT_FILENO)\nfd 1 ahora apunta al archivo"]
-    C --> D["close(fd_nuevo)\nya no lo necesito, fd 1 sigue apuntando al archivo"]
-    D --> E["execvp() escribe por printf/stdout\n-> va al archivo"]
-```
-
-### 3.5 Diagrama: pipe entre dos comandos
-
-```mermaid
-flowchart LR
-    subgraph Padre["Shell (padre)"]
-        P1["pipe(fd) -> fd[0]=lectura, fd[1]=escritura"]
-    end
-    subgraph Hijo1["Hijo 1: ls -l"]
-        H1["dup2(fd[1], STDOUT)\nclose(fd[0]); close(fd[1])\nexecvp(ls)"]
-    end
-    subgraph Hijo2["Hijo 2: wc -l"]
-        H2["dup2(fd[0], STDIN)\nclose(fd[0]); close(fd[1])\nexecvp(wc)"]
-    end
-    P1 --> H1
-    P1 --> H2
-    H1 -- "escribe stdout" --> Pipe(("Buffer del pipe\nen el kernel"))
-    Pipe -- "lee stdin" --> H2
-```
-
 ---
 
-## 4. Análisis de Comandos y Secuencias de Syscalls
+## 4. Practicando: de un comando escrito a lo que hace el sistema operativo por dentro
 
-**Método general para deducir la secuencia:**
-1. ¿Cuántos comandos hay (separados por `|`)? → esa cantidad de `fork()` + `execvp()`.
-2. ¿Hay más de un comando? → `(cantidad de comandos - 1)` llamadas a `pipe()`, hechas **antes** de forkear.
-3. ¿Hay redirección (`<`, `>`)? → `open()` + `dup2()` + `close()` en el hijo correspondiente, antes del `execvp()`.
-4. ¿Termina en `&`? → el padre **no** llama a `wait()` para ese pipeline (sigue con el prompt).
-5. Al final (si no es background) → tantos `wait()` como procesos hijo se hayan creado.
+La forma de resolver esto siempre es la misma receta:
+1. ¿Cuántos comandos hay, separados por `|`? Esa es la cantidad de fotocopias (`fork`) y disfraces (`execvp`) que hacen falta.
+2. Si hay más de uno, hacen falta mangueras (`pipe`) — una menos que la cantidad de comandos.
+3. ¿Hay `<` o `>`? Ahí va la recetita de `open` + `dup2` + `close`.
+4. ¿Termina en `&`? El padre no se queda esperando.
+5. Si no es background, al final el padre pregunta "¿cómo les fue?" a cada hijo (`wait`).
 
-### 4.1 Comando simple: `gzip Lab1G04.tar`
+### `gzip Lab1G04.tar`
 ```
 fork()
   hijo: execvp("gzip", ["gzip","Lab1G04.tar",NULL])
 padre: wait(NULL)
 ```
 
-### 4.2 Con redirección: `ls -l > out.txt`
+### `ls -l > out.txt`
 ```
 fork()
-  hijo: open("out.txt", O_WRONLY|O_CREAT|O_TRUNC)
-        dup2(fd, STDOUT_FILENO)
-        close(fd)
+  hijo: open("out.txt", ...) -> dup2(fd, salida) -> close(fd)
         execvp("ls", ["ls","-l",NULL])
 padre: wait(NULL)
 ```
 
-### 4.3 En background: `xeyes &`
+### `xeyes &`
 ```
 fork()
   hijo: execvp("xeyes", ["xeyes",NULL])
-padre: (NO llama a wait — sigue mostrando el prompt)
+padre: (no espera, sigue de largo)
 ```
 
-### 4.4 Con pipe: `ls -l | wc -l`
+### `ls -l | wc -l`
 ```
-pipe(fd)                          // fd[0]=lectura, fd[1]=escritura
+pipe(fd)   // fd[0]=entrada de la manguera, fd[1]=salida
 
-fork()  -> hijo 1 (ls -l)
-  dup2(fd[1], STDOUT_FILENO); close(fd[0]); close(fd[1])
+fork() -> hijo 1 (ls -l)
+  dup2(fd[1], salida); cierra fd[0] y fd[1]
   execvp("ls", ["ls","-l",NULL])
 
-fork()  -> hijo 2 (wc -l)
-  dup2(fd[0], STDIN_FILENO); close(fd[0]); close(fd[1])
+fork() -> hijo 2 (wc -l)
+  dup2(fd[0], entrada); cierra fd[0] y fd[1]
   execvp("wc", ["wc","-l",NULL])
 
-padre: close(fd[0]); close(fd[1])
+padre: cierra fd[0] y fd[1]
        wait(NULL); wait(NULL)
 ```
 
-### 4.5 Combinado: `cat file.txt | grep 'a' > out.txt &`
+### `cat file.txt | grep 'a' > out.txt &`
 ```
 pipe(fd)
 
 fork() -> hijo 1 (cat file.txt)
-  dup2(fd[1], STDOUT_FILENO); close(fd[0]); close(fd[1])
+  dup2(fd[1], salida); cierra fd[0] y fd[1]
   execvp("cat", ["cat","file.txt",NULL])
 
 fork() -> hijo 2 (grep 'a' > out.txt)
-  dup2(fd[0], STDIN_FILENO)                         // entrada: viene del pipe
-  open("out.txt", O_WRONLY|O_CREAT|O_TRUNC)
-  dup2(fd_out, STDOUT_FILENO); close(fd_out)         // salida: al archivo
-  close(fd[0]); close(fd[1])
+  dup2(fd[0], entrada)                        // lee del pipe
+  open("out.txt", ...) -> dup2(fd_out, salida) -> close(fd_out)  // escribe al archivo
+  cierra fd[0] y fd[1]
   execvp("grep", ["grep","a",NULL])
 
-padre: close(fd[0]); close(fd[1])
-       (NO wait — es background por el "&")
+padre: cierra fd[0] y fd[1]
+       (no espera, porque terminó en "&")
 ```
 
 ---
 
-## 5. Programación en C y Herramientas del Laboratorio
+## 5. Un poco de C: cómo se guardan las palabras (strings)
 
-### 5.1 Representación interna de strings
-Un string en C **no es un tipo de dato propio**: es un `char *` (puntero al primer carácter) donde la cadena termina en un carácter nulo `\0`. No hay longitud almacenada aparte; para saber dónde termina hay que recorrer byte a byte hasta encontrar `\0` (por eso `strlen()` es O(n)).
+### 5.1 Cómo es un string por dentro
+En C, un string no es un tipo de dato "de verdad", es solo una fila de casilleros de memoria, uno por letra, y el último casillero tiene un cartelito especial (`\0`) que dice "acá se terminó la palabra". No hay ningún lugar donde esté anotado "esta palabra mide 5 letras" — si querés saber la longitud, tenés que ir casillero por casillero contando hasta encontrar el cartelito.
 
-### 5.2 Funciones de `<string.h>`
+### 5.2 Las funciones más comunes
 
-| Función | Qué hace | Qué devuelve |
-|---|---|---|
-| `strlen(s)` | Cuenta caracteres hasta el `\0` (sin contarlo) | `size_t` con la longitud |
-| `strcpy(dst, src)` | Copia `src` a `dst`, **incluyendo** el `\0` | `dst` |
-| `strcat(dst, src)` | Concatena `src` al final de `dst` (busca el `\0` de `dst` y pega ahí) | `dst` |
-| `strcmp(s1, s2)` | Compara lexicográficamente | `0` si son iguales; `<0` si `s1<s2`; `>0` si `s1>s2` |
+| Función | Qué hace |
+|---|---|
+| `strlen(s)` | Cuenta cuántas letras hay hasta el cartelito de "fin" |
+| `strcpy(dst, src)` | Copia una palabra dentro de otra fila de casilleros |
+| `strcat(dst, src)` | Pega una palabra al final de otra |
+| `strcmp(s1, s2)` | Compara dos palabras: te dice si son iguales, o cuál "va antes" alfabéticamente |
 
-### 5.3 Buffer Overflow
-`strcpy()` y `strcat()` **no verifican el tamaño del buffer destino**: si `src` es más larga de lo que `dst` puede contener, se escribe *más allá* de la memoria reservada, corrompiendo memoria adyacente (otras variables, el stack, direcciones de retorno). Esto se llama **buffer overflow** y es una de las vulnerabilidades de seguridad más clásicas en C (puede llevar desde corrupción de datos hasta ejecución de código arbitrario). Por eso se prefieren variantes con límite (`strncpy`, `strncat`) o, como en este laboratorio, funciones a medida que reservan memoria dinámica del tamaño exacto necesario.
+### 5.3 El problema del buffer overflow
+Ahora, `strcpy()` y `strcat()` tienen un problema: **no se fijan si hay lugar suficiente**. Es como servir agua en un vaso sin fijarte cuánto entra — si servís de más, se derrama sobre la mesa y moja lo que había al lado.
 
-### 5.4 `strmerge()` — concatenación segura
-Implementada en `strextra.c`:
+Cuando eso pasa con memoria de la computadora, "lo que había al lado" puede ser otra variable, o información importante del programa — y ese derrame se llama **buffer overflow**. Es uno de los errores de seguridad más conocidos en programas escritos en C, porque a veces alguien puede aprovechar ese "derrame" a propósito para romper o tomar control del programa.
+
+### 5.4 `strmerge()` — la versión "sin derrame" de `strcat`
+En vez de intentar meter agua extra en un vaso que ya estaba armado, `strmerge()` primero **mide cuánta agua va a entrar en total**, fabrica un vaso nuevo exactamente de ese tamaño, y recién ahí sirve las dos palabras juntas:
+
 ```c
 char * strmerge(char *s1, char *s2) {
     char *merge = NULL;
     size_t len_s1 = strlen(s1);
     size_t len_s2 = strlen(s2);
-    assert(s1 != NULL && s2 != NULL);
-    merge = calloc(len_s1 + len_s2 + 1, sizeof(char));  // reserva EXACTA + 1 para '\0'
+    merge = calloc(len_s1 + len_s2 + 1, sizeof(char));  // vaso del tamaño justo (+1 para el cartelito de fin)
     strncpy(merge, s1, len_s1);
     merge = strncat(merge, s2, len_s2);
-    assert(merge != NULL && strlen(merge) == strlen(s1) + strlen(s2));
     return merge;
 }
 ```
-**Diferencia clave con `strcat()`:** `strcat(dst, src)` asume que `dst` **ya tiene espacio reservado de sobra** para recibir `src` (si no, hay buffer overflow). `strmerge(s1, s2)` en cambio **reserva memoria nueva** con `calloc()` del tamaño exacto (`len_s1 + len_s2 + 1`), y devuelve un puntero nuevo — nunca modifica `s1` ni `s2` in-place. Por eso es "segura": el tamaño del destino siempre es el correcto porque se calcula, no se asume. El costo es que **el llamador es responsable de hacer `free()`** sobre el resultado (se ve en todo `command.c`, ej. `scommand_to_string()`, donde cada `strmerge` intermedio se libera con `free()` inmediatamente después de usarlo).
 
-### 5.5 Manejo de listas: GLib
-`command.c` usa la librería **GLib**, específicamente `GList` (lista doblemente enlazada), para implementar los TADs:
+La diferencia con `strcat()`: `strcat()` asume que el vaso destino ya tiene lugar de sobra (si no, hay derrame). `strmerge()` nunca asume nada — fabrica el vaso del tamaño exacto cada vez, así que nunca se puede desbordar. El costo es que ese vaso nuevo hay que acordarse de tirarlo después con `free()` cuando ya no se usa (en `command.c` se ve esto todo el tiempo).
+
+### 5.5 Listas: GLib
+Para no tener que armar listas enlazadas a mano, el código usa una librería ya hecha, **GLib**, con su tipo `GList`. Es la lista que guarda, por ejemplo, los argumentos de un comando (`"ls" -> "-l" -> "/tmp"`).
+
 ```c
 struct scommand_s {
-    GList * args;      // lista de argumentos (strings)
+    GList * args;       // la lista de palabras del comando
     char * redir_in;
     char * redir_out;
 };
-struct pipeline_s {
-    GList * scmds;     // lista de scommand
-    bool wait;
-};
 ```
-Funciones de GLib usadas: `g_list_append()` (agregar al final), `g_list_length()` (longitud), `g_list_delete_link()` (borrar un nodo puntual), `g_list_free()` / `g_list_free_full()` (liberar toda la lista, esta última liberando también el contenido con una función, en este caso `free`). 
 
 ---
 
-## 6. Arquitectura Específica del Laboratorio MyBash
+## 6. Cómo está armado MyBash por dentro
 
-### 6.1 Rol de cada módulo (según el código real)
+Pensá en MyBash como una pequeña fábrica con estaciones, cada una con un trabajo bien puntual:
 
-| Módulo                      | Rol                                                                                                                                                                                                           |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `mybash.c`                  | **Ciclo principal (REPL)**: crea el `Parser`, corre el `while` que muestra el prompt, parsea y ejecuta hasta EOF                                                                                              |
-| `command.h` / `command.c`   | Define e implementa los **TADs** `scommand` y `pipeline` (estructura de datos pura, sin syscalls de proceso)                                                                                                  |
-| `parser.h` (provisto, `.o`) | TAD **opaco** de bajo nivel: tokeniza el archivo de entrada carácter por carácter (`parser_next_argument`, `parser_op_pipe`, `parser_op_background`, `parser_skip_blanks`, `parser_garbage`, `parser_at_eof`) |
-| `parsing.h` / `parsing.c`   | **Orquesta** el `parser` para construir un TAD `pipeline` completo a partir del texto (`parse_pipeline`, y la función estática `parse_scommand`)                                                              |
-| `execute.h` / `execute.c`   | **Ejecuta** el pipeline: hace fork/exec/pipes/redirecciones/wait, orquestando las syscalls sobre el TAD `pipeline`                                                                                            |
-| `builtin.h` / `builtin.c`   | Detecta y ejecuta **comandos internos** (`cd`, `help`, `exit`) sin crear procesos nuevos                                                                                                                      |
-| `strextra.h` / `strextra.c` | Utilidad de bajo nivel: `strmerge()`, usada por `command.c` para serializar (`_to_string`)                                                                                                                    |
+| Módulo | Su trabajo, en criollo |
+|---|---|
+| `mybash.c` | La línea principal: recibe el pedido, lo manda a las demás estaciones, muestra el prompt de nuevo |
+| `parser.h` | La estación que entiende letra por letra lo que escribiste (viene ya hecha, no hay que tocarla) |
+| `parsing.c` | Traduce lo que entendió el parser a una estructura ordenada: "este es el comando, estos son los argumentos, esta es la redirección" |
+| `command.c/h` | Define cómo se guarda un comando y un pipeline en memoria |
+| `execute.c` | La que de verdad hace las fotocopias (`fork`), los disfraces (`execvp`), las mangueras (`pipe`) y las redirecciones |
+| `builtin.c` | La barra de atención rápida: resuelve `cd`, `help`, `exit` sin mandar nada a la fábrica |
 
-### 6.2 TAD `scommand`
-Representa **un comando simple**: sus argumentos (el primero es el nombre del comando) más, opcionalmente, un archivo de redirección de entrada y otro de salida.
+### 6.1 `scommand` — un comando simple
+Es la estructura que guarda **un** comando con sus argumentos, y opcionalmente a qué archivo redirige su entrada o su salida.
 
 ```c
-typedef struct scommand_s * scommand;   // tipo opaco
-
 struct scommand_s {
-    GList * args;       // "ls" -> "-l" -> "/tmp"
+    GList * args;       // ej: "ls" -> "-l" -> "/tmp"
     char * redir_in;    // NULL si no hay "<"
     char * redir_out;   // NULL si no hay ">"
 };
 ```
-Interfaz (cola + accesores de redirección): `scommand_new`, `scommand_destroy`, `scommand_push_back`, `scommand_pop_front`, `scommand_set_redir_in/out`, `scommand_is_empty`, `scommand_length`, `scommand_front`, `scommand_get_redir_in/out`, `scommand_to_string`.
 
-Detalle de diseño importante: **el TAD toma posesión de la memoria** que se le pasa (ej. `scommand_push_back(self, argument)` — el `argument` pasa a ser propiedad del TAD, y se libera dentro de `scommand_destroy` con `g_list_free_full(self->args, free)`).
-
-### 6.3 TAD `pipeline`
-Representa **una secuencia de `scommand` conectados por pipes**, más un flag de si hay que esperar (`&`).
+### 6.2 `pipeline` — una cadena de comandos
+Es una lista de `scommand`, uno atrás del otro, más un dato que dice si hay que esperar o no (si terminó en `&`).
 
 ```c
-typedef struct pipeline_s * pipeline;
-
 struct pipeline_s {
-    GList * scmds;   // scommand1 -> scommand2 -> ... -> scommandN
+    GList * scmds;   // scommand1 -> scommand2 -> ...
     bool wait;        // false si terminó en "&"
 };
 ```
-Interfaz: `pipeline_new`, `pipeline_destroy`, `pipeline_push_back`, `pipeline_pop_front` (saca **y destruye** el `scommand` del frente — ver que `execute_pipeline()` usa esto para ir "consumiendo" el pipeline comando por comando), `pipeline_set_wait`/`pipeline_get_wait`, `pipeline_is_empty`, `pipeline_length`, `pipeline_front`, `pipeline_to_string`.
 
-### 6.4 Relación `parser` vs. `parsing`
-- **`parser`** (dado, `parser.o` + `lexer.o`) es el TAD de **bajo nivel**: sabe leer caracteres del `FILE *` de entrada y reconocer *tokens* (un argumento normal, una redirección `<`/`>`, el operador `|`, el operador `&`, fin de línea, basura). No sabe nada de `scommand` ni `pipeline`.
-- **`parsing.c`** es el módulo que **orquesta** al `parser` para construir las estructuras (`parse_scommand` es estática/privada; `parse_pipeline` es la función pública, declarada en `parsing.h`).
+### 6.3 `parser` vs. `parsing` — ojo, no son lo mismo
+- **`parser`**: es la estación de bajo nivel, la que entiende **letra por letra** lo que escribiste (te dice "esto es una palabra normal", "esto es una redirección", "esto es un pipe"). Viene ya hecha por la cátedra, no sabe nada de `scommand` ni `pipeline`.
+- **`parsing.c`**: es quien **usa** al parser para armar la estructura completa. Le va preguntando al parser "¿qué sigue?" una y otra vez, y con esas respuestas arma el `pipeline` entero.
 
 ```c
 static scommand parse_scommand(Parser p) {
     scommand cmd = scommand_new();
     arg_kind_t arg;
     char *comando = parser_next_argument(p, &arg);
-    parser_skip_blanks(p);
     while (comando != NULL) {
         if (arg == ARG_INPUT)       scommand_set_redir_in(cmd, comando);
         else if (arg == ARG_NORMAL) scommand_push_back(cmd, comando);
         else if (arg == ARG_OUTPUT) scommand_set_redir_out(cmd, comando);
-        free(comando);   // ojo: acá se libera el string...
+        free(comando);
         comando = parser_next_argument(p, &arg);
     }
-    if (scommand_is_empty(cmd)) { scommand_destroy(cmd); cmd = NULL; }
     return cmd;
 }
 ```
-> **Punto fino para el examen:** en `command.h` se aclara que el TAD **se apropia** de las cadenas que recibe (`scommand_push_back`, `scommand_set_redir_in/out` no copian el string, guardan el puntero). Sin embargo, en `parse_scommand` se ve `free(comando)` **después** de cada rama (incluida después de `scommand_push_back(cmd, comando)` y `scommand_set_redir_in(cmd, comando)`). Esto es un buen disparador de pregunta: ¿está bien liberar `comando` ahí, sabiendo que el TAD "toma posesión" de esa memoria? Conviene revisarlo con la cátedra/tests (`make test-parsing`), porque a primera lectura pareciera un doble-uso de memoria (usar-y-liberar lo mismo que el TAD guardó por referencia).
 
-`parse_pipeline()` arma el pipeline completo: parsea un `scommand`, lo agrega al `pipeline`, chequea si sigue un `|` (`parser_op_pipe`) y si es así parsea otro `scommand`, hasta que no haya más pipes o haya error. Al final chequea `&` (`parser_op_background`) para setear `pipeline_set_wait(result, false)`, y consume el resto de la línea con `parser_garbage`.
+> **Detalle fino, para pensar:** en `command.h` se aclara que el `scommand` "se queda con" (toma posesión de) cada palabra que le pasás — no la copia, guarda el mismo puntero. Pero en el código de arriba, justo después de guardarla, se hace `free(comando)`. Vale la pena revisarlo con calma (con `make test-parsing`) porque a primera vista parece que se libera algo que el `scommand` todavía necesita.
 
-### 6.5 Flujo completo: de texto a ejecución
+### 6.4 El camino completo, de texto a ejecución
 
 ```mermaid
 flowchart TD
-    A["Usuario escribe: ls -l | wc -l"] --> B["parser_new(stdin) ya está creado en mybash.c"]
-    B --> C["parse_pipeline(parser) -- parsing.c"]
-    C --> D["usa parser_next_argument / parser_op_pipe / parser_op_background -- parser.h"]
-    D --> E["construye TAD pipeline con 2 scommand -- command.c"]
-    E --> F{"builtin_alone(pipeline)?"}
-    F -- "sí (ej: 'cd /tmp')" --> G["builtin_run(scommand) -- builtin.c\n(sin fork, en el propio shell)"]
-    F -- "no" --> H["execute_pipeline(pipeline) -- execute.c\n(fork + pipe + dup2 + execvp + wait)"]
+    A["Escribís: ls -l | wc -l"] --> B["parsing.c le pregunta al parser\nqué hay, letra por letra"]
+    B --> C["se arma un pipeline con 2 scommand"]
+    C --> D{"¿Es un solo comando\ny encima builtin?"}
+    D -- "sí, ej: 'cd /tmp'" --> E["builtin_run(): se resuelve\nen el mismo shell, sin fork"]
+    D -- "no" --> F["execute_pipeline(): fork + pipe\n+ dup2 + execvp + wait"]
 ```
 
-### 6.6 Resumen de puntos particulares del código (para repasar antes del examen)
-- `cmd_to_args()` en `execute.c` **consume** el `scommand` (hace `scommand_pop_front` mientras arma el arreglo de `argv`), dejándolo vacío — esto es antes de `execvp`, en el proceso **hijo**, así que no afecta al padre.
-- La redirección de salida (`>`) solo se aplica en el **último** comando del pipeline (`i == cant_pipes`); en los comandos intermedios, el stdout siempre va al pipe siguiente.
-- La redirección de entrada (`<`) se prioriza sobre el pipe anterior: si hay `redir_in`, se usa el archivo; si no, y no es el primer comando (`i > 0`), se usa el pipe.
-- El código de `execute_pipeline()` **siempre espera** a todos los hijos (no condiciona el `for` de `wait()` con `pipeline_get_wait()`), aunque el TAD sí modela el background con el flag `wait`. Es un punto para señalar como posible mejora/bug si el examen pide "encontrar problemas en el código".
-- `mybash.c` 
+### 6.5 Cosas para tener frescas antes del examen
+- `mybash.c`, tal cual está subido, todavía **no llama** a `parse_pipeline` ni a `execute_pipeline` — es un esqueleto para completar.
+- La redirección de salida (`>`) solo se usa en el **último** comando de un pipeline; los del medio siempre van al pipe siguiente.
+- `execute_pipeline()` siempre espera a todos los hijos con `wait()`, sin fijarse en si el pipeline debía correr en segundo plano — aunque el dato (`wait` del pipeline) sí existe.
 
 ---
 
-## 7. Laboratorio 0 — Herramientas de Línea de Comandos (Shell Scripting)
+## 7. El laboratorio anterior (Lab 0): usando la terminal como usuario
 
-### 7.1 Filtrado y conteo de texto: `grep`, `head`, `wc`
+Antes de programar un shell, este laboratorio previo es sobre **usarlo** bien: encadenar herramientas con `|` para resolver problemas de texto y datos. Son los mismos comandos externos que MyBash tiene que poder correr.
 
+### 7.1 Filtrar y contar: `grep`, `head`, `wc`
 ```bash
-cat /proc/cpuinfo | grep "name" | head -n 1        # Ejercicio 1
-cat /proc/cpuinfo | grep "name" | wc -l            # Ejercicio 2
+cat /proc/cpuinfo | grep "name" | head -n 1     # el modelo del procesador
+cat /proc/cpuinfo | grep "name" | wc -l          # cuántos cores tiene
 ```
+- `cat archivo`: muestra el contenido de un archivo (acá, un archivo especial del sistema con info de la CPU).
+- `grep "palabra"`: se queda solo con las líneas que contienen esa palabra.
+- `head -n 1`: se queda solo con la primera línea.
+- `wc -l`: cuenta cuántas líneas le llegaron.
 
-| Comando         | Qué hace                                                                                                                |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `cat archivo`   | Vuelca el contenido del archivo a stdout (acá `/proc/cpuinfo`, un pseudo-archivo del kernel con info de la CPU)         |
-| `grep "patrón"` | Filtra e imprime solo las líneas que matchean el patrón (acá, las líneas que contienen `"name"`, es decir `model name`) |
-| `head -n N`     | Devuelve solo las primeras `N` líneas de la entrada                                                                     |
-| `wc -l`         | Cuenta líneas de la entrada (`wc` = *word count*; `-l` = contar líneas en vez de palabras/bytes)                        |
+Como cada core tiene su propia línea con el modelo, contar esas líneas es contar cores.
 
-**Por qué funciona para contar cores:** `/proc/cpuinfo` tiene un bloque por cada unidad de ejecución (core lógico), y cada bloque tiene una línea `model name`. Contar esas líneas con `grep | wc -l` es contar cores.
-
-### 7.2 Descarga y procesamiento de texto: `curl`, `cut`, `tr`, `sed`
-
+### 7.2 Bajar y limpiar texto: `curl`, `cut`, `tr`, `sed`
 ```bash
-# Ejercicio 3
-curl -s https://.../heroes.csv | cut -d ';' -f2 | tr 'A-Z' 'a-z' | sed -e 's/ /_/g' -e '1d' -e '/^$/d' > superheroes_usuarios.txt
+curl -s URL | cut -d ';' -f2 | tr 'A-Z' 'a-z' | sed -e 's/ /_/g' -e '1d' -e '/^$/d' > usuarios.txt
 ```
+- `curl -s URL`: baja el contenido de una página o archivo de internet.
+- `cut -d ';' -f2`: de un archivo tipo tabla separado por `;`, se queda solo con la columna 2.
+- `tr 'A-Z' 'a-z'`: pasa todo a minúsculas.
+- `sed`: va editando línea por línea. `s/ /_/g` cambia espacios por guiones bajos; `1d` borra la primera línea (el título de la tabla); `/^$/d` borra las líneas que quedaron vacías.
+- `> usuarios.txt`: en vez de mostrar el resultado en pantalla, lo guarda en un archivo.
 
-| Comando | Qué hace |
-|---|---|
-| `curl -s URL` | Descarga el contenido de una URL e imprime el body por stdout; `-s` = *silent* (no muestra la barra de progreso) |
-| `cut -d ';' -f2` | Corta cada línea usando `;` como delimitador (`-d`) y se queda solo con el campo 2 (`-f2`) — es decir, extrae una "columna" de un CSV |
-| `tr 'A-Z' 'a-z'` | *Translate*: reemplaza carácter a carácter el primer conjunto por el segundo (acá, pasa todo a minúsculas) |
-| `sed -e 'expr1' -e 'expr2' ...` | *Stream editor*: aplica una o más expresiones de edición línea por línea. Cada `-e` es una expresión distinta |
-| `sed 's/ /_/g'` | Sustitución (`s/patrón/reemplazo/flags`): reemplaza espacios por guiones bajos; `g` = *global* (todas las ocurrencias de la línea, no solo la primera) |
-| `sed '1d'` | Borra (`d` = delete) la línea 1 (el encabezado del CSV) |
-| `sed '/^$/d'` | Borra las líneas vacías (`^$` = regex que matchea "principio de línea seguido inmediatamente de fin de línea", o sea, línea vacía) |
-| `> archivo` | Redirección de salida: en vez de imprimir en pantalla, escribe (truncando) en `superheroes_usuarios.txt` |
-
-Esta cadena es un ejemplo perfecto del enunciado del laboratorio de MyBash: **cada `|` conecta el stdout de un comando con el stdin del siguiente**, y el `>` final redirige el stdout del último comando a un archivo — exactamente lo que `execute_pipeline()` implementa a nivel de syscalls (`pipe()`, `dup2()`, `open()`).
-
-### 7.3 Ordenamiento de datos tabulares: `sort`, `awk`
-
+### 7.3 Ordenar tablas: `sort`, `awk`
 ```bash
-sort -k 5nr datos/weather_cordoba.in | head -n 1 | awk '{print $1,$2,$3}'   # Ejercicio 4A (máxima)
-sort -k 6n  datos/weather_cordoba.in | head -n 1 | awk '{print $1, $2, $3}' # Ejercicio 4B (mínima)
-sort -n -k 3 datos/wtaplayers.in                                            # Ejercicio 5
-awk '{print $0, $7-$8}' datos/lpf.in | sort -k2,2nr -k9,9nr                  # Ejercicio 6
+sort -k 5nr datos.in | head -n 1     # el que tiene el valor más alto en la columna 5
+awk '{print $0, $7-$8}' tabla.in     # le agrega a cada línea el resultado de restar dos columnas
 ```
+- `sort -k N`: ordena usando la columna N como criterio.
+- La `n` es para que ordene como número (si no, "10" queda antes que "9", porque compara letra por letra); la `r` es para que ordene de mayor a menor.
+- Buscar el máximo/mínimo de una columna sin escribir un programa entero: ordenás por esa columna y te quedás con la primera línea (`head -n 1`).
+- `awk`: separa cada línea en columnas (`$1`, `$2`, ...) y te deja hacer cosas con ellas, como sumarlas o restarlas.
 
-| Comando/Opción            | Qué hace                                                                                                                                                                                                                               |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sort -k N`               | Ordena usando como clave la columna `N` (por defecto, separada por espacios)                                                                                                                                                           |
-| `sort -k Nn`              | Orden **numérico** por la columna `N` (sin la `n`, ordenaría alfabéticamente: "10" < "9")                                                                                                                                              |
-| `sort -k Nnr`             | Numérico y **reverso** (descendente) — usado para encontrar el máximo poniendo el `head -n 1` después                                                                                                                                  |
-| `sort -k2,2nr -k9,9nr`    | Clave múltiple: ordena primero por la columna 2 (numérico descendente) y, para desempatar, por la columna 9 (también numérico descendente). La sintaxis `N,M` indica "desde el campo N hasta el M" (acá, un solo campo cada vez)       |
-| `awk '{print $1,$2,$3}'`  | AWK procesa la entrada línea por línea, separándola en campos `$1`, `$2`, ... (`$0` es la línea completa). Acá imprime solo los primeros 3 campos                                                                                      |
-| `awk '{print $0, $7-$8}'` | Imprime la línea completa (`$0`) y le agrega, al final, el resultado de una **operación aritmética entre campos** (columna 7 menos columna 8 — típicamente "goles a favor" menos "goles en contra" para calcular la diferencia de gol) |
-
-**Patrón general (Ejercicio 4):** para encontrar el registro con el valor máximo/mínimo de una columna sin usar un lenguaje de programación completo, se ordena por esa columna (`sort -k`) y se toma la primera línea (`head -n 1`) — es un patrón muy común en scripting de shell.
-
-### 7.4 Expresiones regulares sobre comandos del sistema: `ip`, `grep -oE`, `grep -v`
-
+### 7.4 Buscar patrones: `grep -oE`, `grep -v`
 ```bash
 ip link show | grep -oE "([a-fA-F0-9]{2}:){5}[a-fA-F0-9]{2}" | grep -v "00:00:00:00:00:00"
 ```
+- `ip link show`: te muestra información de las conexiones de red, incluida la dirección MAC.
+- `grep -o "patrón"`: en vez de mostrar toda la línea, muestra solo la parte que matchea.
+- `grep -v "patrón"`: al revés, muestra todo lo que **no** matchea (acá, descarta una MAC "vacía" que suele aparecer de más).
 
-| Comando/Opción                       | Qué hace                                                                                                                                                         |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ip link show`                       | Comando de red que lista las interfaces de red del equipo y sus datos (incluida la MAC en formato `link/ether xx:xx:xx:xx:xx:xx`)                                |
-| `grep -o "patrón"`                   | Igual que `grep` pero solo imprime la parte de la línea que **matchea** el patrón, no la línea entera                                                            |
-| `grep -E "regex"`                    | Usa **regex extendidas** (permite `{n}`, `+`, `?`, `\|` sin tener que escaparlos con `\`)                                                                        |
-| `([a-fA-F0-9]{2}:){5}[a-fA-F0-9]{2}` | Regex para una MAC: un grupo de "2 dígitos hexadecimales seguidos de `:`" repetido 5 veces, más un último par de dígitos hex sin `:` al final                    |
-| `grep -v "patrón"`                   | Invierte el filtro: imprime las líneas que **no** matchean (acá, descarta la MAC "nula" `00:00:00:00:00:00` que suele aparecer en interfaces virtuales/loopback) |
-
-### 7.5 Manipulación de archivos y expansión de llaves: `mkdir`, `touch`, bucle `for`, `mv`
-
+### 7.5 Crear muchos archivos de una: `{01..10}`, `for`
 ```bash
-mkdir serie_prueba                                    # Ejercicio 8A
-touch serie_prueba/fma_S01e{01..10}_es.srt
-
-for i in {01..10}; do                                 # Ejercicio 8B
-    mv serie_prueba/fma_S01e${i}_es.srt serie_prueba/fma_S01e${i}.srt
-done
+touch serie{01..10}.srt
+for i in {01..10}; do mv serie${i}_es.srt serie${i}.srt; done
 ```
+- `{01..10}` es una forma corta de escribir `01 02 03 ... 10` — la terminal lo expande antes de correr el comando, así que `touch` recibe 10 nombres de archivo de una sola vez.
+- El `for` hace falta cuando el comando (acá `mv`) solo puede trabajar de a un archivo por vez — no existe una forma de renombrar 10 archivos en un solo `mv`.
 
-| Elemento | Qué hace |
-|---|---|
-| `mkdir dir` | Crea un directorio |
-| `touch archivo` | Crea un archivo vacío si no existe (o actualiza su fecha de modificación si ya existe) |
-| `{01..10}` | **Brace expansion** de bash: antes de ejecutar el comando, la shell expande esto a `01 02 03 ... 10` (con ceros a la izquierda porque el primer valor los tiene) y genera **un argumento por cada valor** — por eso un solo `touch` crea los 10 archivos |
-| `for i in {01..10}; do ... ; done` | Bucle que itera la variable `i` sobre cada valor de la lista expandida, ejecutando el cuerpo una vez por valor |
-| `${i}` | Interpolación de variable dentro de un string (útil para no confundir los límites del nombre, ej. `${i}_es` vs. `$i_es` que buscaría una variable llamada `i_es`) |
-| `mv origen destino` | Renombra (o mueve) un archivo |
-
-**Diferencia clave con la expansión de brace de `touch` vs. el `for`:** en el Ejercicio 8A, la expansión `{01..10}` se resuelve **una sola vez** y `touch` recibe 10 argumentos de una — no hace falta un loop porque `touch` acepta múltiples archivos en una sola invocación. En el 8B, en cambio, se necesita `for` porque `mv` solo soporta pares origen→destino, no se puede pasar una lista de renombres en un solo comando.
-
-### 7.6 Procesamiento de audio/video: `ffmpeg`
-
+### 7.6 Video y audio: `ffmpeg`
 ```bash
-ffmpeg -i onepiece-skypea.mp4 -ss 00:00:05 -to 00:00:30 -c copy onepiece-skypea-cut.mp4   # Ejercicio 9A
-ffmpeg -i luffy.mp3 -i sake-binks.mp3 -filter_complex amix=inputs=2:duration=first one-piece-weird.mp3  # Ejercicio 9B
+ffmpeg -i video.mp4 -ss 00:00:05 -to 00:00:30 -c copy recorte.mp4
 ```
-
-| Opción | Qué hace |
-|---|---|
-| `-i archivo` | Especifica un archivo de **entrada** (input); se puede repetir para varias entradas |
-| `-ss HH:MM:SS` | Punto de **inicio** del recorte (start seek) |
-| `-to HH:MM:SS` | Punto de **fin** del recorte |
-| `-c copy` | Copia los streams de audio/video **sin recodificar** (mucho más rápido, sin pérdida de calidad, pero solo funciona si el corte no requiere recodificar) |
-| `-filter_complex amix=inputs=2:duration=first` | Aplica un filtro complejo de mezcla de audio (`amix`) sobre 2 entradas (`inputs=2`), donde la duración de salida es la de la **primera** entrada (`duration=first`) |
-
-### 7.7 Resumen: operadores de shell usados en el Lab 0
-
-| Operador/Símbolo                               | Significado                                                                                             |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `\|`                                           | Pipe: conecta stdout de un comando con stdin del siguiente                                              |
-| `>`                                            | Redirección de salida (trunca el archivo destino)                                                       |
-| `{a..b}`                                       | Brace expansion: genera una secuencia de valores                                                        |
-| `${var}`                                       | Expansión/interpolación de variable                                                                     |
-| `-` (dentro de opciones como `-l`, `-n`, `-s`) | Flags/opciones de cada comando (no son operadores del shell, son parte de la interfaz de cada programa) |
+- `-i`: el archivo de entrada.
+- `-ss` / `-to`: desde dónde hasta dónde recortar.
+- `-c copy`: copia el video tal cual, sin reprocesarlo (más rápido, sin perder calidad).
 
 ---
 
-## Apéndice — Tabla rápida de syscalls (firmas de referencia)
+## Apéndice — Tabla rápida de syscalls
+
+| Syscall | Analogía | Devuelve si sale bien | Devuelve si falla |
+|---|---|---|---|
+| `fork()` | Sacarte una fotocopia de vos mismo | `0` en la copia, el "número de documento" de la copia en el original | `-1` |
+| `execvp()` | Disfrazarte de otro programa, sin vuelta atrás | (si sale bien, no vuelve) | `-1` |
+| `wait()` / `waitpid()` | Preguntarle a un hijo "¿cómo te fue?" | el identificador del hijo que terminó | `-1` |
+| `pipe()` | Conseguir una manguera con dos puntas | `0` | `-1` |
+| `open()` | Abrir o crear un balde | un número para referirte al balde | `-1` |
+| `close()` | Soltar un balde que ya no usás | `0` | `-1` |
+| `dup()` / `dup2()` | Pegar un caño a un balde | un número de caño | `-1` |
 
 ```c
 pid_t fork(void);
@@ -627,14 +539,3 @@ int   close(int fd);
 int   dup(int oldfd);
 int   dup2(int oldfd, int newfd);
 ```
-
-| Syscall | Devuelve en éxito | Devuelve en error |
-|---|---|---|
-| `fork()` | `0` en el hijo / PID del hijo en el padre | `-1` |
-| `execvp()` | (no retorna si tuvo éxito) | `-1` |
-| `wait()` / `waitpid()` | PID del hijo que terminó | `-1` |
-| `pipe()` | `0` | `-1` |
-| `open()` | nuevo fd (≥0) | `-1` |
-| `close()` | `0` | `-1` |
-| `dup()` / `dup2()` | nuevo fd (≥0) | `-1` |
-
