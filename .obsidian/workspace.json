@@ -111,12 +111,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08 Sistemas Operativos/teorico/Lab 1 guia.md",
+                "file": "08 Sistemas Operativos/teorico/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lab 1 guia"
+              "title": "Untitled"
             }
           }
         ],
@@ -177,8 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 454.5,
-    "collapsed": true
+    "width": 454.5
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -242,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08 Sistemas Operativos/teorico/Lab 1 guia.md",
+                "file": "08 Sistemas Operativos/teorico/Untitled.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Lab 1 guia"
+              "title": "Outline of Untitled"
             }
           }
         ],
@@ -278,27 +277,29 @@
   },
   "active": "4292e060c8821ba9",
   "lastOpenFiles": [
-    "08 Sistemas Operativos/teorico/cuestionario lab 0 y 1.md",
+    "08 Sistemas Operativos/teorico/Lab_1_guia_sintetizada.md",
     "08 Sistemas Operativos/teorico/Lab 1 guia.md",
+    "08 Sistemas Operativos/teorico/Untitled.md",
+    "99 Adjuntos/Pasted image 20260909213628.png",
+    "99 Adjuntos/Pasted image 20260909213431.png",
+    "99 Adjuntos/Pasted image 20260909213337.png",
+    "99 Adjuntos/Pasted image 20260909213259.png",
+    "99 Adjuntos/Pasted image 20260909213254.png",
+    "99 Adjuntos/Pasted image 20260909213250.png",
+    "99 Adjuntos/Pasted image 20260909213102.png",
+    "99 Adjuntos/Pasted image 20260909213045.png",
+    "99 Adjuntos/Pasted image 20260909211131.png",
+    "99 Adjuntos/Pasted image 20260909211100.png",
+    "08 Sistemas Operativos/teorico/cuestionario lab 0 y 1.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "09 Probabilidad y estadistica/practico/Practico_2_Proba2025.pdf",
-    "99 Adjuntos/Pasted Image 20260909105306_786.png",
-    "99 Adjuntos/Pasted Image 20260909105257_808.png",
     "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
     "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
     "08 Sistemas Operativos/teorico/operating_systems_three_easy_pieces.pdf",
     "08 Sistemas Operativos/teorico/Lab 1 Guía de estudio.md",
-    "99 Adjuntos/Pasted Image 20260907114445_835.png",
-    "99 Adjuntos/Pasted Image 20260907112732_591.png",
-    "99 Adjuntos/Pasted Image 20260907112639_076.png",
-    "99 Adjuntos/Pasted Image 20260907100531_252.png",
     "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu.md",
-    "99 Adjuntos/Pasted Image 20260906093337_838.png",
-    "99 Adjuntos/Pasted Image 20260906093229_833.png",
-    "99 Adjuntos/Pasted Image 20260906093200_589.png",
-    "99 Adjuntos/Pasted Image 20260906093105_386.png",
     "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
     "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
     "09 Probabilidad y estadistica/practico/Practico_3_Proba2025.pdf",
@@ -321,8 +322,6 @@
     "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto 2025.md",
     "09 Probabilidad y estadistica/parciales/2/practica/re-practicos (5,6,7) 2025.md",
     "09 Probabilidad y estadistica/parciales/2/practica/re-practicos 1 (7,8) 2025.md",
-    "Cheatsheat AYED2.md",
-    "machete.md",
-    "The joy of coding.md"
+    "Cheatsheat AYED2.md"
   ]
 }

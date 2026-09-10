@@ -41,8 +41,6 @@ while (!quit) {
 parser_destroy(input);
 ```
 
-> **Ojo:** este archivo tal cual está subido todavía **no ejecuta nada** — el `parse_pipeline` está comentado y falta el paso de "Evaluate". Es un esqueleto para completar, no algo roto.
-
 **Para practicar:** imaginate que el shell no tuviera este bucle, y que el programa terminara después de ejecutar un solo comando. ¿Qué tendrías que hacer vos, como usuario, para correr un segundo comando? (Respuesta: volver a abrir el programa shell entero, cada vez).
 
 ### 1.3 Cosas que el shell resuelve solo (builtins) vs. cosas que delega
@@ -52,10 +50,10 @@ Los **comandos internos (builtins)** son esos pedidos chicos: el shell los resue
 
 Los **comandos externos** son todo lo demás (`ls`, `grep`, `wc`, `gzip`...): son programas aparte, guardados en el disco, y el shell tiene que crear un **proceso nuevo** para correrlos.
 
-| | Builtin | Externo |
-|---|---|---|
-| ¿Quién lo ejecuta? | El shell mismo, con una función en C | Un proceso hijo nuevo |
-| Ejemplos | `cd`, `help`, `exit` | `ls`, `grep`, `wc`, `gzip` |
+|                    | Builtin                              | Externo                    |
+| ------------------ | ------------------------------------ | -------------------------- |
+| ¿Quién lo ejecuta? | El shell mismo, con una función en C | Un proceso hijo nuevo      |
+| Ejemplos           | `cd`, `help`, `exit`                 | `ls`, `grep`, `wc`, `gzip` |
 
 **¿Por qué `cd` tiene que ser builtin sí o sí?** Pensalo así: si le pedís a un mensajero "andá y mudate a la casa de al lado", el que se muda es el mensajero, no vos. Vos seguís en el mismo lugar. Lo mismo pasa si `cd` se ejecutara en un proceso hijo: el hijo cambiaría *su propia* carpeta de trabajo, y un instante después ese hijo termina y desaparece. El shell (el padre) ni se entera, sigue en la carpeta de siempre. Por eso `cd` tiene que correr en el mismo proceso que el shell — es la única forma de que el cambio "pegue" de verdad.
 
@@ -155,6 +153,26 @@ Eso es exactamente un **proceso zombie**: un hijo que ya terminó su trabajo, pe
 
 `wait(NULL)` es "esperá a que termine cualquiera de mis hijos, y decime cómo le fue" (acá no nos importa el resultado, por eso `NULL`). `waitpid()` es la versión más específica: "esperá a este hijo puntual".
 
+
+
+Si se matara el proceso de mybash, el proceso zombie es adoptado por otro proceso. 
+
+### 2. Si se mata `mybash`, ¿el proceso muere o es adoptado por otro?
+
+Es adoptado por otro proceso. No muere automáticamente cuando se mata a la shell.
+
+1. **Huérfano:** Si `mybash` (el padre) muere o es terminado por el usuario, todos los procesos hijos que seguían vivos o que habían quedado en estado zombie se convierten en **procesos huérfanos**.
+    
+2. **Adopción por PID 1:** El Kernel detecta la orfandad e inmediatamente hace que esos procesos sean **adoptados por el proceso inicial del sistema operativo** (usualmente `init` o `systemd`, que tiene el **PID 1**).
+    
+3. **Limpieza automática:** El proceso PID 1 tiene un bucle interno que ejecuta continuamente `wait()` sobre todos sus hijos adoptivos. En cuanto los adopta, ejecuta el `wait()` por ellos y los elimina de la tabla de procesos inmediatamente.
+
+
+
+El proceso zombie deja "el exit status colgando
+
+
+
 En `execute_pipeline()`, después de crear todos los procesos, el padre le pregunta a cada uno cómo le fue:
 ```c
 for (int i = 0; i < tam; i++) {
@@ -198,13 +216,33 @@ Si tenés un pipeline de 3 comandos (`a | b | c`), necesitás **2 mangueras** (u
 ### 3.3 Redirecciones — conectar un caño a un balde en vez de a otro proceso
 En vez de conectar la manguera a otro proceso, la podés conectar a un **balde** (un archivo).
 
-| Operador | Qué hace, en criollo |
-|---|---|
-| `>` | Tirá todo lo que salga por acá a este balde. Si el balde ya tenía algo, primero se vacía |
-| `>>` | Igual, pero sin vaciar el balde antes — se va acumulando arriba de lo que ya había |
-| `<` | En vez de leer del teclado, leé de este balde que ya tiene algo adentro |
-| `2>` | Los mensajes de error (no los normales) van a este balde |
+| Operador | Qué hace, en criollo                                                                     |
+| -------- | ---------------------------------------------------------------------------------------- |
+| `>`      | Tirá todo lo que salga por acá a este balde. Si el balde ya tenía algo, primero se vacía |
+| `>>`     | Concatenación                                                                            |
+| `<`      | En vez de leer del teclado, leé de este balde que ya tiene algo adentro                  |
+| `2>`     | Los mensajes de error (no los normales) van a este balde                                 |
+| `<<`     | (Here-Document / Here-Doc) Opera sobre la **Entrada Estándar** (`stdin` / descriptor 0). |
 
+```
+aike  …/Lab01   master $?    v16.2.1  ♡ 20:54  ls -l | head -n 5 << stats.txt
+∙ asdads
+∙ asd
+∙ a
+∙ sd
+∙ asd
+∙ asd
+∙ asd
+∙ asd
+∙ stats.txt
+asdads
+asd
+a
+sd
+asd
+
+aike  …/Lab01   master $?    v16.2.1  ♡ 20:54  
+```
 En términos técnicos, esto se logra siempre con la misma receta de 3 pasos:
 
 ```c
@@ -350,6 +388,15 @@ Ahora, `strcpy()` y `strcat()` tienen un problema: **no se fijan si hay lugar su
 
 Cuando eso pasa con memoria de la computadora, "lo que había al lado" puede ser otra variable, o información importante del programa — y ese derrame se llama **buffer overflow**. Es uno de los errores de seguridad más conocidos en programas escritos en C, porque a veces alguien puede aprovechar ese "derrame" a propósito para romper o tomar control del programa.
 
+| **Operador Shell** | **Target (fd)** | **Descripción / Comportamiento**                                                                                   | **Banderas en open() (Kernel C)**                | **Modo / Permisos Octales** |
+| ------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ | --------------------------- |
+| **`<`**            | `stdin` (fd 0)  | **Entrada Estándar:** Lee datos desde un archivo existente.                                                        | `O_RDONLY`                                       | _No aplica_ (solo lectura)  |
+| **`>`**            | `stdout` (fd 1) | **Salida Estándar (Sobrescribe):** Vacía el archivo a 0 bytes si existe o lo crea si no existe.                    | `O_WRONLY \| O_CREAT \| O_TRUNC`                 | `0644` (`rw-r--r--`)        |
+| **`>>`**           | `stdout` (fd 1) | **Salida Estándar (Concatena):** Mantiene el contenido previo y escribe todo al final del archivo.                 | `O_WRONLY \| O_CREAT \| O_APPEND`                | `0644` (`rw-r--r--`)        |
+| **`2>`**           | `stderr` (fd 2) | **Error Estándar (Sobrescribe):** Captura únicamente mensajes de error en un archivo borrando su contenido previo. | `O_WRONLY \| O_CREAT \| O_TRUNC`                 | `0644` (`rw-r--r--`)        |
+| **`<<`**           | `stdin` (fd 0)  | **Here-Doc:** Lee líneas interactivas por teclado hasta escribir una clave/delimitador.                            | _N/A_ (Crea `pipe()` en RAM o archivo en `/tmp`) | _N/A_                       |
+
+### Resumen de Significado de Banderas / Flags en C (`fcntl.h`)
 ### 5.4 `strmerge()` — la versión "sin derrame" de `strcat`
 En vez de intentar meter agua extra en un vaso que ya estaba armado, `strmerge()` primero **mide cuánta agua va a entrar en total**, fabrica un vaso nuevo exactamente de ese tamaño, y recién ahí sirve las dos palabras juntas:
 
@@ -518,15 +565,17 @@ ffmpeg -i video.mp4 -ss 00:00:05 -to 00:00:30 -c copy recorte.mp4
 
 ## Apéndice — Tabla rápida de syscalls
 
-| Syscall | Analogía | Devuelve si sale bien | Devuelve si falla |
-|---|---|---|---|
-| `fork()` | Sacarte una fotocopia de vos mismo | `0` en la copia, el "número de documento" de la copia en el original | `-1` |
-| `execvp()` | Disfrazarte de otro programa, sin vuelta atrás | (si sale bien, no vuelve) | `-1` |
-| `wait()` / `waitpid()` | Preguntarle a un hijo "¿cómo te fue?" | el identificador del hijo que terminó | `-1` |
-| `pipe()` | Conseguir una manguera con dos puntas | `0` | `-1` |
-| `open()` | Abrir o crear un balde | un número para referirte al balde | `-1` |
-| `close()` | Soltar un balde que ya no usás | `0` | `-1` |
-| `dup()` / `dup2()` | Pegar un caño a un balde | un número de caño | `-1` |
+| Syscall                                          | Analogía                                                                                                                      | Devuelve si sale bien                                                                                                                                                                                                                                                                                                               | Devuelve si falla |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| `fork()`                                         | Sacarte una fotocopia de vos mismo                                                                                            | `0` en la copia, el "número de documento" de la copia en el original                                                                                                                                                                                                                                                                | `-1`              |
+| `execvp()`                                       | Disfrazarte de otro programa, sin vuelta atrás                                                                                | (si sale bien, no vuelve)                                                                                                                                                                                                                                                                                                           | `-1`              |
+| `wait()` / `waitpid()`                           | Preguntarle a un hijo "¿cómo te fue?"                                                                                         | el identificador del hijo que terminó                                                                                                                                                                                                                                                                                               | `-1`              |
+| `pipe()`                                         | Conseguir una manguera con dos puntas                                                                                         | `0`                                                                                                                                                                                                                                                                                                                                 | `-1`              |
+| `open()`                                         | Abrir o crear un balde                                                                                                        | un número para referirte al balde                                                                                                                                                                                                                                                                                                   | `-1`              |
+| `close()`                                        | Soltar un balde que ya no usás                                                                                                | `0`                                                                                                                                                                                                                                                                                                                                 | `-1`              |
+| `dup()` / `dup2()`                               | Pegar un caño a un balde                                                                                                      | un número de caño                                                                                                                                                                                                                                                                                                                   | `-1`              |
+| `wait(int *wstatus)`:                            | **Comportamiento:** Bloquea al padre hasta que finalice **cualquiera** de sus procesos hijos. No podés elegir a cuál esperar. | **Ejemplo:** Es lo que usás en un pipeline (`ls \| wc`) cuando hacés un bucle para esperar a que terminen los $N$ comandos sin importar el orden.                                                                                                                                                                                   |                   |
+| `waitpid(pid_t pid, int *wstatus, int options)`: | **Comportamiento:** Permite especificar **a qué hijo en concreto querés esperar** pasándole su PID.                           | **Flexibilidad (`WNOHANG`):** Te permite pasarle banderas como `WNOHANG`. Con esta opción, si el hijo todavía no terminó, `waitpid()` **no se bloquea**, sino que devuelve `0` inmediatamente. Es clave para que la shell revise periódicamente si un proceso corriendo en _background_ (`&`) ya terminó, sin congelar la terminal. |                   |
 
 ```c
 pid_t fork(void);
@@ -539,3 +588,307 @@ int   close(int fd);
 int   dup(int oldfd);
 int   dup2(int oldfd, int newfd);
 ```
+
+- **¿Por qué `cat < entrada.txt` MANTIENE el contenido del archivo mientras que `cat > entrada.txt` lo VACÍA?** (Menciona las banderas / flags del Kernel).
+
+cat < entrada hace stdin, o sea le hace entrar informacion al comando cat y imprime info de stats.txt, y entra el contenido. 
+cat > entrada borra el contenido por que está re-creando el archivo.
+Todo, con el syscall de open("archivo", {flags (Create, wronly, trunc)}, 0644 ).
+
+0644 permisos POSIX/Linux 
+- `0`: Prefijo que indica número octal.
+- `6` (Propietario): Lectura (`4`) + Escritura (`2`) = `6` (`rw-`).
+- `4` (Grupo): Solo Lectura (`r--`).
+- `4` (Otros): Solo Lectura (`r--`).
+
+- **`O_WRONLY`**: Modo solo escritura.
+- **`O_CREAT`**: Crea el archivo si no existe.
+- **`O_TRUNC`**: **Vacía el archivo a 0 bytes** si ya existía
+Las 3 flags son necesarias para manejo de errores y escenarios en los que pase una cosa u otra.
+
+- **Si ejecutas `comando 2> errores.log`, ¿qué número de FD se está modificando mediante la syscall `dup2()` y hacia dónde apuntará?**
+
+El file descriptor que usa es el 2, siendo el de error (stderr - fd 2)
+apunta hacia el errores.log 
+
+- **¿Por qué es necesario hacer `close(fd_abierto)` inmediatamente después de haber ejecutado `dup2(fd_abierto, STDOUT_FILENO)`?**
+
+**Razón real del `close()`:** Cuando hacés `open()`, el Kernel te da un número de descriptor (ej. `fd = 5`). Al hacer `dup2(5, STDOUT_FILENO)`, tenés **dos descriptores (el 5 y el 1) apuntando exactamente al mismo archivo**. Se debe hacer `close(5)` inmediatamente después porque:
+
+No necesitás dos canales abiertos al mismo recurso.
+**Consumo de recursos:** El Kernel tiene un límite de descriptores por proceso.
+**Seguridad en PIPES / EOF:** Si el descriptor redundante es un extremo de un pipe, dejarlo abierto evita que se envíe la señal `EOF` (End of File), dejando congelados a otros procesos. 
+
+- **En tus logs ejecutas `ls -l | head -n 5 << stats.txt`. ¿Qué significa realmente el operador `<<` en la terminal y por qué el proceso se quedó esperando entrada (`^C`)**
+
+se queda congelado por que CREO que estaba esperando concatenar algo que no existe
+
+
+#### Caso 1: `ls -l | head -n 5 > stats.txt`
+
+1. **`pipe(pipefd)`**: La Shell crea el canal de comunicación. Devuelve `pipefd[0]` (lectura) y `pipefd[1]` (escritura).
+    
+2. **`fork()` (Hijo 1 - `ls`)**:
+    
+    - **`dup2(pipefd[1], STDOUT_FILENO)`**: Reconecta el `stdout` (fd 1) para que apunte al extremo de escritura del pipe.
+        
+    - **`close()`**: Cierra los FDs de pipe sobrantes (`pipefd[0]` y `pipefd[1]` original).
+        
+    - **`execvp("ls", ...)`**: Reemplaza el proceso para ejecutar `ls -l`.
+        
+3. **`fork()` (Hijo 2 - `head`)**:
+    
+    - **`dup2(pipefd[0], STDIN_FILENO)`**: Reconecta el `stdin` (fd 0) para que lea desde el extremo de lectura del pipe.
+        
+    - **`open("stats.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644)`**: Abre/crea el archivo de salida con permisos de lectura/escritura (`0644`).
+        
+        - **`O_WRONLY`**: Modo solo escritura.
+            
+        - **`O_CREAT`**: Crea el archivo si no existe.
+            
+        - **`O_TRUNC`**: **Vacía el archivo a 0 bytes** si ya existía.
+            
+    - **`dup2(fd_stats, STDOUT_FILENO)`**: Redirige la salida de `head` hacia `stats.txt`.
+        
+    - **`close(fd_stats)`** y **`close()`** de los pipes sobrantes.
+        
+    - **`execvp("head", ...)`**: Ejecuta `head -n 5`.
+        
+4. **`close()`** en el padre sobre ambos extremos del pipe y **`waitpid()`** para esperar a que los hijos terminen.
+    
+
+#### Caso 2: `ls -l | head -n 5 < stats.txt`
+
+- Ocurre la misma secuencia con `pipe()`, `fork()` y `execvp()`, pero en el **Hijo 2 (`head`)**:
+    
+    - Ejecuta `open("stats.txt", O_RDONLY)`.
+        
+        - **`O_RDONLY`**: Bandera de **solo lectura**. No modifica ni vacía el archivo.
+            
+    - Ejecuta `dup2(fd_stats, STDIN_FILENO)`. Esto pisa la redirección que venía del pipe y la **sobrescribe** para que `head` lea directo desde `stats.txt` en lugar de leer lo que mandó `ls`.
+        
+    - Por eso la terminal imprimió el contenido de `stats.txt` que guardaste en el paso anterior.
+        
+
+#### Caso 3: `ls -l | head -n 5 << stats.txt`
+
+- **`<<` NO es un operador de redirección de archivos.** En Unix es un **Here-Document (Here-Doc)**.
+    
+- Le indica a la shell que lea líneas desde el teclado hasta encontrar la palabra clave del delimitador (en este caso la palabra `"stats.txt"`).
+    
+- **Por qué se colgó:** La shell no abrió ningún archivo; se quedó bloqueada en un bucle esperando que escribieras líneas de texto por teclado finalizando con la palabra `stats.txt`. Al presionar `Ctrl + C` (`^C`), enviaste la señal `SIGINT` para cancelar el proceso.
+    
+
+#### Caso 4: `ls -l | head -n 5 >> stats.txt`
+
+- Ejecuta exactamente el mismo flujo del **Caso 1**, con **una sola diferencia** en el `open()` del Hijo 2:
+    
+    - **`open("stats.txt", O_WRONLY | O_CREAT | O_APPEND, 0644)`**:
+        
+        - **`O_APPEND`**: En lugar de `O_TRUNC`, preserva la información existente y coloca el puntero al final del archivo para **concatenar los nuevos datos**.
+
+
+
+### Guía de Estudio Detallada para el Examen
+
+#### 1. Fundamentos de Shell y Sistemas Operativos
+
+- Rol del Shell: Intérprete de línea de comandos.
+    
+- Shell vs. Kernel: Diferencia de responsabilidades (el shell traduce, el kernel ejecuta). Espacio de usuario vs. espacio de kernel.
+    
+- Ciclo REPL: Significado (Read-Evaluate-Print Loop) y la tarea principal de cada fase.
+    
+- Comandos Internos (Builtins) vs. Externos:
+    
+
+- Diferencia conceptual y de ejecución (función interna vs. nuevo proceso).
+    
+- Razón de ser de los comandos internos (cd, exit, export).
+    
+
+#### 2. Gestión de Procesos
+
+- fork(): Creación de procesos. Duplicación de memoria. Valores de retorno (0 en el hijo, PID en el padre).
+    
+- execvp(): Reemplazo de la imagen de un proceso. La combinación fork() + execvp().
+    
+- wait() y waitpid(): Sincronización padre-hijo.
+    
+- Procesos Zombie: Qué son, por qué ocurren y cómo se evitan (usando wait() o waitpid()).
+    
+- Ejecución Foreground vs. Background (&):
+    
+
+- Diferencia en el flujo de ejecución del shell (con wait() o sin wait()).
+    
+- Paralelismo entre el shell (padre) y el comando en background (hijo).
+    
+
+#### 3. Comunicación Entre Procesos (IPC) y Redirección de E/S
+
+- Descriptores de Archivo: El concepto y los tres descriptores estándar: 0 (stdin), 1 (stdout), 2 (stderr).
+    
+- Pipes (|):
+    
+
+- Concepto: Conectar stdout de un proceso con el stdin de otro.
+    
+- Syscall pipe(): Cómo crea los dos descriptores (lectura y escritura).
+    
+
+- Redirección de E/S:
+    
+
+- Operadores: >, <, >>, 2>.
+    
+- Syscalls involucradas: open(), close(), dup(), y dup2(). Entender el propósito de cada una en el proceso de redirección.
+    
+
+#### 4. Análisis de Comandos y Secuencias de Syscalls
+
+- Habilidad para deducir la combinación de llamadas al sistema necesarias para ejecutar un comando completo.
+    
+- Ejemplos para practicar:
+    
+
+- Comando simple: gzip Lab1G04.tar (fork, execvp, wait).
+    
+- Con redirección: ls -l > out.txt (fork, open, dup2, close, execvp, wait).
+    
+- En background: xeyes & (fork, execvp).
+    
+- Con pipe: ls -l | wc -l (dos fork, pipe, dup2, close, execvp, dos wait).
+    
+- Combinado: cat file.txt | grep 'a' > out.txt & (requiere todas las técnicas).
+    
+
+#### 5. Programación en C y Herramientas del Laboratorio
+
+- Manejo de Strings:
+    
+
+- Representación interna: Puntero a char terminado en el carácter nulo (\0).
+    
+- Funciones de la librería <string.h>: strlen(), strcpy(), strcat(), strcmp() (saber qué hace cada una y qué devuelve).
+    
+- Seguridad y Errores: El concepto de Buffer Overflow y por qué ocurre con funciones como strcpy.
+    
+
+- Funciones específicas del laboratorio:
+    
+
+- strmerge(): Su propósito (concatenación segura de strings) y cómo se diferencia de strcat().
+    
+
+- Manejo de Listas y Secuencias:
+    
+
+- Conocimiento de la librería GLib como herramienta sugerida para la gestión de listas en los TADs.
+    
+
+#### 6. Arquitectura Específica del Laboratorio MyBash
+
+- Rol de cada Módulo:
+    
+
+- mybash.c: Ciclo principal (REPL).
+    
+- command.c: Definición de los TADs (scommand, pipeline).
+    
+- parsing.c: Orquestación del parsing, transforma texto en un TAD pipeline.
+    
+- execute.c: Ejecución del pipeline, orquestando syscalls.
+    
+- builtin.c: Implementación y ejecución de comandos internos.
+    
+
+- Tipos Abstractos de Datos (TADs):
+    
+
+- scommand: Qué representa (un comando simple, argumentos, redirecciones).
+    
+- pipeline: Qué representa (una secuencia de scommands conectados por pipes).
+    
+
+- Relación parser vs. parsing: Entender que parsing es el módulo que usa el TAD parser (provisto en parser.o y lexer.o) para construir las estructuras.
+    
+
+Para más detalle tienen que saber todo lo que esta en la presentación del lab:  
+  
+Presentación: [https://drive.google.com/file/d/12smrFtlB1AJO1eP0kfG62rWZsaID5vm8/view  
+](https://drive.google.com/file/d/12smrFtlB1AJO1eP0kfG62rWZsaID5vm8/view)Video: [https://youtu.be/bT1D2p8uV8Q  
+  
+](https://youtu.be/bT1D2p8uV8Q)
+
+
+ese deberia de ser el indice, al final del archivbo deberia de tener ejemplos y como son las secuencias de las syscalls.
+
+![[Pasted image 20260909211100.png]]
+
+![[Pasted image 20260909211131.png]]
+
+
+o sea que el fd es como de que manera esta trasmitiendo informacion al usuario? tipo es como console.log, input() y console.error
+
+  
+
+pero, por que hay tantos enchufes? o son miles de enchufes con distintos permisos
+
+tipo puede haber un fd con distintos permisos de numero N
+
+**Sí, exactamente.** Pensarlo en relación a `console.log`, `input()` y `console.error` es la forma ideal de conectar el concepto con la programación de alto nivel:
+
+- **FD 0 (`stdin`):** Es el equivalente a `input()` en Python o `readline()` en JS.
+    
+- **FD 1 (`stdout`):** Es el equivalente a `console.log()` o `print()`.
+    
+- **FD 2 (`stderr`):** Es el equivalente a `console.error()`.
+
+![[Pasted image 20260909213045.png]]
+![[Pasted image 20260909213102.png]]
+
+### 2. Se necesitan dos números distintos de FD para poder usar `dup2()`
+
+Para hacer una redirección (cambiar el "enchufe"), necesitás obligatoriamente **dos números distintos**:
+
+- **El número de origen (`oldfd`):** Es el número nuevo que te dio el Kernel al abrir el archivo o pipe (por ejemplo, el **FD 5**).
+    
+- **El número de destino (`newfd`):** Es el descriptor estándar que querés reemplazar (por ejemplo, el **FD 1**, que es la salida estándar `stdout`).
+    
+
+Si no existieran distintos números, no podrías ejecutar `dup2(5, 1)` para decirle al sistema: _"Conectá el canal 1 (pantalla) hacia donde apunta el canal 5 (archivo)"_.
+
+**de `open()` obtenés el FD directamente**, pero **NO, por regla común NO** **se usa `dup2()` obligatoriamente con cada `open()`**.
+
+![[Pasted image 20260909213628.png]]
+
+
+
+### 1. El `open()`
+
+- **Lo que dijiste:** _"Haco open pa ver qué onda con el archivo y demás, obvio las flags cambian según `<, >, >>`"_.
+    
+- **Corrección:** El `open()` **no es solo para chusmear o ver qué onda**, sino para **pedirle al Kernel que abra/cree el archivo** y te devuelva un canal válido. Las flags (`O_RDONLY`, `O_WRONLY | O_CREAT | O_TRUNC`, etc.) le dicen al Kernel _cómo_ abrirlo en el disco.
+    
+
+### 2. ¿Qué es realmente el FD? _(¡Ojo acá!)_
+
+- **Lo que dijiste:** _"El FD es simplemente qué pinchila hago con el archivo, si tengo error, input o output"_.
+    
+- **Corrección:** ¡No! El FD **NO determina qué hacés con el archivo ni es el tipo de error/input/output**.
+    
+- **Lo que ES:** El FD es **únicamente un número entero (ejemplo: 3, 4, 5)** que el Kernel te da como etiqueta identificadora para ese archivo abierto. Los permisos/flags de lo que podés hacer pertenecen a la apertura de `open()`, no al número de FD.
+    
+
+### 3. El `dup2()` y el flujo de la información _(El detalle más importante)_
+
+- **Lo que dijiste:** _"Redirijo la información del archivo al nuevo mediante pasar los file descripts en el dup2"_.
+    
+- **Corrección:** **`dup2()` NO redirige la información ni pasa datos de un archivo a otro**.
+    
+- **Lo que hace `dup2(fd_archivo, 1)`:** Solamente **recablea** la Salida Estándar (`STDOUT` / canal 1) para que apunte al archivo en lugar de apuntar a la pantalla.
+    
+- **¿Quién transmite/redirige realmente la información?:** El proceso que corre después (ya sea mediante un `write()`, `printf()`, o cuando ejecutas **`execvp()`**). Ese programa escribe pensando que manda datos a la pantalla (canal 1), pero como lo "recableaste" c
+
+toda syscall puede fallar. en el codigo del laboratio todo returno -1 debe ir seguido obligatoriamente de un perror() y un exit(EXIT_FAILURE) en el caso de procesos hijos
