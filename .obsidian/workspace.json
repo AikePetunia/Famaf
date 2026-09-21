@@ -6,7 +6,7 @@
       {
         "id": "c7a451d80219d2fb",
         "type": "tabs",
-        "dimension": 74.48165869218501,
+        "dimension": 57.41626794258373,
         "children": [
           {
             "id": "9ba9a8bc11242c3c",
@@ -25,7 +25,7 @@
       {
         "id": "69046142ca990ac5",
         "type": "tabs",
-        "dimension": 25.51834130781499,
+        "dimension": 42.58373205741627,
         "children": [
           {
             "id": "2739d11167a2a996",
@@ -34,61 +34,13 @@
               "type": "pdf",
               "state": {
                 "file": "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
-                "page": 2,
-                "left": 106,
-                "top": 330,
-                "zoom": 1.5
+                "page": 1,
+                "left": -12,
+                "top": 545,
+                "zoom": 1.2787101472866007
               },
               "icon": "lucide-file-text",
               "title": "Practico_4_Proba2025"
-            }
-          },
-          {
-            "id": "5c95d7beba7b48f6",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/Practico_3_Proba2025.pdf",
-                "page": 2,
-                "left": -3,
-                "top": 14,
-                "zoom": 1.1
-              },
-              "icon": "lucide-file-text",
-              "title": "Practico_3_Proba2025"
-            }
-          },
-          {
-            "id": "953158928c4e2334",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/7) Clase 4 de septiembre.pdf",
-                "page": 31,
-                "left": -19,
-                "top": 251,
-                "zoom": 0.8281249999999999
-              },
-              "icon": "lucide-file-text",
-              "title": "7) Clase 4 de septiembre"
-            }
-          },
-          {
-            "id": "ccd8ca63e117a203",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
-                "page": 1,
-                "left": -11,
-                "top": 45,
-                "zoom": 1.3615771812080537
-              },
-              "icon": "lucide-file-text",
-              "title": "Clases 2026.docx"
             }
           },
           {
@@ -99,16 +51,47 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
                 "page": 1,
-                "left": -4,
+                "left": -189,
                 "top": 796,
-                "zoom": 1.633578431372549
+                "zoom": 0.8
               },
               "icon": "lucide-file-text",
               "title": "resumen_primer_parcial"
             }
+          },
+          {
+            "id": "0a15b3b19a070257",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/10) Clase 16 de septiembre.pdf",
+                "page": 5,
+                "left": -15,
+                "top": 163,
+                "zoom": 1.0583333333333333
+              },
+              "icon": "lucide-file-text",
+              "title": "10) Clase 16 de septiembre"
+            }
+          },
+          {
+            "id": "9288d8d5d0bd2a9f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/11) Clase 18 de septiembre.pdf",
+                "page": 6,
+                "left": -18,
+                "top": 175,
+                "zoom": 0.8562500000000002
+              },
+              "icon": "lucide-file-text",
+              "title": "11) Clase 18 de septiembre"
+            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -266,29 +249,32 @@
   },
   "active": "9ba9a8bc11242c3c",
   "lastOpenFiles": [
-    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1) borrador lol.md",
+    "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/10) Clase 16 de septiembre.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
+    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/11) Clase 18 de septiembre.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/9) Clase 11 de septiembre.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/7) Clase 4 de septiembre.pdf",
+    "09 Probabilidad y estadistica/practico/Practico_3_Proba2025.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1) borrador lol.md",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2005.pdf",
+    "09 Probabilidad y estadistica/parciales/1/PARCIAL 1 2023.pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-10-04.jpeg",
+    "09 Probabilidad y estadistica/FINALES/README.md",
+    "09 Probabilidad y estadistica/parciales/2/practica/re-practicos 1 (7,8) 2025.md",
+    "09 Probabilidad y estadistica/parciales/2/practica/re-practicos (5,6,7) 2025.md",
+    "09 Probabilidad y estadistica/parciales/2/Parcial 2 2023-11-16 (Tema B).jpg",
     "99 Adjuntos/Pasted Image 20260918222216_655.png",
     "99 Adjuntos/Pasted Image 20260918222203_352.png",
     "09 Probabilidad y estadistica/Pasted Image 20250918181730_382.png",
-    "09 Probabilidad y estadistica/practico/Practico_3_Proba2025.pdf",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "09 Probabilidad y estadistica/Pasted Image 20250930205453_558.png",
     "99 Adjuntos/Pasted Image 20260819115244_519.png",
     "99 Adjuntos/Pasted Image 20260819115614_544.png",
     "99 Adjuntos/Pasted Image 20260918214612_929.png",
     "99 Adjuntos/Pasted Image 20260918214434_087.png",
-    "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
-    "99 Adjuntos/Pasted Image 20260918213510_275.png",
-    "99 Adjuntos/Pasted Image 20260918213103_770.png",
-    "09 Probabilidad y estadistica/teorico/Parcial1/7) Clase 4 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/8) Clase 09 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/9) Clase 11 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/10) Clase 16 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/1)Clase 11 de agosto.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
-    "09 Probabilidad y estadistica/teorico/resumen_distribuciones.pdf",
-    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
     "08 Sistemas Operativos/teorico/cuestionario lab 0 y 1.md",
     "08 Sistemas Operativos/teorico/Lab_1_guia_sintetizada.md",
@@ -307,9 +293,6 @@
     "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 (Recuperatorio) resuelto 2025.md",
     "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TA - Resuelto (mio) 2025.md",
     "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TB (Mio) 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TA (Mio) 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) resuleto 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/practica/re-practicos (5,6,7) 2025.md"
+    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TB (Mio) 2025.md"
   ]
 }
