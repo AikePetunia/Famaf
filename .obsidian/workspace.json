@@ -6,7 +6,7 @@
       {
         "id": "c7a451d80219d2fb",
         "type": "tabs",
-        "dimension": 57.41626794258373,
+        "dimension": 48.87375589313777,
         "children": [
           {
             "id": "9ba9a8bc11242c3c",
@@ -25,7 +25,7 @@
       {
         "id": "69046142ca990ac5",
         "type": "tabs",
-        "dimension": 42.58373205741627,
+        "dimension": 51.12624410686223,
         "children": [
           {
             "id": "2739d11167a2a996",
@@ -34,10 +34,10 @@
               "type": "pdf",
               "state": {
                 "file": "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
-                "page": 1,
-                "left": -12,
-                "top": 545,
-                "zoom": 1.2787101472866007
+                "page": 2,
+                "left": 41,
+                "top": 349,
+                "zoom": 2.7
               },
               "icon": "lucide-file-text",
               "title": "Practico_4_Proba2025"
@@ -111,7 +111,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -139,7 +141,10 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
@@ -219,7 +224,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ! Teorico completo + Anotaciones (P1)"
+              "title": "Outline"
             }
           }
         ],
@@ -251,6 +256,7 @@
   "lastOpenFiles": [
     "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "99 Adjuntos/Pasted Image 20260922212722_643.png",
     "09 Probabilidad y estadistica/teorico/Parcial1/10) Clase 16 de septiembre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
     "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
@@ -274,7 +280,6 @@
     "99 Adjuntos/Pasted Image 20260819115244_519.png",
     "99 Adjuntos/Pasted Image 20260819115614_544.png",
     "99 Adjuntos/Pasted Image 20260918214612_929.png",
-    "99 Adjuntos/Pasted Image 20260918214434_087.png",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
     "08 Sistemas Operativos/teorico/cuestionario lab 0 y 1.md",
     "08 Sistemas Operativos/teorico/Lab_1_guia_sintetizada.md",
