@@ -6,10 +6,10 @@
       {
         "id": "c7a451d80219d2fb",
         "type": "tabs",
-        "dimension": 52.63157894736842,
+        "dimension": 57.216905901116434,
         "children": [
           {
-            "id": "9ba9a8bc11242c3c",
+            "id": "450f870a5ceb7eaa",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -19,46 +19,26 @@
               "icon": "excalidraw-icon",
               "title": "! Teorico completo + Anotaciones (P1)"
             }
+          },
+          {
+            "id": "9ba9a8bc11242c3c",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Parcial_I_resuelto_2025 (1)"
+            }
           }
         ]
       },
       {
         "id": "69046142ca990ac5",
         "type": "tabs",
-        "dimension": 47.368421052631575,
+        "dimension": 42.78309409888357,
         "children": [
-          {
-            "id": "2739d11167a2a996",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
-                "page": 3,
-                "left": 58,
-                "top": 553,
-                "zoom": 1.8
-              },
-              "icon": "lucide-file-text",
-              "title": "Practico_4_Proba2025"
-            }
-          },
-          {
-            "id": "9288d8d5d0bd2a9f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/14) Clase 25 de septiembre.pdf",
-                "page": 22,
-                "left": 45,
-                "top": 321,
-                "zoom": 1.3
-              },
-              "icon": "lucide-file-text",
-              "title": "14) Clase 25 de septiembre"
-            }
-          },
           {
             "id": "5f73213ffd63944f",
             "type": "leaf",
@@ -67,15 +47,48 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
                 "page": 1,
-                "left": 74,
-                "top": 614,
+                "left": 62,
+                "top": 618,
                 "zoom": 1.7
               },
               "icon": "lucide-file-text",
               "title": "Tabla_normal"
             }
+          },
+          {
+            "id": "33113d4733603d1c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
+                "page": 2,
+                "left": -110,
+                "top": 828,
+                "zoom": 0.9765100671140939
+              },
+              "icon": "lucide-file-text",
+              "title": "Clases 2026.docx"
+            }
+          },
+          {
+            "id": "a87796f620791cc2",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-19 resuelto.pdf",
+                "page": 1,
+                "left": -12,
+                "top": 706,
+                "zoom": 1.2850030121846647
+              },
+              "icon": "lucide-file-text",
+              "title": "Parcial 1 2024-11-19 resuelto"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -132,7 +145,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 454.5,
+    "width": 329.5,
     "collapsed": true
   },
   "right": {
@@ -197,13 +210,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Practico_4_Proba2025"
+              "title": "Outline of ! Teorico completo + Anotaciones (P1)"
             }
           }
         ],
@@ -231,29 +244,30 @@
       "graph:Open graph view": false
     }
   },
-  "active": "2739d11167a2a996",
+  "active": "450f870a5ceb7eaa",
   "lastOpenFiles": [
-    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "99 Adjuntos/Pasted Image 20260923161750_632.png",
-    "09 Probabilidad y estadistica/practico/Practico_4_Proba2025.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/14) Clase 25 de septiembre.pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-19 resuelto.pdf",
     "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/14) Clase 25 de septiembre.pdf",
+    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-18.pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (h).pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md",
+    "99 Adjuntos/Pasted Image 20260925092851_730.png",
+    "99 Adjuntos/Pasted Image 20260925092821_203.png",
+    "99 Adjuntos/Pasted Image 20260925092052_622.png",
+    "99 Adjuntos/Pasted Image 20260925091747_700.png",
+    "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
+    "09 Probabilidad y estadistica/practico/Practico_2_Proba2025.pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-10-04.jpeg",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-19.pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-10-04 resuelto.pdf",
+    "99 Adjuntos/Pasted Image 20260923161750_632.png",
     "99 Adjuntos/Pasted Image 20260923145248_846.png",
     "99 Adjuntos/Pasted Image 20260923145234_478.png",
-    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
     "99 Adjuntos/Pasted Image 20260923110700_535.png",
     "99 Adjuntos/Pasted Image 20260923104624_491.png",
-    "99 Adjuntos/Pasted Image 20260923104610_460.png",
-    "99 Adjuntos/Pasted Image 20260923104553_293.png",
-    "99 Adjuntos/Pasted Image 20260923104536_623.png",
-    "99 Adjuntos/Pasted Image 20260923104527_914.png",
-    "99 Adjuntos/Pasted Image 20260923104517_712.png",
-    "09 Probabilidad y estadistica/teorico/Parcial1/13) Clase 23 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/11) Clase 18 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/10) Clase 16 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/9) Clase 11 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/7) Clase 4 de septiembre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1) borrador lol.md",
     "09 Probabilidad y estadistica/FINALES/README.md",
     "09 Probabilidad y estadistica/parciales/2/practica/re-practicos 1 (7,8) 2025.md",
@@ -276,7 +290,6 @@
     "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 resuelto (mio).md",
     "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 (Recuperatorio) resuelto 2025.md",
     "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TA - Resuelto (mio) 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TB (Mio) 2025.md"
+    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo 2025.md"
   ]
 }
