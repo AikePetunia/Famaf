@@ -19,18 +19,6 @@
               "icon": "excalidraw-icon",
               "title": "! Teorico completo + Anotaciones (P1)"
             }
-          },
-          {
-            "id": "9ba9a8bc11242c3c",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Parcial_I_resuelto_2025 (1)"
-            }
           }
         ]
       },
@@ -64,7 +52,7 @@
                 "file": "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
                 "page": 2,
                 "left": -110,
-                "top": 828,
+                "top": 832,
                 "zoom": 0.9765100671140939
               },
               "icon": "lucide-file-text",
@@ -77,14 +65,62 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-19 resuelto.pdf",
-                "page": 1,
+                "file": "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-18.pdf",
+                "page": 3,
                 "left": -12,
-                "top": 706,
-                "zoom": 1.2850030121846647
+                "top": 654,
+                "zoom": 1.2850030121846645
               },
               "icon": "lucide-file-text",
-              "title": "Parcial 1 2024-11-19 resuelto"
+              "title": "Parcial 1 2024-11-18"
+            }
+          },
+          {
+            "id": "736d0a29d1b0260f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+                "page": 90,
+                "left": 29,
+                "top": 62,
+                "zoom": 1.3462261628308672
+              },
+              "icon": "lucide-file-text",
+              "title": "Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion"
+            }
+          },
+          {
+            "id": "d308626bd0515ef4",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/resumen_distribuciones.pdf",
+                "page": 1,
+                "left": -3,
+                "top": -16,
+                "zoom": 0.9202508641271426
+              },
+              "icon": "lucide-file-text",
+              "title": "resumen_distribuciones"
+            }
+          },
+          {
+            "id": "37c4090816fd827a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
+                "page": 1,
+                "left": -12,
+                "top": 580,
+                "zoom": 1.2512254901960786
+              },
+              "icon": "lucide-file-text",
+              "title": "resumen_primer_parcial"
             }
           }
         ],
@@ -210,13 +246,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+                "file": "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-18.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ! Teorico completo + Anotaciones (P1)"
+              "title": "Outline of Parcial 1 2024-11-18"
             }
           }
         ],
@@ -244,36 +280,40 @@
       "graph:Open graph view": false
     }
   },
-  "active": "450f870a5ceb7eaa",
+  "active": "a87796f620791cc2",
   "lastOpenFiles": [
-    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-19 resuelto.pdf",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/14) Clase 25 de septiembre.pdf",
-    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-18.pdf",
-    "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (h).pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
+    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
+    "09 Probabilidad y estadistica/teorico/resumen_distribuciones.pdf",
+    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c5 dualidad.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 beta grafico.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 RR dos colas.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 RR cola izquierda.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 potencia H0 H1.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 p-valor y alfa.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c3 tabla IC normal.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c3 chi2 cuantiles.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c2 IC repetidos.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c2 z 90 95 99.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/img P2",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).md",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial A (CLAUDE).pdf",
     "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md",
-    "99 Adjuntos/Pasted Image 20260925092851_730.png",
-    "99 Adjuntos/Pasted Image 20260925092821_203.png",
-    "99 Adjuntos/Pasted Image 20260925092052_622.png",
-    "99 Adjuntos/Pasted Image 20260925091747_700.png",
-    "09 Probabilidad y estadistica/practico/Practico_1_2026.pdf",
-    "09 Probabilidad y estadistica/practico/Practico_2_Proba2025.pdf",
-    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-10-04.jpeg",
-    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-19.pdf",
-    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-10-04 resuelto.pdf",
-    "99 Adjuntos/Pasted Image 20260923161750_632.png",
-    "99 Adjuntos/Pasted Image 20260923145248_846.png",
-    "99 Adjuntos/Pasted Image 20260923145234_478.png",
-    "99 Adjuntos/Pasted Image 20260923110700_535.png",
-    "99 Adjuntos/Pasted Image 20260923104624_491.png",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial A (CLAUDE).md",
+    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).md.tmp.22726.8dac62f82953",
+    "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1) borrador lol.md",
     "09 Probabilidad y estadistica/FINALES/README.md",
     "09 Probabilidad y estadistica/parciales/2/practica/re-practicos 1 (7,8) 2025.md",
     "09 Probabilidad y estadistica/parciales/2/practica/re-practicos (5,6,7) 2025.md",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
     "08 Sistemas Operativos/teorico/cuestionario lab 0 y 1.md",
     "08 Sistemas Operativos/teorico/Lab_1_guia_sintetizada.md",
     "08 Sistemas Operativos/teorico/Lab 1 guia.md",
@@ -285,11 +325,7 @@
     "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md",
     "09 Probabilidad y estadistica/asd.md",
     "09 Probabilidad y estadistica/teorico/Aulas y otras cosas.md",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
-    "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 resuelto (mio).md",
-    "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 (Recuperatorio) resuelto 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TA - Resuelto (mio) 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo 2025.md"
+    "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 resuelto (mio).md"
   ]
 }
