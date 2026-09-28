@@ -6,10 +6,10 @@
       {
         "id": "c7a451d80219d2fb",
         "type": "tabs",
-        "dimension": 57.216905901116434,
+        "dimension": 55.36668285575522,
         "children": [
           {
-            "id": "450f870a5ceb7eaa",
+            "id": "82c145e8af52b215",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -25,7 +25,7 @@
       {
         "id": "69046142ca990ac5",
         "type": "tabs",
-        "dimension": 42.78309409888357,
+        "dimension": 44.63331714424478,
         "children": [
           {
             "id": "5f73213ffd63944f",
@@ -35,44 +35,12 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
                 "page": 1,
-                "left": 62,
-                "top": 618,
+                "left": 58,
+                "top": 622,
                 "zoom": 1.7
               },
               "icon": "lucide-file-text",
               "title": "Tabla_normal"
-            }
-          },
-          {
-            "id": "33113d4733603d1c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
-                "page": 2,
-                "left": -110,
-                "top": 832,
-                "zoom": 0.9765100671140939
-              },
-              "icon": "lucide-file-text",
-              "title": "Clases 2026.docx"
-            }
-          },
-          {
-            "id": "a87796f620791cc2",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-18.pdf",
-                "page": 3,
-                "left": -12,
-                "top": 654,
-                "zoom": 1.2850030121846645
-              },
-              "icon": "lucide-file-text",
-              "title": "Parcial 1 2024-11-18"
             }
           },
           {
@@ -83,28 +51,12 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
                 "page": 90,
-                "left": 29,
-                "top": 62,
-                "zoom": 1.3462261628308672
+                "left": 28,
+                "top": 743,
+                "zoom": 1.1603124615976133
               },
               "icon": "lucide-file-text",
               "title": "Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion"
-            }
-          },
-          {
-            "id": "d308626bd0515ef4",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/resumen_distribuciones.pdf",
-                "page": 1,
-                "left": -3,
-                "top": -16,
-                "zoom": 0.9202508641271426
-              },
-              "icon": "lucide-file-text",
-              "title": "resumen_distribuciones"
             }
           },
           {
@@ -115,16 +67,48 @@
               "state": {
                 "file": "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
                 "page": 1,
-                "left": -12,
-                "top": 580,
+                "left": -26,
+                "top": 586,
                 "zoom": 1.2512254901960786
               },
               "icon": "lucide-file-text",
               "title": "resumen_primer_parcial"
             }
+          },
+          {
+            "id": "f3692023ee6257ff",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/resumen_distribuciones.pdf",
+                "page": 1,
+                "left": -4,
+                "top": -115,
+                "zoom": 0.7830595445960875
+              },
+              "icon": "lucide-file-text",
+              "title": "resumen_distribuciones"
+            }
+          },
+          {
+            "id": "0e141aeef744602f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).pdf",
+                "page": 1,
+                "left": -11,
+                "top": 245,
+                "zoom": 1.3075980392156863
+              },
+              "icon": "lucide-file-text",
+              "title": "Parcial B (CLAUDE)"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -181,7 +165,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 329.5,
+    "width": 448.5,
     "collapsed": true
   },
   "right": {
@@ -246,13 +230,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-18.pdf",
+                "file": "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Parcial 1 2024-11-18"
+              "title": "Outline of Parcial B (CLAUDE)"
             }
           }
         ],
@@ -280,15 +264,21 @@
       "graph:Open graph view": false
     }
   },
-  "active": "a87796f620791cc2",
+  "active": "0e141aeef744602f",
   "lastOpenFiles": [
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-11-18.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
-    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
-    "09 Probabilidad y estadistica/teorico/resumen_distribuciones.pdf",
-    "09 Probabilidad y estadistica/teorico/Libro-> PyE, Ingenieria y Ciencias - Jay Devore - Septima Edicion.pdf",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_distribuciones.pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2021-10-05.pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2022-10-06 (Tema A).pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2022-10-06 (Tema B).pdf",
+    "09 Probabilidad y estadistica/parciales/1/PARCIAL 1 2023.pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2023-10-03 (Tema A).pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-10-04.jpeg",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial A (CLAUDE).pdf",
+    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-10-02.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c5 dualidad.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 beta grafico.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 RR dos colas.png",
@@ -298,16 +288,10 @@
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c3 tabla IC normal.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c3 chi2 cuantiles.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c2 IC repetidos.png",
-    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c2 z 90 95 99.png",
-    "09 Probabilidad y estadistica/teorico/Parcial2/img P2",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).pdf",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).md",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial A (CLAUDE).pdf",
     "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial A (CLAUDE).md",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).md.tmp.22726.8dac62f82953",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1) borrador lol.md",
     "09 Probabilidad y estadistica/FINALES/README.md",
