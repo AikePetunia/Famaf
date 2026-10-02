@@ -6,7 +6,7 @@
       {
         "id": "5e369131de629378",
         "type": "tabs",
-        "dimension": 60.24720893141946,
+        "dimension": 47.75742261528743,
         "children": [
           {
             "id": "1cb954737f0cae64",
@@ -54,7 +54,7 @@
       {
         "id": "ae1e6be57e705a5e",
         "type": "tabs",
-        "dimension": 39.75279106858054,
+        "dimension": 52.242577384712575,
         "children": [
           {
             "id": "a840decdbdd94f7b",
@@ -64,9 +64,9 @@
               "state": {
                 "file": "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
                 "page": 2,
-                "left": -16,
-                "top": 723,
-                "zoom": 0.9776977402079038
+                "left": 24,
+                "top": 213,
+                "zoom": 1.1
               },
               "icon": "lucide-file-text",
               "title": "1.) Virtualización del cpu"
@@ -108,7 +108,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -136,7 +138,10 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
@@ -210,13 +215,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
+                "file": "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1.) Virtualización del cpu"
+              "title": "Outline"
             }
           }
         ],
@@ -244,12 +249,12 @@
       "graph:Open graph view": false
     }
   },
-  "active": "a840decdbdd94f7b",
+  "active": "06c28636d6720c8d",
   "lastOpenFiles": [
-    "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
-    "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
+    "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas.md",
+    "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "99 Adjuntos/Pasted image 20261001092829.png",
     "99 Adjuntos/Pasted image 20260930193454.png",
     "99 Adjuntos/Pasted image 20260930180123.png",
