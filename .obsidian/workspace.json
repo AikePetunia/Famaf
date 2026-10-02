@@ -26,12 +26,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
+                "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1.) Virtualizacion del cpu rtas nvas."
+              "title": "2.) Virtualizacion de memoria rtas"
             }
           },
           {
@@ -62,27 +62,11 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
-                "page": 2,
-                "left": 24,
-                "top": 213,
-                "zoom": 1.1
-              },
-              "icon": "lucide-file-text",
-              "title": "1.) Virtualización del cpu"
-            }
-          },
-          {
-            "id": "1c7e31ed2db86355",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
                 "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
                 "page": 1,
-                "left": -13,
-                "top": 846,
-                "zoom": 1.1906241810521507
+                "left": -16,
+                "top": 534,
+                "zoom": 0.9764378204395945
               },
               "icon": "lucide-file-text",
               "title": "2.) Virtualizacion de la memoria"
@@ -215,7 +199,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
+                "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -251,8 +235,10 @@
   },
   "active": "06c28636d6720c8d",
   "lastOpenFiles": [
-    "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
+    "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
+    "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
+    "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas.md",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "99 Adjuntos/Pasted image 20261001092829.png",
@@ -271,8 +257,6 @@
     "08 Sistemas Operativos/practico/4.) Persistencia rtas.md",
     "08 Sistemas Operativos/practico/3.) Concurrencia rtas.md",
     "08 Sistemas Operativos/practico/4.)persistencia.pdf",
-    "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
-    "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
     "08 Sistemas Operativos/parciales/Finales/Final sin fecha 2.pdf",
     "08 Sistemas Operativos/teorico/Untitled.md",
     "08 Sistemas Operativos/lab/Lab 1 guia.md",
