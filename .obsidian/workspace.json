@@ -63,10 +63,10 @@
               "type": "pdf",
               "state": {
                 "file": "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
-                "page": 1,
+                "page": 2,
                 "left": -16,
-                "top": 547,
-                "zoom": 0.9776977402079037
+                "top": 723,
+                "zoom": 0.9776977402079038
               },
               "icon": "lucide-file-text",
               "title": "1.) Virtualización del cpu"
@@ -210,13 +210,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
+                "file": "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1.) Virtualizacion del cpu rtas nvas."
+              "title": "Outline of 1.) Virtualización del cpu"
             }
           }
         ],
@@ -244,13 +244,14 @@
       "graph:Open graph view": false
     }
   },
-  "active": "06c28636d6720c8d",
+  "active": "a840decdbdd94f7b",
   "lastOpenFiles": [
-    "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
-    "99 Adjuntos/Pasted image 20260930193454.png",
+    "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas.md",
+    "99 Adjuntos/Pasted image 20261001092829.png",
+    "99 Adjuntos/Pasted image 20260930193454.png",
     "99 Adjuntos/Pasted image 20260930180123.png",
     "99 Adjuntos/Pasted Image 20260930175953_963.png",
     "99 Adjuntos/Pasted Image 20260930175536_497.png",
@@ -277,7 +278,6 @@
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 beta grafico.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 RR dos colas.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 RR cola izquierda.png",
-    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 potencia H0 H1.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md",
