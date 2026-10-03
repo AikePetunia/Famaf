@@ -63,13 +63,29 @@
               "type": "pdf",
               "state": {
                 "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
-                "page": 1,
-                "left": -16,
-                "top": 534,
-                "zoom": 0.9764378204395945
+                "page": 2,
+                "left": -12,
+                "top": 353,
+                "zoom": 1.305276879968284
               },
               "icon": "lucide-file-text",
               "title": "2.) Virtualizacion de la memoria"
+            }
+          },
+          {
+            "id": "f8adf0af92a93c7c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "08 Sistemas Operativos/operating_systems_three_easy_pieces.pdf",
+                "page": 190,
+                "left": -11,
+                "top": 489,
+                "zoom": 1.3923611111111112
+              },
+              "icon": "lucide-file-text",
+              "title": "operating_systems_three_easy_pieces"
             }
           }
         ]
@@ -92,9 +108,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -122,10 +136,7 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {
-                "showSearch": false,
-                "searchQuery": ""
-              },
+              "state": {},
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
@@ -199,13 +210,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
+                "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2.) Virtualizacion de la memoria"
             }
           }
         ],
@@ -233,14 +244,16 @@
       "graph:Open graph view": false
     }
   },
-  "active": "06c28636d6720c8d",
+  "active": "a840decdbdd94f7b",
   "lastOpenFiles": [
-    "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
     "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
+    "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
+    "99 Adjuntos/Pasted image 20261003085417.png",
+    "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
+    "08 Sistemas Operativos/operating_systems_three_easy_pieces.pdf",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
     "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas.md",
-    "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "99 Adjuntos/Pasted image 20261001092829.png",
     "99 Adjuntos/Pasted image 20260930193454.png",
     "99 Adjuntos/Pasted image 20260930180123.png",
@@ -257,7 +270,6 @@
     "08 Sistemas Operativos/practico/4.) Persistencia rtas.md",
     "08 Sistemas Operativos/practico/3.) Concurrencia rtas.md",
     "08 Sistemas Operativos/practico/4.)persistencia.pdf",
-    "08 Sistemas Operativos/parciales/Finales/Final sin fecha 2.pdf",
     "08 Sistemas Operativos/teorico/Untitled.md",
     "08 Sistemas Operativos/lab/Lab 1 guia.md",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
@@ -266,7 +278,6 @@
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c5 dualidad.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 beta grafico.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 RR dos colas.png",
-    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c4 RR cola izquierda.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md",
