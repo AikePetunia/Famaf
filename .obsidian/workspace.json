@@ -65,7 +65,7 @@
                 "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
                 "page": 2,
                 "left": -12,
-                "top": 353,
+                "top": 371,
                 "zoom": 1.305276879968284
               },
               "icon": "lucide-file-text",
@@ -210,13 +210,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
+                "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2.) Virtualizacion de la memoria"
+              "title": "Outline of 2.) Virtualizacion de memoria rtas"
             }
           }
         ],
@@ -244,10 +244,10 @@
       "graph:Open graph view": false
     }
   },
-  "active": "a840decdbdd94f7b",
+  "active": "06c28636d6720c8d",
   "lastOpenFiles": [
-    "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
     "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
+    "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
     "99 Adjuntos/Pasted image 20261003085417.png",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "08 Sistemas Operativos/operating_systems_three_easy_pieces.pdf",
