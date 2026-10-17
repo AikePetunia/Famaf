@@ -4,88 +4,130 @@
     "type": "split",
     "children": [
       {
-        "id": "5e369131de629378",
+        "id": "1cffa04dbeecd7a7",
         "type": "tabs",
-        "dimension": 64.64300983326207,
         "children": [
           {
-            "id": "cf14b4f5ab0ae796",
+            "id": "0bd93b9ac57950bb",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md"
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md"
               },
               "icon": "excalidraw-icon",
-              "title": "Resumen Virtualizacion"
+              "title": "! Teorico completo + Anotaciones (P1)"
             }
           },
           {
-            "id": "de36f82caf8f4221",
+            "id": "e1ffb94cfd858b5f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
-                "mode": "source",
-                "source": false
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md"
               },
-              "icon": "lucide-file",
-              "title": "1.) Virtualizacion del cpu rtas nvas."
+              "icon": "excalidraw-icon",
+              "title": "! Teorico completo + anotaciones (P2) CLAUDE"
             }
           },
           {
-            "id": "06c28636d6720c8d",
+            "id": "24c504078b3c0e6b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
-                "mode": "source",
-                "source": false
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md"
               },
-              "icon": "lucide-file",
-              "title": "2.) Virtualizacion de memoria rtas"
+              "icon": "excalidraw-icon",
+              "title": "! Teorico completo + anotaciones (P2)"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
-        "id": "ae1e6be57e705a5e",
+        "id": "93da7ec945afed7d",
         "type": "tabs",
-        "dimension": 35.35699016673792,
         "children": [
           {
-            "id": "a840decdbdd94f7b",
+            "id": "d24e389f2371779b",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
-                "page": 3,
-                "left": -17,
-                "top": 94,
-                "zoom": 0.8630450412917707
+                "file": "09 Probabilidad y estadistica/practico/Practico_5_Proba2025.pdf",
+                "page": 2,
+                "left": 30,
+                "top": 199,
+                "zoom": 1.4
               },
               "icon": "lucide-file-text",
-              "title": "2.) Virtualizacion de la memoria"
+              "title": "Practico_5_Proba2025"
             }
           },
           {
-            "id": "bdf5477394b9586a",
+            "id": "547086c14a14fcb2",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
-                "page": 1,
-                "left": -17,
-                "top": 801,
-                "zoom": 0.8630450412917707
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/1) Clase 7 y 9 de octubre.pdf",
+                "page": 46,
+                "left": -15,
+                "top": 152,
+                "zoom": 1.03125
               },
               "icon": "lucide-file-text",
-              "title": "1.) Virtualización del cpu"
+              "title": "1) Clase 7 y 9 de octubre"
+            }
+          },
+          {
+            "id": "8cf252cec78b28d8",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/2) Clase 14 de octubre.pdf",
+                "page": 38,
+                "left": -15,
+                "top": 341,
+                "zoom": 1.03125
+              },
+              "icon": "lucide-file-text",
+              "title": "2) Clase 14 de octubre"
+            }
+          },
+          {
+            "id": "5aa052dbb6e61c3f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
+                "page": 1,
+                "left": -12,
+                "top": 786,
+                "zoom": 1.2478991596638658
+              },
+              "icon": "lucide-file-text",
+              "title": "Tabla_normal"
+            }
+          },
+          {
+            "id": "5f5e6db6143ba0f9",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
+                "page": 1,
+                "left": -14,
+                "top": 796,
+                "zoom": 1.213235294117647
+              },
+              "icon": "lucide-file-text",
+              "title": "Tabla_t"
             }
           }
         ]
@@ -145,7 +187,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 448.5,
+    "width": 376.5026054382324,
     "collapsed": true
   },
   "right": {
@@ -210,13 +252,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
+                "file": "09 Probabilidad y estadistica/practico/Practico_5_Proba2025.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2.) Virtualizacion de la memoria"
+              "title": "Outline of Practico_5_Proba2025"
             }
           }
         ],
@@ -244,17 +286,29 @@
       "graph:Open graph view": false
     }
   },
-  "active": "a840decdbdd94f7b",
+  "active": "d24e389f2371779b",
   "lastOpenFiles": [
-    "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
-    "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
+    "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/2) Clase 14 de octubre.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/1) Clase 7 y 9 de octubre.pdf",
+    "09 Probabilidad y estadistica/practico/Practico_5_Proba2025.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "99 Adjuntos/Pasted Image 20261017171402_033.png",
+    "99 Adjuntos/Pasted Image 20261017155733_649.png",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
+    "09 Probabilidad y estadistica/practico/Practico_6_Proba2025.pdf",
+    "09 Probabilidad y estadistica/practico/Practico_6_Proba2026.pdf",
+    "99 Adjuntos/Pasted Image 20261016103504_906.png",
+    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
+    "09 Probabilidad y estadistica/practico/resoluciones/guia5_prob_estad_sol.pdf",
+    "09 Probabilidad y estadistica/teorico/Clases 2026.docx.pdf",
+    "09 Probabilidad y estadistica/practico/Parctico_6_Proba2026.pdf",
+    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo 2025.md",
+    "quicknote.md",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
-    "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
-    "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2022-10-18.pdf",
-    "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2025-10-09 (Trabajadores).pdf",
-    "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2024-10-03.pdf",
-    "08 Sistemas Operativos/practico/2.) Virtualizacion de la memoria.pdf",
-    "08 Sistemas Operativos/operating_systems_three_easy_pieces.pdf",
+    "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
+    "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
     "99 Adjuntos/Pasted image 20261005094117.png",
     "99 Adjuntos/Pasted image 20261005090919.png",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas.md",
@@ -263,22 +317,12 @@
     "99 Adjuntos/Pasted image 20260930193454.png",
     "99 Adjuntos/Pasted image 20260930180123.png",
     "99 Adjuntos/Pasted Image 20260930175953_963.png",
-    "99 Adjuntos/Pasted Image 20260930175536_497.png",
-    "08 Sistemas Operativos/practico/3.) Concurrencia.pdf",
-    "08 Sistemas Operativos/lab/luffy.mp3",
     "08 Sistemas Operativos/lab/Lab_1_guia_sintetizada.md",
-    "08 Sistemas Operativos/lab/sake-binks.mp3",
-    "08 Sistemas Operativos/lab/one-piece-weird.mp3",
     "08 Sistemas Operativos/lab/cuestionario lab 0 y 1.md",
     "08 Sistemas Operativos/practico/4.) Persistencia rtas.md",
     "08 Sistemas Operativos/practico/3.) Concurrencia rtas.md",
     "08 Sistemas Operativos/teorico/Untitled.md",
     "08 Sistemas Operativos/lab/Lab 1 guia.md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "09 Probabilidad y estadistica/parciales/1/Parcial 1 2024-10-04.jpeg",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
-    "09 Probabilidad y estadistica/teorico/Parcial2/img P2/P2 c5 dualidad.png",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial B (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial A (CLAUDE).md",
@@ -288,8 +332,6 @@
     "09 Probabilidad y estadistica/parciales/2/practica/re-practicos 1 (7,8) 2025.md",
     "09 Probabilidad y estadistica/parciales/2/practica/re-practicos (5,6,7) 2025.md",
     "08 Sistemas Operativos/teorico/Lab 1 Guía de estudio.md",
-    "08 Sistemas Operativos/teorico/Untitled mindmap.md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/3)Clase 19 de agosto.md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/2)Clase 12, 14 de agosto.md"
+    "08 Sistemas Operativos/teorico/Untitled mindmap.md"
   ]
 }
