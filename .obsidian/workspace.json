@@ -51,67 +51,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8cf252cec78b28d8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/2) Clase 14 de octubre.pdf",
-                "page": 32,
-                "left": -15,
-                "top": 137,
-                "zoom": 1.03125
-              },
-              "icon": "lucide-file-text",
-              "title": "2) Clase 14 de octubre"
-            }
-          },
-          {
-            "id": "4316dd3eedd2560d",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/3) Clase 16 de octubre.pdf",
-                "page": 6,
-                "left": -15,
-                "top": 50,
-                "zoom": 1.03125
-              },
-              "icon": "lucide-file-text",
-              "title": "3) Clase 16 de octubre"
-            }
-          },
-          {
-            "id": "63ab47b34360e333",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/4) Clase 23 de octubre.pdf",
-                "page": 15,
-                "left": -15,
-                "top": 198,
-                "zoom": 1.03125
-              },
-              "icon": "lucide-file-text",
-              "title": "4) Clase 23 de octubre"
-            }
-          },
-          {
             "id": "f3bfbf65cbd72f92",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "09 Probabilidad y estadistica/practico/Praactico_6_Proba2026.pdf",
+                "file": "09 Probabilidad y estadistica/practico/Practico_7_Proba2025.pdf",
                 "page": 2,
-                "left": 11,
-                "top": 653,
+                "left": 28,
+                "top": 246,
                 "zoom": 1.4
               },
               "icon": "lucide-file-text",
-              "title": "Praactico_6_Proba2026"
+              "title": "Practico_7_Proba2025"
+            }
+          },
+          {
+            "id": "74f3c7b907c12199",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/5) Clase 28 de octubre.pdf",
+                "page": 6,
+                "left": -15,
+                "top": 209,
+                "zoom": 1.03125
+              },
+              "icon": "lucide-file-text",
+              "title": "5) Clase 28 de octubre"
             }
           },
           {
@@ -123,7 +91,7 @@
                 "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
                 "page": 1,
                 "left": -12,
-                "top": 680,
+                "top": 684,
                 "zoom": 1.2478991596638658
               },
               "icon": "lucide-file-text",
@@ -146,8 +114,7 @@
               "title": "Tabla_t"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -269,13 +236,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
+                "file": "09 Probabilidad y estadistica/practico/Practico_7_Proba2025.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ! Teorico completo + anotaciones (P2) CLAUDE"
+              "title": "Outline of Practico_7_Proba2025"
             }
           }
         ],
@@ -303,18 +270,21 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e1ffb94cfd858b5f",
+  "active": "f3bfbf65cbd72f92",
   "lastOpenFiles": [
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
+    "09 Probabilidad y estadistica/practico/Practico_7_Proba2025.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
+    "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/5) Clase 28 de octubre.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial2/4) Clase 23 de octubre.pdf",
+    "99 Adjuntos/Pasted Image 20261021101836_609.png",
     "99 Adjuntos/Pasted Image 20261019100313_699.png",
     "09 Probabilidad y estadistica/practico/Praactico_6_Proba2026.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
-    "09 Probabilidad y estadistica/teorico/Parcial2/4) Clase 23 de octubre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial2/3) Clase 16 de octubre.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
     "99 Adjuntos/Pasted Image 20261019092702_575.png",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial2/1) Clase 7 y 9 de octubre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial2/2) Clase 14 de octubre.pdf",
     "99 Adjuntos/Pasted Image 20261019085232_551.png",
@@ -323,8 +293,6 @@
     "09 Probabilidad y estadistica/practico/Practico_5_Proba2025.pdf",
     "99 Adjuntos/Pasted Image 20261017171402_033.png",
     "99 Adjuntos/Pasted Image 20261017155733_649.png",
-    "09 Probabilidad y estadistica/practico/Practico_6_Proba2025.pdf",
-    "09 Probabilidad y estadistica/practico/Practico_6_Proba2026.pdf",
     "99 Adjuntos/Pasted Image 20261016103504_906.png",
     "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo 2025.md",
     "quicknote.md",
@@ -332,9 +300,7 @@
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
     "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
     "99 Adjuntos/Pasted image 20261005094117.png",
-    "99 Adjuntos/Pasted image 20261005090919.png",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas.md",
-    "99 Adjuntos/Pasted image 20261003085417.png",
     "08 Sistemas Operativos/lab/Lab_1_guia_sintetizada.md",
     "08 Sistemas Operativos/lab/cuestionario lab 0 y 1.md",
     "08 Sistemas Operativos/practico/4.) Persistencia rtas.md",
