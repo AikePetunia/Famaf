@@ -4,9 +4,9 @@
 > Pensado para **ejercitar fórmulas**, complementa a la Práctica A (no se repiten los mismos sub-temas).
 > Convención: z, t y χ² con 4 decimales; resultados finales con 4 decimales (o redondeo natural si es un n de muestra).
 
-| 1a | 1b | 1c | 2a | 2b | 2c | 3a | 3b | 3c | 3d | 3e | 4a | 4b | 4c | 5a | 5b | 5c | 5d |
-|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-|    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| 1a | 1b | 1c | 1d | 1e | 2a | 2b | 2c | 3a | 3b | 3c | 3d | 3e | 3f | 4a | 4b | 4c | 4d | 5a | 5b | 5c | 5d |
+|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+|    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
 
 ---
 
@@ -18,6 +18,14 @@ $$\hat\theta_1=2\bar X \qquad M=\max(X_1,\dots,X_n) \qquad \hat\theta_2=\frac{n+
 **a)** Para cada uno, indique si es insesgado y calcule su ECM en función de $\theta$ y $n$. *(Dato: para $M$, $E(M)=\dfrac{n}{n+1}\theta$ y $V(M)=\dfrac{n}{(n+1)^2(n+2)}\theta^2$.)*
 **b)** Con la muestra $2.1,\ 5.4,\ 7.8,\ 3.3,\ 6.6,\ 8.9,\ 4.2,\ 7.1,\ 1.5,\ 9.3$ calcule las tres estimaciones.
 **c)** Ordene los tres estimadores de mejor a peor según su ECM (para este $n$). ¿Qué le llama la atención del resultado si compara $M$ (sesgado) contra $\hat\theta_1$ (insesgado)?
+
+Ahora, un caso de máxima verosimilitud "clásica" (armando la verosimilitud desde cero, a diferencia de $U(0,\theta)$ donde el EMV sale por inspección): sea $Y\sim\text{Exponencial}(\lambda)$, con $f(y;\lambda)=\lambda e^{-\lambda y}$, $y>0$.
+
+**d)** Deduzca $\hat\lambda_{MV}$ a partir de $L(\lambda)=\prod f(y_i;\lambda)$. Con una muestra de $n=12$ tiempos de falla (en meses) y $\sum y_i=18$, calcule $\hat\lambda_{MV,obs}$ y, por invarianza, estime $P(Y>2)$.
+
+Un tercer caso, con variable **discreta** (los dos anteriores eran continuas): sea $Z\sim\text{Bernoulli}(p)$, con $P(Z=1)=p$, $P(Z=0)=1-p$.
+
+**e)** Deduzca $\hat p_{MV}$ a partir de $L(p)=\prod p^{z_i}(1-p)^{1-z_i}$, y compárelo con el estimador de momentos $\hat p_{mom}$ (¿coinciden?). Con la muestra $1,0,1,1,0,1,1,0,1,0$ ($n=10$), calcule $\hat p_{obs}$.
 
 ---
 
@@ -43,6 +51,7 @@ El tiempo en los 100 m llanos de un grupo de atletas entrenados tiene distribuci
 **c)** Calcule el p-valor.
 **d)** Si el verdadero tiempo medio con el nuevo método fuera $\mu=0.235$ s, calcule $\beta$ y la potencia del test (mismo $n=16$, $\alpha=0.01$). Interprete el número de potencia que obtiene.
 **e)** ¿Qué tamaño de muestra haría falta para que, si $\mu=0.235$ s, $\beta\le0.05$ (manteniendo $\alpha=0.01$)?
+**f)** En este contexto, ¿qué significaría cometer un error de **Tipo I**? ¿Y uno de **Tipo II** (relacione con el $\beta$ que calculó en d))?
 
 ---
 
@@ -56,6 +65,7 @@ Una empresa de streaming afirma que el 60 % de sus usuarios usa la app todos los
 En otro contexto, se quiere testear $H_0:p=0.3$ vs $H_A:p<0.3$ con una muestra chica de $n=15$ (no vale la aproximación normal).
 
 **c)** Usando $X\sim\text{Binomial}(15,0.3)$ bajo $H_0$, busque el $k$ tal que la región de rechazo $RR=\{X\le k\}$ tenga el nivel real $\alpha$ más cercano posible a $0.10$ **sin superarlo**. ¿Por qué no se puede lograr $\alpha=0.10$ exacto?
+**d)** Si en la muestra real se observaran $X=3$ familias interesadas, calcule el p-valor exacto (con la Binomial, sin usar la RR de c)) y decida al nivel $\alpha=0.10$. Verifique que es coherente con no estar $X=3$ dentro de la RR hallada en c).
 
 ---
 
@@ -63,7 +73,7 @@ En otro contexto, se quiere testear $H_0:p=0.3$ vs $H_A:p<0.3$ con una muestra c
 
 Se comparan los tiempos de reacción (ms) ante un estímulo bajo dos condiciones experimentales, con muestras independientes y **sin suponer varianzas iguales**: Condición 1: $n_1=10$, $\bar x_1=4.2$, $s_1=1.8$. Condición 2: $n_2=8$, $\bar x_2=3.1$, $s_2=0.9$.
 
-**a)** Calcule los grados de libertad de Welch (redondee hacia abajo) y pruebe $H_0:\mu_1=\mu_2$ vs $H_A:\mu_1>\mu_2$ con $\alpha=0.05$.
+**a)** Calcule los grados de libertad de Welch (redondee hacia abajo), pruebe $H_0:\mu_1=\mu_2$ vs $H_A:\mu_1>\mu_2$ con $\alpha=0.05$, y calcule el p-valor.
 
 Para evaluar una dieta, se mide el colesterol (mg/dl) de 6 personas antes y después de 2 meses:
 
@@ -101,6 +111,16 @@ $$\hat\theta_{1,obs}=2(5.62)=\mathbf{11.24}\qquad m=\mathbf{9.3}\qquad \hat\thet
 **c)** Orden de mejor a peor (menor a mayor ECM): $\hat\theta_2$ (0.0083$\theta^2$) $<$ $M$ (0.0152$\theta^2$) $<$ $\hat\theta_1$ (0.0333$\theta^2$).
 Lo llamativo: **$M$, que es sesgado, tiene menor ECM que $\hat\theta_1=2\bar X$, que es insesgado**. Un estimador insesgado no es automáticamente "mejor": lo que importa para comparar es el ECM completo (varianza + sesgo²), y acá la varianza de $M$ es tan chica que compensa de sobra su sesgo. Por eso $\hat\theta_2$ (que corrige exactamente ese sesgo sin agregar casi nada de varianza) termina siendo el mejor de los tres.
 
+**d)** $L(\lambda)=\prod_{i=1}^n\lambda e^{-\lambda y_i}=\lambda^n e^{-\lambda\sum y_i}$.
+$$\ln L(\lambda)=n\ln\lambda-\lambda\sum y_i\ \Rightarrow\ \frac{d\ln L}{d\lambda}=\frac{n}{\lambda}-\sum y_i=0\ \Rightarrow\ \hat\lambda_{MV}=\frac{n}{\sum Y_i}=\frac1{\bar Y}$$
+Con $n=12$, $\sum y_i=18$: $\hat\lambda_{MV,obs}=\dfrac{12}{18}\approx\mathbf{0.6667}$ (por mes). Por invarianza, usando $P(Y>y)=e^{-\lambda y}$:
+$$\widehat{P(Y>2)}=e^{-0.6667\times2}\approx\mathbf{0.2636}$$
+
+**e)** $L(p)=\prod_{i=1}^n p^{z_i}(1-p)^{1-z_i}=p^{\sum z_i}(1-p)^{n-\sum z_i}$.
+$$\ln L(p)=\left(\sum z_i\right)\ln p+\left(n-\sum z_i\right)\ln(1-p)\ \Rightarrow\ \frac{d\ln L}{dp}=\frac{\sum z_i}{p}-\frac{n-\sum z_i}{1-p}=0\ \Rightarrow\ \hat p_{MV}=\frac{\sum Z_i}{n}=\bar Z$$
+Por momentos: $E(Z)=p=\bar Z$ se despeja directo y da **exactamente lo mismo**, $\hat p_{mom}=\bar Z$ — a diferencia de $U(0,\theta)$ (donde MV y momentos daban estimadores distintos, $M$ vs $2\bar X$), acá **coinciden siempre**, porque la ecuación de momentos y la de verosimilitud son la misma ecuación.
+Con la muestra dada, $\sum z_i=6$, $n=10$: $\hat p_{obs}=\dfrac{6}{10}=\mathbf{0.6}$.
+
 ---
 
 ## Ejercicio 2
@@ -136,6 +156,9 @@ Potencia $=1-\beta\approx\mathbf{0.1300}$. Interpretación: si el verdadero tiem
 $$n\ge\left(\frac{(z_{0.01}+z_{0.05})\sigma}{\delta}\right)^2=\left(\frac{(2.3263+1.6449)(0.05)}{0.015}\right)^2\approx175.23\ \Rightarrow\ \mathbf{n=176}$$
 *(Comparar con d): para pasar de potencia 0.13 a potencia 0.95 frente a la misma diferencia, hace falta multiplicar la muestra por más de 10 — así de caro es detectar diferencias chicas.)*
 
+**f)** **Error de Tipo I:** concluir que el nuevo método **sí** mejora el tiempo (rechazar $H_0$) cuando en realidad el método no tiene ningún efecto real — el entrenador adoptaría una rutina nueva (con el costo de tiempo y esfuerzo que implica el cambio) sin que realmente sirva.
+**Error de Tipo II:** concluir que el método **no** mejora el tiempo (no rechazar $H_0$) cuando en realidad sí lo hace — es exactamente lo que pasó en este ejercicio: con $\mu=0.235$ s el método realmente mejora el tiempo, pero en b) no se rechazó $H_0$. El $\beta=0.8700$ de d) es justamente la probabilidad de que ocurra este error si la mejora real fuera de esa magnitud: con este $n$ tan chico, es mucho más probable "no darse cuenta" de una mejora real que confirmar una que no existe.
+
 ---
 
 ## Ejercicio 4
@@ -152,6 +175,10 @@ El 0.6 **sí** pertenece al intervalo, coherente con no rechazar $H_0:p=0.6$ en 
 $$P(X\le1)\approx0.0353\qquad P(X\le2)\approx0.1268$$
 Con $k=1$: $\alpha_{real}=0.0353\le0.10$ ✓. Con $k=2$: $\alpha_{real}=0.1268>0.10$ ✗ (ya se pasó). Entonces **$RR=\{X\le1\}$**, con nivel real $\alpha=0.0353$.
 No se puede lograr $\alpha=0.10$ exacto porque $X$ es **discreta**: el conjunto de valores posibles de $P(X\le k)$ es un conjunto finito de números (uno por cada $k=0,\dots,15$), y $0.10$ simplemente no es ninguno de ellos; hay que "saltar" al $k$ más grande que no supere el nivel nominal, lo cual deja el test más conservador de lo pedido.
+
+**d)** El p-valor de una observación $x_{obs}$ en un test de cola inferior es $P(X\le x_{obs}\mid H_0)$ (se acumula del lado de $H_A$, igual que con $z$ o $t$, pero acá exacto con la Binomial en vez de aproximado). Con $x_{obs}=3$:
+$$p\text{-valor}=P(X\le3\mid p=0.3)\approx\mathbf{0.2969}$$
+Como $0.2969>0.10$: **no se rechaza $H_0$**. Es coherente con c): $X=3$ no pertenece a $RR=\{X\le1\}$, así que ya sabíamos que no se iba a rechazar sin necesidad de calcular el p-valor; lo que aporta el p-valor acá es cuantificar qué tan lejos está $3$ de ser "evidencia" contra $H_0$ (bastante lejos, $0.2969\gg0.10$).
 
 ---
 

@@ -4,9 +4,9 @@
 > Pensado para **ejercitar fórmulas**, no para cronometrarse: no hace falta resolverlo todo de una sentada.
 > Convención: z, t y χ² con 4 decimales; resultados finales con 4 decimales (o redondeo natural si es un n de muestra).
 
-| 1a | 1b | 1c | 1d | 2a | 2b | 2c | 2d | 3a | 3b | 3c | 3d | 3e | 4a | 4b | 4c | 5a | 5b | 5c | 5d |
-|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-|    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| 1a | 1b | 1c | 1d | 2a | 2b | 2c | 2d | 3a | 3b | 3c | 3d | 3e | 3f | 4a | 4b | 4c | 5a | 5b | 5c | 5d |
+|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+|    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
 
 ---
 
@@ -42,6 +42,7 @@ Una máquina llena bolsas de un producto; el peso nominal es $\mu_0=500$ g, y se
 **c)** Calcule el p-valor del inciso anterior.
 **d)** Si el verdadero peso medio fuera $\mu=490$ g, calcule $\beta$ y la potencia del test (con $n=25$ y $\alpha=0.05$).
 **e)** En el contexto del problema: ¿qué significaría cometer un error de tipo I? ¿Y uno de tipo II? ¿Cuál le parece más costoso para el fabricante?
+**f)** Suponga ahora que $\sigma$ **no** se conoce, y que se tiene una muestra más grande de $n=45$ bolsas con $\bar x=495.4$ g (igual que antes) y $s=11.8$ g. ¿Qué Caso de test corresponde (A, B o C) y por qué? Decida con $\alpha=0.05$.
 
 ---
 
@@ -137,6 +138,10 @@ Potencia $=1-\beta\approx\mathbf{0.9942}$: con $n=25$, si la media real fuera 49
 
 **e)** **Error de tipo I:** concluir que la máquina llena de menos cuando en realidad está bien calibrada (el $495.4$ fue solo una fluctuación del azar) — se pararía la producción sin necesidad, con el costo que eso implica.
 **Error de tipo II:** NO detectar que la máquina efectivamente está llenando de menos — se seguirían vendiendo bolsas de menor peso que el declarado, lo cual puede ser más grave (reclamos de clientes, problemas legales por publicidad engañosa). En general, acá el error de tipo II es el más costoso para el fabricante a largo plazo.
+
+**f)** Corresponde el **Caso B** (test para la media, $n$ grande, $\sigma$ desconocida): como $n=45\ge40$, por Slutsky se puede reemplazar $\sigma$ por $S$ y seguir usando la **misma tabla y el mismo estadístico $z$ que en el Caso A** (no hace falta pasar a $t$ — eso es justamente lo que distingue al Caso B del Caso C, que es para $n$ chico). Con $H_A:\mu<500$ igual que antes:
+$$z_{obs}=\frac{(495.4-500)\sqrt{45}}{11.8}\approx\mathbf{-2.6151}$$
+$RR=\{z\le-z_{0.05}\}=\{z\le-1.6449\}$. Como $-2.6151<-1.6449$: **se rechaza $H_0$** (p-valor $\approx0.0045$). *(Nótese que acá el estadístico salió más negativo que en b), aunque $\bar x$ es el mismo: con más datos ($n=45$ en vez de $25$) el error estándar es más chico, así que la misma diferencia observada pesa más como evidencia.)*
 
 ---
 

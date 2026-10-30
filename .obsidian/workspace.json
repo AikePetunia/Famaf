@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "aa198504a515f097",
+        "id": "9ccfde2d414c6b24",
         "type": "tabs",
         "children": [
           {
-            "id": "2beb4e164557a882",
+            "id": "5d52a480a0f44b3b",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -20,35 +20,7 @@
             }
           },
           {
-            "id": "1dbe078c4ecf7163",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "! Teorico completo + anotaciones (P2) CLAUDE"
-            }
-          },
-          {
-            "id": "b091ee48bd8df4a8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/parciales/2/Parcial 2 2025-11-13.pdf",
-                "page": 1,
-                "left": -16,
-                "top": 846,
-                "zoom": 0.9198825503355704
-              },
-              "icon": "lucide-file-text",
-              "title": "Parcial 2 2025-11-13"
-            }
-          },
-          {
-            "id": "0afaba8928cbc7a0",
+            "id": "40c3b04755eca617",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -60,78 +32,68 @@
             }
           },
           {
-            "id": "9b92891f93684339",
+            "id": "cd2fe8f90975c414",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "excalidraw",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/6) Clase 30 de octubre.pdf",
-                "page": 7,
-                "left": -15,
-                "top": 175,
-                "zoom": 1.03125
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md"
               },
-              "icon": "lucide-file-text",
-              "title": "6) Clase 30 de octubre"
+              "icon": "excalidraw-icon",
+              "title": "! Teorico completo + anotaciones (P2) CLAUDE"
+            }
+          },
+          {
+            "id": "2fbc0271c2cf1f9b",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "! Teorico completo + anotaciones (P2) CLAUDE.bak"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       },
       {
-        "id": "348d1b53e91289b0",
+        "id": "5318dd38cbead706",
         "type": "tabs",
         "children": [
           {
-            "id": "51522e19b506ebe5",
+            "id": "b9f8e9277c8dd108",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Practica B (CLAUDE)"
+            }
+          },
+          {
+            "id": "44af2823fb1ef3b1",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "09 Probabilidad y estadistica/practico/Practico_8_Proba2025.pdf",
-                "page": 1,
-                "left": -44,
-                "top": 847,
-                "zoom": 0.3750547479246132
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/1) Clase 7 y 9 de octubre.pdf",
+                "page": 14,
+                "left": -15,
+                "top": 116,
+                "zoom": 1.03125
               },
               "icon": "lucide-file-text",
-              "title": "Practico_8_Proba2025"
+              "title": "1) Clase 7 y 9 de octubre"
             }
           },
           {
-            "id": "5261ee39667c8994",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
-                "page": 1,
-                "left": -12,
-                "top": 680,
-                "zoom": 1.2478991596638658
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla_normal"
-            }
-          },
-          {
-            "id": "3a0f0a50e83c96c0",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
-                "page": 1,
-                "left": -14,
-                "top": 796,
-                "zoom": 1.213235294117647
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla_t"
-            }
-          },
-          {
-            "id": "84e521d2675cafef",
+            "id": "d63c7a70401cfa9c",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -144,6 +106,38 @@
               },
               "icon": "lucide-file-text",
               "title": "Tabla Chi-Cuadrado"
+            }
+          },
+          {
+            "id": "6a80e59bc9831543",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
+                "page": 1,
+                "left": -12,
+                "top": 693,
+                "zoom": 1.2478991596638658
+              },
+              "icon": "lucide-file-text",
+              "title": "Tabla_normal"
+            }
+          },
+          {
+            "id": "572df4579adce830",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
+                "page": 1,
+                "left": -12,
+                "top": 734,
+                "zoom": 1.2132352941176472
+              },
+              "icon": "lucide-file-text",
+              "title": "Tabla_t"
             }
           }
         ]
@@ -203,7 +197,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 517.5026054382324,
+    "width": 328.5026054382324,
     "collapsed": true
   },
   "right": {
@@ -268,12 +262,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of ! Teorico completo + anotaciones (P2) CLAUDE"
             }
           }
         ],
@@ -301,21 +296,29 @@
       "graph:Open graph view": false
     }
   },
-  "active": "d4d1a7240cf9ed59",
+  "active": "cd2fe8f90975c414",
   "lastOpenFiles": [
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
-    "09 Probabilidad y estadistica/practico/Practico_8_Proba2025.pdf",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica A (CLAUDE).md.tmp.961195.02dfcf30c02b",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica A (CLAUDE).md.tmp.961195.aa9e18cae2a0",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica A (CLAUDE).md.tmp.961195.83d38115ffd0",
     "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica A (CLAUDE).md",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica A (CLAUDE).md.tmp.961195.f1351c131cfd",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios",
-    "09 Probabilidad y estadistica/practico/Practico_7_Proba2025.pdf",
     "09 Probabilidad y estadistica/practico/tablas/Tabla Chi-Cuadrado.pdf",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.a279b38f112e",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.47b0ddac0c9e",
+    "09 Probabilidad y estadistica/teorico/Parcial2/1) Clase 7 y 9 de octubre.pdf",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.875082a04df9",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.4e008ca971e3",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.b4ad010b1f01",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.9065c7d66935",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.8663ca2cc384",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak.md",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica A (CLAUDE).md",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak2.md",
+    "08 Sistemas Operativos/lab/Lab_2_3_guia.md",
+    "08 Sistemas Operativos/lab/Lab_1_guia_sintetizada.md",
+    "08 Sistemas Operativos/lab/Lab 1 guia.md",
+    "08 Sistemas Operativos/lab/cuestionario lab 0 y 1.md",
     "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 resuelto (mio).md",
     "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
     "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) res 2025.md",
@@ -329,11 +332,9 @@
     "99 Adjuntos/Pasted Image 20261025195345_182.png",
     "99 Adjuntos/Pasted Image 20261025190931_014.png",
     "99 Adjuntos/Pasted Image 20261025190915_530.png",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
     "08 Sistemas Operativos/teorico/Resumen Persistencia.md",
     "08 Sistemas Operativos/teorico/Resumen Concurrencia.md",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak.md",
     "99 Adjuntos/Pasted Image 20261023150454_869.png",
     "99 Adjuntos/Pasted Image 20261023150431_070.png",
     "99 Adjuntos/Pasted Image 20261021101836_609.png",
@@ -341,12 +342,6 @@
     "99 Adjuntos/Pasted Image 20261019092702_575.png",
     "quicknote.md",
     "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md",
-    "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md",
-    "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas.md",
-    "08 Sistemas Operativos/lab/Lab_1_guia_sintetizada.md",
-    "08 Sistemas Operativos/lab/cuestionario lab 0 y 1.md",
-    "08 Sistemas Operativos/practico/4.) Persistencia rtas.md",
-    "08 Sistemas Operativos/practico/3.) Concurrencia rtas.md",
-    "08 Sistemas Operativos/teorico/Untitled.md"
+    "08 Sistemas Operativos/practico/2.) Virtualizacion de memoria rtas.md"
   ]
 }
