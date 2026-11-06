@@ -3,8 +3,6 @@ tags: [sistemas-operativos, xv6, semaforos, syscalls, fat32, fuse, filesystem]
 curso: Sistemas Operativos 2026 - Laboratorios 2 (semáforos en xv6) y 3 (auditoría forense en FAT32-FUSE)
 ---
 
-> **De dónde sale esto.** El Lab 3 está armado con el enunciado de la cátedra ("Sistema de Auditoría Forense para FAT32-FUSE"), el README del código y tu `INFORME.md`. Del Lab 2 no hay enunciado en la compu, así que está armado con tu código (`semaphore.c`, `pingpong.c`, `prodcons.c`), el código que dio la cátedra (`semtest.c`) y los tests con los que corrigen (`lab2_tests.py`). Donde algo es una decisión de tu grupo y no una regla del enunciado, está aclarado.
-
 ---
 
 # PARTE A — Laboratorio 2: semáforos en xv6
@@ -18,15 +16,6 @@ Es como una **maqueta de una casa**: no vivís ahí, pero tiene cañerías, cabl
 
 - Está escrito para procesadores **RISC-V** (otra "familia" de procesadores, distinta de la x86 de tu compu).
 - Como tu compu no es RISC-V, se corre adentro de **QEMU**, un programa que **emula** una computadora RISC-V completa. QEMU hace de "compu falsa" y xv6 bootea adentro como si fuera una máquina real.
-
-### 1.2 Comandos que tenés que conocer
-| Comando | Qué hace |
-|---|---|
-| `make qemu` | Compila el kernel y los programas de usuario, arma el disco (`fs.img`) y bootea xv6 en QEMU |
-| `make grade` / `make grade-parcial` / `make grade-final` | Corren los tests de la cátedra (los mismos que usan para corregir) |
-| `Ctrl-a` y después `x` | Salir de QEMU |
-| `Ctrl-p` (dentro de xv6) | Imprime la lista de procesos (`procdump`): sirve para ver si alguien quedó dormido para siempre |
-| `make clean` | Borra lo compilado |
 
 > En tu `Makefile` QEMU corre con **una sola CPU** (`-smp 1`). Con una CPU nunca corren dos procesos *al mismo tiempo de verdad*, pero sí se **intercalan**, porque el kernel los cambia por interrupciones de reloj. Por eso los problemas de concurrencia aparecen igual.
 
@@ -67,27 +56,26 @@ int sem_close(int sem);            // cerrar/liberar el semáforo "sem"
 El semáforo se identifica con un **número** (en tu implementación, del 1 al 64). No es un puntero ni una variable del programa: es como el **número de un casillero** en una pared que está en el kernel. Dos procesos que usan "el casillero 5" están usando el mismo semáforo.
 
 ### 3.2 Qué hace cada una en cada caso (tu implementación)
-| Llamada | Si sale bien | Si falla devuelve 0 cuando... |
-|---|---|---|
-| `sem_open(sem, value)` | Lo marca abierto con `value` fichas; devuelve `sem` | `sem` fuera de 1..64, `value < 0`, o **ya estaba abierto** |
-| `sem_up(sem)` | Suma 1 y despierta a los que duermen; devuelve `sem` | fuera de rango, no está abierto, o llegó al máximo (1.000.000) |
-| `sem_down(sem)` | Si hay fichas, resta 1 y sigue; si no, duerme hasta que haya. Devuelve `sem` | fuera de rango, no abierto, o **lo cerraron mientras dormía** |
-| `sem_close(sem)` | Lo marca libre, valor 0, despierta a los que dormían; devuelve `sem` | fuera de rango o no estaba abierto |
+| Llamada                | Si sale bien                                                                 | Si falla devuelve 0 cuando...                                  |
+| ---------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| `sem_open(sem, value)` | Lo marca abierto con `value` fichas; devuelve `sem`                          | `sem` fuera de 1..64, `value < 0`, o **ya estaba abierto**     |
+| `sem_up(sem)`          | Suma 1 y despierta a los que duermen; devuelve `sem`                         | fuera de rango, no está abierto, o llegó al máximo (1.000.000) |
+| `sem_down(sem)`        | Si hay fichas, resta 1 y sigue; si no, duerme hasta que haya. Devuelve `sem` | fuera de rango, no abierto, o **lo cerraron mientras dormía**  |
+| `sem_close(sem)`       | Lo marca libre, valor 0, despierta a los que dormían; devuelve `sem`         | fuera de rango o no estaba abierto                             |
 
 - `up` **puede pasar el valor inicial**: si abrís con 0 y hacés tres `up`, queda en 3. Es el test `semtest grow`.
 - Abrir dos veces el mismo número **se rechaza** (test `semtest reopen`). Gracias a eso un programa puede "buscar un casillero libre" probando números hasta que `sem_open` le dé bien (lo hace `sem_get` en pingpong y prodcons).
 
 ### 3.3 Lo que miran los tests de `semtest` (programa que dio la cátedra)
-| Test | Qué prueba |
-|---|---|
-| `noinit` | `sem_down` sobre un semáforo nunca abierto → tiene que dar **error**, no colgarse |
-| `init 3` | Abrir con 3 y que el valor sea 3 |
-| `closeuse` | Después de `sem_close`, usarlo (`sem_up`) tiene que dar **error** |
-| `exhaust` | Gastar la única ficha, cerrar y **volver a abrir** el mismo número (reutilizar) |
-| `grow` | Hacer `up` más veces que el valor inicial |
-| `reopen` | Abrir dos veces el mismo número → el segundo se **rechaza** |
+| Test       | Qué prueba                                                                        |
+| ---------- | --------------------------------------------------------------------------------- |
+| `noinit`   | `sem_down` sobre un semáforo nunca abierto → tiene que dar **error**, no colgarse |
+| `init 3`   | Abrir con 3 y que el valor sea 3                                                  |
+| `closeuse` | Después de `sem_close`, usarlo (`sem_up`) tiene que dar **error**                 |
+| `exhaust`  | Gastar la única ficha, cerrar y **volver a abrir** el mismo número (reutilizar)   |
+| `grow`     | Hacer `up` más veces que el valor inicial                                         |
+| `reopen`   | Abrir dos veces el mismo número → el segundo se **rechaza**                       |
 
-Puntaje: syscalls 6, pingpong 5, prodcons 4 (total 15). La entrega intermedia (`grade-parcial`) eran syscalls + pingpong (11). El punto estrella (varios productores y consumidores) vale 0 puntos, es crédito extra.
 
 ---
 
@@ -237,8 +225,6 @@ Primero se espera la **condición** (`empty` o `full`) y **después** se toma el
 - `prodcons 1 5`: con B = 1 tiene que **alternar** produce/consume (nunca 2 producidos sin consumir).
 - `prodcons 3 10`: nunca más de **3** "en vuelo" (producidos y sin consumir).
 - Al final, todo lo producido fue consumido y el programa termina (aparece `DONE`).
-- ⭐ Estrella: `prodcons 2 20 2 2` → **2 productores y 2 consumidores** en paralelo. Ahí sí el `mutex` es indispensable de verdad, porque hay más de uno de cada lado.
-
 ---
 
 ## 8. Cosas para tener frescas del Lab 2
@@ -246,7 +232,6 @@ Primero se espera la **condición** (`empty` o `full`) y **después** se toma el
 - La syscall entra con **`ecall`**, el número va en **`a7`**, los argumentos en **`a0..a5`** y la respuesta vuelve en **`a0`**.
 - `sys_*` no recibe parámetros en C: los lee con **`argint`** del trapframe.
 - **Spinlock** = espera dando vueltas, para secciones **cortas**; **sleep/wakeup** = dormir sin gastar CPU, para esperas **largas**.
-- `sleep` **suelta el lock y duerme en un solo paso** → evita el *lost wakeup*.
 - `while` (no `if`) alrededor del `sleep`, porque `wakeup` despierta a **todos**.
 - Valor inicial: **1** mutex, **0** orden/aviso, **B** lugares.
 - En `prodcons`: **primero** la condición, **después** el mutex.

@@ -4,129 +4,59 @@
     "type": "split",
     "children": [
       {
-        "id": "9ccfde2d414c6b24",
+        "id": "0d0652c6436a7ab9",
         "type": "tabs",
-        "dimension": 19.68503937007874,
         "children": [
           {
-            "id": "5d52a480a0f44b3b",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "! Teorico completo + Anotaciones (P1)"
-            }
-          },
-          {
-            "id": "40c3b04755eca617",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "! Teorico completo + anotaciones (P2)"
-            }
-          },
-          {
-            "id": "cd2fe8f90975c414",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "! Teorico completo + anotaciones (P2) CLAUDE"
-            }
-          },
-          {
-            "id": "2fbc0271c2cf1f9b",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "! Teorico completo + anotaciones (P2) CLAUDE.bak"
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "5318dd38cbead706",
-        "type": "tabs",
-        "dimension": 80.31496062992126,
-        "children": [
-          {
-            "id": "a6445bee923e5862",
+            "id": "06c84e087b51d122",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica C (CLAUDE).md",
+                "file": "08 Sistemas Operativos/lab/guia estudio lab 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Practica C (CLAUDE)"
-            }
-          },
-          {
-            "id": "d63c7a70401cfa9c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla Chi-Cuadrado.pdf",
-                "page": 1,
-                "left": -3,
-                "top": -17,
-                "zoom": 0.8818289786223279
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla Chi-Cuadrado"
-            }
-          },
-          {
-            "id": "6a80e59bc9831543",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
-                "page": 1,
-                "left": -12,
-                "top": 697,
-                "zoom": 1.2478991596638658
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla_normal"
-            }
-          },
-          {
-            "id": "572df4579adce830",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
-                "page": 1,
-                "left": -14,
-                "top": 734,
-                "zoom": 1.213235294117647
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla_t"
+              "title": "guia estudio lab 2"
             }
           }
         ]
+      },
+      {
+        "id": "4105f2177c31c630",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "49742665bb182c18",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "08 Sistemas Operativos/lab/notas lab 2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "notas lab 2"
+            }
+          },
+          {
+            "id": "4870ad9aead599bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "08 Sistemas Operativos/lab/notas lab 3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "notas lab 3"
+            }
+          }
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,8 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 328.5026054382324,
-    "collapsed": true
+    "width": 328.5026054382324
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -248,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
+                "file": "08 Sistemas Operativos/lab/notas lab 3.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ! Teorico completo + anotaciones (P2) CLAUDE"
+              "title": "Outline of notas lab 3"
             }
           }
         ],
@@ -282,52 +211,53 @@
       "graph:Open graph view": false
     }
   },
-  "active": "cd2fe8f90975c414",
+  "active": "4870ad9aead599bb",
   "lastOpenFiles": [
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica C (CLAUDE).md",
+    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.235977.fecc3df54340",
+    "08 Sistemas Operativos/lab/guia estudio lab 2.md",
+    "08 Sistemas Operativos/lab/notas lab 2.md",
+    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.16bc77058e5b",
+    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.cff81630ee7a",
+    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.4393fbd3b52d",
+    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.da2c00eda392",
+    "08 Sistemas Operativos/lab/notas lab 3.md",
+    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.235977.851fa52f9423",
+    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.fc5aea2856fb",
+    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.c4dc22fb000a",
+    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.9ae91d902354",
+    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.e9f85a8762ff",
+    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.80e4549872c9",
+    "08 Sistemas Operativos/lab/Lab2 Filminas/Lab2 - Enunciado.md",
+    "99 Adjuntos/Pasted image 20261106083652.png",
+    "99 Adjuntos/Pasted image 20261106081113.png",
+    "99 Adjuntos/Pasted image 20261106080016.png",
+    "99 Adjuntos/Pasted image 20261106080001.png",
+    "99 Adjuntos/Pasted image 20261106075946.png",
+    "99 Adjuntos/Pasted image 20261106075936.png",
+    "08 Sistemas Operativos/lab/Notas Lab 2.md",
+    "08 Sistemas Operativos/lab/Lab_2_3_guia.md",
+    "MAQUETA_VIDEO.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla Chi-Cuadrado.pdf",
-    "99 Adjuntos/Pasted Image 20261031130257_525.png",
-    "09 Probabilidad y estadistica/teorico/Parcial2/1) Clase 7 y 9 de octubre.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.a279b38f112e",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.47b0ddac0c9e",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.875082a04df9",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.4e008ca971e3",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.b4ad010b1f01",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md.tmp.282613.9065c7d66935",
+    "99 Adjuntos/Pasted Image 20261102210009_140.png",
+    "99 Adjuntos/Pasted Image 20261102205957_452.png",
+    "99 Adjuntos/Pasted Image 20261102205731_622.png",
+    "99 Adjuntos/Pasted Image 20261102205615_810.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak.md",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak3.md",
+    "08 Sistemas Operativos/NOTAS_VIDEO.md",
+    "08 Sistemas Operativos/teorico/3. Resumen Persistencia.md",
+    "08 Sistemas Operativos/teorico/2. Resumen Concurrencia.md",
+    "08 Sistemas Operativos/teorico/1. Resumen Virtualizacion.md",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica C (CLAUDE).md",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica A (CLAUDE).md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak2.md",
-    "08 Sistemas Operativos/lab/Lab_2_3_guia.md",
     "08 Sistemas Operativos/lab/Lab_1_guia_sintetizada.md",
     "08 Sistemas Operativos/lab/Lab 1 guia.md",
     "08 Sistemas Operativos/lab/cuestionario lab 0 y 1.md",
     "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 resuelto (mio).md",
-    "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
-    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 (Recuperatorio) res 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TA (Mio) 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2022-Parcial 2 TB (Mio) 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TA - Resuelto (mio) 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB.jpg",
-    "09 Probabilidad y estadistica/parciales/2/Parcial 2 2023-11-16 (Tema B).jpg",
-    "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 (Recuperatorio) resuelto 2025.md",
-    "09 Probabilidad y estadistica/parciales/2/2023-Parcial 2 TB (mio) todo 2025.md",
-    "99 Adjuntos/Pasted Image 20261025195345_182.png",
-    "99 Adjuntos/Pasted Image 20261025190931_014.png",
-    "99 Adjuntos/Pasted Image 20261025190915_530.png",
-    "08 Sistemas Operativos/teorico/Resumen Virtualizacion.md",
-    "08 Sistemas Operativos/teorico/Resumen Persistencia.md",
-    "08 Sistemas Operativos/teorico/Resumen Concurrencia.md",
-    "99 Adjuntos/Pasted Image 20261023150454_869.png",
-    "99 Adjuntos/Pasted Image 20261023150431_070.png",
-    "99 Adjuntos/Pasted Image 20261021101836_609.png",
-    "99 Adjuntos/Pasted Image 20261019100313_699.png",
-    "quicknote.md",
-    "08 Sistemas Operativos/practico/1.) Virtualizacion del cpu rtas nvas..md"
+    "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md"
   ]
 }
