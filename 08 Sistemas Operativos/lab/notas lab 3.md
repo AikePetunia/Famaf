@@ -1,574 +1,347 @@
-# Lab 3: Auditoría forense en FAT32 con FUSE
+# Lab 3: Sistemas de archivos y FAT32
 
-El lab implementa un sistema de auditoría para un filesystem FAT32 montado con FUSE: registra las operaciones críticas en un log binario y permite recuperar archivos borrados.
+## 1. Anatomía común de un sistema de archivos
 
-La parte central es entender **cuándo un archivo borrado puede recuperarse y cuándo no**. Si borrás un archivo y después otro reutiliza esos clusters sobrescribiendo los datos, el primero ya no se puede recuperar. El sistema tiene que detectarlo solo, consultando los logs.
+Un disco, o una imagen de disco, es solo una secuencia de bloques numerados: no sabe nada de archivos ni de directorios. El **sistema de archivos** es una forma de organizar esos bloques para ofrecer dos abstracciones:
 
-Son 3 piezas:
-1. **Registrar la actividad:** un archivo donde se guardan las actividades relevantes del usuario, como escrituras y borrados.
-2. **Comando de restaurado:** recupera archivos borrados.
-3. **Reconstruir archivos:** usa los logs para rearmar archivos borrados de más de un cluster.
+- **Archivos:** secuencias de bytes con un nombre, que se pueden leer y escribir desde cualquier posición (*offset*).
+- **Directorios:** listas que asocian nombres con archivos u otros directorios. Al anidarse forman el árbol que vemos con `ls -l` y `cd (Change Directory)`.
 
-## 1. Conceptos base
+Todo sistema de archivos guarda cuatro tipos de información:
 
-### Qué es un sistema de archivos
+| Parte                     | Para qué sirve                                                                        | En FAT32                         |
+| ------------------------- | ------------------------------------------------------------------------------------- | -------------------------------- |
+| Información del volumen   | Describe cómo está organizado el resto del disco. Es lo primero que se lee al montar. | Sector de boot                   |
+| Metadatos de cada archivo | Nombre, tamaño, fechas, atributos y dónde están sus datos.                            | Entrada de directorio (32 bytes) |
+| Datos                     | El contenido de los archivos, y también el de los directorios.                        | Área de datos (clusters)         |
+| Registro de espacio libre | Qué bloques se pueden usar para datos nuevos.                                         | Entradas con valor 0 en la FAT   |
 
-Es el componente del sistema operativo que administra y organiza los datos dentro de un dispositivo de memoria. Acá los datos se organizan en archivos y directorios, que tienen metadatos y una jerarquía definida por el usuario.
+#### ¿Que es Fat32? 
 
-### VFS y FUSE
+Fat32, (_File Allocation Table 32_) es un sistema de archivos creado por Microsoft en 1996 que organiza y almacena datos en unidades de almacenamiento, como memorias USB, tarjetas SD y discos externos
 
-**VFS** (*Virtual File System*) es la capa del kernel que ofrece la misma interfaz (`open`, `read`, `write`) para cualquier sistema de archivos. Recibe esas llamadas y se las pasa al filesystem que corresponde a esa carpeta.
+En FAT32 la tabla FAT cumple **dos roles**: registra el espacio libre e indica en qué orden se encadenan los clusters de cada archivo.
 
-**FUSE** (*Filesystem in Userspace*) permite escribir un sistema de archivos como un **programa común**, en espacio de usuario. Normalmente un filesystem es código dentro del kernel: es difícil de programar, y un bug puede tirar abajo todo el sistema.
+Dos ideas que valen para cualquier sistema de archivos:
 
-```
-echo hola > mnt/a.txt       programa cualquiera
-        │  syscall write()
-        ▼
-VFS (kernel)
-        │
-        ▼
-módulo FUSE del kernel      /dev/fuse
-        │
-        ▼
-fat-fuse (libfuse)          tu programa, en espacio de usuario
-        │
-        ▼
-fat_fuse_write()            en fat_fuse_ops.c
-        │
-        ▼
-disk.img                    lee y escribe la imagen
-```
+- **Un directorio también es un archivo.** Su contenido es la lista de entradas (nombre -> metadatos) de lo que contiene, y se guarda en bloques de datos.
+- **Para llegar a un archivo hay que recorrer el camino desde la raíz.** Para abrir `/docs/notas.txt` se lee la información del volumen para encontrar la raíz, se busca `docs` en la raíz, se lee ese directorio, se busca `notas.txt` y con sus metadatos se llega a los datos. Un bloque al que no lleva ningún camino es **inalcanzable**, aunque tenga datos.
 
-Se le dice a FUSE qué hacer completando `struct fuse_operations` con punteros a funciones: "cuando alguien haga `write`, llamá a `fat_fuse_write`". El esqueleto ya trae `read`, `write`, `unlink`, `rmdir`, `mkdir`, `rename`, etc.
-
-- Si algo sale mal se devuelve un número negativo con el error (`-ENOENT`, `-ENOSYS`, `-EOVERFLOW`). `read` y `write` devuelven cuántos bytes procesaron.
-- El código no es thread-safe, así que FUSE corre en un solo hilo (`-s`).
-
-### Alto nivel vs bajo nivel
-
-Una sola syscall (alto nivel) puede terminar en varias escrituras al disco (bajo nivel). Un `echo hola > mnt/a.txt` sobre un archivo nuevo puede buscar un cluster libre y marcarlo en la FAT, escribir los datos en el cluster y actualizar la dentry.
-
-### Borrado lógico vs físico
-
-Cuando hacés `rm file.txt`, el filesystem:
-
-1. Marca la dentry como borrada: primer byte = `0xE5`.
-2. Libera los clusters en la FAT: los marca como `0x0` (`FREE`).
-3. **No** sobrescribe los datos de los clusters.
-
-Eso es **borrado lógico**. Los datos siguen físicamente en el disco hasta que otro archivo reutilice esos clusters, que sería el **borrado físico**. Es como una biblioteca que saca la ficha del catálogo y marca el estante como disponible, pero deja el libro ahí.
+// Tabla fat32
+![[Pasted image 20261106234716.png]]
 
 ---
 
-## 2. FAT32 por dentro
+## 2. FAT32 en una página
 
-### Las tres zonas
+### Sectores y clusters
+
+- **Sector/Numero de cluster:** la unidad física del disco. En nuestras imágenes mide 512 bytes.
+- **Cluster:** Un cluster en este lab son 512 bytes. Un cluster por asi decirlo, es como una "medida de almacenamiento", almacena bytes (Informacion) con una asignacion de numero de cluster. 
+Ejemplo 
+![[Pasted image 20261106234638.png]]
+(El verde). Es un cluster 2, y tiene `FF FF FF 0F` como informacion. 
+
+Si el archivo no llena su último cluster, el resto queda desperdiciado (**fragmentación interna**). Con clusters más grandes la FAT tiene menos entradas, pero los archivos chicos desperdician más espacio.
+
+`fat_file` y todas sus operaciones solo usan clusters e ignoran los sectores. Los sectores se mencionan en `fat_volume`.
+##### Entradas de directorio y sector de datos
+![[Pasted image 20261106234135.png]]
+### Regiones del volumen
 
 ```
-┌───────────────┬───────────────┬──────────────────────────────┐
-│ Reserved Area │   FAT Area    │  Data Area: │ │ │ │ ... │ │  │
-└───────┬───────┴───────────────┴──────────────────────────────┘
-        ▼                                     └─ clusters
- Boot Sector │ FSINFO │ Bootstrap │ Reserved Sector
+ byte 0                                                              fin
+ ┌──────────────────┬──────────┬──────────┬─────────────────────────────┐
+ │ Región reservada │  FAT #1  │  FAT #2  │       Área de datos         │
+ │ (sector de boot) │          │ (copia)  │ cluster 2 │ cluster 3 │ ... │
+ └──────────────────┴──────────┴──────────┴─────────────────────────────┘
 ```
 
-| Componente       | Qué hace                                                                                                                                    |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sector de boot   | Define cómo está organizado el volumen: particiones, ubicación de la FAT y segmentos del sector de datos (clusters).                        |
-| Tabla(s) FAT     | Define dónde están los datos de cada archivo. Como pueden no estar en clusters contiguos, guarda la cadena de clusters del archivo.         |
-| Sector de datos  | Está dividido en clusters contiguos del mismo tamaño: clusters de datos y clusters de entradas de directorio.                               |
+- **Región reservada:** empieza con el **sector de boot**, que tiene los parámetros del volumen.
+- **Tablas FAT:** suele haber dos copias iguales, por redundancia. El esqueleto actualiza solo la primera.
+- **Área de datos:** los clusters con el contenido de archivos y directorios. En FAT32 **el directorio raíz también está acá**, en el cluster que indica el sector de boot.
 
-- La imagen del lab (`disk.img`) es un archivo común con el formato de un disco FAT32.
-- Un **cluster** es la unidad mínima que se le da a un archivo. En la imagen del lab, **1 cluster = 512 bytes**.
-- Suele haber 2 copias de la FAT, por seguridad.
-- La FAT está **mapeada en memoria** con `mmap()`: se usa como un arreglo y los cambios se reflejan en la imagen. Los datos de los clusters se leen y escriben con `pread()`/`pwrite()`.
+### Campos del sector de boot (esto deberia de tener el nombre tal cual, no lo tiene...)
+
+No hace falta aprender los offsets, solo que estos campos existen.
+
+| Campo                       | `fatfs.img`                         |
+| --------------------------- | ----------------------------------- |
+| Bytes por sector            | 512                                 |
+| Sectores por cluster        | 2, o sea clusters de **1024 bytes** |
+| Sectores reservados         | 32                                  |
+| Cantidad de tablas FAT      | 2                                   |
+| Sectores por FAT            | 1016                                |
+| Cluster del directorio raíz | 2                                   |
+
+Todos los números están en *little endian*. Se pueden leer de la imagen:
+
+```bash
+xxd -s 0x0B -l 6 resources/fatfs.img   # bytes/sector, sectores/cluster, reservados, #FATs
+xxd -s 0x2C -l 4 resources/fatfs.img   # cluster del directorio raíz
+```
+
+### Las cuentas
+
+```
+inicio_FAT        = sectores_reservados × bytes_por_sector
+inicio_área_datos = (sectores_reservados + cant_FATs × sectores_por_FAT) × bytes_por_sector
+
+entrada FAT del cluster N  →  inicio_FAT + N × 4
+datos del cluster N        →  inicio_área_datos + (N − 2) × bytes_por_cluster
+```
+
+// No me sirve de nada ver "Las cuentas" sin saber a que pertenecen.
+// Principalmente a algo que le falta a estos apuntes es lo "Visual", por que parece todos conceptos muy abstractos.
+// Tampoco me indica que significa cada cosa
+
+Se resta 2 porque las entradas 0 y 1 de la FAT están reservadas: **el primer cluster de datos es el 2**.
+
+Con `fatfs.img`:
+
+- `inicio_FAT` = 32 × 512 = 16 384
+- `inicio_área_datos` = (32 + 2 × 1016) × 512 = 1 056 768
+- La entrada FAT del cluster 100 está en el byte 16 384 + 400 = 16 784.
+- Los datos del cluster 100 empiezan en el byte 1 056 768 + 98 × 1024 = 1 157 120.
+
+En el código, estas cuentas las hacen `fat_table_cluster_offset()` y `fat_table_set_next_cluster()`.
 
 ### La tabla FAT
 
-La FAT es un arreglo: en la posición de cada cluster está el número del **siguiente** cluster del archivo. Cada entrada mide 4 bytes, así que la del cluster `n` está en el offset `n × 4`.
+Es un arreglo con una entrada de 4 bytes por cluster. La entrada `N` dice qué pasa con el cluster `N`:
 
-| Valor en la FAT             | Significa                       |
-| --------------------------- | ------------------------------- |
-| `0x00000000`                | Cluster libre                   |
-| Un número (ej. `9`)         | El archivo sigue en el cluster 9 |
-| `0x0FFFFFF8` a `0x0FFFFFFF` | Fin de la cadena                |
-| `0x0FFFFFF7`                | Cluster dañado                  |
+| Valor de `FAT[N]`           | Significado                                          |
+| --------------------------- | ---------------------------------------------------- |
+| `0x00000000`                | Cluster libre                                        |
+| `2` … `0x0FFFFFEF`          | Cluster usado: el valor es el **siguiente** cluster  |
+| `0x0FFFFFF7`                | Cluster dañado (*bad cluster*)                       |
+| `0x0FFFFFF8` … `0x0FFFFFFF` | Último cluster del archivo (*end of chain*, EOC)     |
 
-Los números se guardan en **little endian** (primero el byte menos significativo): `0A 00 00 00` es el 10, y `FF FF FF 0F` es `0x0FFFFFFF`.
+Los valores tienen 28 bits útiles, y los 4 altos están reservados. Por eso `0xFFFFFFFF` no es uno de los valores especiales de la tabla.
 
-Ejemplo de la filmina:
-
-| Cluster | Valor | Cluster | Valor | Cluster | Valor | Cluster | Valor |
-| ------- | ----- | ------- | ----- | ------- | ----- | ------- | ----- |
-| 0       | reservado | 1   | reservado | 2   | FIN   | 3       | 4     |
-| 4       | 5     | 5       | 6     | 6       | FIN   | 7       | 10    |
-| 8       | 9     | 9       | 13    | 10      | 14    | 11      | FIN   |
-| 12      | libre | 13      | FIN   | 14      | FIN   | 15      | libre |
-
-Las cadenas que quedan son:
+Un archivo es una **lista enlazada de clusters**: el primero se guarda en la entrada de directorio y los siguientes salen de la FAT.
 
 ```
-Raíz:      2 → FIN
-Archivo:   3 → 4 → 5 → 6 → FIN     contiguo
-Archivo:   8 → 9 → 13 → FIN        fragmentado
-Archivo:   7 → 10 → 14 → FIN       fragmentado
-Archivo:   11 → FIN                un solo cluster
+Entrada de directorio:  nombre = "NOTAS   TXT", cluster inicial = 5, tamaño = 2500
+
+FAT:  ...  [5] = 9   [6] = EOC   [7] = 0   [8] = 0   [9] = 6  ...
+
+       5 ──→ 9 ──→ 6 ──→ fin
 ```
 
-**Ejemplo de truncate.** Con clusters de 512 B, truncar el archivo que empieza en el cluster 7 a un offset de 600 B deja la cadena en `7 → 10 → FIN`: 600 B necesitan 2 clusters. El cluster 14 queda libre.
+Los clusters no tienen por qué ser contiguos: el archivo está **fragmentado**, y la FAT es la única que sabe el orden. Tampoco tienen que estar en orden ascendente: acá el 6 va después del 9.
 
-### Entradas de directorio (dentries)
+(Vengo de debatir: Si los clusters son listas enlazadas, o sea uno atras del otro, si pierdo el cluster 8, pierdo todos los clusters contiguos que le queda, provocando una fragmenteacion (espacio interno no usado))
+### La entrada de directorio (32 bytes)
 
-En FAT no hay inodos. Un directorio es un archivo cuyo contenido es una lista de **dentries de 32 bytes**, igual de grandes todas.
+// Nuevamente, esto deberia de tener los nombres del struct que hicismo
 
-| Campo                      | Qué guarda                                     |
-| -------------------------- | ---------------------------------------------- |
-| Nombre (8) + extensión (3) | Formato 8.3                                    |
-| Atributos                  | Directorio, oculto, solo lectura, etc.         |
-| Fechas y horas             | Creación, último acceso, última modificación   |
-| Primer cluster             | Dónde empieza la cadena en la FAT              |
-| Tamaño                     | En bytes                                       |
+| Offset | Tamaño | Campo                                                                    |
+| ------ | ------ | ------------------------------------------------------------------------ |
+| 0      | 8      | Nombre, relleno con espacios. **El primer byte es especial**             |
+| 8      | 3      | Extensión                                                                |
+| 11     | 1      | Atributos (`0x10` = directorio, `0x02` = oculto, `0x01` = solo lectura…) |
+| 13–19  |        | Fecha y hora de creación y último acceso                                 |
+| 20     | 2      | 16 bits altos del cluster inicial                                        |
+| 22–25  |        | Fecha y hora de modificación                                             |
+| 26     | 2      | 16 bits bajos del cluster inicial                                        |
+| 28     | 4      | Tamaño en bytes (**0 para directorios**)                                 |
 
-```
-dentry: nombre = file.dat, primer cluster = 40, tamaño = 6230
-FAT:    40 → 41 → 46 → EOF
-```
+El primer byte del nombre:
 
-El primer byte del nombre tiene significados especiales:
+- `0x00`: la entrada está libre **y no hay más entradas** en este directorio.
+- `0xE5`: la entrada está libre porque se borró un archivo, pero **puede haber entradas válidas después**.
 
-| Valor  | Constante           | Significa                   |
-| ------ | ------------------- | --------------------------- |
-| `0xE5` | `FILE_FOR_DELETION` | Dentry borrada              |
-| `0x00` | `DENTRY_END_OF_DIR` | Fin del directorio          |
+El tamaño en bytes hace falta porque la cadena solo dice cuántos clusters usa el archivo, no cuántos bytes del último son válidos. Un archivo de 2500 bytes usa 3 clusters (3072 bytes), y los últimos 572 no son parte del archivo.
 
-Como los datos de un archivo están en su dentry y no en un inodo aparte, **no se pueden hacer hard links** en FAT.
+Un cluster de 1024 bytes tiene lugar para 1024 / 32 = **32 entradas de directorio**.
 
-### Imagen vs memoria
-
-Cada dato existe en dos lugares, y al escribir hay que mantener los dos iguales:
-
-| Dónde vive   | Estructura        | Ejemplo de campos                                       |
-| ------------ | ----------------- | ------------------------------------------------------- |
-| En la imagen | `fat_dir_entry_s` | `base_name`, `extension`, `start_cluster_low`, `attribs` |
-| En memoria   | `fat_file_s`      | `filepath`, `start_cluster`, `is_dir`                   |
-
-Ejemplo de un sector de datos con `/pregunta.txt` y `/dir/f1.txt`:
-
-```
-0x00 Reservado    0x01 Reservado    0x02 raíz (dentries)    0x03 contenido de /pregunta.txt
-0x04 dentries     0x05 dir .audit   0x06 contenido de       0x07
-     de /dir                             /dir/f1.txt
-```
-
-- El cluster `0x02` guarda las dentries de `pregunta.txt` (empieza en `0x03`) y de `dir` (empieza en `0x04`).
-- El cluster `0x04` es el contenido de `/dir`: una lista de dentries, entre ellas `f1.txt` (empieza en `0x06`).
-- `is_dir` en realidad sale de `fat_file_is_directory`.
-
-### Cómo está armado el código
-
-| Módulo                               | Qué hace                                                                       |
-| ------------------------------------ | ------------------------------------------------------------------------------ |
-| `fat_fuse.c`                         | `main`: arma el volumen, completa `fuse_operations` y llama a `fuse_main`      |
-| `fat_volume.c`                       | Monta: abre la imagen, lee el sector de boot y la FAT, crea el árbol con la raíz |
-| `fat_fuse_ops.c`                     | Las operaciones que llama FUSE: lógica de alto nivel                           |
-| `fat_file.c`                         | TAD `fat_file`: lectura y escritura de bajo nivel en clusters                  |
-| `fat_table.c`                        | TAD `fat_table`: seguir cadenas, buscar clusters libres, modificar la FAT      |
-| `fat_fs_tree.c`, `hierarchy_tree.c`  | Árbol de directorios en memoria                                                |
-| `fat_filename_util.c`, `fat_util.c`  | Nombres 8.3, fechas, conversiones de bytes                                     |
-
-Funciones útiles:
-
-| Función                         | Para qué                         |
-| ------------------------------- | -------------------------------- |
-| `fat_file_pread()`/`fat_file_pwrite()` | Leer y escribir datos de archivos |
-| `fat_table_get_cluster_value()` | Leer el valor de la FAT de un cluster |
-| `fat_table_set_cluster()`       | Modificar un valor en la FAT     |
-| `fat_tree_search()`             | Buscar un archivo por path       |
+(estaria bueno decir que borrar no es literal borrar, es solo marcar q es escribible y no se borra la informacion, por eso si no pisamos la dentry, podemos recueprar archivos)
 
 ---
 
-## 3. Operaciones en FAT
+## 3. Vida de un archivo en FAT32
 
-### Borrado de archivos
+### Cómo elige un cluster libre el esqueleto
 
-```
-fat_fuse_ops.c                 fat_file.c
-fat_fuse_unlink  ───────────►  fat_file_unlink
-                                     └──► fat_file_remove_child_direntry
-```
+`fat_table_get_next_free_cluster()` recorre la FAT **desde el cluster 2** y devuelve el primero con valor 0 (*first fit*). Un cluster liberado por un borrado vuelve a ser candidato enseguida, y si es el libre de menor número, la próxima operación que pida un cluster lo va a reutilizar.
 
-```python
-def fat_file_unlink(file, parent):
-    table = file.table
-    cluster = file.start_cluster
+### `mkdir /dir` y `create /dir/a.txt`
 
-    while not is_end_of_cluster(cluster):                # recorre toda la cadena
-        siguiente = table.next_cluster[cluster]          # guarda el siguiente
-        table.next_cluster[cluster] = FAT_CLUSTER_FREE   # libera este
-        cluster = siguiente
+Las dos pasan por `fat_file_init()` y hacen lo mismo en el disco:
 
-    fat_file_remove_child_direntry(parent, file.dentry)
+1. Buscan un cluster libre `C`.
+2. Marcan `FAT[C] = EOC`: el archivo ocupa un cluster.
+3. Arman la entrada de directorio con nombre, atributos, fechas, cluster inicial `C` y tamaño 0.
+4. Escriben esa entrada en los clusters de datos del **directorio padre** (`fat_file_add_child_direntry()`).
 
-def fat_file_remove_child_direntry(parent, child_dentry):
-    child_dentry.base_name[0] = FILE_FOR_DELETION        # 0xe5
-    write_dir_entry(parent, child_dentry)
-```
+Después, en memoria, se inserta el nuevo `fat_file` en el árbol (`fat_tree_insert()`).
 
-La cadena se pierde en este paso: al poner cada casillero en `FREE`, la FAT deja de decir qué cluster seguía a cuál. Por eso hay que guardarla en el log.
+Por ejemplo, al crear `/.audit` en una imagen vacía se toma el primer cluster libre, se marca como EOC y se agrega una entrada en el cluster raíz (el 2). Al crear `/.audit/events.bin` se repite lo mismo, pero la entrada va en el cluster de `/.audit`.
 
-### Lectura de directorios
+Diferencias del esqueleto con la especificación:
 
-```
-fat_fuse_ops.c                 fat_file.c
-fat_fuse_read_dir  ─────────►  fat_file_read_children
-                                     └──► parse_dir_entries_in_cluster (por cada cluster)
-```
+| Tema                  | Según FAT                                                    | En el esqueleto                                                |
+| --------------------- | ------------------------------------------------------------ | -------------------------------------------------------------- |
+| Archivos vacíos       | Pueden tener cluster inicial 0 y no ocupar ningún cluster    | Se les asigna uno igual                                        |
+| `.` y `..`            | Están en el primer cluster del directorio nuevo              | No se escriben: `readdir` las agrega al listar                 |
+| Nuevas entradas       |                                                              | Van al final: no se reutilizan los lugares con `0xE5`          |
+| Directorios llenos    | Crecen como un archivo: se les encadena otro cluster         | No se implementa: solo entran las entradas de su primer cluster |
 
-```python
-def fat_file_read_children(dir):
-    entry_list = []
+### `write`
 
-    for cluster in dir.clusters():
-        parse_dir_entries_in_cluster(cluster, entry_list)
-
-    return entry_list
-
-def parse_dir_entries_in_cluster(cluster, entry_list):
-    for dentry in cluster.dir_entries():
-        if is_end_of_directory(dentry):      # 0x00: corta este cluster
-            break
-        if ignore_dentry(dentry):            # 0xe5, por ejemplo: la salta
-            continue
-        entry_list.append(dentry)
-
-def is_end_of_directory(dentry):
-    return dentry.base_name[0] == DENTRY_END_OF_DIR      # 0x00
-
-def ignore_dentry(dentry):
-    return !file_basename_valid(dentry.base_name) ||
-        !file_extension_valid(dentry.extension)
-
-def file_basename_valid(base_name):
-    if base_name[0] in {'\0', ' ', 0xe5}:
-        return false
-    ...
-```
-
-### Qué pasa al parsear
-
-| Caso                                                | Dentries                              | `entry_list`                       |
-| --------------------------------------------------- | ------------------------------------- | ---------------------------------- |
-| Normal                                              | `hola.txt`, `a.out`, `test`, `nota.txt` | Las 4                            |
-| Normal: una marcada como borrada                    | `hola.txt`, `a.out`, `[0xe5...]`, `nota.txt` | `hola.txt`, `a.out`, `nota.txt` |
-| Erróneo: una marcada con ceros                      | `hola.txt`, `a.out`, `[0x00...]`, `nota.txt` | `hola.txt`, `a.out`         |
-
-- `0xE5` usa `continue`: salta esa dentry y sigue.
-- `0x00` usa `break`: todo lo que viene después en ese cluster **deja de verse**.
-
-**Caso borde: múltiples clusters.** El `break` solo corta el cluster actual, y el `for` de `fat_file_read_children` sigue con el próximo:
+`fat_file_pwrite()` escribe los bytes en los clusters que correspondan al offset. Si la escritura sigue después del último cluster, pide uno nuevo (`next_or_new_cluster()`):
 
 ```
-dentry.cluster0                         dentry.cluster1
-hola.txt, a.out, [0x00...], nota.txt    rshot.html, gadget4, plus.png, vft.sif
-
-entry_list = [hola.txt, a.out, rshot.html, gadget4, plus.png, vft.sif]
+Antes:   FAT[7] = EOC                          (archivo: 7)
+Pide un cluster libre → 12
+Después: FAT[7] = 12,  FAT[12] = EOC           (archivo: 7 → 12)
 ```
 
-`nota.txt` desaparece, pero los archivos del segundo cluster se siguen viendo.
+Al final actualiza el tamaño y la fecha de modificación de la entrada, y la reescribe en el cluster del padre.
+
+### `unlink` y `rmdir`
+
+`fat_fuse_unlink()` y `fat_fuse_rmdir()` llaman a `fat_file_unlink()`, que:
+
+1. Recorre la cadena y pone cada entrada de la FAT en 0. Antes de liberar cada cluster, escribe un byte `'\0'` al principio del cluster.
+2. Reemplaza el primer byte del nombre por `0xE5` y reescribe la entrada en el directorio padre.
+
+Después se saca el archivo del árbol en memoria (`fat_tree_delete()`).
+
+`rmdir(2)` debería fallar con `ENOTEMPTY` si el directorio tiene contenido, pero el esqueleto no lo verifica. Si se borrara un directorio con archivos, sus clusters quedarían marcados como usados sin que ninguna entrada los referencie. Normalmente no pasa, porque `rm -r` borra primero el contenido.
 
 ---
 
-## 4. El sistema de auditoría
+## 4. Borrado lógico vs. físico
 
-### Parte 1: crear el log
+- **Borrado físico:** se destruyen los datos, por ejemplo sobrescribiendo los clusters con ceros.
+- **Borrado lógico:** solo se modifican los **metadatos**, para que el sistema de archivos deje de considerar el archivo y su espacio. Los datos quedan donde estaban.
 
-Al montar, se crea `/.audit/events.bin`:
+FAT32 hace borrado lógico, porque es mucho más barato: se escriben unos pocos bytes en lugar de todos los clusters.
 
-- Si ya existen, se cargan; si no, se crean.
-- Tiene que persistir entre montajes: al desmontar y volver a montar se conservan los logs anteriores.
-- Hay que decidir dónde va el código y qué funciones hace falta, por ejemplo `audit_init()`, `audit_write_event()` y `audit_read_event()`.
+### Qué queda en el disco después de `rm /dir/a.txt`
 
-### Parte 2: eventos de tamaño fijo
-
-Todos los eventos miden lo mismo, igual que las dentries. Eso facilita leer, escribir y acceder directo: el evento `k` está en la posición `k × tamaño`, y la cantidad de eventos es `tamaño del archivo / tamaño del evento`.
-
-Esto es **serialización binaria**: la estructura se escribe tal cual está en memoria. Por eso `cat events.bin` muestra basura y hace falta `audit_reader`.
-
-Ejemplo base del enunciado (se puede y se debe modificar):
-
-```c
-typedef enum {
-    OP_WRITE = 0,
-    OP_UNLINK = 1,
-    OP_MKDIR = 2,
-    OP_RMDIR = 3,
-} operation_type_t;
-
-typedef struct __attribute__((packed)) {
-    uint64_t event_id;        // ID secuencial
-    uint64_t timestamp;       // Unix timestamp
-    uint32_t operation_type;  // Tipo de operación (enum)
-    char username[64];        // Usuario que realizó la operación
-
-    // Información específica de la operación
-    // Sugerencia: usar union para diferentes tipos
-    char filepath[256];       // Path del archivo
-    uint64_t offset;          // Para write: offset
-    uint64_t size;            // Para write: tamaño
-
-    // Padding para completar tamaño fijo
-    uint8_t _padding[512];
-} audit_event_t;
-```
-
-- `__attribute__((packed))`: el compilador no mete huecos de relleno entre campos.
-- `union`: cada evento es una sola operación, así que los campos específicos pueden reusar el mismo espacio.
-- `sizeof(audit_event_t)` hay que calcularlo y justificarlo.
-
-**Cuánto medir:** entre 512 B (1 cluster) y 1024 B (2 clusters). Si es muy grande, cada evento consume varios clusters y llena el filesystem rápido.
-
-**Límite:** con `cluster_chain[32]` y clusters de 512 B, solo se recuperan archivos de hasta **32 × 512 B = 16 KB**. Si un archivo lo supera, hay que elegir y documentar:
-1. No loguearlo.
-2. Loguear parcialmente los primeros 32 clusters.
-3. Implementar una estrategia para archivos grandes (punto estrella).
-
-### Parte 3: verificar con audit_reader
+Supongamos que `a.txt` ocupaba los clusters 40 → 41 y medía 1500 bytes.
 
 ```
-./audit_reader /mnt/fuse/.audit/events.bin
-
-ID   Timestamp             Operation   Path
-1    2026-10-10 14:30:15   write       /file.txt
-2    2026-10-10 14:30:20   unlink      /file.txt
-3    2026-10-10 14:30:25   mkdir       /dir1
-
-Total events: 3
+                    ANTES                               DESPUÉS
+Entrada en /dir:    "A       TXT"  inicio=40 tam=1500   0xE5 "       TXT"  inicio=40 tam=1500
+FAT:                [40]=41  [41]=EOC                   [40]=0  [41]=0
+Clusters 40 y 41:   contenido del archivo               contenido del archivo
+                                                        (salvo el primer byte)
 ```
 
-Si cambiás la estructura, hay que actualizar `audit_reader.c`. Los dos comparten `src/audit.h` para mantener el mismo formato.
+- **Se pierde:** el primer carácter del nombre y **la cadena de clusters**. Con la FAT en 0 no queda forma de saber que después del 40 venía el 41.
+- **Se conserva:** el resto del nombre, la extensión, el cluster inicial, el tamaño, las fechas y casi todos los datos.
 
-### Parte 4: qué guardar de cada operación
+Los datos se vuelven **inalcanzables**: ya no hay ninguna entrada válida que apunte al 40.
 
-Hay que loguear `write`, `unlink`, `mkdir` y `rmdir`. Sugerencia de la filmina:
+### Cuándo se pierden de verdad los datos
 
-| Evento        | Campos                                                                       |
-| ------------- | ---------------------------------------------------------------------------- |
-| `Write`       | `u64 offset`, `u64 size`, `u32 num_clusters`, `u32 clusters[NMAX]`           |
-| `Unlink`      | `u32 clusters[NMAX]`, `u32 file_size`                                        |
-| `Mknod`       | `u32 dir_cluster`                                                            |
-| `Mkdir/Rmdir` | `u32 dir_cluster`                                                            |
+Los clusters 40 y 41 ahora figuran como libres. En cuanto otra operación pida un cluster (crear un archivo, `mkdir`, agrandar un archivo con `write`), el allocator *first fit* puede elegirlos y **sobrescribirlos**.
 
-- **¿Primer cluster o cadena completa?** Cadena completa, porque el archivo puede estar fragmentado. Después de `unlink` la FAT ya no la tiene, y con el primer cluster solo se podría adivinar.
-- **¿Para qué sirve loguear `write`?** Para saber qué clusters se ocuparon después de un borrado.
-- **¿Por qué `mkdir`?** Un directorio nuevo también puede reusar clusters de un archivo borrado.
+Ver que hoy `FAT[40] = 0` **no alcanza** para saber que los datos siguen ahí: el cluster pudo ser usado por otro archivo y liberado de nuevo.
 
-**Sniffing de eventos:** los eventos dan información para saber qué clusters ocupó cada archivo en el tiempo. Qué tan fácil es recuperar, y hasta qué tamaño, depende de cómo se diseñaron.
+### Sin información extra, recuperar es adivinar
+
+Una herramienta que solo mira el disco ve la entrada con `0xE5`: sabe que el archivo empezaba en el 40 y ocupaba 2 clusters, pero no cuál era el segundo. Solo puede **suponer** que eran contiguos y que nadie los sobrescribió. Si el archivo estaba fragmentado o los clusters se reutilizaron, el resultado es basura.
+
+Para recuperar con certeza hace falta información guardada **antes** de que se pierda. Esa es la idea del sistema de auditoría.
+
+### El byte que escribe el esqueleto
+
+`fat_file_unlink()` escribe un `'\0'` al principio de cada cluster que libera. Lo hace para que, si ese cluster se reutiliza como directorio, la primera entrada se lea como "fin del directorio" (`0x00`) y no como basura. Para la recuperación, significa que **el primer byte de cada cluster del archivo borrado se pierde**.
 
 ---
 
-## 5. Recuperación de archivos
+## 5. Hablarle al sistema de archivos desde un programa de usuario
 
-### Por qué hace falta el log
-
-Sin una fuente adicional hay dos problemas:
-
-1. Solo se podría asumir que los clusters eran contiguos (100 → 101 → 102), y falla si el archivo estaba fragmentado.
-2. Otra operación pudo haber sobrescrito esos clusters, y recuperar dejaría un contenido inconsistente.
-
-El log resuelve los dos: da la cadena exacta y permite detectar si hubo corrupción.
-
-### Algoritmo
-
-1. **Localizar** el evento que evidencia que el archivo fue borrado.
-2. **Verificar** si se puede recuperar, analizando otros eventos: que ningún evento posterior haya tocado esos clusters.
-3. **Reconstruir** el archivo y efectivizar sus clusters.
+Un programa de usuario solo puede pedirle cosas al sistema de archivos mediante **llamadas a sistema**. El VFS las recibe, ve que el path pertenece a un volumen montado con FUSE y se las pasa a nuestro proceso, que ejecuta la función correspondiente de `struct fuse_operations`.
 
 ```
-restore /dir1/file.txt
-   │
-   ▼
-Buscar en el log el unlink de ese path ──── no hay ──► Avisar
-   │
-   ▼
-Sacar cadena de clusters y tamaño
-   │
-   ▼
-¿Un evento posterior usa esos clusters? ─── sí ──► Avisar y no restaurar
-   │ no
-   ▼
-Rehacer la cadena en la FAT
-   │
-   ▼
-Crear la dentry en el directorio padre
-   │
-   ▼
-Actualizar el árbol en memoria
+ programa ──syscall──→ VFS (kernel) ──→ módulo FUSE (kernel) ──→ fat-fuse (usuario)
+                                                                   fat_fuse_unlink(), ...
 ```
 
-La consigna está poco definida a propósito: hay muchas soluciones posibles. Mientras más información guarde el log, mejor es la recuperación, pero el sistema queda más lento y ocupa más espacio.
+`restore` no es ninguna de esas operaciones, y no podemos crear una llamada a sistema nueva porque habría que modificar el kernel. Hay dos formas de hacerle llegar el pedido.
 
-### Casos borde
+### Opción 1: `ioctl`
 
-- Archivos que nunca existieron.
-- Archivos que todavía existen.
-- Archivos con nombres repetidos: en la entrega básica se puede restaurar el más reciente.
-- El archivo nunca fue borrado o no está en los logs.
-- Ya no existe el directorio padre.
-- Ya hay otro archivo con el mismo nombre.
-- El log se vuelve demasiado grande.
-- Qué hacer con los logs al desmontar.
+`ioctl(fd, cmd, arg)` es una llamada a sistema genérica para operaciones que **no tienen una llamada a sistema propia**. Se usa mucho con dispositivos: por ejemplo, para preguntarle a una terminal su tamaño.
 
-Se puede elegir no implementar alguno, pero hay que **notificar al usuario y no fallar en silencio**.
+- `fd`: un descriptor de archivo abierto. El comando va al sistema de archivos o dispositivo de ese archivo, así que el programa tiene que abrir algo **dentro del punto de montaje**.
+- `cmd`: un número que identifica el comando. Se arma con las macros `_IO`, `_IOR`, `_IOW` e `_IOWR` de `<sys/ioctl.h>`, que codifican la dirección de los datos y su **tamaño**. FUSE usa ese tamaño para saber cuántos bytes copiar entre el programa y nuestro proceso.
+- `arg`: un puntero a los datos del comando.
 
-### Cómo invocar restore
+Del lado del filesystem, FUSE llama a `fat_fuse_ioctl()`, que en el esqueleto devuelve `-ENOSYS`. Recibe el `cmd` y los datos, hace el trabajo, y su valor de retorno le llega al programa como resultado de `ioctl()`. Devolver `-ENOENT` hace que `ioctl()` retorne -1 con `errno = ENOENT`.
 
-```
-./restore /mnt/fuse /dir1/file.txt
-```
+El soporte de `ioctl` en FUSE varía según el sistema operativo y la plataforma. Por eso existe la segunda opción.
 
-No se pueden implementar syscalls nuevas en el sistema operativo, así que hay dos alternativas:
+### Opción 2: un archivo de control
 
-| Opción                | Cómo funciona                                                                              | Contras                                         |
-| --------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------- |
-| `ioctl` (recomendada) | El programa `restore` llama a `ioctl`, y la lógica va en `fat_fuse_ioctl()`                | No anda en todas las arquitecturas sin configurar |
-| Archivo de control    | Se escribe un path en un archivo especial, como `/.audit/.restore`, y se detecta esa escritura | Más simple, menos elegante                  |
+El programa escribe un pedido (por ejemplo, el path a restaurar) en un archivo especial como `/.audit/.restore`. En `fat_fuse_write()` se detecta ese destino y, en lugar de guardar los bytes, se ejecuta la restauración.
 
-Conviene implementar primero el comando y, cuando funcione, el algoritmo.
+Funciona en cualquier plataforma, porque solo usa `write`, pero tiene desventajas:
 
-### ioctl
-
-Es una syscall de manipulación especial de archivos:
-
-```c
-int ioctl(int fd, unsigned long op, ... /* argp */)
-```
-
-- `fd`: algún file descriptor.
-- `op`: código de operación, dependiente de cada dispositivo.
-- `argp`: argumento especial de usuario (`void *`).
-
-**Desde el programa de usuario:**
-
-```c
-#include <fcntl.h>      // open
-#include <sys/ioctl.h>  // ioctl
-#include "fat_types.h"  // FAT_IOCTL_HELLO (definido arbitrariamente ahí)
-
-int main() {
-    const char *path = "/tmp/my_volume/.audit/events.bin";
-    int fd = open(path, 0);
-    int res = ioctl(fd, FAT_IOCTL_HELLO);
-    return res;
-}
-```
-
-**El hook en FUSE (`fat_fuse_ops.c`, caso representativo):**
-
-```c
-#define FAT_IOCTL_HELLO 0xF001
-
-int fat_fuse_ioctl(/* path */, int op, /* arg, info, flags, data */) {
-    if (op == FAT_IOCTL_HELLO) {
-        DEBUG("ioctl: Hello world!");
-    }
-    return 0;
-}
-```
-
-```
-DEBUG audit.c:68 audit_init(): Audit file: /.audit/events.bin
-DEBUG fat_fuse_ops.c:605 fat_fuse_ioctl(): ioctl: Hello world!
-```
-
-El `fd` es **simbólico**: puede no hacer falta estrictamente, pero tiene que referir a un archivo válido y existente.
-
-#### Argumentos de ioctl
-
-- El número de operación está ligado a la función del tercer argumento.
-- Ese argumento puede ser de entrada y/o salida, o ignorarse.
-- El número se puede codificar con las macros `_IO`, `_IOR`, `_IOW` e `_IOWR`.
-
-Ejemplo: una operación que devuelve el estado del filesystem.
-
-```c
-enum status { STATUS_HEALTHY, STATUS_CORRUPTED, ... };
-
-#define FAT_SAMPLE     _IO('F', 0)                // ningún significado específico
-#define FAT_GET_STATUS _IOR('F', 42, enum status) // obtener status del filesystem
-```
-
-```c
-int fat_fuse_ioctl(/* path */, int op, /* arg, info, flags */, void *data) {
-    // op es el número de operación
-    // data es el tercer argumento de ioctl
-    if (op == FAT_GET_STATUS) {
-        enum status *stat = data;
-        *stat = STATUS_HEALTHY;
-    }
-}
-```
-
-#### Estructura de un número de operación
-
-| Bits    | Campo  | Tamaño  | Qué es                                                   |
-| ------- | ------ | ------- | -------------------------------------------------------- |
-| 31...30 | `dir`  | 2 bits  | Dirección: lectura, escritura, ambas o ninguna           |
-| 29...16 | `size` | 14 bits | Tamaño en bytes de la estructura del argumento (máx. 16383) |
-| 15...8  | `type` | 8 bits  | Magic: identificador del driver o subsistema             |
-| 7...0   | `nr`   | 8 bits  | Número para diferenciar nuestros comandos internos       |
+- Una operación que normalmente guarda datos pasa a tener otro significado según el path.
+- Devolver el resultado es más indirecto: hay que codificarlo en el retorno de `write` o dejarlo en otro archivo.
 
 ---
 
-## 6. Puntos estrella
+## 6. Memoria y disco en el esqueleto
 
-- **Restore recursivo:** `restore -r /dir/` recupera un directorio completo. Hay que restaurar primero el padre y después los archivos, y decidir qué hacer si solo algunos se pueden recuperar.
-- **Visualizador web:** timeline de eventos, filtros por operación, indicadores de qué se puede recuperar y un botón de restore.
-- **Optimización del allocator:** asignar clusters secuencialmente (watermark) y reutilizar los viejos solo cuando no quede espacio. Así un archivo borrado tarda más en ser pisado.
-- **Archivos grandes (más de 32 clusters):**
-    1. Si son contiguos, guardar solo `start_cluster + length`.
-    2. Eventos de continuación: un `OP_UNLINK_CONTINUATION` con el resto de la cadena.
-    3. Archivo auxiliar `/.audit/chains.bin`: más complejo, pero más eficiente en espacio.
+Mientras el volumen está montado, la información vive en la **imagen** y en **estructuras en memoria** de `fat-fuse`. Las operaciones FUSE consultan la memoria, pero lo único que sobrevive a desmontar es la imagen. Toda modificación tiene que hacerse **en los dos lugares**.
+
+### Las tres capas
+
+| Estructura  | Qué es                                                              | Cómo se sincroniza con la imagen                                                                       |
+| ----------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `fat_table` | La tabla FAT, mapeada en memoria con `mmap`                         | `fat_table_set_next_cluster()` escribe en la imagen con `pwrite` **y** actualiza la memoria mapeada    |
+| `fat_file`  | Un archivo o directorio: copia de su entrada, cluster inicial, posición en el padre | Las funciones de `fat_file.c` reescriben la entrada en el padre con `pwrite`             |
+| `fat_tree`  | El árbol de directorios con todos los `fat_file`                    | **No existe en la imagen**: se construye al montar y se actualiza con `fat_tree_insert()` y `fat_tree_delete()` |
+
+### `mmap` y `MAP_PRIVATE`
+
+`mmap()` hace que una región de un archivo se vea como memoria: se accede como a un arreglo (`fat_map[N]`), y el sistema operativo carga las páginas a medida que se usan.
+
+El esqueleto mapea la FAT con `MAP_PRIVATE`. Con esa opción, **escribir en la memoria mapeada no modifica el archivo**: los cambios quedan en una copia privada del proceso. Con `MAP_SHARED` sí llegarían. Por eso `fat_table_set_next_cluster()` hace las dos cosas:
+
+```c
+pwrite(table->fd, &next_cluster_le32, sizeof(le32), entry_offset); // imagen
+((le32 *)table->fat_map)[cur_cluster] = next_cluster_le32;         // memoria
+```
+
+Si solo se modificara `fat_map`, todo funcionaría mientras el volumen está montado, pero los cambios se perderían al desmontar. **Es el error más común del laboratorio**, y solo se ve al desmontar y volver a montar.
+
+### El árbol se lee una sola vez
+
+Al montar, `fat_fuse_init()` lee el directorio raíz y arma el árbol. Cada directorio se lee del disco **la primera vez** que se lo recorre (`children_read`), y después se usa solo lo que está en memoria:
+
+- Si se escribe una entrada en la imagen sin insertar el `fat_file` en el árbol, el archivo **no aparece** hasta desmontar y volver a montar.
+- Si se inserta en el árbol sin escribir la entrada en la imagen, el archivo se ve mientras está montado y **desaparece** al volver a montar.
+
+Para saber si un cambio es persistente, la pregunta es siempre: **¿alguien escribió en la imagen?**
+
+| Función                                  | ¿Escribe en la imagen?             |
+| ---------------------------------------- | ---------------------------------- |
+| `fat_table_set_next_cluster()`           | Sí (entrada de la FAT)             |
+| `fat_file_add_child_direntry()`          | Sí (entrada en el directorio padre) |
+| `fat_file_pwrite()`                      | Sí (datos y entrada de directorio) |
+| `fat_tree_insert()`, `fat_tree_delete()` | No, solo memoria                   |
 
 ---
 
-## 7. Debugging y comandos
-
-| Comando                                 | Qué hace                                       |
-| --------------------------------------- | ---------------------------------------------- |
-| `make`                                  | Compila `fat-fuse`                             |
-| `./fat-fuse disk.img mnt`               | Monta la imagen en `mnt`                       |
-| `./fat-fuse -f disk.img mnt`            | Monta en primer plano: se ven los `DEBUG`      |
-| `./fat-fuse disk.img /mnt/fuse -d`      | Muestra todos los mensajes                     |
-| `fusermount -u mnt`                     | Desmonta                                       |
-| `./audit_reader mnt/.audit/events.bin`  | Muestra el log en forma legible                |
-
-- Usar `DEBUG()` generosamente (`fat_util.h`).
-- `audit_reader` sirve para ver qué se está logueando realmente.
-- Para ver una cadena de clusters, crear un archivo grande y hacer `DEBUG` de la cadena: `yes A | head -n 5000 > mnt/bigfile.txt`.
-
----
-
-## 8. Cómo lo implementamos (INFORME.md)
+## 7. Cómo lo implementamos (INFORME.md)
 
 ### Arquitectura
 
 - El código de logging y de restore va en `fat_fuse_ops.c`: si las operaciones de FUSE ya están ahí, no hacía falta complejizar la lectura.
 - `audit.h` tiene lo compartido entre `fat-fuse`, `audit_reader` y `restore`.
 - La creación de `.audit` y de `events.bin` está en funciones separadas (`create_audit_dir`, `create_events_bin`).
-- Restore usa ioctl y su lógica está separada de las llamadas estándar de FUSE, así la auditoría queda desacoplada de la lectura y escritura normales.
+- Restore usa ioctl y su lógica está separada de las llamadas estándar de FUSE.
 
-`audit_init()` se llama en `fat_fuse_init`, después de cargar los hijos de `/`, porque hacen falta para saber si `.audit` existe. Es `void` por diseño: es un sistema forense, así que si no se puede crear el log, hace `exit(1)` y no sigue andando sin su función principal.
-
-| Función                              | Para qué                                                 |
-| ------------------------------------ | -------------------------------------------------------- |
-| `fat_tree_node_search()`             | Buscar `/`, `/.audit` y `/.audit/events.bin` en el árbol |
-| `fat_tree_get_file()`                | Sacar el `fat_file` de un nodo                           |
-| `fat_file_init()`                    | Crear el `fat_file` en memoria                           |
-| `fat_tree_insert()`                  | Meterlo en el árbol (memoria)                            |
-| `fat_file_add_child_direntry()`      | Escribir la dentry en el cluster del padre (imagen)      |
-| `fat_fuse_load_directory_children()` | Cargar los hijos de `.audit` desde el disco              |
-| `fat_error()`                        | Imprimir errores antes de abortar                        |
+`audit_init()` se llama en `fat_fuse_init`, después de cargar los hijos de `/`, porque hacen falta para saber si `.audit` existe. Es `void` por diseño: es un sistema forense, así que si no se puede crear el log, hace `exit(1)`.
 
 ### Bug de primer montaje
 
@@ -581,13 +354,13 @@ Con la imagen limpia, `ls mnt/.audit` salía vacío en el primer montaje, y en e
 3. `ls` lista los hijos de `.audit` en el árbol, y no tenía ninguno.
 4. En la imagen la dentry se escribía bien, porque `audit_dir` sí era correcto.
 
-En el segundo montaje no se crea nada: se lee del disco con `fat_fuse_load_directory_children`, que inserta con el padre correcto.
+En el segundo montaje no se crea nada: se lee del disco con `fat_fuse_load_directory_children`, que inserta con el padre correcto. Es el caso de la sección 6: estaba en la imagen, pero no bien en el árbol.
 
 **Arreglo:** `create_audit_dir` devuelve el nodo: `audit_node = create_audit_dir(...)`.
 
 ### Cambio en el código base
 
-Al recuperar un `.txt` aparecía un `'\0'`. Esa marca la pasamos de `fat_file_unlink` a `fat_file_init`, solo para directorios nuevos, para que no se interpreten datos viejos como entradas válidas. Si no, ningún archivo volvía intacto.
+El `'\0'` de la sección 4 hacía que ningún archivo volviera intacto. Lo pasamos de `fat_file_unlink` a `fat_file_init`, solo para directorios nuevos, y sigue evitando que se interpreten datos viejos como entradas válidas.
 
 ### Estructura del evento
 
@@ -601,13 +374,7 @@ Al recuperar un `.txt` aparecía un `'\0'`. Esa marca la pasamos de `fat_file_un
 | `username`       | Usuario, vía `fuse_get_context()`                |
 | `filepath`       | Ruta absoluta del archivo o directorio           |
 
-**`write_info` (para `OP_WRITE`):**
-
-| Campo          | Para qué                                     |
-| -------------- | -------------------------------------------- |
-| `offset`       | Dónde se realizó la escritura                |
-| `size`         | Cantidad de bytes escritos                   |
-| `clusters[32]` | Clusters del archivo, para detectar colisiones |
+**`write_info` (para `OP_WRITE`):** `offset`, `size` y `clusters[32]`, para detectar colisiones.
 
 **`unlink_info` (para `OP_UNLINK`, `OP_RMDIR` y `OP_MKDIR`):**
 
@@ -618,9 +385,9 @@ Al recuperar un `.txt` aparecía un `'\0'`. Esa marca la pasamos de `fat_file_un
 | `parent_dir_cluster` | Padre, para reinsertar la entrada o detectar que ya no existe    |
 | `clusters[32]`       | Cadena al momento del borrado, para verificar si fue sobrescrita |
 
-**Por qué 512 bytes:** coincide con 1 cluster de la imagen. Se fuerza con `_padding[512]` y `static_assert(sizeof(audit_event_t) == 512)`. Los offsets salen directo (`índice * 512`) y cada evento ocupa exactamente un cluster del log.
+**Tamaño:** cada evento mide 512 bytes, forzado con `_padding[512]` y `static_assert(sizeof(audit_event_t) == 512)`. Los offsets salen directo (`índice * 512`). En `fatfs.img` entran 2 eventos por cluster.
 
-**ID secuencial:** al montar, `file_size / sizeof(audit_event_t)`. Después se incrementa la global `current_event_id`, y así hay continuidad entre montajes.
+**ID secuencial:** al montar, `file_size / sizeof(audit_event_t)`. Después se incrementa la global `current_event_id`.
 
 **Registro de `write`:** después de `fat_file_pwrite()`, en `fat_fuse_write()` se arma el evento, se recorre la cadena con `fat_table_read_cluster_value()` para llenar `clusters[32]`, y `audit_log_write()` lo agrega al final de `events.bin`.
 
@@ -628,49 +395,47 @@ Al recuperar un `.txt` aparecía un `'\0'`. Esa marca la pasamos de `fat_file_un
 
 - **`write`:** para detectar si alguien pisó los clusters de un archivo borrado.
 - **`mkdir`:** por lo mismo. Si hacés `rm b.txt` y `mkdir dir` toma el cluster 7 de `b.txt`, ya no se puede recuperar.
-- **`unlink`:** cadena completa, porque los archivos pueden estar fragmentados (`b.txt = [8, 9, 11]`).
+- **`unlink`:** cadena completa, porque la FAT la pierde y el archivo puede estar fragmentado (`b.txt = [8, 9, 11]`).
 
-No guardamos la dentry completa: alcanza con nombre, primer cluster, tamaño y si es archivo o directorio. Las fechas no hacen falta: el archivo aparece con la fecha de restauración.
+No guardamos la entrada completa: alcanza con nombre, primer cluster, tamaño y si es archivo o directorio. El archivo aparece con la fecha de restauración.
 
-Un archivo contiguo y uno fragmentado se guardan igual, y restore los reconstruye igual porque sigue la lista.
-
-**Más de 32 clusters:** elegimos loguear parcialmente. El `while` corta a los 32, y se detecta el corte porque la lista tiene menos clusters de los que indica `file_size`.
+**Más de 32 clusters:** se loguea parcialmente. El `while` corta a los 32, y el corte se detecta porque la lista tiene menos clusters de los que indica `file_size`.
 
 ### Por qué ioctl
 
-Descartamos el archivo especial por ser menos robusto. Como FUSE rechaza ioctl sobre directorios (`ENOTTY`), `restore.c` abre `/.audit/events.bin` dentro del punto de montaje y emite `FAT_IOCTL_RESTORE`, definido como `_IOW('f', 1, char[256])`.
+Descartamos el archivo de control por ser menos robusto. Como FUSE rechaza ioctl sobre directorios (`ENOTTY`), `restore.c` abre `/.audit/events.bin` dentro del punto de montaje y emite `FAT_IOCTL_RESTORE`, definido como `_IOW('f', 1, char[256])`.
 
 ### Las 5 etapas de audit_restore()
 
 1. **Existencia previa:** si el archivo ya existe en el árbol, `-EEXIST`.
 2. **Búsqueda:** recorre `events.bin` de atrás hacia adelante buscando el último evento de ese path. Si no hay, o no fue un `OP_UNLINK`, `-ENOENT`.
-3. **Validación:** chequea el directorio padre y la integridad de la cadena, contrastando `file_size` con los clusters guardados. Si está truncada, `-EFBIG`.
+3. **Validación:** chequea el padre y contrasta `file_size` con los clusters guardados. Si la cadena está truncada, `-EFBIG`.
 4. **Colisiones:**
-    - **Por log:** barre los eventos posteriores al `UNLINK`. Si un `OP_WRITE` u `OP_MKDIR` usó un cluster de la cadena, `-EBUSY`.
+    - **Por log:** si un `OP_WRITE` u `OP_MKDIR` posterior usó un cluster de la cadena, `-EBUSY`. Hace falta porque ver la FAT en 0 no alcanza (sección 4).
     - **En la FAT actual:** `fat_table_is_cluster_used()` por cada cluster, que protege de cambios no logueados. También `-EBUSY`.
 5. **Reconstrucción:**
     - **FAT:** rehace los enlaces con `fat_table_set_next_cluster()` y cierra con `FAT_CLUSTER_END_OF_CHAIN_MAX`.
-    - **Dentry:** crea una que apunta a `c[0]`, con su tamaño, y la escribe en el padre.
+    - **Entrada:** crea una que apunta a `c[0]`, con su tamaño, y la escribe en el padre.
     - **Árbol:** `fat_tree_insert`, y el archivo se ve en `ls` y `cat` sin volver a montar.
 
-| Retorno de `audit_restore()` | Significa                                    |
-| ---------------------------- | -------------------------------------------- |
-| `0`                          | Restaurado en su ubicación original          |
-| `1`                          | El padre ya no existe: restaurado en `/`     |
-| `-EEXIST`                    | Ya existe un archivo con ese nombre          |
+| Retorno de `audit_restore()` | Significa                                      |
+| ---------------------------- | ---------------------------------------------- |
+| `0`                          | Restaurado en su ubicación original            |
+| `1`                          | El padre ya no existe: restaurado en `/`       |
+| `-EEXIST`                    | Ya existe un archivo con ese nombre            |
 | `-ENOENT`                    | Nunca fue borrado o no figura en los registros |
-| `-EFBIG`                     | Cadena truncada                              |
-| `-EBUSY`                     | Colisión                                     |
+| `-EFBIG`                     | Cadena truncada                                |
+| `-EBUSY`                     | Colisión                                       |
 
 ### Casos borde y limitaciones
 
-La idea es no adivinar qué quiso hacer el usuario: lo que no se puede resolver termina en un error específico, no en un fallo en silencio.
+Lo que no se puede resolver termina en un error específico, no en un fallo en silencio.
 
-- **Ya no existe el padre:** se evalúa `parent_dir_cluster`. Si fue eliminado o reutilizado, el archivo va a `/` y se retorna `1`.
+- **Ya no existe el padre:** si fue eliminado o reutilizado, el archivo va a `/` y se retorna `1`.
 - **Nunca fue borrado o no está en los registros:** `-ENOENT`.
 - **Mismo nombre:** `-EEXIST`, también si ya existe `/nombre` al restaurar en la raíz.
 - **Borrado varias veces:** se restaura el más reciente.
-- **Persistencia:** cada evento se escribe en la imagen en el momento, y `audit_init` carga lo que ya existe. Al desmontar no pasa nada especial.
+- **Persistencia:** cada evento se escribe en la imagen en el momento, y `audit_init` carga lo que ya existe.
 
 **Limitaciones:**
 - Solo se recuperan archivos, no directorios.
@@ -681,7 +446,7 @@ La idea es no adivinar qué quiso hacer el usuario: lo que no se puede resolver 
 
 ### Punto estrella: visualizador web
 
-Express sobre Node.js, y una web estática. El diseño se hizo con IA.
+Express sobre Node.js, y una web estática.
 
 - `audit_reader --json` convierte `events.bin` a JSON para la web.
 - El botón ejecuta `./restore <montaje> <path>` con `execFile`.
@@ -699,7 +464,7 @@ cp resources/fatfs.img disk.img
 ./fat-fuse -f disk.img mnt
 
 # Test 1: restore exitoso (datos intactos)
-yes C | head -c 3000 > mnt/c.txt     # archivo de 6 clusters
+yes C | head -c 3000 > mnt/c.txt     # archivo de 3 clusters
 md5sum mnt/c.txt
 rm mnt/c.txt
 ./restore mnt /c.txt                 # "Restaurado exitosamente..."
@@ -716,27 +481,51 @@ mkdir mnt/dir
 
 ---
 
-## Glosario que necesito saber (en FAT32 + FUSE)
+## Qué leer
 
-- **FUSE:** mecanismo para implementar un filesystem como programa de usuario. El kernel le reenvía las operaciones.
-- **VFS:** capa del kernel con la misma interfaz para todos los filesystems. No confundir con VFAT, la extensión de FAT para nombres largos.
-- **FAT:** tabla con un casillero por cluster, que guarda el siguiente cluster del archivo o una marca de libre, fin o dañado.
-- **Cluster:** unidad mínima de espacio que se le da a un archivo. En el lab, 512 B.
-- **Sector de boot:** ficha técnica del volumen: cómo está organizado y dónde está cada cosa.
-- **Dentry:** entrada de directorio de 32 bytes, con nombre 8.3, atributos, primer cluster y tamaño.
-- **Cadena de clusters:** secuencia de clusters de un archivo, que se sigue por la FAT.
-- **Fragmentación:** cuando los clusters de un archivo no son contiguos.
-- **Little endian:** orden en que el byte menos significativo va primero.
-- **Borrado lógico:** marcar la dentry con `0xE5` y liberar la FAT, sin tocar los datos.
-- **Borrado físico:** que los datos se destruyan o se sobrescriban.
-- **`0xE5`:** primer byte de una dentry borrada. Es una marca de dentry, no un valor de la FAT.
-- **`0x00`:** primer byte que marca el fin del directorio.
-- **`events.bin`:** log binario de eventos de tamaño fijo, en `/.audit/`. Persiste entre montajes.
-- **Serialización binaria:** escribir una estructura como bytes crudos, tal cual está en memoria.
-- **`packed`:** atributo para que el compilador no agregue relleno entre campos.
-- **`audit_reader`:** herramienta que muestra `events.bin` en forma legible.
-- **`restore`:** comando que busca el borrado, chequea conflictos y rehace la FAT y la dentry.
-- **Conflicto:** un evento posterior al borrado que usa alguno de los clusters del archivo.
-- **`ioctl`:** syscall para mandar comandos especiales a un archivo o dispositivo.
-- **`mmap`:** usar un archivo como si fuera memoria. Así se accede a la FAT.
-- **Hard link:** dos nombres para los mismos datos. FAT no los tiene porque no tiene inodos.
+**OSTEP cap. 39, *Files and Directories*** ([PDF](https://pages.cs.wisc.edu/~remzi/OSTEP/file-intro.pdf)):
+- La sección sobre `mmap`, y cómo está implementada en el laboratorio
+- *Files And Directories*
+- *Reading And Writing, But Not Sequentially*
+- *Removing Files*
+- *Making And Mounting A File System*
+
+**OSTEP cap. 40, *File System Implementation*** ([PDF](https://pages.cs.wisc.edu/~remzi/OSTEP/file-implementation.pdf)). Usa un sistema de ejemplo (vsfs) basado en *inodes*. No hace falta aprender sus detalles: hay que buscar las partes que tiene todo sistema de archivos y cómo se corresponden con FAT32.
+- *The Way To Think*
+- *Overall Organization*
+- *File Organization: The Inode*: la idea de estructura con metadatos, y el recuadro sobre listas enlazadas, que es justamente FAT
+- *Directory Organization*
+- *Free Space Management*
+- *Access Paths: Reading and Writing*
+
+**De consulta:**
+- Wikipedia, *Design of the FAT file system*, solo FAT32: *Boot Sector*, *File Allocation Table* y *Directory table*.
+- Man pages: `unlink(2)`, `rmdir(2)`, `mkdir(2)`, `ioctl(2)`, `mmap(2)`, `pwrite(2)`.
+- libfuse, `struct fuse_operations`: `unlink`, `rmdir`, `mkdir`, `write` e `ioctl`.
+- Comentarios de `fat_table.h`, `fat_file.h`, `fat_fs_tree.h` y `audit.h`.
+
+---
+
+## Glosario que necesito saber
+
+- **Sistema de archivos:** forma de organizar los bloques del disco para ofrecer archivos y directorios.
+- **Sector:** unidad física del disco, de 512 bytes en nuestras imágenes.
+- **Cluster:** grupo de sectores consecutivos, la unidad de asignación. En `fatfs.img`, 1024 bytes.
+- **Sector de boot:** parámetros del volumen. Es lo primero que se lee al montar.
+- **FAT:** arreglo con una entrada de 4 bytes por cluster. Registra el espacio libre y encadena los clusters.
+- **EOC:** *end of chain*, valor que marca el último cluster de un archivo.
+- **Entrada de directorio:** 32 bytes con nombre, atributos, fechas, cluster inicial y tamaño.
+- **Fragmentación:** clusters de un archivo que no son contiguos.
+- **Fragmentación interna:** lo que queda sin usar en el último cluster.
+- **First fit:** elegir el primer cluster libre, buscando desde el 2.
+- **Inalcanzable:** bloque al que no lleva ningún camino desde la raíz.
+- **Borrado lógico:** modificar solo los metadatos. Los datos quedan.
+- **Borrado físico:** destruir los datos.
+- **`0xE5`:** entrada libre por un borrado. Puede haber entradas válidas después.
+- **`0x00`:** entrada libre, y no hay más en el directorio.
+- **`ioctl`:** syscall genérica para operaciones sin syscall propia.
+- **Archivo de control:** archivo especial cuya escritura dispara una operación.
+- **`mmap`:** hacer que una región de un archivo se vea como memoria.
+- **`MAP_PRIVATE`:** los cambios en la memoria mapeada no llegan al archivo.
+- **`fat_tree`:** árbol de directorios en memoria. No existe en la imagen.
+- **`children_read`:** indica si un directorio ya se leyó del disco.

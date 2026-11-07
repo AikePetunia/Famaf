@@ -13,15 +13,62 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08 Sistemas Operativos/lab/guia estudio lab 2.md",
+                "file": "08 Sistemas Operativos/lab/Guia de estudio Lab 2..md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "guia estudio lab 2"
+              "title": "Guia de estudio Lab 2."
+            }
+          },
+          {
+            "id": "eebe68a89f2e8c4b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "08 Sistemas Operativos/lab/Guia de estudio Lab 3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Guia de estudio Lab 3"
+            }
+          },
+          {
+            "id": "629f2b472368ab6f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "08 Sistemas Operativos/lab/Lab3 Filminas/Clase 1 - Lab3 - FUSE.pdf",
+                "page": 26,
+                "left": -4,
+                "top": 286,
+                "zoom": 1
+              },
+              "icon": "lucide-file-text",
+              "title": "Clase 1 - Lab3 - FUSE"
+            }
+          },
+          {
+            "id": "e3322cb3f969eb79",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "08 Sistemas Operativos/lab/Lab3 Filminas/Clase 2 - Operaciones de FAT.pdf",
+                "page": 4,
+                "left": -15,
+                "top": 41,
+                "zoom": 1.03125
+              },
+              "icon": "lucide-file-text",
+              "title": "Clase 2 - Operaciones de FAT"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "4105f2177c31c630",
@@ -113,7 +160,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 328.5026054382324
+    "width": 328.5026054382324,
+    "collapsed": true
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -213,37 +261,38 @@
   },
   "active": "4870ad9aead599bb",
   "lastOpenFiles": [
+    "08 Sistemas Operativos/lab/Guia de estudio Lab 3.md",
+    "08 Sistemas Operativos/lab/notas lab 3.md",
+    "08 Sistemas Operativos/lab/Lab3 Filminas/Clase 2 - Operaciones de FAT.pdf",
+    "08 Sistemas Operativos/lab/Lab3 Filminas/Clase 1 - Lab3 - FUSE.pdf",
+    "99 Adjuntos/Pasted image 20261106234716.png",
+    "99 Adjuntos/Pasted image 20261106234638.png",
+    "99 Adjuntos/Pasted image 20261106234135.png",
+    "99 Adjuntos/Pasted image 20261106230432.png",
+    "99 Adjuntos/Pasted image 20261106230047.png",
+    "99 Adjuntos/Pasted image 20261106225716.png",
+    "08 Sistemas Operativos/lab/Guia de estudio Lab 2..md",
+    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.126339.ea7ee8f37142",
+    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.126339.85b315f9e0a4",
+    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.126339.76ec0713facd",
+    "08 Sistemas Operativos/lab/[SO26] Apunte Lab3.md",
     "08 Sistemas Operativos/lab/notas lab 3.md.tmp.235977.fecc3df54340",
-    "08 Sistemas Operativos/lab/guia estudio lab 2.md",
     "08 Sistemas Operativos/lab/notas lab 2.md",
     "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.16bc77058e5b",
     "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.cff81630ee7a",
     "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.4393fbd3b52d",
     "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.da2c00eda392",
-    "08 Sistemas Operativos/lab/notas lab 3.md",
-    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.235977.851fa52f9423",
-    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.fc5aea2856fb",
-    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.c4dc22fb000a",
-    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.9ae91d902354",
-    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.e9f85a8762ff",
-    "08 Sistemas Operativos/lab/notas lab 2.md.tmp.235977.80e4549872c9",
     "08 Sistemas Operativos/lab/Lab2 Filminas/Lab2 - Enunciado.md",
     "99 Adjuntos/Pasted image 20261106083652.png",
     "99 Adjuntos/Pasted image 20261106081113.png",
     "99 Adjuntos/Pasted image 20261106080016.png",
     "99 Adjuntos/Pasted image 20261106080001.png",
-    "99 Adjuntos/Pasted image 20261106075946.png",
-    "99 Adjuntos/Pasted image 20261106075936.png",
     "08 Sistemas Operativos/lab/Notas Lab 2.md",
     "08 Sistemas Operativos/lab/Lab_2_3_guia.md",
     "MAQUETA_VIDEO.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "99 Adjuntos/Pasted Image 20261102210009_140.png",
-    "99 Adjuntos/Pasted Image 20261102205957_452.png",
-    "99 Adjuntos/Pasted Image 20261102205731_622.png",
-    "99 Adjuntos/Pasted Image 20261102205615_810.png",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak3.md",
     "08 Sistemas Operativos/NOTAS_VIDEO.md",
@@ -256,8 +305,6 @@
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak2.md",
     "08 Sistemas Operativos/lab/Lab_1_guia_sintetizada.md",
     "08 Sistemas Operativos/lab/Lab 1 guia.md",
-    "08 Sistemas Operativos/lab/cuestionario lab 0 y 1.md",
-    "09 Probabilidad y estadistica/parciales/2/2024-Parcial 2 resuelto (mio).md",
-    "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md"
+    "08 Sistemas Operativos/lab/cuestionario lab 0 y 1.md"
   ]
 }
