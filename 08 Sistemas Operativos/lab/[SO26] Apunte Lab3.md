@@ -1,9 +1,5 @@
 # Apunte – Lab 3: Sistemas de archivos y FAT32
 
-Sistemas Operativos 2026 – FaMAFyC
-
-Este apunte acompaña la guía de estudio. Explica las partes de un sistema de archivos que necesitan para el laboratorio, cómo se implementan en FAT32 y cómo las maneja el código del esqueleto. No cubre el diseño del log ni el algoritmo de restauración: eso depende de cómo lo implemente cada grupo.
-
 Cuando un ejemplo usa números concretos, son los de la imagen `resources/fatfs.img`. Otras imágenes (por ejemplo `test_empty.img`) tienen otros valores, y en la sección 2 se explica cómo leerlos.
 
 ---
@@ -17,12 +13,12 @@ Un disco, o una imagen de disco como la del laboratorio, es solo una secuencia d
 
 Para eso, todo sistema de archivos, sea FAT32 o cualquier otro, guarda en el disco cuatro tipos de información:
 
-| Parte | Para qué sirve | En FAT32 |
-|---|---|---|
-| **Información del volumen** | Describe cómo está organizado el resto del disco: tamaño de bloque, dónde empieza cada región, dónde está el directorio raíz. Es lo primero que se lee al montar. | Sector de boot |
-| **Metadatos de cada archivo** | Nombre, tamaño, fechas, atributos y dónde están sus datos. | Entrada de directorio (32 bytes) |
-| **Datos** | El contenido de los archivos, y también el de los directorios. | Área de datos (clusters) |
-| **Registro de espacio libre** | Qué bloques se pueden usar para datos nuevos. | Entradas con valor 0 en la tabla FAT - Esto no es tan obvio en FAT y no lo vimos como una parte del sistema de archivos independiente |
+| Parte                         | Para qué sirve                                                                                                                                                    | En FAT32                                                                                                                              |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Información del volumen**   | Describe cómo está organizado el resto del disco: tamaño de bloque, dónde empieza cada región, dónde está el directorio raíz. Es lo primero que se lee al montar. | Sector de boot                                                                                                                        |
+| **Metadatos de cada archivo** | Nombre, tamaño, fechas, atributos y dónde están sus datos.                                                                                                        | Entrada de directorio (32 bytes)                                                                                                      |
+| **Datos**                     | El contenido de los archivos, y también el de los directorios.                                                                                                    | Área de datos (clusters)                                                                                                              |
+| **Registro de espacio libre** | Qué bloques se pueden usar para datos nuevos.                                                                                                                     | Entradas con valor 0 en la tabla FAT - Esto no es tan obvio en FAT y no lo vimos como una parte del sistema de archivos independiente |
 
 En FAT32 la tabla FAT cumple dos roles: registra el espacio libre y además indica en qué orden se encadenan los clusters de cada archivo.
 
@@ -62,14 +58,14 @@ En el código del laboratorio existen los sectores, pero nuestra abstracción de
 
 ### Campos del sector de boot que usamos
 
-| Offset | Tamaño | Campo | `fatfs.img` |
-|---|---|---|---|
-| `0x0B` | 2 | Bytes por sector | 512 |
-| `0x0D` | 1 | Sectores por cluster | 2 → clusters de **1024 bytes** |
-| `0x0E` | 2 | Sectores reservados | 32 |
-| `0x10` | 1 | Cantidad de tablas FAT | 2 |
-| `0x24` | 4 | Sectores por FAT | 1016 |
-| `0x2C` | 4 | Cluster del directorio raíz | 2 |
+| Offset | Tamaño | Campo                       | `fatfs.img`                    |
+| ------ | ------ | --------------------------- | ------------------------------ |
+| `0x0B` | 2      | Bytes por sector            | 512                            |
+| `0x0D` | 1      | Sectores por cluster        | 2 → clusters de **1024 bytes** |
+| `0x0E` | 2      | Sectores reservados         | 32                             |
+| `0x10` | 1      | Cantidad de tablas FAT      | 2                              |
+| `0x24` | 4      | Sectores por FAT            | 1016                           |
+| `0x2C` | 4      | Cluster del directorio raíz | 2                              |
 
 Los pueden leer directamente de la imagen. Todos los números están en *little endian*:
 
@@ -79,7 +75,6 @@ xxd -s 0x2C -l 4 resources/fatfs.img   # cluster del directorio raíz
 ```
 
 Nota: no tienen que aprenderse las direcciones de memoria, sólo que esos campos existen.
-
 ### Las cuentas
 
 ```
