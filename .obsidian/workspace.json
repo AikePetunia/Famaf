@@ -4,56 +4,117 @@
     "type": "split",
     "children": [
       {
-        "id": "0388d5ba42587e63",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "f39ffd6b423a1b51",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "08 Sistemas Operativos/teorico/3. Resumen Persistencia.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "3. Resumen Persistencia"
-            }
-          },
-          {
-            "id": "2cd506087de5d97f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "08 Sistemas Operativos/practico/3.) Concurrencia rtas.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3.) Concurrencia rtas"
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
         "id": "dc1f4b5cbdbc91be",
         "type": "tabs",
         "children": [
           {
-            "id": "bcbdce53b02ea730",
+            "id": "e2cc196bf016608c",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "! Teorico completo + Anotaciones (P1)"
+            }
+          },
+          {
+            "id": "7297611c9388da53",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "08 Sistemas Operativos/practico/3.) Concurrencia.pdf",
+                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla Chi-Cuadrado.pdf",
                 "page": 1,
-                "left": -13,
-                "top": 291,
-                "zoom": 1.2473205706260624
+                "left": -4,
+                "top": -36,
+                "zoom": 0.5665083135391925
               },
               "icon": "lucide-file-text",
-              "title": "3.) Concurrencia"
+              "title": "Tabla Chi-Cuadrado"
+            }
+          },
+          {
+            "id": "c109b744c427bc25",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
+                "page": 1,
+                "left": -19,
+                "top": 741,
+                "zoom": 0.7794117647058824
+              },
+              "icon": "lucide-file-text",
+              "title": "Tabla_t"
+            }
+          },
+          {
+            "id": "ee4cc7b9ba5d71e0",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
+                "page": 1,
+                "left": -13,
+                "top": 725,
+                "zoom": 1.2478991596638656
+              },
+              "icon": "lucide-file-text",
+              "title": "Tabla_normal"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b39e93c733ffa2ad",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b86c7f6f1b5413e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Parcial C (CLAUDE)"
+            }
+          },
+          {
+            "id": "5d3fd029666ac319",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Parcial D (CLAUDE)"
+            }
+          },
+          {
+            "id": "d5729fa12a5aba8b",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "09 Probabilidad y estadistica/parciales/1/Parcial_I_2026_resuelto.pdf",
+                "page": 3,
+                "left": -14,
+                "top": 308,
+                "zoom": 1.0383227081805566
+              },
+              "icon": "lucide-file-text",
+              "title": "Parcial_I_2026_resuelto"
             }
           }
         ]
@@ -113,8 +174,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 328.5026054382324,
-    "collapsed": true
+    "width": 328.5026054382324
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -178,13 +238,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08 Sistemas Operativos/practico/3.) Concurrencia rtas.md",
+                "file": "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3.) Concurrencia rtas"
+              "title": "Outline of Parcial C (CLAUDE)"
             }
           }
         ],
@@ -212,9 +272,27 @@
       "graph:Open graph view": false
     }
   },
-  "active": "2cd506087de5d97f",
+  "active": "6b86c7f6f1b5413e",
   "lastOpenFiles": [
-    "08 Sistemas Operativos/practico/3.) Concurrencia.pdf",
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md",
+    "99 Adjuntos/Pasted Image 20261111101837_308.png",
+    "99 Adjuntos/Pasted Image 20261111095042_214.png",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md.tmp.84815.be7b695039c4",
+    "09 Probabilidad y estadistica/parciales/1/Parcial_I_2026_resuelto.pdf",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial E (CLAUDE).md",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial E (CLAUDE).md.tmp.84815.f25486fa2cd4",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Plan de estudio Parcial I (CLAUDE).md",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Plan de estudio Parcial I (CLAUDE).md.tmp.84815.1f52d69d8375",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md.tmp.84815.79573b85e4b0",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md.tmp.84815.e12e6c699385",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md.tmp.84815.c138500d698f",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md.tmp.84815.98a6e8a3bd74",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md.tmp.84815.5327598dbc17",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md.tmp.84815.f3c8b55bdca5",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
+    "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md",
     "08 Sistemas Operativos/practico/3.) Concurrencia rtas.md",
     "99 Adjuntos/Pasted image 20261108180042.png",
     "99 Adjuntos/Pasted image 20261108142632.png",
@@ -223,41 +301,23 @@
     "08 Sistemas Operativos/teorico/3. Resumen Persistencia.md",
     "08 Sistemas Operativos/teorico/2. Resumen Concurrencia.md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial A (CLAUDE).md",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla Chi-Cuadrado.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak2.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak3.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak.md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial A (CLAUDE).pdf",
     "08 Sistemas Operativos/lab/notas lab 2.md",
     "08 Sistemas Operativos/lab/notas lab 3.md",
     "08 Sistemas Operativos/lab/Guia de estudio Lab 2..md",
     "08 Sistemas Operativos/lab/Guia de estudio Lab 3.md",
     "08 Sistemas Operativos/lab/[SO26] Apunte Lab3.md",
-    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.772717.ebf5ecedfe4e",
-    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.772717.e8c41e6ab9bb",
-    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.772717.c3e84f429992",
-    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.772717.c0903cbafc4d",
-    "08 Sistemas Operativos/lab/notas lab 3.md.tmp.772717.7a74b28a23b9",
     "99 Adjuntos/Pasted image 20261108111329.png",
     "99 Adjuntos/Pasted image 20261108094943.png",
     "99 Adjuntos/Pasted image 20261108093821.png",
     "99 Adjuntos/Pasted image 20261106234716.png",
-    "99 Adjuntos/Pasted image 20261106234638.png",
-    "99 Adjuntos/Pasted image 20261106234135.png",
     "08 Sistemas Operativos/lab/Lab2 Filminas/Lab2 - Enunciado.md",
     "08 Sistemas Operativos/lab/Notas Lab 2.md",
     "08 Sistemas Operativos/lab/Lab_2_3_guia.md",
     "MAQUETA_VIDEO.md",
-    "08 Sistemas Operativos/NOTAS_VIDEO.md",
-    "08 Sistemas Operativos/teorico/1. Resumen Virtualizacion.md",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica C (CLAUDE).md",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica A (CLAUDE).md",
-    "08 Sistemas Operativos/lab/Lab_1_guia_sintetizada.md"
+    "08 Sistemas Operativos/NOTAS_VIDEO.md"
   ]
 }
