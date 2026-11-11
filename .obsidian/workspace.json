@@ -4,117 +4,85 @@
     "type": "split",
     "children": [
       {
-        "id": "dc1f4b5cbdbc91be",
+        "id": "70966e6ac2f78142",
         "type": "tabs",
         "children": [
           {
-            "id": "e2cc196bf016608c",
+            "id": "d12e4ffbe48e507a",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md"
+                "file": "08 Sistemas Operativos/lab/Guia de estudio Lab 2..md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "! Teorico completo + Anotaciones (P1)"
+              "icon": "lucide-file",
+              "title": "Guia de estudio Lab 2."
             }
           },
           {
-            "id": "7297611c9388da53",
+            "id": "3da88658900a2ef4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "08 Sistemas Operativos/lab/Guia de estudio Lab 3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Guia de estudio Lab 3"
+            }
+          },
+          {
+            "id": "ea89273eb7aa6a82",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla Chi-Cuadrado.pdf",
-                "page": 1,
-                "left": -4,
-                "top": -36,
-                "zoom": 0.5665083135391925
+                "file": "08 Sistemas Operativos/lab/Lab2 Filminas/clase-04.pdf",
+                "page": 9,
+                "left": -9,
+                "top": 66,
+                "zoom": 1.6371213123429025
               },
               "icon": "lucide-file-text",
-              "title": "Tabla Chi-Cuadrado"
-            }
-          },
-          {
-            "id": "c109b744c427bc25",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
-                "page": 1,
-                "left": -19,
-                "top": 741,
-                "zoom": 0.7794117647058824
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla_t"
-            }
-          },
-          {
-            "id": "ee4cc7b9ba5d71e0",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
-                "page": 1,
-                "left": -13,
-                "top": 725,
-                "zoom": 1.2478991596638656
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla_normal"
+              "title": "clase-04"
             }
           }
         ]
       },
       {
-        "id": "b39e93c733ffa2ad",
+        "id": "6ff1c130ac2f66a1",
         "type": "tabs",
         "children": [
           {
-            "id": "6b86c7f6f1b5413e",
+            "id": "1463364b00ad9e59",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md",
+                "file": "08 Sistemas Operativos/lab/notas lab 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Parcial C (CLAUDE)"
+              "title": "notas lab 2"
             }
           },
           {
-            "id": "5d3fd029666ac319",
+            "id": "31cd69e7ad5b9f23",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md",
+                "file": "08 Sistemas Operativos/lab/notas lab 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Parcial D (CLAUDE)"
-            }
-          },
-          {
-            "id": "d5729fa12a5aba8b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/parciales/1/Parcial_I_2026_resuelto.pdf",
-                "page": 3,
-                "left": -14,
-                "top": 308,
-                "zoom": 1.0383227081805566
-              },
-              "icon": "lucide-file-text",
-              "title": "Parcial_I_2026_resuelto"
+              "title": "notas lab 3"
             }
           }
         ]
@@ -174,7 +142,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 328.5026054382324
+    "width": 328.5026054382324,
+    "collapsed": true
   },
   "right": {
     "id": "5d729815bc1b3eae",
@@ -238,13 +207,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md",
+                "file": "08 Sistemas Operativos/lab/Guia de estudio Lab 2..md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Parcial C (CLAUDE)"
+              "title": "Outline of Guia de estudio Lab 2."
             }
           }
         ],
@@ -272,25 +241,30 @@
       "graph:Open graph view": false
     }
   },
-  "active": "6b86c7f6f1b5413e",
+  "active": "d12e4ffbe48e507a",
   "lastOpenFiles": [
-    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
+    "08 Sistemas Operativos/lab/notas lab 2.md",
+    "08 Sistemas Operativos/lab/Guia de estudio Lab 3.md",
+    "08 Sistemas Operativos/lab/Guia de estudio Lab 2..md",
+    "99 Adjuntos/Pasted image 20261111182859.png",
+    "08 Sistemas Operativos/lab/Lab2 Filminas/clase-04.pdf",
+    "08 Sistemas Operativos/lab/notas lab 3.md",
+    "09 Probabilidad y estadistica/parciales/1/Parcial_I_2026_resuelto.pdf",
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md",
+    "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
+    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
+    "09 Probabilidad y estadistica/practico/tablas/Tabla Chi-Cuadrado.pdf",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md",
+    "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "99 Adjuntos/Pasted Image 20261111101837_308.png",
     "99 Adjuntos/Pasted Image 20261111095042_214.png",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md.tmp.84815.be7b695039c4",
-    "09 Probabilidad y estadistica/parciales/1/Parcial_I_2026_resuelto.pdf",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial E (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial E (CLAUDE).md.tmp.84815.f25486fa2cd4",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Plan de estudio Parcial I (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Plan de estudio Parcial I (CLAUDE).md.tmp.84815.1f52d69d8375",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md.tmp.84815.79573b85e4b0",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md.tmp.84815.e12e6c699385",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md.tmp.84815.c138500d698f",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md.tmp.84815.98a6e8a3bd74",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md.tmp.84815.5327598dbc17",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md.tmp.84815.f3c8b55bdca5",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
     "09 Probabilidad y estadistica/parciales/1/Parcial_I_resuelto_2025 (1).md",
     "08 Sistemas Operativos/practico/3.) Concurrencia rtas.md",
@@ -305,15 +279,10 @@
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak2.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak3.md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.bak.md",
-    "08 Sistemas Operativos/lab/notas lab 2.md",
-    "08 Sistemas Operativos/lab/notas lab 3.md",
-    "08 Sistemas Operativos/lab/Guia de estudio Lab 2..md",
-    "08 Sistemas Operativos/lab/Guia de estudio Lab 3.md",
     "08 Sistemas Operativos/lab/[SO26] Apunte Lab3.md",
     "99 Adjuntos/Pasted image 20261108111329.png",
     "99 Adjuntos/Pasted image 20261108094943.png",
     "99 Adjuntos/Pasted image 20261108093821.png",
-    "99 Adjuntos/Pasted image 20261106234716.png",
     "08 Sistemas Operativos/lab/Lab2 Filminas/Lab2 - Enunciado.md",
     "08 Sistemas Operativos/lab/Notas Lab 2.md",
     "08 Sistemas Operativos/lab/Lab_2_3_guia.md",

@@ -531,12 +531,19 @@ int ksem_up(int sem) {
 
 ### Politicas obligatorias (no las inventan ustedes)
 
-- Doble `sem_open` de un `id` ya abierto: error.
+- Doble `sem_open` en ID ya abierto da error. 
 - `sem_up` puede incrementar más allá del valor inicial: es un contador real, no un binario forzado.
 - `sem_close` está permitido con procesos bloqueados: el cierre despierta a los procesos dormidos y sus invocaciones a `sem_down` deben fallar y retornar `0`.
 - Reabrir un `id` cerrado: `sem_open` vuelve a ser valido.
 - El valor del semaforo nunca es menor a 0.
 - Valor máximo: `SEM_VALUE_MAX = 1 000 000`.
+- El tamaño de tabla es 65. 64 id's, y 1 de error (0)
+
+- No podes abrir dos veces un mismo semaforo que ya esa abierto.
+- Podes re abrir un semaforo que anteriormente se cerro (Sleep).
+- El valor máximo de open es 1 millon. 
+- La tabla son de 65, 64 sems y 1 de error (0)
+- **`sem_close(id)` despierta (Hace wakeup) e invalida (Pone open = 0, value = 0.):** Los semaforos dormidos en `sem_down` cuando el semaforo se cierra deben ser despertados por `sem_close` y retornar `0`. Es válido que se llame desde un proceso que está blocked. 
 
 **Por que no topear `sem_up` en el valor inicial:**
 
@@ -550,11 +557,12 @@ Es un contador, no un binario forzado. El unico techo es `SEM_VALUE_MAX`, para e
 ### Invariantes del kernel
 
 1. **`value` nunca es negativo:** es un contador que indica fichas disponibles. Esperar significa dormirse liberando la CPU, no dejar el valor en -1.
-2. **`sem_up(id)` no debe limitar el valor** al `value` con el que se abrio.
-3. **`sem_close(id)` despierta e invalida:** quienes se durmieron en un `sem_down` cuando el semaforo se cierra deben ser despertados por `sem_close` y retornar `0`.
+2. **`sem_up(id)`el contador puede crecer indefinidamente más allá de ese número inicial
+3. **`sem_close(id)` despierta e invalida: (Marca is_close = 0 y hace wakeup)** quienes se durmieron en un `sem_down` cuando el semaforo se cierra deben ser despertados por `sem_close` y retornar `0`.
 4. **Validacion bajo lock:** tanto el chequeo de si el semaforo esta abierto como la manipulacion de variables deben ocurrir despues de `acquire()`. Con validaciones fuera del lock, dos CPUs pueden ver el espacio libre al mismo tiempo y generar una *Race Condition*.
 5. **`sleep()` siempre va dentro de un `while` y no un `if`:** `wakeup()` despierta a todos los procesos en ese canal, y al despertar el proceso debe volver a evaluar si el valor sigue siendo mayor a 0. En un `if`, varios procesos podrian pasar de largo con una sola ficha: decrementan un valor en 0, queda negativo y el semaforo deja de funcionar.
 
+![[Pasted image 20261111182859.png]]
 ---
 
 ## 4. Los semaforos en el programa de `pingpong`
@@ -659,6 +667,46 @@ Funciona porque `sem_open` falla si el id ya esta abierto.
 | Adelantarse | Nunca | Hasta B items |
 
 Con B = 1, `prodcons` se comporta como `pingpong`. Con B > 1, el productor puede ir varios pasos adelante, como un pipe (`cmd1 | cmd2`).
+
+B (El buffer) es como el intermedio, el punto de stock para el productos y retiro de el consumidor.
+
+El productor, puede encolarse N items, pero tiene una cantidad de almacenamiento B.
+
+Y el consumidor puede consumir N items, pero consume 1 por 1 los que hay en B.
+
+```c
+// --- Creación de los semáforos ---
+// Se crean ANTES del fork para que padre e hijo usen los mismos ids.
+int sem_empty = sem_get(b); // lugares libres: al principio el buffer está vacío -> B libres
+int sem_full = sem_get(0); // ítems disponibles: al principio no hay ninguno -> 0
+int sem_mutex = sem_get(1); // mutex: 1 = "la sección crítica está libre"
+
+// produce
+for (k = 1; k <= n; k++) {
+    sem_down(empty);  // ¿Hay lugar libre en el depósito?
+    sem_down(mutex);  // Pide permiso para imprimir
+    printf("produce %d pid=%d\n", k, getpid());
+    sem_up(mutex);    // Suelta el permiso de impresión
+    sem_up(full);     // Avisa: "agregué un ítem al depósito"
+}
+
+// consume 
+for (i = 0; i < n; i++) {
+    sem_down(full);                       // 1. ¿Hay algún ítem listo? Si full == 0, duerme
+    sem_down(mutex);                      // 2. Pide el turno para imprimir
+    printf("consume pid=%d\n", getpid()); // 3. Consume el ítem
+    sem_up(mutex);                        // 4. Suelta el permiso de impresión
+    sem_up(empty);                        // 5. Devuelve un lugar libre en el depósito
+}
+```
+
+**### 1. ¿Qué define cada semáforo?
+
+| **Semáforo** | **Arranca en** | **Rol exacto**                                                                                                              |
+| ------------ | -------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **`empty`**  | **`B`**        | Cuenta los **lugares libres** en el depósito. El productor hace `down(empty)` para gastar un lugar libre antes de fabricar. |
+| **`full`**   | **`0`**        | Cuenta los **ítems disponibles de retiro. El consumidor hace `down(full)` para llevarse un ítem.                            |
+| **`mutex`**  | **`1`**        | Candado binario de exclusión mutua. En este lab protege el `printf` para que las líneas de texto no se mezclen.             |
 
 ### Dos semaforos contadores
 
@@ -877,6 +925,9 @@ Otra vez aparece el `while`, por lo mismo de siempre. En `pipewrite` no se ve po
 - xv6 no trae semaforos en el kernel: tiene `sleep`/`wakeup`, que es una condition variable. Con una CV hay que llevar el estado aparte; con un semaforo, el contador ya lo es.
 - **Por que el pipe si tiene un buffer de verdad?** Porque vive en el kernel, cuya memoria es compartida por construccion. Dos procesos de usuario, despues de `fork`, no comparten nada.
 
+### los id's de semaforos son globales
+No podés hardcodear IDs (como poner `sem_open(1, ...)` y `sem_open(2, ...)`) porque **los semáforos son un recurso global compartido en el kernel entre todos los procesos del sistema operativo**
+
 ### Mismo patron en otros lados
 
 - **POSIX:** `sem_open`, `sem_wait` (≈ `sem_down`), `sem_post` (≈ `sem_up`). Con valor 0, `sem_wait` bloquea hasta un post. Hay dos tipos (`sem_overview(7)`):
@@ -888,7 +939,16 @@ Otra vez aparece el `while`, por lo mismo de siempre. En `pipewrite` no se ve po
 
 ---
 
-## 6. Debugging
+### Distingo spinlock (acquire/release) de espera (sleep/wakeup)
+
+Spinlock es lógico usarlo si la operacion dura nano segundos, que usa para quemar tiempo de cpu en lo que se hace un acquire, que se apropia un lock, y permita que 1 proceso modifique 1 solol semaforo.
+
+  
+
+Sleep simplemente DUERME el proceso, (algo similar a blocked), haciendo que no pueda hacer nada. Es posible despertarlo si se llama wakeup() que lo hace sem_close o sem_up. Si vlaue = 0, se duerme al pingo
+
+
+## 6. Debugging [Relaciono síntomas típicos (cuelgue, dos ping, prompt temprano) con su causa  ]
 
 Cuando las `sem_*` fallan o `pingpong` no anda, hay que ir del sintoma a la causa.
 
@@ -914,22 +974,22 @@ Cuando las `sem_*` fallan o `pingpong` no anda, hay que ir del sintoma a la caus
 
 **prodcons**
 
-| Sintoma                         | Donde mirar                                        |
-| ------------------------------- | -------------------------------------------------- |
-| Se cuelga                       | Un `down` sin su `up`, o `empty`/`full` mal inicializados |
-| Mas de B producidos sin consumir | ¿`empty` arranca en B?                            |
-| Faltan o sobran items           | Los loops de N, en productor y consumidor          |
-| Lineas partidas                 | El `printf` quedo fuera del mutex                  |
-| Algo despues del `DONE`         | El padre no espera al hijo                         |
-| Anda solo, falla con otro al lado | Ids de semaforo fijos                            |
+| Sintoma                           | Donde mirar                                               |
+| --------------------------------- | --------------------------------------------------------- |
+| Se cuelga                         | Un `down` sin su `up`, o `empty`/`full` mal inicializados |
+| Mas de B producidos sin consumir  | ¿`empty` arranca en B?                                    |
+| Faltan o sobran items             | Los loops de N, en productor y consumidor                 |
+| Lineas partidas                   | El `printf` quedo fuera del mutex                         |
+| Algo despues del `DONE`           | El padre no espera al hijo                                |
+| Anda solo, falla con otro al lado | Ids de semaforo fijos                                     |
 
-| Error en `prodcons`         | Que pasa                                  |
-| --------------------------- | ----------------------------------------- |
-| `full` arranca en B         | El consumidor consume lo que no existe    |
-| `empty` arranca en 0        | Deadlock desde el primer item             |
-| `mutex` antes del recurso   | Deadlock con el buffer lleno o vacio      |
-| `printf` fuera del par down/up | La salida viola la capacidad           |
-| Sin `wait` o sin `sem_close` | El shell vuelve antes / ids que no se liberan |
+| Error en `prodcons`            | Que pasa                                      |
+| ------------------------------ | --------------------------------------------- |
+| `full` arranca en B            | El consumidor consume lo que no existe        |
+| `empty` arranca en 0           | Deadlock desde el primer item                 |
+| `mutex` antes del recurso      | Deadlock con el buffer lleno o vacio          |
+| `printf` fuera del par down/up | La salida viola la capacidad                  |
+| Sin `wait` o sin `sem_close`   | El shell vuelve antes / ids que no se liberan |
 
 **Otros errores frecuentes**
 
@@ -942,14 +1002,15 @@ Cuando las `sem_*` fallan o `pingpong` no anda, hay que ir del sintoma a la caus
 
 **Los 6 tests de semtest**
 
-| Test       | Que mira                                  |
-| ---------- | ----------------------------------------- |
-| `noinit`   | Usar un semaforo que nunca se abrio       |
-| `init`     | Que el valor inicial sea el pedido        |
-| `closeuse` | Usar uno ya cerrado                       |
-| `exhaust`  | Quedarse sin ids, y reusar tras cerrar    |
-| `grow`     | Que `sem_up` pase el valor inicial        |
-| `reopen`   | Cerrar y volver a abrir el mismo id       |
+| Test       | Que mira                               |
+| ---------- | -------------------------------------- |
+| `noinit`   | Usar un semaforo que nunca se abrio    |
+| `init`     | Que el valor inicial sea el pedido     |
+| `closeuse` | Usar uno ya cerrado                    |
+| `exhaust`  | Quedarse sin ids, y reusar tras cerrar |
+| `grow`     | Que `sem_up` pase el valor inicial     |
+| `reopen`   | Cerrar y volver a abrir el mismo id    |
+|            |                                        |
 
 **Que miran los tests de prodcons**
 
@@ -972,6 +1033,108 @@ Cuando las `sem_*` fallan o `pingpong` no anda, hay que ir del sintoma a la caus
 3. ¿Anda con un proceso y falla con varios? Mira los locks.
 4. ¿Cuelga o devuelve mal? Cuelga = `sleep`; mal = validacion.
 
+
+### Deadlock en prodcons:
+es acquire, luego sleep, entonces causa el deadlock. por eso sleep tiene el sem y el lock.
+
+Aca pasaria, que el consumidor se duerme, por que esta esperando al productor producir algo, pero nunca produce algo por que esta esperando que el consumidor consuma.
+
+es esperar un resultado que nunca llega. O una notificacion pero nuncca llega
+
+### Explico 1P+1C sin mutex vs multi P/C con mutex 
+
+- **1P + 1C:** no necesitan mutex porque cada variable hay **un único dueño**. Un consumidor, y un productor. El productor es el único que modifica `in` y el consumidor es el único que modifica `out`. Como `empty` y `full` impiden que ambos operen en la misma celda a la vez, no hay accesos concurrentes destructivos.
+    
+- **Multi P o Multi C ($P > 1$ o $C > 1$):** los contadores (`empty`/`full`) dan **permiso de entrada, no exclusión mutua**. Si hay 2 lugares libres, dos productores pasan el `sem_down(empty)` al mismo tiempo, leen la misma variable compartida `in` y **uno pisa al otro corrompiendo la estructura de datos**. Ahí el `mutex` es estrictamente obligatorio para proteger la estructura del buffer.
+
+En realidad en el lab, lo que pasa es que no se imprime correctamente.,
+
+###  Sé por qué no hay que fijar ids de semáforo entre programas  
+
+No es lo mismo q con globales?
+pero basicamente si usamos id's fijas, podemos mezclar semaforos de distintos procesos por que los semaforos son globales en el kernel.
+
+### relaciono el problema con pipes
+Pensalo así de simple:
+
+1. **El escritor es el Productor:** mete bytes con `write()`.
+2. **El lector es el Consumidor:** saca bytes con `read()`.
+3. **El pipe es el Buffer ($B$):** es una cajita fija de **512 bytes** en el kernel.
+
+ ¿Cómo se frenan? (Igual que en tu código)
+
+- **Si el pipe se llena:** el escritor se va a dormir (`sleep`) hasta que el lector saque bytes y haga espacio.
+    
+- **Si el pipe está vacío:** el lector se va a dormir (`sleep`) hasta que el escritor meta datos.
+    
+ La única diferencia con tu lab
+
+- En tu `prodcons` usás **3 semáforos** (`empty`, `full`, `mutex`).
+    
+- En el kernel de xv6 (`pipe.c`) no hay semáforos: usan directamente **1 lock + `sleep` / `wakeup`**.
+
+### 1. Lost Wakeup y por qué `sleep` lleva el lock (Ítem 13)
+
+Tu intuición de "olvidarse de despertarlo" va por el camino del síntoma, pero la causa técnica no es olvido: es una **condición de carrera temporal** donde el aviso ocurre **demasiado temprano**.
+
+- **La analogía:**
+    
+    Querés irte a dormir la siesta y le decís a tu amigo: _"Cuando llegue el cartero, tocame el timbre"_.
+    
+    Si primero abrís la puerta y después te vas caminando lento a la cama, tu amigo puede tocar el timbre **mientras todavía estás caminando por el pasillo**. Vos no lo escuchás porque aún no estabas en la cama con el oído atento. Tu amigo cree que ya te avisó y se va; vos te acostás y **te quedás esperando un timbre que ya sonó y nadie volverá a tocar**.
+    
+- **En el código de xv6:**
+    
+    Si soltaras el spinlock antes de llamar a `sleep`:
+    
+    1. La CPU 1 ve `value == 0`, suelta el lock con `release(&sem->lock)`.
+        
+    2. En esa milésima de segundo, la CPU 2 toma el lock, hace `value++` y llama a `wakeup()`.
+        
+    3. Como el proceso de la CPU 1 **todavía no terminó de registrarse como dormido** en el kernel, el `wakeup()` busca en la tabla de procesos, no encuentra a nadie en `SLEEPING` y el grito se pierde en la nada.
+        
+    4. La CPU 1 retoma y se duerme (`sleep`). Se queda esperando un `wakeup` que ya ocurrió y no volverá a suceder.
+        
+- **Por qué `sleep(chan, &lock)` recibe el lock:**
+    
+    Para que **soltar el lock y marcar el proceso como `SLEEPING` sea una operación indivisible (atómica)**. La CPU 2 no puede hacer `acquire`, sumar la ficha ni mandar el `wakeup` hasta que el proceso que duerme esté 100% acostado y registrado en la lista de espera.
+    
+
+### 2. Qué es el canal y por qué deben coincidir (Ítem 14)
+
+- **¿Qué es un canal (`chan`)?**
+    
+    Un canal es simplemente un **número o dirección de memoria que sirve de etiqueta o cartel identificador**. No es un cable ni un buffer; es una dirección de memoria como `&sem_table[id]` o `&pi->nread`.
+    
+- **Por qué deben coincidir:**
+    
+    Cuando un proceso duerme con `sleep(chan, lock)`, el kernel anota en su ficha interna: `p->chan = chan`.
+    
+    Cuando otro llama a `wakeup(chan)`, el kernel recorre la lista de procesos buscando estrictamente:
+    
+    `if (p->state == SLEEPING && p->chan == chan) p->state = RUNNABLE;`
+    
+    Si `sleep` duerme usando un puntero (ej. `&sem_table[1]`) y `wakeup` usa otro distinto (ej. `&sem_table[2]` o una dirección local errónea), la comparación da falso: el proceso **nunca se entera del despertar y queda congelado para siempre**.
+    
+
+### 3. POSIX: Named vs. Unnamed y wait/post (Ítem 15)
+
+POSIX es el estándar que siguen Linux y Unix para semáforos (`man 7 sem_overview`):
+
+- **Named (con nombre):**
+    
+    Tienen un identificador visible en el sistema (en Linux un nombre tipo `"/mi_semaforo"`, en tu lab un número `id` del 1 al 64). Viven administrados globalmente por el kernel, por lo que **cualquier proceso independiente puede abrirlo y usarlo para sincronizarse**. Son exactamente los que programaste en xv6.
+    
+- **Unnamed (sin nombre):**
+    
+    No tienen nombre ni entrada en el kernel; son una simple variable tipo `sem_t` que colocás en la memoria RAM compartida entre hilos (`threads`) o entre procesos con memoria compartida explícita (`shm_open`).
+    
+- **Analogía `wait` y `post`:**
+    
+    - `sem_wait()` en POSIX es equivalente a tu **`sem_down()`** (operación P de Dijkstra): descuenta 1 o bloquea si no hay fichas.
+        
+    - `sem_post()` en POSIX es equivalente a tu **`sem_up()`** (operación V de Dijkstra): incrementa 1 ficha y despierta a los que esperan.
+- 
 ---
 
 ## Glosario que necesito saber (en xv6)
@@ -994,7 +1157,7 @@ Cuando las `sem_*` fallan o `pingpong` no anda, hay que ir del sintoma a la caus
 
 Explicar cada uno en voz alta, 2 o 3 minutos.
 
-- [x] `acquire`/`release` vs `sleep`/`wakeup`
+- [ ] `acquire`/`release` vs `sleep`/`wakeup`
 - [ ] Doble `sem_open` y `sem_close` con waiters
 - [ ] `pingpong`: dos semaforos y valores 1/0; por que falta `wait` rompe el prompt
 - [ ] `empty=B`, `full=0`

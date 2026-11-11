@@ -317,21 +317,21 @@ https://pdos.csail.mit.edu/6.828/2022/xv6/book-riscv-rev3.pdf
 
 ### Lab / enunciado / clase 4
 
-- [ ] Sé qué retorna cada `sem_*` en éxito y en error  
-- [ ] Memorcé las políticas fijas (doble open, close con waiters, up sin tope al init, reopen)  
-- [ ] Puedo listar los **5 invariantes** de la clase 4  
-- [ ] Distingo spinlock (`acquire`/`release`) de espera (`sleep`/`wakeup`)  
-- [ ] Sé el contrato de `pingpong` (fork, 2N líneas, orden, ERROR, close, wait)  
+- [x] Sé qué retorna cada `sem_*` en éxito y en error  
+- [ ] Memoricé las políticas fijas (doble open, close con waiters, up sin tope al init, reopen)   (Costo)
+- [x] Puedo listar los **5 invariantes** de la clase 4 ()  
+- [x] Distingo spinlock (`acquire`/`release`) de espera (`sleep`/`wakeup`)  
+- [x] Sé el contrato de `pingpong` (fork, 2N líneas, orden, ERROR, close, wait)  
 - [ ] Relaciono síntomas típicos (cuelgue, dos ping, prompt temprano) con su causa  
-- [ ] Entiendo por qué los ids son globales  
+- [x] Entiendo por qué los ids son globales  
 
 ### Prodcons / clases 5–7
 
-- [ ] Sé inicializar empty/full y el invariante del buffer (`0 <= ítems <= B`)  
-- [ ] Explico 1P+1C sin mutex vs multi P/C con mutex  
-- [ ] Sé el riesgo de deadlock por el orden de downs  
+- [x] Sé inicializar empty/full y el invariante del buffer (`0 <= ítems <= B`)  
+- [x] Explico 1P+1C sin mutex vs multi P/C con mutex  
+- [x] Sé el riesgo de deadlock por el orden de downs  
 - [ ] Relaciono el problema con pipes / `pipe.c`  
-- [ ] Sé por qué no hay que fijar ids de semáforo entre programas  
+- [x] Sé por qué no hay que fijar ids de semáforo entre programas  
 
 ### Bibliografía / xv6
 
