@@ -1,12 +1,3 @@
-# Probabilidad y Estadística — Parcial I (práctica D, CLAUDE ejercicios)
-
-> Segunda tanda a partir de tu autodiagnóstico (Parcial I 2026 + el de 2024/2025). Mismo espíritu que la práctica C: ningún enunciado real reutilizado, mezcla de modelos discretos y continuos, y de nuevo parte del ejercicio es reconocer vos mismo qué corresponde en cada ítem sin que el enunciado te lo diga.
->
-> Convención: $\Phi$ de tabla con 2 decimales en el cuantil $z$, resultados con 4 decimales, decimales con coma (como en los parciales reales).
-
-| 1a | 1b | 1c | 1d | 1e | 2a | 2b | 2c | 2d | 2e | 3a | 3b | 3c | 3d | 3e | 4a | 4b | 4c | 5a | 5b | 5c |
-|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-|    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
 
 ---
 
@@ -34,7 +25,10 @@ En una línea de producción, cada pieza inspeccionada es defectuosa con probabi
 **b)** ¿Cuál es la probabilidad de que se necesiten **más de** 10 inspecciones para encontrar la primera defectuosa?
 **c)** Si ya se inspeccionaron 10 piezas sin encontrar ninguna defectuosa, ¿cuál es la probabilidad de necesitar más de 15 inspecciones **en total**?
 **d)** Ahora se inspecciona hasta encontrar la **tercera** pieza defectuosa. ¿Cuál es la probabilidad de necesitar exactamente 12 inspecciones?
-**e)** Sin calcular nada, identifique qué distribución (Binomial, Binomial Negativa, Geométrica o Hipergeométrica) corresponde a cada situación: **(i)** de 20 piezas elegidas sin reposición de un lote de 200 piezas con 15 defectuosas, cuántas son defectuosas; **(ii)** de 20 piezas inspeccionadas (con $n=20$ fijado de antemano), cuántas son defectuosas; **(iii)** cuántas inspecciones hacen falta hasta la 4ª defectuosa; **(iv)** cuántas inspecciones hacen falta hasta la 1ª defectuosa.
+**e)** Sin calcular nada, identifique qué distribución (Binomial, Binomial Negativa, Geométrica o Hipergeométrica) corresponde a cada situación: **(i)** de 20 piezas elegidas sin reposición de un lote de 200 piezas con 15 defectuosas, cuántas son defectuosas; Hipergeometrica 
+**(ii)** de 20 piezas inspeccionadas (con $n=20$ fijado de antemano), cuántas son defectuosas; Binominal
+**(iii)** cuántas inspecciones hacen falta hasta la 4ª defectuosa;  Binominal negativa
+**(iv)** cuántas inspecciones hacen falta hasta la 1ª defectuosa. Geometrica
 
 ---
 
@@ -48,7 +42,9 @@ $$f_B(y)=y\,e^{-y},\qquad y>0\ \text{(años)}$$
 **b)** Calcule $P(\min\{A,B\}>2)$.
 **c)** Calcule $P(\min\{A,B\}\le2)$.
 **d)** ¿Tiene $\min\{A,B\}$ distribución exponencial? Justifique.
-**e)** Calcule $P(\max\{A,B\}>2)$ (la probabilidad de que **al menos uno** de los dos siga funcionando pasados los 2 años).
+**e)** Calcule $P(\max\{A,B\}>2)$ 
+
+esta bueno, pero tampoco me metas una gamma. es como si pusieras una log normal o weibull, no las identifico por q no las tengo integradas en mi cabeza y ningun ejercicio los da.
 
 ---
 

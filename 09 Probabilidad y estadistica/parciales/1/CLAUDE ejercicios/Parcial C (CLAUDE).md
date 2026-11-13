@@ -67,10 +67,10 @@ Las fallas de un servidor web siguen un proceso de Poisson con tasa $\lambda=0,4
 
 ## ▶ 5. (2,5 puntos)
 
-El diámetro $X$ (en mm) de los rodamientos que produce una máquina es $X\sim N(\mu=15,\ \sigma=0,3)$. Un rodamiento es aceptable si su diámetro está entre 14,5 y 15,6 mm.
+El diámetro $X$ (en mm) de los rodamientos que produce una máquina es $X\sim N(\mu=15,\ \sigma=0,3)$. Un rodamiento es aceptable si su diámetro está entre 14,6 y 15,6 mm.
 
 **a)** Calcule $P(X\le15,6)$ y $P(X\ge14,5)$ por separado (una es de cola superior, la otra de cola inferior).
-**b)** Calcule $P(14,5\le X\le15,6)$.
+**b)** Calcule $P(14,6\le X\le15,6)$.
 **c)** ¿Qué diámetro caracteriza al 5 % más chico de todos los rodamientos (percentil 5)?
 **d)** Se eligen 8 rodamientos al azar, de forma independiente. ¿Cuál es la probabilidad de que al menos uno esté fuera de especificación?
 
