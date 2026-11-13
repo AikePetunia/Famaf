@@ -2,19 +2,12 @@
 tags: [sistemas-operativos, xv6, semaforos, fat32, fuse, parcialito]
 curso: Sistemas Operativos 2026 - Labs 2 y 3, lo esencial respondido
 ---
-
-# Lab 2 y 3 — Esencial (checklist respondido)
-
-Cada punto de las checklists de las guías de estudio y cada cosa que piden los enunciados está **respondido de forma explícita**. Fuentes: enunciado del Lab 2, `Guia de estudio Lab 2`, enunciado del Lab 3, `[SO26] Apunte Lab3`, `Guia de estudio Lab 3`, filminas del Lab 3 y el código e informe de tu grupo.
-
----
-
 # LAB 2 — Semáforos en xv6
 
 ## A. Qué pide el enunciado (y cómo se cumple)
 
 - [x] **Implementar 4 syscalls: `sem_open`, `sem_up`, `sem_down`, `sem_close`.**
-  Viven en el kernel (`kernel/semaphore.c`), en un arreglo `sem_table[65]` (índices 1..64, el 0 no se usa). Cada semáforo tiene `value`, `is_open` y un `spinlock`.
+  Viven en el kernel (`kernel/semaphore.c`), en un arreglo `sem_table[65]` (índices 1..64, el 0 no se usa, es error). Cada semáforo tiene `value`, `is_open` y un `spinlock`.
 - [x] **Semáforos nombrados.**
   Los administra el **kernel**, son **globales** a todos los procesos (no hay privados), duran mientras xv6 esté prendido (se pierden al reiniciar) y su "nombre" es un **entero** (como un file descriptor).
 - [x] **Ids y retornos.**
@@ -30,7 +23,7 @@ Cada punto de las checklists de las guías de estudio y cada cosa que piden los 
 - [x] **`prodcons B N`.**
   Un solo `fork`: el productor produce los ítems `1..N` e imprime `produce K pid=P`; el consumidor consume N e imprime `consume pid=P`. Nunca hay más de B ítems "en vuelo", sin busy-wait, con semáforos contadores. Al final se cierran los semáforos y se agrega el programa a `UPROGS`. Errores: `ERROR: ...` si faltan argumentos o B, N < 1.
 - [x] **⭐ Punto estrella `prodcons B N P C`.**
-  P productores y C consumidores (varios `fork`) comparten `empty`, `full` y `mutex`; en total se producen y consumen N ítems y el padre espera a los P+C hijos. Es opcional (`@CREDIT`, 0 puntos extra).
+  P productores y C consumidores (varios `fork`) comparten `empty`, `full` y `mutex`; en total se producen y consumen N ítems y el padre espera a los P+C hijos. Es opcional (`@CREDIT`, 0 puntos extra).--
 - [x] **Auto-corrección.**
   `make grade-parcial` → **11/11** (syscalls 6 + pingpong 5). `make grade-final` → **15/15** (+ prodcons 4). Antes del push, `make clean`.
 - [x] **Entregas.**
