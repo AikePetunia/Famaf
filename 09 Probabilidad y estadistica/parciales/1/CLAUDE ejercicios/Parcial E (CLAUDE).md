@@ -36,9 +36,16 @@ Un profesor siempre termina su clase después de que suena el timbre y antes de 
 
 $$f(x)=\begin{cases}kx^2 & 0\le x\le2\\0 & \text{en otro caso}\end{cases}$$
 
-**a)** Encuentre $k$. ¿Cuál es la probabilidad de que la clase termine antes de 1 minuto después de que suena el timbre?
+**a)** Encuentre $k$. 
+i)¿Cuál es la probabilidad de que la clase termine antes de 1 minuto después de que suena el timbre?
 **b)** ¿Cuál es la probabilidad de que la clase continúe entre 60 y 90 segundos después de que suena el timbre?
-**c)** Obtenga la función de distribución acumulada de $X$, el percentil 75, $E(X)$, $\sigma_X$, y la probabilidad de que $X$ esté a menos de 1 desviación estándar de su valor medio.
+**c)** Obtenga la función de distribución acumulada de $X$, 
+
+el percentil 75, 
+
+$E(X)$, $\sigma_X$, y 
+
+la probabilidad de que $X$ esté a menos de 1 desviación estándar de su valor medio.
 
 ---
 
