@@ -1,124 +1,85 @@
+# Probabilidad y Estadística — Parcial II (práctica F, CLAUDE ejercicios)
+
+> **Simulacro de examen calibrado con el formato, nivel y extensión real de FaMAF (Parciales II 2025 y 2026).**
+>
+> Diseñado para practicar directamente los 4 puntos flojos del examen sin sobrecarga matemática:
+> 1. **Máxima Verosimilitud e Invarianza:** Deducción de $\hat{\lambda}_{MV}$ (con derivadas), estimación con muestra y uso de invarianza.
+> 2. **Muestra chica ($n < 30$, $\sigma$ desconocida):** Uso de $t$-Student (¡no $Z$!), despeje de error estándar y comparación de anchos.
+> 3. **Inferencia de Varianza:** Uso de Chi-cuadrado $\chi^2$ (¡no $Z$!), IC para $\sigma^2$ y **conclusión por dualidad con el intervalo**.
+> 4. **Datos Apareados:** Construcción de IC para $\mu_d$, **conclusión del test mediante el IC** y cálculo del P-valor.
+> 5. **Momentos e Insesgamiento:** Comprobación directa de insesgamiento y deducción simple por método de los momentos.
+>
+> **Convención:** Coma decimal ($,$), valores críticos de tablas habituales de la cátedra y resultados con 4 decimales (o redondeo natural).
+
+| 1a | 1b | 1c | 2a | 2b | 2c | 3a | 3b | 3c | 4a | 4b | 4c | 5a | 5b |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|    |    |    |    |    |    |    |    |    |    |    |    |    |    |
 
 ---
 
-## ▶ 1. Estimador de Máxima Verosimilitud, Invarianza y Propiedades (2 puntos)
+## ▶ 1. Máxima Verosimilitud e Invarianza (2 puntos)
 
-Sea $X_1, X_2, \dots, X_n$ una muestra aleatoria de variables independientes e idénticamente distribuidas provenientes de una población continua con función de densidad:
+El tiempo de espera $X$ (en minutos) en la fila de atención rápida de un banco sigue una distribución exponencial con parámetro de tasa $\lambda > 0$, cuya función de densidad es:
 
-$$f(x; \theta) = \theta \, x^{\theta - 1}, \qquad 0 < x < 1, \quad \theta > 0$$
+$$f(x; \lambda) = \begin{cases} \lambda e^{-\lambda x} & \text{si } x > 0 \\ 0 & \text{en otro caso} \end{cases}$$
 
-**a)** Obtenga analíticamente el estimador de máxima verosimilitud (EMV) de $\theta$, $\hat{\theta}_{MV}$. Plantee la función de verosimilitud $L(\theta)$, la log-verosimilitud $\ln L(\theta)$, obtenga el punto crítico mediante la primera derivada y demuestre formalmente que dicho punto maximiza la verosimilitud evaluando la segunda derivada.
+**a)** A partir de una muestra aleatoria $X_1, X_2, \dots, X_n$, obtenga el estimador de máxima verosimilitud de $\lambda$, $\hat{\lambda}_{MV}$. Escriba la función de verosimilitud $L(\lambda)$, la log-verosimilitud $\ln L(\lambda)$, halle el punto crítico igualando la primera derivada a cero y verifique que es un máximo con la segunda derivada.
 
-**b)** Se toma una muestra de tamaño $n = 10$, cuyos registros arrojan que $\sum_{i=1}^{10} \ln(x_i) = -4{,}00$. Calcule el valor numérico estimado $\hat{\theta}_{MV, obs}$.
+**b)** Se registran los tiempos de espera de $n = 5$ clientes elegidos al azar:
+$$1{,}5 \qquad 3{,}0 \qquad 2{,}0 \qquad 4{,}5 \qquad 1{,}5$$
+Calcule la media muestral $\bar{x}$ y obtenga la estimación puntual de $\lambda$ usando el estimador hallado en **a)**.
 
-**c)** Utilizando la propiedad de invarianza del estimador de máxima verosimilitud y el valor obtenido en **b)**:
-- Estime la probabilidad de que una nueva observación supere el valor $0{,}5$, es decir, estime $P(X > 0{,}5)$.
-- Estime la mediana poblacional de la distribución (el valor $m$ tal que $P(X \le m) = 0{,}5$).
-
-**d)** Considere ahora que se desea estimar la media poblacional $\mu = E(X) = \frac{\theta}{\theta + 1}$. Se proponen dos estimadores alternativos basados en la muestra:
-$$\hat{\mu}_1 = \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \qquad \text{y} \qquad \hat{\mu}_2 = \frac{X_1 + 2X_n}{3}$$
-- Demuestre si $\hat{\mu}_1$ y $\hat{\mu}_2$ son estimadores insesgados de $\mu$.
-- Calcule las varianzas $V(\hat{\mu}_1)$ y $V(\hat{\mu}_2)$ en función de $V(X)$ y $n$. ¿Cuál de los dos estimadores tiene menor Error Cuadrático Medio ($\text{ECM}$)? Justifique.
+**c)** Utilizando la propiedad de invarianza del estimador por máxima verosimilitud y el resultado de **b)**, estime la probabilidad de que un cliente espere a lo sumo 2 minutos en la fila, es decir, estime $P(X \le 2)$.
 
 ---
 
-## ▶ 2. Método de los Momentos con Parámetros Iguales (1,5 puntos)
+## ▶ 2. Muestra Chica con Varianza Desconocida (2 puntos)
 
-Sea $X_1, X_2, \dots, X_n$ una muestra aleatoria de una distribución $\text{Beta}(\alpha, \beta)$ con soporte en $[0, 1]$, cuya función de densidad es:
+El intervalo de confianza del 95 % para la resistencia media a la tracción $\mu$ de un nuevo polímero con distribución normal y varianza desconocida fue $(38{,}22; \; 41{,}78)$, construido a partir de una muestra de tamaño $n = 5$.
 
-$$g(x; \alpha, \beta) = \frac{1}{B(\alpha, \beta)} x^{\alpha - 1} (1 - x)^{\beta - 1}, \qquad 0 \le x \le 1$$
+**a)** Indique qué distribución de probabilidad corresponde utilizar para modelar este intervalo y con cuántos grados de libertad ($\nu$). A partir de las cotas del intervalo dado, encuentre el **error estándar** ($SE = s/\sqrt{n}$) que se utilizó para construirlo.
 
-Se sabe que el primer y segundo momento teórico de esta distribución están dados por:
-$$\mu = E(X) = \frac{\alpha}{\alpha + \beta} \qquad \text{y} \qquad \mu_2 = E(X^2) = \frac{\alpha(\alpha + 1)}{(\alpha + \beta)(\alpha + \beta + 1)}$$
+**b)** Si ahora usted considera que es preferible reportar un intervalo de confianza del **99 %**, ¿cuáles son las nuevas cotas de este intervalo?
 
-Considere el caso particular en que ambos parámetros son iguales, es decir, $\alpha = \beta$.
-
-**a)** Evalúe $E(X)$ bajo la condición $\alpha = \beta$. Explique conceptualmente por qué en este caso **no** es posible utilizar el primer momento muestral $m_1 = \bar{X}$ para obtener un estimador de $\alpha$.
-
-**b)** Utilice el segundo momento poblacional $\mu_2 = E(X^2)$ y el segundo momento muestral $m_2 = \frac{1}{n}\sum_{i=1}^n X_i^2$ para deducir la fórmula del estimador por el método de los momentos de $\alpha$, $\hat{\alpha}_{mom}$.
-
-**c)** Una muestra aleatoria de $n = 5$ observaciones arrojó los siguientes valores:
-$$0{,}32 \qquad 0{,}48 \qquad 0{,}55 \qquad 0{,}62 \qquad 0{,}43$$
-Calcule el valor de $m_2$ y obtenga la estimación puntual $\hat{\alpha}_{mom, obs}$.
+**c)** ¿Cómo espera que sea el ancho del intervalo del 99 % comparado con el del 95 %? Justifique conceptualmente.
 
 ---
 
-## ▶ 3. Inferencia con Muestra Chica ($n < 30$, varianza desconocida) y Margen de Error (2 puntos)
+## ▶ 3. Inferencia para la Varianza y Dualidad con Intervalos (2 puntos)
 
-Se analiza la resistencia a la tensión (en MPa) de una aleación metálica experimental. Se asume que la variable sigue una distribución normal con media $\mu$ y varianza $\sigma^2$ **desconocida**.
+Una máquina envasadora de harina debe operar de manera que la variabilidad en el peso de los paquetes sea muy baja. Se toma una muestra aleatoria de $n = 10$ paquetes y se obtiene una desviación estándar muestral de $s = 4\text{ g}$ ($s^2 = 16$). Se supone que el peso de los paquetes sigue una distribución aproximadamente normal.
 
-A partir de una muestra aleatoria de tamaño $n = 7$, se construyó un intervalo de confianza del 90 % bilateral para la resistencia media verdadera $\mu$, resultando:
+**a)** Diseñe un test de hipótesis de nivel $\alpha = 0{,}05$ para evaluar si la varianza poblacional difiere de $9$ ($H_0: \sigma^2 = 9$ vs. $H_a: \sigma^2 \ne 9$). Indique el estadístico de prueba correspondiente, su distribución bajo $H_0$ con sus grados de libertad, determine los valores críticos en la tabla Chi-cuadrado y tome una decisión en el contexto del problema.
 
-$$\text{IC}_{90\%}(\mu) = (42{,}352; \; 47{,}648)$$
+**b)** Construya un intervalo de confianza del 95 % para la varianza poblacional $\sigma^2$.
 
-**a)** Explique por qué sería un error metodológico utilizar los cuantiles de la distribución Normal estándar $Z$ para trabajar con este intervalo. Indique qué distribución de probabilidad debe utilizarse y con cuántos grados de libertad ($\nu$).
-
-**b)** A partir de los límites dados del intervalo del 90 %:
-- Halle la media muestral observada $\bar{x}$.
-- Halle la amplitud total del intervalo $A$ y el margen de error $ME$.
-- Utilice el valor crítico correspondiente de la tabla para despejar el **error estándar estimado** utilizado ($SE = s/\sqrt{n}$) y deduzca el valor de la desviación estándar muestral observada $s$.
-
-**c)** Con la media muestral $\bar{x}$ y el error estándar $SE$ hallados en **b)**, construya los intervalos de confianza para $\mu$ al **95 %** y al **99 %**.
-
-**d)** Compare la amplitud de los tres intervalos (90 %, 95 % y 99 %). Explique claramente la relación matemática y conceptual entre el nivel de confianza ($1 - \alpha$), el valor crítico y el margen de error.
+**c)** Compare ambas respuestas: ¿cómo se relaciona la decisión adoptada en el test del inciso **a)** con la pertenencia del valor nulo $\sigma_0^2 = 9$ dentro del intervalo hallado en **b)**? Explique el principio de dualidad.
 
 ---
 
-## ▶ 4. Inferencia sobre la Varianza Poblacional y Dualidad con Intervalos (1,5 puntos)
+## ▶ 4. Datos Apareados y Conclusión por Intervalo de Confianza (2 puntos)
 
-Una máquina calibradora de piezas automotrices debe operar garantizando una variabilidad muy reducida en el diámetro de los pernos. Se toma una muestra aleatoria de $n = 10$ pernos y se mide su diámetro (en mm), obteniéndose:
-$$\bar{x} = 25{,}40 \text{ mm} \qquad \text{y} \qquad s = 0{,}08 \text{ mm} \quad (s^2 = 0{,}0064)$$
-Se asume que el diámetro de los pernos se distribuye de manera aproximadamente normal con media $\mu$ y varianza $\sigma^2$.
+Para evaluar si un programa de capacitación reduce el tiempo que tardan los empleados en procesar un trámite, se toma una muestra de $n = 25$ empleados y se registra su tiempo antes ($X$) y después ($Y$) de realizar el curso.
 
-**a)** Se desea contrastar si la varianza poblacional del proceso difiere del estándar admisible de $0{,}0025\text{ mm}^2$ al nivel de significación $\alpha = 0{,}05$.
-- Enuncie formalmente las hipótesis nula ($H_0$) y alternativa ($H_a$).
-- Escriba el estadístico de prueba correspondiente. Justifique por qué su distribución bajo $H_0$ es Chi-cuadrado ($\chi^2$) y **no** Normal estándar ($Z$), indicando sus grados de libertad.
+Para cada empleado se calcula la diferencia $d_i = x_i - y_i$ (tiempo antes menos tiempo después), obteniéndose los siguientes estadísticos muestrales:
+$$\bar{d} = 3{,}60\text{ minutos} \qquad \text{y} \qquad s_d = 2{,}50\text{ minutos}$$
+Se asume que la distribución de las diferencias es aproximadamente normal con media $\mu_d$ y varianza desconocida.
 
-**b)** Calcule el valor observado del estadístico de prueba ($\chi^2_{obs}$). Determine los valores críticos de la tabla Chi-cuadrado para un ensayo bilateral con $\alpha = 0{,}05$, defina la región de rechazo y concluya en el contexto del problema.
+**a)** Calcule el margen de error y construya un intervalo de confianza del 95 % para la diferencia media poblacional $\mu_d = \mu_X - \mu_Y$.
 
-**c)** Construya un intervalo de confianza del 95 % para la varianza poblacional $\sigma^2$, y a partir de él obtenga el intervalo de confianza del 95 % para la desviación estándar poblacional $\sigma$.
+**b)** Utilice **exclusivamente el intervalo de confianza** construido en **a)** para concluir si existe evidencia significativa al nivel del 5 % de que el programa reduce el tiempo medio de procesamiento (contraste bilateral $H_0: \mu_d = 0$ vs. $H_a: \mu_d \ne 0$). Justifique según la posición del valor $0$ respecto al intervalo.
 
-**d)** Aplique el principio de **dualidad** entre pruebas de hipótesis e intervalos de confianza: determine la decisión sobre $H_0$ observando únicamente el intervalo hallado en **c)**. Explique detalladamente por qué ambas conclusiones son equivalentes.
+**c)** Calcule el estadístico de prueba observado $t_{obs}$ y concluya respecto al P-valor de la prueba. Verifique que la conclusión coincide con la del inciso **b)**.
 
 ---
 
-## ▶ 5. Prueba de Hipótesis: Error de Tipo II ($\beta$), Potencia y P-valor (1,5 puntos)
+## ▶ 5. Insesgamiento y Método de los Momentos (2 puntos)
 
-La resistencia a la compresión del cemento utilizado en obras viales sigue una distribución normal con media $\mu$ y desviación estándar conocida $\sigma = 12\text{ kg/cm}^2$. La especificación técnica exige que la resistencia media no sea inferior a $100\text{ kg/cm}^2$.
+**a)** Sea $X_1, X_2, \dots, X_n$ una muestra aleatoria de variables independientes con media común $\mu = E(X)$ y varianza $\sigma^2$. Considere los siguientes dos estimadores para $\mu$:
+$$\hat{\mu}_1 = \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \qquad \text{y} \qquad \hat{\mu}_2 = \frac{X_1 + X_n}{2}$$
+Demuestre formalmente si $\hat{\mu}_1$ y $\hat{\mu}_2$ son estimadores insesgados de $\mu$ aplicando las propiedades de la esperanza matemática.
 
-Se toma una muestra aleatoria de $n = 36$ bloques para verificar si la resistencia media es significativamente inferior a la norma, planteando:
-$$H_0: \mu = 100 \qquad \text{vs.} \qquad H_a: \mu < 100$$
-Se fija un nivel de significación $\alpha = 0{,}05$.
-
-**a)** Determine la región de rechazo en términos del estadístico estandarizado $Z$, y determine el valor crítico expresado en la escala original de la media muestral, $\bar{x}_c$ (es decir, la regla de decisión: *"Rechazar $H_0$ si $\bar{X} \le \bar{x}_c$"*).
-
-**b)** Suponga que el verdadero promedio poblacional de la partida de cemento cayó a $\mu' = 95\text{ kg/cm}^2$.
-- Calcule la probabilidad de cometer el **Error de Tipo II**, $\beta(95)$.
-- Calcule la **potencia de la prueba** frente a dicha alternativa ($1 - \beta(95)$).
-- Interprete en palabras qué significan el Error de Tipo I ($\alpha$), el Error de Tipo II ($\beta$) y la potencia en el contexto del control de calidad de la obra.
-
-**c)** Tras ensayar los 36 bloques, la muestra arrojó una media observada $\bar{x}_{obs} = 96{,}20\text{ kg/cm}^2$. Calcule el valor observado del estadístico de prueba $z_{obs}$ y obtenga el **P-valor (valor-p)** exacto de la prueba.
-
-**d)** Enuncie la regla de decisión basada en el P-valor y tome la conclusión tanto para $\alpha = 0{,}05$ como para $\alpha = 0{,}01$.
-
----
-
-## ▶ 6. Muestras Pareadas (Datos Apareados), Margen de Error y Conclusión por IC (1,5 puntos)
-
-Para comprobar la efectividad de un programa de entrenamiento físico destinado a reducir el tiempo de respuesta motriz, se evalúa a un grupo de $n = 25$ atletas antes y después de completar el programa.
-
-Para cada atleta $i$ se define la diferencia $d_i = x_i - y_i$, donde:
-- $x_i$: tiempo de respuesta antes del entrenamiento (en centésimas de segundo).
-- $y_i$: tiempo de respuesta después del entrenamiento (en centésimas de segundo).
-
-Los estadísticos muestrales calculados a partir de las diferencias resultaron:
-$$\bar{d} = 3{,}40 \qquad \text{y} \qquad s_d^2 = 3{,}24 \quad (s_d = 1{,}80)$$
-Se asume que las diferencias $D = X - Y$ se distribuyen de forma aproximadamente normal con media $\mu_d$ y varianza desconocida.
-
-**a)** Explique la diferencia fundamental entre un esquema de **muestras pareadas (o apareadas)** y uno de **dos muestras independientes**. ¿Por qué este problema se reduce formalmente a una inferencia de una sola muestra?
-
-**b)** Calcule el error estándar estimado ($SE$), el margen de error ($ME$) y construya un intervalo de confianza del 95 % para la verdadera diferencia media poblacional $\mu_d = \mu_X - \mu_Y$.
-
-**c)** Utilice **exclusivamente el intervalo de confianza** obtenido en **b)** para concluir si existe evidencia estadísticamente significativa de que el programa de entrenamiento modifica el tiempo medio de respuesta (prueba bilateral $H_0: \mu_d = 0$ vs. $H_a: \mu_d \ne 0$ al nivel $\alpha = 0{,}05$). Justifique formalmente según el criterio de pertenencia del valor nulo.
-
-**d)** Calcule el estadístico de prueba observado $t_{obs}$ y determine (o acote mediante la tabla $t$-Student) el **P-valor** de la prueba. Verifique que la decisión adoptada sea consistente con la obtenida a través del intervalo de confianza.
+**b)** Sea $Y_1, Y_2, \dots, Y_n$ una muestra aleatoria de una variable con distribución de Pareto cuyo valor esperado poblacional es:
+$$E(Y) = \frac{\theta}{\theta - 1}, \qquad \text{con } \theta > 1$$
+- Obtenga la fórmula del estimador de $\theta$ por el método de los momentos, $\hat{\theta}_{mom}$, igualando el momento muestral $\bar{Y}$ a la esperanza teórica $E(Y)$.
+- Si una muestra de $n = 6$ datos arroja una media muestral $\bar{y} = 1{,}50$, calcule el valor numérico de la estimación $\hat{\theta}_{mom, obs}$.
