@@ -4,165 +4,75 @@
     "type": "split",
     "children": [
       {
-        "id": "ce40f78ea1145f44",
+        "id": "b3f7b4578433635e",
         "type": "tabs",
-        "dimension": 37.70413064361191,
         "children": [
           {
-            "id": "388f87585001dc6f",
+            "id": "86227ab248a6f4e2",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md"
+                "file": "08 Sistemas Operativos/teorico/1. Resumen Virtualizacion.md"
               },
               "icon": "excalidraw-icon",
-              "title": "! Teorico completo + anotaciones (P2) CLAUDE"
+              "title": "1. Resumen Virtualizacion"
             }
           },
           {
-            "id": "9b02e4bb656b09cb",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "! Teorico completo + Anotaciones (P1)"
-            }
-          },
-          {
-            "id": "d6e5d92e91f6e58a",
+            "id": "483a3facc1909530",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica F (CLAUDE).md",
+                "file": "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2025-10-09 (Trabajadores) rta.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Practica F (CLAUDE)"
-            }
-          },
-          {
-            "id": "4f2581eb5e8cd573",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
-                "page": 1,
-                "left": -17,
-                "top": 846,
-                "zoom": 1.0210084033613445
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla_normal"
-            }
-          },
-          {
-            "id": "1c5bfb86c3106fc0",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
-                "page": 1,
-                "left": -3,
-                "top": 795,
-                "zoom": 1.150735294117647
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla_t"
-            }
-          },
-          {
-            "id": "87b1dd1cee7cec8e",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/practico/tablas/Tabla Chi-Cuadrado.pdf",
-                "page": 1,
-                "left": 552,
-                "top": 488,
-                "zoom": 1.9
-              },
-              "icon": "lucide-file-text",
-              "title": "Tabla Chi-Cuadrado"
-            }
-          }
-        ]
-      },
-      {
-        "id": "051f077b1bdd2a17",
-        "type": "tabs",
-        "dimension": 62.29586935638809,
-        "children": [
-          {
-            "id": "247a75a094f8db73",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/parciales/2/ParcialII resuelto 2026.pdf",
-                "page": 2,
-                "left": -15,
-                "top": 211,
-                "zoom": 1.0924413463039067
-              },
-              "icon": "lucide-file-text",
-              "title": "ParcialII resuelto 2026"
-            }
-          },
-          {
-            "id": "f45a2cb6eb50760d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica F (CLAUDE).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Practica F (CLAUDE)"
-            }
-          },
-          {
-            "id": "e637a1a3e97fe86f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica G (CLAUDE).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Practica G (CLAUDE)"
-            }
-          },
-          {
-            "id": "6eee0d123110d333",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "09 Probabilidad y estadistica/parciales/2/Parcial 2 2023-11-16 (Tema A).pdf",
-                "page": 1,
-                "left": -15,
-                "top": 778,
-                "zoom": 1.0941176470588236
-              },
-              "icon": "lucide-file-text",
-              "title": "Parcial 2 2023-11-16 (Tema A)"
+              "title": "Parcial 1 2025-10-09 (Trabajadores) rta"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
+      },
+      {
+        "id": "5051eec6b9fb7b4d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6a9279924e3f4185",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2025-10-09 (Trabajadores).pdf",
+                "page": 2,
+                "left": 66,
+                "top": 457,
+                "zoom": 1.8
+              },
+              "icon": "lucide-file-text",
+              "title": "Parcial 1 2025-10-09 (Trabajadores)"
+            }
+          },
+          {
+            "id": "b531308cf32c97a9",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "08 Sistemas Operativos/parciales/Finales/Final 2024-02-09.pdf",
+                "page": 1,
+                "left": -13,
+                "top": 846,
+                "zoom": 1.3745632307485554
+              },
+              "icon": "lucide-file-text",
+              "title": "Final 2024-02-09"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -284,13 +194,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
+                "file": "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2025-10-09 (Trabajadores) rta.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ! Teorico completo + anotaciones (P2) CLAUDE"
+              "title": "Outline of Parcial 1 2025-10-09 (Trabajadores) rta"
             }
           }
         ],
@@ -318,24 +228,38 @@
       "graph:Open graph view": false
     }
   },
-  "active": "388f87585001dc6f",
+  "active": "483a3facc1909530",
   "lastOpenFiles": [
+    "99 Adjuntos/Pasted image 20261123133320.png",
+    "99 Adjuntos/Pasted image 20261123131058.png",
+    "quicknote.md",
+    "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2025-10-09 (Trabajadores) rta.md",
+    "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2025-10-09 (Trabajadores).pdf",
+    "08 Sistemas Operativos/parciales/Finales/Final 2024-02-09.pdf",
+    "08 Sistemas Operativos/teorico/1. Resumen Virtualizacion.md",
+    "99 Adjuntos/Pasted Image 20261123070626_691.png",
+    "08 Sistemas Operativos/practico/1.) Virtualización del cpu.pdf",
+    "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2024-10-03.pdf",
+    "08 Sistemas Operativos/parciales/Parcial 2/Parcial 2 2025-11-18.pdf",
+    "08 Sistemas Operativos/parciales/Parcial 2/Parcial 2 2023-11-21.pdf",
+    "08 Sistemas Operativos/parciales/Parcial 2/Parcial 2 2022-11-22.pdf",
+    "08 Sistemas Operativos/parciales/Parcial 2/Parcial 2 2021-11-25.pdf",
+    "08 Sistemas Operativos/parciales/Parcial 2/Parcial 2 2020-12-03.pdf",
+    "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2022-10-18.pdf",
+    "08 Sistemas Operativos/parciales/Parcial 1/Parcial 1 2009-09-28Untitled.md",
+    "08 Sistemas Operativos/practico/puntaje.md",
+    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica F (CLAUDE).md",
+    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
+    "99 Adjuntos/Pasted Image 20261118195257_178.png",
+    "99 Adjuntos/Pasted Image 20261118195845_680.png",
+    "99 Adjuntos/Pasted Image 20261118195703_908.png",
+    "99 Adjuntos/Pasted Image 20261118195618_345.png",
     "99 Adjuntos/Pasted Image 20261118152852_332.png",
     "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica G (CLAUDE).md",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_normal.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2) CLAUDE.md",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla Chi-Cuadrado.pdf",
-    "09 Probabilidad y estadistica/practico/tablas/Tabla_t.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial1/! Teorico completo + Anotaciones (P1).md",
     "09 Probabilidad y estadistica/teorico/Parcial2/! Teorico completo + anotaciones (P2).md",
     "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica G.md",
-    "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica F (CLAUDE).md",
-    "09 Probabilidad y estadistica/parciales/2/ParcialII resuelto 2026.pdf",
-    "09 Probabilidad y estadistica/parciales/2/Parcial 2 2023-11-16 (Tema A).pdf",
     "09 Probabilidad y estadistica/parciales/2/Parcial 2 2023-11-16 (Tema B).jpg",
-    "09 Probabilidad y estadistica/parciales/2/Parcial 2 2024-11-21 resuelto.pdf",
-    "09 Probabilidad y estadistica/parciales/2/Parcial 2 2025-11-13.pdf",
-    "09 Probabilidad y estadistica/parciales/2/Parcial 2 2024-11-21.pdf",
     "09 Probabilidad y estadistica/teorico/Parcial2/parcial2.jpeg",
     "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica B (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica C (CLAUDE).md",
@@ -343,9 +267,6 @@
     "09 Probabilidad y estadistica/parciales/2/CLAUDE ejercicios/Practica E (CLAUDE).md",
     "99 Adjuntos/Pasted Image 20261118100647_520.png",
     "09 Probabilidad y estadistica/parciales/2/parcial chagpt.md",
-    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_primer_parcial.pdf",
-    "09 Probabilidad y estadistica/teorico/Parcial1/resumen_distribuciones.pdf",
-    "99 Adjuntos/Pasted Image 20261116113120_979.png",
     "09 Probabilidad y estadistica/teorico/Parcial1/resumen parcial 1.md",
     "08 Sistemas Operativos/practico/4.) Persistencia rtas.md",
     "08 Sistemas Operativos/practico/3.) Concurrencia rtas.md",
@@ -353,18 +274,7 @@
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial H (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial G (CLAUDE).md",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial F (CLAUDE).md",
-    "99 Adjuntos/Pasted image 20261114171330.png",
-    "99 Adjuntos/Pasted image 20261114171317.png",
-    "99 Adjuntos/Pasted image 20261114160511.png",
-    "99 Adjuntos/Pasted image 20261114155454.png",
-    "99 Adjuntos/Pasted image 20261114155214.png",
-    "99 Adjuntos/Pasted image 20261114154232.png",
     "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial E (CLAUDE).md",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Plan de estudio Parcial I (CLAUDE).md",
-    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial C (CLAUDE).md",
-    "08 Sistemas Operativos/lab/notas lab 3.md",
-    "08 Sistemas Operativos/lab/notas lab 2.md",
-    "08 Sistemas Operativos/lab/Lab 2 y 3 - Esencial.md"
+    "09 Probabilidad y estadistica/parciales/1/CLAUDE ejercicios/Parcial D (CLAUDE).md"
   ]
 }
