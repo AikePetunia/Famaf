@@ -83,3 +83,79 @@ Suponga que hay 2 nucleos en ejecucion, y es por eso que cada celda de tiempo es
 | A       | 0      | 1   | 6   | 1   |
 | B       | 0      | 8   | 1   | 5   |
 | C       | 5      | 10  |     |     |
+
+
+| **Intervalo** | **Núcleo 1** | **Núcleo 2** | **Eventos / Estado de I/O y Ready**                                  |
+| ------------- | ------------ | ------------ | -------------------------------------------------------------------- |
+| **`0 - 1`**   | **A**        | **B**        | Arrancan A y B. En `1`, A pasa a I/O (`1` a `7`).                    |
+| **`1 - 5`**   | —            | **B**        | A en I/O. En `5`, llega C (`CPU=10`).                                |
+| **`5 - 7`**   | **C**        | **B**        | A sigue en I/O hasta `7`.                                            |
+| **`7 - 8`**   | **C**        | **B**        | En `7`, A termina I/O pero **espera en Ready** (núcleos llenos).     |
+| **`8 - 9`**   | **C**        | **A**        | En `8`, B pasa a I/O (`8` a `9`); A ejecuta su última CPU y termina. |
+| **`9 - 14`**  | **C**        | **B**        | En `9`, B termina I/O y ejecuta su última CPU (`5` u.) hasta `14`.   |
+| **`14 - 15`** | **C**        | —            | B termina en `14`. C completa su 10ma unidad y termina en `15`.      |
+![[Pasted image 20261125173452.png]]
+
+Ejercicio 4)
+![[Pasted image 20261125173659.png]]
+
+Cada tabla de paginas de 4kib con 2 niveles que pasa de un esquema (10,10,12) a uno (20, 12)
+10 bits de nivel 1
+10 bits de nivel 2
+12 bits de offstet
+![[Pasted image 20261125175039.png]]
+![[Pasted image 20261125173858.png]]
+
+CR3=0xFA110 
+
+a) Direccion virtual 0x00000E5A es:
+
+Tenemos 12 bits de offset, que seria 0xE5A.
+El resto, son 10 bits de L1, 10 bits de L2
+0000 0000 00 -> 0x000: 0x0B0CA, UWP
+0000 0000 00 -> 0x000: 0x0CA5A, UWP 
+![[Pasted image 20261125175033.png]]
+Tenemos 
+0x0CA5AE5A
+
+B) La direccion virtual 0x00800F00
+Tenemos 10, 10, 12
+(00 0000 0000): 0x000 :0x0B0CA UWP
+(00 0000 0010): 0x002 en CR3 :0x0B0CA SR-
+12 de offset: F00 (1111 0000 0000)
+
+No es valida, pues l2 no tiene una valida, no está presente esa direccion.
+
+C)0xFFFFFFFF
+Tenemos 10, 10, 12
+10 de l2: (0011 1111 1111): 0x3FF: 0xFA110, SWP
+10 de l1: (0011 1111 1111): 0x3FF: 0xFA110, SWP 
+12 de offset: F00 (1111 0000 0000)
+
+0xFA110FFF
+
+### Ejercicio 5 (Imagen 6)
+
+Para el mismo esquema de paginación del Ejercicio 4:
+
+- **a) Hacer el mapeo inverso de la dirección física `0x00CABE5A` a todas sus direcciones virtuales.**
+    
+Offset: 0xE5A
+Las tablas que tienen 0x00CAB presente son:
+0x0CA5A: 0x002: 0x00CAB 
+0x0B0CA: -
+0x00000: -
+
+`0x000, 0x0B0CA`
+`0x000, 0x0CA5A`
+`0x000, 0x00CAB`
+
+        
+- **b) Hacer el mapeo inverso de la dirección física `0xFA110505` a todas sus direcciones virtuales.**
+Offset = 505
+
+Busco 0xFA110.
+
+    `0x3FF, 0xFA110`
+    `0x3FF, 0xFA110`
+        `0x3FF, 0xFA110`
